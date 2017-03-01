@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="/css/site.css">
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic">
+  
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+
+    
+    {% if page.excerpt %}
+    <meta name="description" content="{{ page.excerpt| strip_html }}" />
+    <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
+    {% else %}
+    <meta name="description" content="{{ site.description }}">
+    <meta property="og:description" content="{{ site.description }}" />
+    {% endif %}
+    <meta name="author" content="{{ site.author }}" />
+
+    {% if page.title %}
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="twitter:title" content="{{ page.title }}" />
+    {% endif %}
+    
+    {% if page.url == '/index.html' %}
+    <link rel="alternate" hreflang="kr" href="/" />
+    {% elsif page.url == '/en/index.html' %}
+      <link rel="alternate" hreflang="en" href="/en/" />
+    {% endif %}
+    
+    {{ page.extra_head }}
+    
+    {% if page.category == 'blog' %}
+      {% if page.photo %}
+        <meta property="og:type" content="article">
+        <meta property="og:image" content="images/posts/{{ page.photo }}" />
+      {% endif %}
+    {% endif %}
+    
+  <script type="text/javascript" src="/helium.js"></script>
+
+  </head>
+
+  <body>
+  <div class="header-container">
+    <header class="inner">
+      <nav>
+        <a class="{% if page.category == 'about' %} selected {% endif %}" href="/">About</a>
+        <a class="{% if page.category == 'blog' %} selected {% endif %}" href="/blog/">Blog</a>
+      </nav>
+      <div class="pull-right right logo">
+        <div class="name">
+          {% if page.url == '/en/index.html' %}
+            <a href="/">JK Park</a><br />
+          {% else %}
+            <a href="/">JK Park</a><br />
+          {% endif %}
+          <small>
+            <em>
+                <a href="http://www.indiecoders.org" target="_blank">Indiecoders</a>
+            </em>
+          </small>
+        </div>
+        <img class="avatar" src="{{ site.avatar }}" alt="2017" />
+      </div>
+      <div class="clear"></div>
+    </header>
+    <div class="clear"></div>
+  </div>
+  
+  {{ content }}
+  <div class="separator"></div>
+  
+  <div  style="border-bottom: 1px solid #ddd"></div>
+  <footer>
+    <p>
+      Made with <a href="http://jekyllrb.com/">Jekyll</a>,
+      hosted on <a href="https://pages.github.com">Github Pages</a>,
+      Template inspired by <a href="https://github.com/ssaunier/ssaunier.github.io">Sébastien Saunier</a>.
+    </p>
+    <ul class="links">
+      <li><a href="https://github.com/jkpark" title="See my code on GitHub"><i class="icon-github"></i></a></li>
+      <li><a href="mailto:jkpark.r@indiecoders.org" title="AMA"><i class="icon-envelope"></i></a></li>
+    </ul>
+  </footer>
+
+  {% include analytics.html %}
+  
+  <!--
+  <script type="text/javascript">
+    window.addEventListener('load', function(){
+
+        helium.init();
+
+    }, false);-->
+</script>
+  </body>
+</html>

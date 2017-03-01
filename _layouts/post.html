@@ -1,0 +1,32 @@
+---
+layout: default
+---
+{% if page.photo %}
+<div class="post-photo" style="background-image: url('/images/posts/{{ page.photo }}')">
+
+</div>
+{% endif %}
+
+<article>
+  <h1 class="inner">
+    {{ page.title }}
+  </h1>
+
+  <p class="inner meta">{{ page.date | date: "%A %-d %B %Y" }}</p>
+
+  {% if page.english %}
+  <div class="inner suggest-translate">
+    이 문서는 영어로 되어있습니다.
+    <a href="http://translate.google.com/translate?sl=en&amp;tl=kr&amp;u=http://{{ site.url }}{{ page.url }}">
+      구글 번역을 원하시면 여기를 클릭해주세요</a>.
+  </div>
+  {% endif %}
+
+  <div class="post">
+    {{ content }}
+  </div>
+</article>
+
+<div class="separator"></div>
+
+{% include disqus.html %}
