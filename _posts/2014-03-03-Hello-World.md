@@ -3,6 +3,7 @@ layout: post
 title: You're up and running!
 description:
 category: blog
+tags: [Jekyll]
 english: true
 ---
 

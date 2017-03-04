@@ -3,12 +3,11 @@ layout: default
 category: about
 ---
 <section class="about-me inner" itemscope itemtype="http://data-vocabulary.org/Person">
-  <div class="pull-right speak-french"></div>
-
+  
   <h1>
-    <div class="book-me">
+    <!--<div class="book-me">
       <a href="/portfolio" class="btn btn-lg">Portfolio</a>
-    </div>
+    </div>-->
     <span class="hello">
       안녕하세요,
       <small><em>speak <a href="/en/" rel="alternate" hreflang="en">english</a> ?</em></small>
@@ -16,8 +15,7 @@ category: about
   </h1>
 
   <p>
-    <a href="/"><span itemprop="name">JK Park</span></a> 입니다. 저는 Android Application 개발자이고 Ubuntu에 관심이 많습니다.
-    
+    저는 <a href="/"><span itemprop="name">JK Park</span></a> 입니다.
   </p>
 
 </section>
@@ -27,13 +25,13 @@ category: about
 <div class="separator"></div>
 
 <section class="inner">
-  <h1>Last Posts</h1>
+  <h1>Recent Posts</h1>
   <ul class="posts">
     {% for post in site.posts limit: 3 %}
       <li>
         <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
-        {% if post.korean %}
-          <img src="/images/korean.png" alt="Korean post" class="korean-flag" title="This post is in korean" />
+        {% if post.english %}
+          <span class="english-post">Posted in English.</span>
         {% endif %}
         <br />
         <span class="date">{{ post.date | date_to_string }}</span>

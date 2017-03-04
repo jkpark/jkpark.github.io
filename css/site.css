@@ -155,6 +155,8 @@ article {
   border: none;
 }
 
+
+
 /* Header and navigation */
 header {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
@@ -310,10 +312,6 @@ h1 {
   margin-top: 0;
 }
 
-.about-me .speak-french {
-  line-height: 3.8em;
-}
-
 /* Footer */
 footer {
   font-size: small;
@@ -405,7 +403,7 @@ article .inner.meta {
 .convinced { margin: 6em 0 4em 0;}
 
 /*Tag from https://alexpearce.me*/
-.posts .tags {
+.tags {
   padding: 0;
   margin-left: 4px;
 }
@@ -414,7 +412,7 @@ article .inner.meta {
   color: #bcc5c8;
 }
 
-.posts .tags a:hover {
+.tags a:hover {
   color: #5e6d74;
 }
 
