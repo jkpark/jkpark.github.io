@@ -65,7 +65,16 @@ zlib1g-dev
 ```bash
 jkpark@cactus:~$ sudo gem install github-pages
   ...
-Done installing documentation for nokogiri, i18n, thread_safe, tzinfo, activesupport, html-pipeline, gemoji, jemoji, jekyll-mentions, jekyll-relative-links, jekyll-optional-front-matter, jekyll-readme-index, jekyll-default-layout, jekyll-titles-from-headings, minima, jekyll-swiss, jekyll-theme-primer, jekyll-theme-architect, jekyll-theme-cayman, jekyll-theme-dinky, jekyll-theme-hacker, jekyll-theme-leap-day, jekyll-theme-merlot, jekyll-theme-midnight, jekyll-theme-minimal, jekyll-theme-modernist, jekyll-theme-slate, jekyll-theme-tactile, jekyll-theme-time-machine, unicode-display_width, terminal-table, github-pages after 24 seconds
+Done installing documentation for nokogiri, i18n, thread_safe, tzinfo, 
+activesupport, html-pipeline, gemoji, jemoji, jekyll-mentions, 
+jekyll-relative-links, jekyll-optional-front-matter, jekyll-readme-index, 
+jekyll-default-layout, jekyll-titles-from-headings, minima, jekyll-swiss, 
+jekyll-theme-primer, jekyll-theme-architect, jekyll-theme-cayman, 
+jekyll-theme-dinky, jekyll-theme-hacker, jekyll-theme-leap-day, 
+jekyll-theme-merlot, jekyll-theme-midnight, jekyll-theme-minimal, 
+jekyll-theme-modernist, jekyll-theme-slate, jekyll-theme-tactile, 
+jekyll-theme-time-machine, unicode-display_width, terminal-table, 
+github-pages after 24 seconds
 32 gems installed
 jkpark@cactus:~$
 ```

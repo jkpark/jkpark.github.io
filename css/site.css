@@ -206,6 +206,14 @@ header .logo a, header .logo a:hover {
   display: block;
 }
 
+.highlight {
+}
+
+pre code {
+  white-space: pre;
+}
+
+
 .twitter-tweet.twitter-tweet-rendered {
   margin: 1em auto !important;
 }
