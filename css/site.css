@@ -232,6 +232,9 @@ article .post {
   word-wrap: break-word;
 }
 
+code {
+}
+
 @media (max-width: 700px) {
   .inner, pre code, .post > * {
     margin-left: 18px !important;
@@ -405,11 +408,11 @@ article .inner.meta {
 /*Tag from https://alexpearce.me*/
 .tags {
   padding: 0;
-  margin-left: 4px;
+  margin: 0;
 }
 
 .posts .tags a {
-  color: #bcc5c8;
+  color: #5e6d74;
 }
 
 .tags a:hover {

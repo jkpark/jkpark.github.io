@@ -1,0 +1,73 @@
+---
+layout: default
+title: Portfolio
+description: JK Park's Portfolio
+category: about
+---
+
+<div class="inner">
+  <h1>Portfolio</h1>
+
+  <p class="fancy">
+  저는 2012년 정보보안 전공으로 <a href="http://www.koreait.ac.kr">한국IT전문학교</a>를 졸업하고 임베디드 기기 벤더 업체인 <a href="http://www.kyungwoo.com/">경우시스테크</a>에 재직하였습니다.
+  안드로이드 개발자로서 System Application, Framework, Linux Kernel 등 깊이 있는 지식을 보유하고 있습니다. 훌륭하고 멋진 소프트웨어 개발에 저의 도움이 필요하다면 언제든지 환영합니다.
+  </p>
+
+
+  <ul class="portfolio-nav">
+    <li {% if page.url == '/portfolio/index.html' %}class="active"{% endif %}>
+      <a href="#projects">Projects</a>
+    </li><li {% if page.url == '/portfolio/tech.html' %}class="active"{% endif %}>
+      <a href="#techs">Tech.</a>
+    </li>
+  </ul>
+</div>
+
+<div class="spacer"></div>
+
+<div class="inner">
+  <p class="fancy" id="projects">
+  Here are some of the projects I worked on.
+  </p>
+  
+  {% for project in site.data.projects %}
+  <section>
+    <img class="inline pull-right" src="/images/portfolio/{{ project.image }}"
+         alt="{{ project.name }} Screenshot" width="240">
+    <h2><a href="{{ project.url }}">{{ project.name }}</a></h2>
+    <h3>{{ project.oneliner }}</h3>
+    <p>{{ project.description}}</p>
+    <p>
+    <strong>My role :</strong> {{ project.role }}</br>
+    <strong>Language :</strong> {{ project.language }}
+    </p>
+    <p>
+      <strong>What I Learned</strong></br>
+      - {{ project.what-i-learned | join: "</br>- " }}
+    </p>
+    <p>
+      <strong>Achievements</strong></br>
+      - {{ project.achievements | join: "</br>- " }}
+    </p>
+  </section>
+    {% unless forloop.last %}
+    <div class="separator"></div>
+    {% endunless %}
+  {% endfor %}
+</div>
+
+<div class="spacer"></div>
+
+<div class="inner">
+  <p class="fancy" id="techs">
+  My Technical Experience
+  </p>
+  <section>
+    {% for tech in site.data.techs %}
+    <p>
+      <strong>{{ tech.name }}</strong></br>
+      {{ tech.data | join: ", " }}
+    </p>
+    {% endfor %}
+  </section>
+</div>

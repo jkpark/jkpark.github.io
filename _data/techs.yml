@@ -1,0 +1,19 @@
+- name: Language
+  data:
+    - Android
+    - Java
+    - C/C++
+    - C#
+    - Visual Basic
+    - HTML5 & CSS
+    - JavaScript
+    - PHP
+    - JSP
+    - Python
+    - Bash
+ 
+- name: Database Management
+  data:
+    - MySQL/MariaDB
+    - SQLite
+    - MS Access

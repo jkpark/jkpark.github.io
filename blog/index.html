@@ -31,10 +31,13 @@ category: blog
         {% endif %}
         <br />
         <span class="date">{{ post.date | date_to_string }}</span>
+        <br />
         {% if post.tags.size > 0 %}
+        <span class="tags">
         {% for tag in post.tags %}
-        <span class="tags"><a href="/blog/search?tags={{ tag }}">{{ tag }}</a></span>
+        <a href="/blog/search?tags={{ tag }}">#{{ tag }}</a>
         {% endfor %}
+        </span>
         {% endif %}
         <br />
         <span class="description">{{ post.description }}</span>

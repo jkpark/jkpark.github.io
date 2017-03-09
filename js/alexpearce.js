@@ -84,14 +84,14 @@ var layoutResultsPage = function(property, value, posts) {
   // Loop through each post to format it
   for (var i in posts) {
     // Create an unordered list of the post's tags
-    var tagsList = '',
+    var tagsList = '<span class="tags">',
         post     = posts[i],
         tags     = post.tags;
         
     for (var j in tags) {
-      tagsList += '<span class="tags"><a href="/blog/search/?tags=' + tags[j] + '">' + tags[j] + '</a></span>';
+      tagsList += '<a href="/blog/search/?tags=' + tags[j] + '">#' + tags[j] + '</a> ';
     }
-    tagsList += '';
+    tagsList += '</span>';
     
     var englishpost = '';
     if(post.english == 'true') {
@@ -110,6 +110,7 @@ var layoutResultsPage = function(property, value, posts) {
         + '<span class="date">'
         + posts[i].date
         + '</span>'
+        + '<br />'
         // Tags
         + tagsList
         + '<br />'
