@@ -27,7 +27,8 @@ category: about
 <section class="inner">
   <h1>Recent Posts</h1>
   <ul class="posts">
-    {% for post in site.posts limit: 3 %}
+  {% assign englishPosts = site.posts | where: 'english', 'true' %}
+    {% for post in englishPosts limit: 3 %}
       {% if post.english %}
       <li>
         <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
