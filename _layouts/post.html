@@ -12,8 +12,15 @@ layout: default
     {{ page.title }}
   </h1>
 
-  <p class="inner meta">{{ page.date | date: "%A %-d %B %Y" }}</p>
-
+  <p class="inner meta">
+  {{ page.date | date: "%A %-d %B %Y" }}</br>
+  {% if page.tags.size > 0 %}
+    {% for tag in page.tags %}
+    <a href="/blog/search?tags={{ tag }}">#{{ tag }}</a>
+    {% endfor %}
+  {% endif %}
+  </p>
+  
   {% if page.english %}
   <div class="inner suggest-translate">
     이 문서는 영어로 되어있습니다.

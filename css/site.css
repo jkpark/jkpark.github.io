@@ -397,6 +397,11 @@ article .inner.meta {
   margin-top: 4px;
   padding: 4px 8px;
 }
+
+article .inner.meta a {
+  color: #dedede;
+}
+
 .suggest-translate, .suggest-translate a {
   color: #ddd !important;
   padding-top: 0.5em !important;
@@ -412,12 +417,13 @@ article .inner.meta {
 }
 
 .posts .tags a {
-  color: #5e6d74;
+  color: #666;
 }
 
 .tags a:hover {
-  color: #5e6d74;
 }
+
+
 
 /*****************************************************************************/
 /*
