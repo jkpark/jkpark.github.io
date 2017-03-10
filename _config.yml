@@ -27,7 +27,7 @@ url: http://www.indiecoders.org
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
-paginate: 10
+paginate: 5
 paginate_path: /blog/page:num/
 
 #
