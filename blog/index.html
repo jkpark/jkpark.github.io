@@ -55,7 +55,7 @@ category: blog
 
   {% for page in (1..paginator.total_pages) %}
     {% if page == paginator.page %}
-      <a href="#" class="active">{{ page }}</a>
+      <a href="#" class="selected">{{ page }}</a>
     {% elsif page == 1 %}
       <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
     {% else %}

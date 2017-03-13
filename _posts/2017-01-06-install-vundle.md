@@ -3,7 +3,7 @@ layout: post
 title: Vundle 설치
 description: Vundle 설치 방법 및 작업내역
 category: blog
-tags: [Vim, Vundle, Ubuntu16.04]
+tags: [Vim, Vundle]
 ---
 
 [Vundle](https://github.com/VundleVim/Vundle.vim) 은 `Vim` 플러그인 관리 도구이다.

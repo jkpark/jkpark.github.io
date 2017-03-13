@@ -3,7 +3,7 @@ layout: post
 title: NERD tree 개발버전, NERD tree git plugin 을 vundle로 설치
 description: 
 category: blog
-tags: [NERDtree, Vim, Vundle, Ubuntu16.04]
+tags: [NERDtree, Vim, Vundle]
 ---
 [NERD Tree](http://www.vim.org/scripts/script.php?script_id=1658) 란 아래 그림과 같이 `vim`에서 파일시스템을 탐색하고 파일을 열 수 있도록 도와주는 플러그인이다.  
 

@@ -78,6 +78,10 @@ table td, table th {
 
 
 /* Common */
+a.selected {
+  color: black;
+}
+
 a, a:active {
   text-decoration: none;
   color: #3073b3;

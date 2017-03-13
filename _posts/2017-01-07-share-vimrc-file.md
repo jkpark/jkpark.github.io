@@ -3,7 +3,7 @@ layout: post
 title: .vimrc 설정파일 공유
 description: 
 category: blog
-tags: [Vim, Vundle, Ubuntu16.04]
+tags: [Vim, Vundle]
 ---
 
 [vim, vimrc 백업 파일 다운로드](https://drive.google.com/file/d/0B1Sz-lqyugC4b0ZTcXBKajR0dW8/view)

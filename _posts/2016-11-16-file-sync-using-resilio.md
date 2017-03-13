@@ -29,9 +29,7 @@ Resilio Sync는 device to device 동기화이기 때문에 이번 기회에 사�
 4. 안드로이드폰에 Resilio 설치 및 동기화 테스트
 5. 아이폰에 Resilio 설치, 테스트
 
-
-
-
+<br>
 
 #### 1. Ubuntu 16.04에 Resilio 설치
 이 스텝은 https://help.getsync.com/hc/en-us/articles/206178924 의 가이드를 참고 하였다.
