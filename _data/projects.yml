@@ -1,6 +1,6 @@
 - name: HX Series Cluster
   image: f-series-cluster.png
-  url: http://www.kyungwoo.com
+  url: /portfolio/hxcluster
   oneliner: Monitor of <a href="https://www.hceamericas.com/equipment-tab/crawler-excavators/">HX series crawler and excavator</a> of <a href="http://english.hhi.co.kr/">HHI</a> 
   role: Android Developer
   language : Android
@@ -9,20 +9,22 @@
     My everyday duties included design the software architecture, development, 
     porting a number of libraries for multimedia and stabilizing of application.
   what-i-learned:
+    - MVC, MVP and MVVM
+    - Refactoring and design pattern
     - Design of multimedia - Video/Audio, GPS, Bluetooth, DMB, Camera and <a href="http://www.samsung.com/ie/support/skp/faq/1057791">Screen mirroring</a>
-    - Knowledge of <a href="https://en.wikipedia.org/wiki/SAE_J1939">CAN(SAE J1939)</a> Protocol
-    - Understanding of Framework, SDK and NDK
+    - <a href="https://en.wikipedia.org/wiki/SAE_J1939">CAN(SAE J1939)</a> Protocol
+    - Understanding of framework, SDK and NDK
     - Way to improve quality and stability of framework
     - Ability of writing native methods using JNI
-    - Ability of Control Internal Hardwares
-    - Knowledge of <a href="https://www.mentor.com/embedded-software/inflexion/">Inflextion UI</a>
+    - Ability of control internal hardwares
+    - <a href="https://www.mentor.com/embedded-software/inflexion/">Inflextion UI</a>
   achievements:
     - Produced over 5,000 products per year and delivered the products to HYUNDAI Heavy Industies.
-    - Oversea Trip with all members in R&D as a reward after completion of the development project.
+    - Oversea Tripped with all members in R&D as a reward after completion of the development project.
   
-- name: Defcon Smart Security
+- name: Defcon Smart Security System
   image: defcon-smart-security.jpg
-  url: d3s
+  url: /portfolio/d3s/
   oneliner: A security application for android
   role: Android Developer
   language : Android, JSP
@@ -31,10 +33,10 @@
     contains number of interrelated functions for security: 
     Vaccine, File encryption, App locking, Virus Detection, Block Spam messages and Remote-Control(Find My Phone, Backup, Lock, Reset).
   what-i-learned:
-    - Understanding about Android Security System
-    - Knowledge of Using Hidden API
-    - Knowledge of Algorithms for encrpytions - DES, AES, <a href="https://ko.wikipedia.org/wiki/%EC%95%84%EB%A6%AC%EC%95%84_(%EC%95%94%ED%98%B8)">ARIA</a>
-    - Ability of Communication via Web Server. Used HTML, JSON, XML and MySql
-    - Ability of Porting 3rd Party Libraries
+    - Understanding about android security system
+    - Knowledge of using hidden API
+    - Algorithms for encrpytions - DES, AES, <a href="https://ko.wikipedia.org/wiki/%EC%95%84%EB%A6%AC%EC%95%84_(%EC%95%94%ED%98%B8)">ARIA</a>
+    - Communicating via web server. Used JSP, JSON, XML and MySql
+    - Porting 3rd party libraries
   achievements:
     - Selected the grand prize winner of <a href="http://www.koreait.ac.kr/new/project/project.asp">2011 korea IT project contest.</a>

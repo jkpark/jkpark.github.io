@@ -1,0 +1,29 @@
+---
+layout: default
+title: Defcon Smart Security System
+description: Details about Defcon Smart Security System Project
+category: portfolio
+---
+
+
+<section class="inner">
+  {% assign project = site.data.projects[0] %}
+    <img class="inline pull-right" src="/images/portfolio/{{ project.image }}"
+         alt="{{ project.name }} Screenshot" width="240">
+    <h2><a href="{{ project.url }}">{{ project.name }}</a></h2>
+    <h3>{{ project.oneliner }}</h3>
+    <p>{{ project.description}}</p>
+    <p>
+    <strong>My role :</strong> {{ project.role }}</br>
+    <strong>Language :</strong> {{ project.language }}
+    </p>
+    <p>
+      <strong>What I Learned</strong></br>
+      - {{ project.what-i-learned | join: "</br>- " }}
+    </p>
+    <p>
+      <strong>Achievements</strong></br>
+      - {{ project.achievements | join: "</br>- " }}
+    </p>
+    
+</section>
