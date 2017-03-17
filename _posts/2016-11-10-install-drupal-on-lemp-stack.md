@@ -3,7 +3,7 @@ layout: post
 title: LEMP stack 에 Drupal8 설치방법
 description:
 category: blog
-tags: [MariaDB, NGINX, Ubuntu16.04, Drupal]
+tags: [MariaDB, NGINX, Ubuntu16.04, LEMP stack, Drupal]
 ---
 <https://www.drupal.org/download> 에서 최신버전의 바이너리를 확인
 

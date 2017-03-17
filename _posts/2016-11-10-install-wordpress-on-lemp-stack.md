@@ -3,7 +3,7 @@ layout: post
 title: LEMP stack 에 WordPress 설치방법
 description:
 category: blog
-tags: [MariaDB, NGINX, Ubuntu16.04, WordPress]
+tags: [MariaDB, NGINX, Ubuntu16.04, LEMP stack, WordPress]
 ---
 Drupal 8 설치 후 테마, 모듈 수가 너무 적어서 Drupal 7을 설치하려고 했지만 WordPress를 설치하여 차이를 느껴보고 싶었다.
 
