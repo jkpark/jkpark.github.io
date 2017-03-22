@@ -88,6 +88,7 @@ jkpark@cactus:~$ sudo systemctl status nginx.service
 11월 08 22:06:57 cactus systemd[1]: Started A high performance web server and a reverse proxy server.
 ```
 
+![](https://4.bp.blogspot.com/-SGqaJImaZfk/WCHPFH7FmwI/AAAAAAAAAfs/dEsIz4mBFYMG8V9kU94Kr3oGUTTxWarHwCLcB/s320/%25EC%25BA%25A1%25EC%25B2%2598.PNG)
 
 
 
@@ -263,6 +264,8 @@ fastcgi_pass unix:/run/php/php7.0-fpm.sock;
 jkpark@cactus:~$ sudo su -c 'echo "<?php phpinfo(); ?>" |tee /var/www/html/info.php'
 <?php phpinfo(); ?>
 ```
+
+![](https://1.bp.blogspot.com/-yU3yEJ54-4s/WCHoi_YParI/AAAAAAAAAgE/hb4hzWi-TP47vHEgOwCzfBK_OAicLx_LQCLcB/s400/%25EC%25BA%25A1%25EC%25B2%2598.PNG)
 
 
 또한 `$_SERVER['SERVER_PROTOCOL']` 항목에서 `HTTP/2.0` 프로토콜이 동작중인지 확인할 수 있다.

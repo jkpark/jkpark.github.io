@@ -3,7 +3,7 @@ layout: post
 title: How to install vsftpd on ubuntu
 description:
 category: blog
-tags: [vsftpd]
+tags: [vsftpd, Ubuntu16.04]
 ---
 
 ```bash

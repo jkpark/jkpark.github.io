@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Saving Iptables Firewall Rules Permanently
-description:
+description: explain how to save rules permanently.
 category: blog
 tags: [iptables]
 english: true
