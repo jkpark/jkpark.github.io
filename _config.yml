@@ -59,3 +59,15 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+
+# for Atom
+atom:
+  buildCommand:
+    - jekyll
+    - build
+    - --option
+    - --this
+  buildEnv:
+    JEKYLL_ENV: development
+  postDirs:
+  defaultPostDir: _drafts

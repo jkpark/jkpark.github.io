@@ -65,15 +65,15 @@ zlib1g-dev
 ```bash
 jkpark@cactus:~$ sudo gem install github-pages
   ...
-Done installing documentation for nokogiri, i18n, thread_safe, tzinfo, 
-activesupport, html-pipeline, gemoji, jemoji, jekyll-mentions, 
-jekyll-relative-links, jekyll-optional-front-matter, jekyll-readme-index, 
-jekyll-default-layout, jekyll-titles-from-headings, minima, jekyll-swiss, 
-jekyll-theme-primer, jekyll-theme-architect, jekyll-theme-cayman, 
-jekyll-theme-dinky, jekyll-theme-hacker, jekyll-theme-leap-day, 
-jekyll-theme-merlot, jekyll-theme-midnight, jekyll-theme-minimal, 
-jekyll-theme-modernist, jekyll-theme-slate, jekyll-theme-tactile, 
-jekyll-theme-time-machine, unicode-display_width, terminal-table, 
+Done installing documentation for nokogiri, i18n, thread_safe, tzinfo,
+activesupport, html-pipeline, gemoji, jemoji, jekyll-mentions,
+jekyll-relative-links, jekyll-optional-front-matter, jekyll-readme-index,
+jekyll-default-layout, jekyll-titles-from-headings, minima, jekyll-swiss,
+jekyll-theme-primer, jekyll-theme-architect, jekyll-theme-cayman,
+jekyll-theme-dinky, jekyll-theme-hacker, jekyll-theme-leap-day,
+jekyll-theme-merlot, jekyll-theme-midnight, jekyll-theme-minimal,
+jekyll-theme-modernist, jekyll-theme-slate, jekyll-theme-tactile,
+jekyll-theme-time-machine, unicode-display_width, terminal-table,
 github-pages after 24 seconds
 32 gems installed
 jkpark@cactus:~$
@@ -106,9 +106,10 @@ Server running... press ctrl-c to stop.
 
 
 브라우저에서 실행된 웹사이트를 확인해보았지만 아래 그림과 같이 포스트가 보이지 않았다.
-![an image alt text]({{ site.baseurl }}/images/posts/jekyll-now-creation-and-local-development-on-ubuntu1604 capture1.png "Posts are not shoing")
 
-원인은 _post에 있는 markdown 파일의 날짜형식이 YYYY-MM-DD이어야만 한다는 것이었다.
+![]({{ site.baseurl }}/images/posts/jekyll-now-creation-and-local-development-on-ubuntu1604 capture1.png "Posts are not shoing")
+
+원인은 `_post`에 있는 markdown 파일의 날짜형식이 `YYYY-MM-DD`이어야만 한다는 것이었다.
 
 ```bash
 jkpark@cactus:/storages/storage1/jkpark.github.io/_posts$ ls
@@ -121,11 +122,4 @@ jkpark@cactus:/storages/storage1/jkpark.github.io/_posts$ ls
 
 위와 같이 수정 후 다시 `serve` 하니 정상적으로 페이지가 보였다.
 
-![an image alt text]({{ site.baseurl }}/images/posts/jekyll-now-creation-and-local-development-on-ubuntu1604 capture2.png "Posts are shoing now")
-
-
-
-
-
-
-
+![]({{ site.baseurl }}/images/posts/jekyll-now-creation-and-local-development-on-ubuntu1604 capture2.png "Posts are shoing now")
