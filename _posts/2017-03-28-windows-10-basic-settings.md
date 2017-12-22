@@ -82,3 +82,34 @@ Windows Search 폴더에서 [새로만들기 > DWORD(32비트)] -> 이름을 "Al
 ![](http://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile4.uf.tistory.com%2Fimage%2F236F273957F12872068A8C)
 
 <http://mastmanban.tistory.com/943> 참고.
+
+#### Install Git
+
+Download Git from <https://git-scm.com/downloads>.
+
+
+
+#### Install gVim
+
+Download gVim from <https://vim.sourceforge.io/download.php#pc>.
+
+and See <http://www.indiecoders.org/blog/2017/01/share-vimrc-file> for setting Plugins.
+
+Registry for adding "Open with gVim" menu on Windows Explorer
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\Shell\Vim]
+@="Edit with &Vim"
+"Icon"="\"C:\\Program Files (x86)\\Vim\\vim80\\gvim.exe\""
+
+[HKEY_CLASSES_ROOT\*\Shell\Vim\command]
+@="\"C:\\Program Files (x86)\\Vim\\vim80\\gvim.exe\" \"%1\""
+
+[HKEY_CLASSES_ROOT\directory\background\shell\Vim]
+@="Open with &Vim"
+"Icon"="\"C:\\Program Files (x86)\\Vim\\vim80\\gvim.exe\""
+
+[HKEY_CLASSES_ROOT\directory\background\shell\Vim\command]
+@="\"C:\\Program Files (x86)\\Vim\\vim80\\gvim.exe\"
+```
