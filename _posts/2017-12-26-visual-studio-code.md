@@ -34,7 +34,7 @@ you can use the following command line arguments to change your proxy settings:
 
 ## C/C++ Extension
 
-![](/images/posts/visual-studio-code/c-extension.PNG)
+![](/images/posts/visual-studio-code/c-extension.png)
 
 See <https://code.visualstudio.com/docs/languages/cpp>.
 
@@ -123,7 +123,7 @@ To Fix errors, I put more include pathes to `includePath` :
 
 ## Code runner
 
-![](/images/posts/visual-studio-code/code-runner.PNG)
+![](/images/posts/visual-studio-code/code-runner.png)
 
 `Ctrl+Alt+N` to run code.
 
