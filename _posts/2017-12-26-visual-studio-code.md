@@ -1,7 +1,7 @@
 ---
 layout: post
-title: VS code 설치 및 설정 가이드
-description: Instruction of installing VS code on windows 7 and basic settings.
+title: Setup Visual Studio Code
+description: Instruction of installing VS code on windows 7.
 category: blog
 tags: [VS Code]
 english: true
