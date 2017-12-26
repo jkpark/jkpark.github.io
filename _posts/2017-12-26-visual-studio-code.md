@@ -4,6 +4,7 @@ title: VS code 설치 및 설정 가이드
 description: Instruction of installing VS code on windows 7 and basic settings.
 category: blog
 tags: [VS Code]
+english: true
 ---
 
 Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages (such as C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity). Begin your journey with VS Code with these [introductory videos](https://code.visualstudio.com/docs/introvideos/overview).
