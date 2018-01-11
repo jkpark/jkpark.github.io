@@ -33,13 +33,13 @@ vim/bundle/
 `aaa` 플러그인을 bundle로서 관리하여 해당 플러그인의 모든 파일을 알맞은 디렉토리에 저장하고 관리하기 편하게 도와준다.
 
 
-## History
+# History
 
-#### Vundle Clone
+## Vundle Clone
 ```bash
 jkpark@cactus:~$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-#### vimrc 기본 설정
+## vimrc 기본 설정
 
 아래 내용을 `.vimrc` 파일의 제일 윗줄에 추가한다.
 
@@ -74,7 +74,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 ```
   
-#### 플러그인 검색 및 설치
+## 플러그인 검색 및 설치
 
 플러그인 검색 방법은 `.vimrc`파일을 열어 `:BundleSearch` 를 입력하면 플러그인 리스트가 출력된다.  
 
@@ -93,7 +93,7 @@ P로 붙여넣기
 
 ![][2]
 
-#### 인스톨
+## 인스톨
 `vim` 을 열고 `:PluginInstall` 을 입력한 후 엔터
 
 .vim/bundle 에서 설치된 플러그인이 존재하는지 확인한다.  

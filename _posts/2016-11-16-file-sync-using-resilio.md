@@ -31,7 +31,7 @@ Resilio Sync는 device to device 동기화이기 때문에 이번 기회에 사�
 
 <br>
 
-#### 1. Ubuntu 16.04에 Resilio 설치
+# 1. Ubuntu 16.04에 Resilio 설치
 이 스텝은 https://help.getsync.com/hc/en-us/articles/206178924 의 가이드를 참고 하였다.
 
 resilio-sync.list 파일 생성 및 내용 추가
@@ -89,7 +89,7 @@ jkpark@cactus:~$ sudo systemctl restart resilio-sync
 ```
 
 
-#### 2. Windows 10에 Resilio 설치
+# 2. Windows 10에 Resilio 설치
 https://www.resilio.com/individuals/ 페이지에서 free download 를 눌러 설치파일을 다운로드한다.
 
 설치방법은 간단하므로 생략한다.
@@ -103,7 +103,7 @@ https://www.resilio.com/individuals/ 페이지에서 free download 를 눌러 �
 
 
 
-#### 3. 우분투와 윈도우간의 동기화 테스트
+# 3. 우분투와 윈도우간의 동기화 테스트
 
 1. 우분투에서 폴더 추가 버튼을 눌러 동기화할 폴더를 선택후 열기버튼 클릭
 
@@ -135,7 +135,7 @@ https://www.resilio.com/individuals/ 페이지에서 free download 를 눌러 �
 우분투의 test 폴더에 파일이 생성되었다.
 
 
-#### 4. 안드로이드폰에 Resilio 설치 및 동기화 테스트
+# 4. 안드로이드폰에 Resilio 설치 및 동기화 테스트
 
 테스트한 기종은 V20 이다.
 
@@ -215,7 +215,7 @@ https://www.resilio.com/individuals/ 페이지에서 free download 를 눌러 �
 동기화 폴더에 변화가 있으면 자동으로 스마트폰에서 동기화를 시작한다.
 
 
-#### 5: 아이폰에 Resilio 설치, 테스트
+# 5: 아이폰에 Resilio 설치, 테스트
 
 설치 방법 및 일반 폴더 동기화 방법은 안드로이드와 동일하다.
 

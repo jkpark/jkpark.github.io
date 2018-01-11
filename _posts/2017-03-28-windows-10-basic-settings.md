@@ -5,8 +5,9 @@ description: Windows 10 포맷 후 최적화 설정 방법
 category: blog
 tags: [Windows10]
 ---
+# Windows 10 포맷 후 최적화 설정 방법
 
-#### One Drive 제거
+## One Drive 제거
 
 한번에 제거할 수 있는 커맨드
 [Github 페이지](https://github.com/tomchappelow/onedrive-uninstaller/blob/master/OneDrive-Uninstaller.cmd)
@@ -46,7 +47,7 @@ if exist %x64% (
   pause
 ```
 
-#### Capslock to Control
+## Capslock to Control
 
 아래 내용을 레지스트리에 등록
 
@@ -57,7 +58,7 @@ Windows Registry Editor Version 5.00
 "Scancode Map"=hex:00,00,00,00,00,00,00,00,02,00,00,00,1d,00,3a,00,00,00,00,00
 ```
 
-#### 알 수 없는 장치 드라이버 ACPI\\INT33A0
+## 알 수 없는 장치 드라이버 ACPI\\INT33A0
 Intel Smmart Connect Driver 를 설치하면 된다.
 
 <https://downloadcenter.intel.com/download/23109/Intel-Smart-Connect-Technology>
@@ -66,7 +67,7 @@ Intel Smmart Connect Driver 를 설치하면 된다.
 
 
 
-#### Disable Cortana via Registry
+## Disable Cortana via Registry
 
 Navigate to the following key
 
@@ -83,13 +84,13 @@ Windows Search 폴더에서 [새로만들기 > DWORD(32비트)] -> 이름을 "Al
 
 <http://mastmanban.tistory.com/943> 참고.
 
-#### Install Git
+## Install Git
 
 Download Git from <https://git-scm.com/downloads>.
 
 
 
-#### Install gVim
+## Install gVim
 
 Download gVim from <https://vim.sourceforge.io/download.php#pc>.
 

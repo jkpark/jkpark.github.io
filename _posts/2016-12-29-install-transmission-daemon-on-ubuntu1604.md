@@ -6,9 +6,9 @@ category: blog
 tags: [Torrent, Ubuntu16.04]
 ---
 
-## history
+# history
 
-#### 다운로드 디렉토리 생성
+## 다운로드 디렉토리 생성
 
 downloads, incomplete 디렉토리 생성
 ```bash
@@ -34,7 +34,7 @@ jkpark@cactus:/storages/storage1/public/torrent$ sudo service transmission-daemo
 jkpark@cactus:/storages/storage1/public/torrent$ sudo service transmission-daemon stop
 ```
 
-#### 설정
+## 설정
 캐쉬 사이즈를 높게 설정할수록 IO작업이 줄어든다. 너무 높게 설정하면 RAM에 부담이 되므로 적당히 설정하자.
 ```
 "cache-size-mb": 256,
@@ -75,7 +75,7 @@ jkpark@cactus:/storages/storage1/public/torrent$ sudo service transmission-daemo
 *로그인 없이 접속하고 싶으면 `"rpc-authentication-required"`를 `false`
 
 
-#### 실행
+## 실행
 ```bash
 jkpark@cactus:/etc/transmission-daemon$ sudo service transmission-daemon start
 ```

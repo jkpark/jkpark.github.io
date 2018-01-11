@@ -1,13 +1,13 @@
 ---
 layout: post
 title: IntelliJ IDEA 기본 설정
-description: IntelliJ IDEA 16.3 초기 설정방법
+description: IntelliJ IDEA 16.3 기본 설정
 category: blog
 tags: [IntelliJ]
 ---
+# IntelliJ IDEA 16.3 기본 설정
 
-
-#### Memory Heap Size 수정
+## Memory Heap Size 수정
 ```
 C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.3.5\bin\idea.exe.vmoptions
 ```
@@ -24,7 +24,7 @@ C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.3.5\bin\idea.exe.vmoptions
 
 
 
-#### File encoding
+## File encoding
 
 ![file encoding](/images/posts/setting-intellij-idea/file-encoding.PNG)
 
@@ -35,16 +35,16 @@ Settings 에서 file encoding을 `UTF-8`로 설정한다.
 > <https://www.jetbrains.com/help/idea/2016.1/configuring-encoding-for-properties-files.html?origin=old_help>
 
 
-#### Plugins
+# Plugins
 
-##### JavaDoc
+## JavaDoc
 
 `Ctrl + Alt + Shift + G` 로 `JavaDoc`을 만들 수 있다.
 
 ![install JavaDoc plugin](/images/posts/setting-intellij-idea/install-javadoc.PNG)
 
 
-##### GrepConsol
+## GrepConsol
 
 콘솔로그에 색 입히기
 
@@ -52,7 +52,7 @@ Settings 에서 file encoding을 `UTF-8`로 설정한다.
 
 
 
-#### Back & Recovery
+# Back & Recovery
 
 아래 사용자 폴더에 설정 정보 및 플러그인을 저장하고 있다.
 

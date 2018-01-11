@@ -22,7 +22,7 @@ https://news.netcraft.com/archives/2016/02/22/february-2016-web-server-survey.ht
 5.5버전 이후 MariaDB만의 색깔을 더 분명히 하고자 개발판을 10.x로 변경하였다.
 
 
-#### Nginx Web Server 설치
+# Nginx Web Server 설치
 
 install Nginx
 
@@ -92,7 +92,7 @@ jkpark@cactus:~$ sudo systemctl status nginx.service
 
 
 
-#### HTTP/2.0 프로토콜 활설화
+# HTTP/2.0 프로토콜 활설화
 
 lastest release of Nginx binaries의 `HTTP/2.0` 프로토콜은 `SSL`과 함께 사용해야 동작된다.
 
@@ -222,7 +222,7 @@ SSL-Session:
 ---
 ```
 
-#### PHP7 설치
+# PHP7 설치
 
 Nginx w/ FastCGI 세팅을 위해 `PHP7`과 `PHP-FPM`을 설치한다.
 
@@ -276,7 +276,7 @@ jkpark@cactus:~$ sudo su -c 'echo "<?php phpinfo(); ?>" |tee /var/www/html/info.
 sudo systemctl restart php7.0-fpm.service
 ```
 
-#### MariaDB 설치
+# MariaDB 설치
 
 미지막으로 MariaDB를 설치하여 LEMP Stack을 완성시키자.
 

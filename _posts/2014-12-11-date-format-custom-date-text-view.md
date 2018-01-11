@@ -19,7 +19,7 @@ System.out.println(pattern + " " + output);
 ```
 
 
-#### Customized Date and Time Formats
+# Customized Date and Time Formats
 
 |Pattern|Output|
 |--------------|
@@ -34,6 +34,6 @@ System.out.println(pattern + " " + output);
 
 <br>
 
-#### Custom Date Text View
+# Custom Date Text View
 
 <script src="https://gist.github.com/jkpark/2163ac1d2bc82361ae9771bc722b5ebf.js"></script>

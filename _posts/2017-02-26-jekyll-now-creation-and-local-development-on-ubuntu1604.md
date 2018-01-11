@@ -10,10 +10,10 @@ tags: [Jekyll, Ubuntu16.04]
 Jekyll + Github page 의 조합
 
 
-## history
+# history
 
 
-#### Jekyll 설치
+## Jekyll 설치
 
 ```bash
 jkpark@cactus:~$ gem install jekyll
@@ -25,7 +25,7 @@ jkpark@cactus:~$ jekyll -v
 jekyll 3.4.0
 ```
 
-#### github-pages 설치
+## github-pages 설치
 ```bash
 jkpark@cactus:~$ sudo gem install github-pages
 [sudo] password for jkpark:

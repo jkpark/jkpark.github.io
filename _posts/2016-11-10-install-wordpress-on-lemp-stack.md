@@ -17,13 +17,14 @@ Drupal 8 설치 후 테마, 모듈 수가 너무 적어서 Drupal 7을 설치하
 
 
 
-#### 설치 전 :
+# 설치 방법
+
 WordPress를 설치하기 전에 `LEMP stack` 이 설치되어있어야 하고, `SSL`이 활성화되어있어야 한다. 우분투 버전은 16.04 에서 진행하였다.
 
 `LEMP stack` 설치 방법은 [여기](/blog/2016/11/install-lemp-stack-on-ubuntu1604)를 참고.
 
 
-#### WordPress를 위한 Database 생성 및 유저 생성
+## WordPress를 위한 Database 생성 및 유저 생성
 ```bash
 jkpark@cactus:/var/www/html$ mysql -u root -p
 Enter password:
@@ -48,7 +49,7 @@ MariaDB [(none)]> exit
 Bye
 ```
 
-#### Nginx 설정
+## Nginx 설정
 ```bash
 jkpark@cactus:/etc/nginx/sites-available$ sudo vi default
 ```
@@ -73,7 +74,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 jkpark@cactus:/var/www/html$ sudo systemctl restart nginx
 ```
 
-#### WordPress 다운로드
+## WordPress 다운로드
 
 `wp-config-sample.php` 샘플설정 파일의 대부분의 설정은 알맞게 되어있어므로 복사하여 기본 설정 파일로 만들어주었다.
 ```bash
@@ -97,7 +98,7 @@ jkpark@cactus:/tmp$ mkdir /tmp/wordpress/wp-content/upgrade
 jkpark@cactus:/tmp/wordpress$ sudo cp -a /tmp/wordpress /var/www/html/wordpress
 ```
 
-#### 소유권과 권한 설정
+## 소유권과 권한 설정
 
 여기서 하는 작업은 타당한 접근 권한과 소유권을 설정하는 것이다. 일반유저가 파일을 쓸 수 있어야하고, web server가 파일과 디렉토리에 접근, 조작할 수 있어야한다.
 
@@ -164,7 +165,7 @@ drwxrwsr-x 5 jkpark www-data 4096  9월  7 23:59 themes
 drwxrwsr-x 2 jkpark www-data 4096 11월  9 21:47 upgrade
 ```
 
-#### WordPress 환경설정
+## WordPress 환경설정
 
 WordPress main configuration 파일을 열었을 때 제일 먼저 해야할 일은 보안키를 설정하는 것이다. `WordPress`가 제공하는 secure generator를 이용하여 키 값을 만들 수 있다.
 
@@ -223,7 +224,7 @@ Database 설정
 save and close the file
 
 
-#### Web Interface를 이용하여 설치를 완료한다.
+## Web Interface를 이용하여 설치를 완료한다.
 
 ![](https://3.bp.blogspot.com/-FVfQJm5491o/WCMqMy4p24I/AAAAAAAAAiA/vt4KO1sfzHkX9BmeE4lO3njXdGO7CF4uACLcB/s320/%25EC%25BA%25A1%25EC%25B2%25981.PNG)
 
@@ -231,7 +232,7 @@ save and close the file
 
 
 
-#### *업그레이드 방법
+# 업그레이드 방법
 
 `WordPress`의 업그레이드가 가능할 경우 현재 권한으로는 업그레이드를 진행할 수 없다.
 

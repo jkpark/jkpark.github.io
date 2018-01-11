@@ -11,7 +11,7 @@ The tools to manipulate the keyboard layout on the virtual consoles are loadkeys
 
 Note that these tools only work in a virtual console, not in a terminal emulator in X.
 
-#### Save your current keyboard layout:
+# Save your current keyboard layout:
 
 ```
 $ dumpkeys > backup.kmap
@@ -25,7 +25,7 @@ $ sudo loadkeys backup.kmap
 
 If the keyboard is so messed up that you can't even do this then your only option not involving ancient kernel magic is to reboot.
 
-#### Check which keycodes are assigned to your keys:
+# Check which keycodes are assigned to your keys:
 
 ```
 $ showkey
@@ -53,7 +53,7 @@ $ dumpkeys | head -1
 keymaps 0-127
 ```
 
-#### Create a keymap file which switches ESC and CAPSLOCK:
+# Create a keymap file which switches ESC and CAPSLOCK:
 
 ```
 keymaps 0-127
@@ -61,7 +61,7 @@ keycode   1 = CtrlL_Lock
 keycode  58 = Escape
 ```
 
-#### Load the keymap:
+# Load the keymap:
 
 ```
 $ sudo loadkeys swap_esc_capslock.kmap
