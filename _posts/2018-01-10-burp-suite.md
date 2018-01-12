@@ -19,7 +19,6 @@ tags: [burpsuite]
 | Enabled | Dest Host | Proxy Host     | Proxy Port |
 | ------- | --------- | -------------- | ---------- |
 | v       | 10.*      |                |            |
-|         |           | 168.219.61.252 | 8080       |
 
 ## 프록시 설정 바로가기 exe
 
