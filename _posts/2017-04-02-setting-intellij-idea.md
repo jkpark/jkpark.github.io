@@ -3,7 +3,7 @@ layout: post
 title: IntelliJ IDEA 기본 설정
 description: IntelliJ IDEA 16.3 기본 설정
 category: blog
-tags: [IntelliJ]
+tags: [IntelliJ, Windows10]
 ---
 # IntelliJ IDEA 16.3 기본 설정
 

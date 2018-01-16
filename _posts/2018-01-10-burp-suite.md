@@ -1,9 +1,9 @@
 ---
 layout: post
 title: burp suite 정리
-description: 
+description:
 category: blog
-tags: [burpsuite]
+tags: [burpsuite, Windows7]
 ---
 # 프록시 설정 방법
 
@@ -22,7 +22,7 @@ tags: [burpsuite]
 
 ## 프록시 설정 바로가기 exe
 
-```cmd
+```
 C:\Windows\System32\control.exe inetcpl.cpl,,4
 ```
 
@@ -37,4 +37,4 @@ C:\Windows\System32\control.exe inetcpl.cpl,,4
 크롬은 인터넷옵션-프록시 설정에 따르지 않고 독립적으로 프록시를 설정할 수 있다.
 이렇게 설정하면 익스플로러를 burp suite용으로 사용하고 동시에 크롬을 다른 업무에 사용할 수 있다.
 
-(http://blog.naver.com/PostView.nhn?blogId=hmw53&logNo=60181498130) 참고하여 플러그인 설치하자.
+http://blog.naver.com/PostView.nhn?blogId=hmw53&logNo=60181498130 참고하여 플러그인 설치하자.

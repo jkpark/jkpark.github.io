@@ -3,7 +3,7 @@ layout: post
 title: Setup Visual Studio Code
 description: Instruction of installing VS code on windows 7.
 category: blog
-tags: [VS Code]
+tags: [VS Code, Windows7]
 english: true
 ---
 
