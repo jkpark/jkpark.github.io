@@ -1,6 +1,6 @@
 Jekyll website serving [JK Park](http://jkpark.github.io)
 
-##Checkout :
+## Checkout :
 
 ```console
 $ git clone https://github.com/jkpark/jkpark.github.io.git
