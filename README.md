@@ -25,7 +25,7 @@ $ git push origin master
 
 ```console
 $ cd _posts
-touch yyyy-mm-dd-slug.md
+$ touch yyyy-mm-dd-slug.md
 ```
  - slug : 해당 포스트의 고유 URL. should use english, disits and '-' only.
 
