@@ -11,10 +11,10 @@ tags: [Ubuntu, Ubuntu18.04]
 ## Choose Install ISO
 설치 이미지는 2 종류가 있는데, Subiquity 인스톨러가 탑재된 이미지와 기존의 데비안 인스톨러가 탑재된 이미지이다.
 Subiquity 인스톨러 버전은 새로운 우분투 서버 인스톨러이다.
-일단 RAID 기능을 지원하지 않고 아직 불안정해보여서(개인적인 의견임) 기존처럼 데비안 인스톨러를 다운 받는다.
-!(http://cdimage.ubuntu.com/releases/18.04/release/) 에서 ubuntu-18.04.1-server-amd64.iso 선택
+일단 RAID 기능을 지원하지 않고 아직 불안정해보여서 기존처럼 데비안 인스톨러를 다운 받는다.
+http://cdimage.ubuntu.com/releases/18.04/release/ 에서 `ubuntu-18.04.1-server-amd64.iso` 선택한다.
 
-*Subiquity 인스톨러 버전은 !(https://www.ubuntu.com/download/server)에서 받으면 된다.
+*Subiquity 인스톨러 버전은 https://www.ubuntu.com/download/server에서 받으면 된다.
 
 ## Burn bootable ISO
 
@@ -33,15 +33,15 @@ Subiquity 인스톨러 버전은 새로운 우분투 서버 인스톨러이다.
 
 
 ![](/images/posts/install-ubuntu1804/05.png)
-!](/images/posts/install-ubuntu1804/06.png)
+![]](/images/posts/install-ubuntu1804/06.png)
 ![](/images/posts/install-ubuntu1804/07.png)
 
 키보드 레이아웃은 `gnome3`를 설치할 때 수동으로 설치할 것이다.
-[언어 및 키보드 레이아웃 설정](2018-12-26-install_ubuntu1804-04-gnome3.md#language-and-keyboard-layout)
+[언어 및 키보드 레이아웃 설정](install_ubuntu1804-04-gnome3#language-and-keyboard-layout)
 
 ![](/images/posts/install-ubuntu1804/18.png)
 우분투가 설치 될 SSD를 `/`에 `ext4`로 포맷시킨다.
-HDD 포맷은 우분투 설치 후 [btrfs 설치방법](2018-12-26-install_ubuntu1804-02-btrfs.md)를 통해 진행할 것이다.
+HDD 포맷은 우분투 설치 후 [btrfs 설치방법](install_ubuntu1804-02-btrfs)를 통해 진행할 것이다.
 지금은 하지 않으므로 그냥 놔둔다.
 
 ![](/images/posts/install-ubuntu1804/27.png)
