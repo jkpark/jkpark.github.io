@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ubuntu18.04 - 03 - samba
+title: Ubuntu18.04 - 04 - samba
 description:
 category: blog
 tags: [Ubuntu, Ubuntu18.04, samba]
