@@ -23,6 +23,8 @@ Added user jkpark.
 
 `/etc/samba/smb.conf` 파일을 열어 공유할 디렉토리를 설정한다.
 맨 아랫줄에 아래 내용을 추가한다. 해당 디렉토리는 `btrfs`의 스냅샷 기능으로 파일복원이 가능하다. 이를 위한 설정도 몇개 추가했다.
+`path`로 지정한 `/cactus_ws1/%S`은 [Make Own Workspace](install_ubuntu1804-03-user-privacy-and-proxy-setting#make-own-workspace)을 통해 만들어진 사용자들의 workspace이다.
+
 
 ```
 # Enable the workspace directory shares. This will share each

@@ -37,7 +37,7 @@ http://cdimage.ubuntu.com/releases/18.04/release/ 에서 `ubuntu-18.04.1-server-
 ![](/images/posts/install-ubuntu1804/07.png)
 
 키보드 레이아웃은 `gnome3`를 설치할 때 수동으로 설치할 것이다.
-[언어 및 키보드 레이아웃 설정](install_ubuntu1804-04-gnome3#language-and-keyboard-layout)
+[언어 및 키보드 레이아웃 설정](install_ubuntu1804-05-gnome3#language-and-keyboard-layout)
 
 ![](/images/posts/install-ubuntu1804/18.png)
 우분투가 설치 될 SSD를 `/`에 `ext4`로 포맷시킨다.
@@ -79,28 +79,10 @@ $ sudo netplan apply
 ```
 
 
-# General Proxy Configuration
+# Proxy Configuration
 
-## All User
-
-`/etc/environment` 파일 마지막 줄에 아래 내용 추가
-
-```
-HTTP_PROXY=http://xx.xx.xx.xx:xx
-HTTPS_PROXY=http://xx.xx.xx.xx:xx
-http_proxy=http://xx.xx.xx.xx:xx
-https_proxy=http://xx.xx.xx.xx:xx
-no_proxy="localhost"
-```
-
-## apt Proxy
-
-`/etc/apt/apt.conf` 파일에 아래 내용 추가
-
-```
-Acquire::http::Proxy "http://xx.xx.xx.xx:xx";
-Acquire::https::Proxy "http://xx.xx.xx.xx:xx";
-```
+프록시를 사용한다면 프록시 설정을 해야한다.
+[General Proxy Configuration](install_ubuntu1804-03-user-privacy-and-proxy-setting#general-proxy-configuration)을 참고하여 프록시를 설정한다.
 
 # software package update and upgrade
 

@@ -94,7 +94,7 @@ $ sudo mkfs.btrfs /dev/sdb1
 
 ## 마운트
 
-`/btrfsmnt`에 마운트할 것이다. 이 디렉토리는 스냅샷과 서브볼륨을 관리한다.
+생성한 파티션을 `/btrfsmnt`에 마운트할 것이다. 이 디렉토리는 스냅샷과 서브볼륨을 관리한다.
 
 ```
 $ sudo mkdir /btrfsmnt
@@ -111,7 +111,7 @@ Filesystem     Type      Size  Used Avail Use% Mounted on
 
 ## subvolume 설정
 
-앞서 말한 것처럼 스냅샷 기능을 사용하기 위해 `btrfs`을 골랐다. 스냅샷 기능으로 서브볼륨 전체를 복원할 수도 있고 서브볼륨에 있는 각각의 파일도 복원 가능하다.
+스냅샷으로 서브볼륨 전체를 복원할 수도 있고 서브볼륨에 있는 각각의 파일도 복원 가능하다.
 
 서브볼륨으로 `@cactus_ws1`를 생성할 것이다. 서브볼륨이라는 것을 나타내기 위해 `@`을 붙였다. 
 
@@ -237,7 +237,7 @@ $ sudo mount -o subvol=@cactus_ws1 /dev/sdb1 /cactus_ws1
 #### 윈도우OS에서 복원
 
 `samba`로 윈도우OS에서 접근가능하도록 설정 한 후 파일을 복원시킬 수 있다.
-자세한 내용은 [restore each files from SMB](install_ubuntu1804-03-samba#restore-each-files) 에서 다룬다.
+자세한 내용은 [restore each files from SMB](install_ubuntu1804-04-samba#restore-each-files) 에서 다룬다.
 
 
 ## 스냅샷 삭제
@@ -247,3 +247,7 @@ $ sudo mount -o subvol=@cactus_ws1 /dev/sdb1 /cactus_ws1
 ```
 $ sudo btrfs subvolume delete /btrfsmnt/@cactus_ws1_last
 ```
+
+## 사용자별로 workspace 나누기
+
+[Make Own Workspace](install_ubuntu1804-03-user-privacy-and-proxy-setting#make-own-workspace)을 참고하여 사용자가 추가될 때 자동으로 workspace가 생기도록 만들어준다.
