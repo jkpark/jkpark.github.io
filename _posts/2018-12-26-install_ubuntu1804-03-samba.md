@@ -8,7 +8,7 @@ tags: [Ubuntu, Ubuntu18.04, samba]
 
 # Install Samba
 
-`sapt-get install samba` 로 `samba`를 설치한다.
+`apt-get install samba` 로 `samba`를 설치한다.
 
 ## Add User
 
