@@ -36,7 +36,7 @@ ln -s /cactus_ws1/$username /home/$username/workspace
 ```
 
 
-`adduser`로 `setu`라는 사용자를 추가해보았다. 아래와 같이 `/cactus_ws1`에 `setu`라는 디렉토리가 생성되었고, `/home/setu`에 역시 workspace가 링크되어 있다.
+`adduser`로 `setu`라는 사용자를 추가해보았다. 아래와 같이 `/cactus_ws1`에 `setu`라는 디렉토리가 생성되었고, `/home/setu`에 역시 `workspace`가 링크되어 있다.
 
 ```
 $ ll /cactus_ws1
