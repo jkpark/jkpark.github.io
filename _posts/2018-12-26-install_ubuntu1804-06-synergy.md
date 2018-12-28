@@ -14,7 +14,7 @@ tags: [Ubuntu, Ubuntu18.04, Synergy]
 
 윈도우에서 `Synergy`를 사용하려면 구매를 해야한다. 하지만 `Synergy`는 [GNU General Public License](https://en.wikipedia.org/wiki/GNU_General_Public_License)를 따르기 때문에 소스코드를 빌드하여 사용할 수 있다. 엄밀히 말하면 다른 누군가가 빌드를 하여 공유하여도 개발자가 재재를 못한다. 때문에, 인터넷 상에 빌드된 무료버전을 쉽게 구할 수 있다.
 
-나응 아자님의 블로그를 통해 빌드된 `Synergy`를 다운받았다. [이 곳](https://ommokazza.blogspot.com/2017/07/synergy_19.html)에서 인스톨러를 다운로드한다.
+아자님의 블로그를 통해 빌드된 `Synergy`를 다운받았다. [이 곳](https://ommokazza.blogspot.com/2017/07/synergy_19.html)에서 인스톨러를 다운로드한다.
 
 다운로드 후 설치를 한다. 설치 과정은 쉽기 때문에 생략한다.
 
