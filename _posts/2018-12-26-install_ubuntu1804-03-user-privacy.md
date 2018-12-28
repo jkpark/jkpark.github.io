@@ -26,7 +26,7 @@ homedir="$4"
 mkdir /cactus_ws1/$username
 chown $uid:$gid /cactus_ws1/$username
 
-ln -s /cactus_ws1/$username /home/$username/workspace
+ln -s /cactus_ws1/$username $homedir/workspace
 ```
 
 실행권한도 추가해준다.
