@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ubuntu18.04 - 02 - btrfs
-description:
+description: 파일 백업 및 복원을 위한 btrfs 파티션 설정방법
 category: blog
 tags: [Ubuntu, Ubuntu18.04, btrfs]
 ---
@@ -250,4 +250,4 @@ $ sudo btrfs subvolume delete /btrfsmnt/@cactus_ws1_last
 
 ## 사용자별로 workspace 나누기
 
-[Make Own Workspace](install_ubuntu1804-03-user-privacy-and-proxy-setting#make-own-workspace)을 참고하여 사용자가 추가될 때 자동으로 workspace가 생기도록 만들어준다.
+[Make Own Workspace](install_ubuntu1804-03-user-privacy#make-own-workspace)을 참고하여 사용자가 추가될 때 자동으로 workspace가 생기도록 만들어준다.

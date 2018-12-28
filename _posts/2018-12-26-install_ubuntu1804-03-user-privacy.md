@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Ubuntu18.04 - 03 - User Privacy and Proxy Setting
-description:
+title: Ubuntu18.04 - 03 - User Privacy
+description: 사용자 설정
 category: blog
-tags: [Ubuntu, Ubuntu18.04, proxy,privacy]
+tags: [Ubuntu, Ubuntu18.04, privacy]
 ---
 
 # Make Own Workspace
@@ -53,28 +53,5 @@ drwxr-xr-x 4 root root 4096 Dec 26 21:26 ../
 -rw-r--r-- 1 setu setu 3771 Dec 26 21:26 .bashrc
 -rw-r--r-- 1 setu setu  807 Dec 26 21:26 .profile
 lrwxrwxrwx 1 root root   16 Dec 26 21:26 workspace -> /cactus_ws1/setu/
-```
-
-# General Proxy Configuration
-
-## All User
-
-`/etc/environment` 파일 마지막 줄에 아래 내용 추가
-
-```
-HTTP_PROXY=http://xx.xx.xx.xx:xx
-HTTPS_PROXY=http://xx.xx.xx.xx:xx
-http_proxy=http://xx.xx.xx.xx:xx
-https_proxy=http://xx.xx.xx.xx:xx
-no_proxy="localhost"
-```
-
-## apt Proxy
-
-`/etc/apt/apt.conf` 파일에 아래 내용 추가
-
-```
-Acquire::http::Proxy "http://xx.xx.xx.xx:xx";
-Acquire::https::Proxy "http://xx.xx.xx.xx:xx";
 ```
 

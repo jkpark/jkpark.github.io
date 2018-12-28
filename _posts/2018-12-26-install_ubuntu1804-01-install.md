@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ubuntu18.04 - 01 - Install Ubuntu Server 18.04 LTS
-description:
+description: Installation Guide for Ubuntu 18.04 Server LTS.
 category: blog
 tags: [Ubuntu, Ubuntu18.04]
 ---
@@ -82,7 +82,45 @@ $ sudo netplan apply
 # Proxy Configuration
 
 프록시를 사용한다면 프록시 설정을 해야한다.
-[General Proxy Configuration](install_ubuntu1804-03-user-privacy-and-proxy-setting#general-proxy-configuration)을 참고하여 프록시를 설정한다.
+
+## Proxy for all user
+
+`/etc/environment` 파일 마지막 줄에 아래 내용 추가
+
+```
+HTTP_PROXY=http://xx.xx.xx.xx:xx
+HTTPS_PROXY=http://xx.xx.xx.xx:xx
+http_proxy=http://xx.xx.xx.xx:xx
+https_proxy=http://xx.xx.xx.xx:xx
+no_proxy="localhost"
+```
+
+# Import Certificate file
+
+인증서를 등록한다.
+
+```
+$ sudo mkdir /usr/share/ca-certificates/samsung
+$ sudo mv samsung.crt /usr/share/ca-certificates/samsung/
+$ sudo dpkg-reconfigure ca-certificates
+Updating certificates in /etc/ssl/certs...
+1 added, 0 removed; done.
+Processing triggers for ca-certificates (20180409) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+```
+
+## apt Proxy
+
+`/etc/apt/apt.conf` 파일에 아래 내용 추가
+
+```
+Acquire::http::Proxy "http://xx.xx.xx.xx:xx";
+Acquire::https::Proxy "http://xx.xx.xx.xx:xx";
+```
+
 
 # software package update and upgrade
 
