@@ -191,6 +191,9 @@ $ sudo lspci -k
 
 # Multiple display settings
 
-부팅 시 로그인 화면은 Primary Display에 보여진다.
+부팅 시 로그인 화면은 Primary Display에 보여진다. 로그인 화면을 다른 모니터에 보여주고 싶다면 `settings - display` 설정 후 `monitors.xml`을 `gdm`에 복사해준다.
 
-`settings - display` 설정 후 
+```
+$ sudo cp ~/.config/monitors.xml ~gdm/.config/
+$ sudo chown gdm:gdm ~gdm/.config/monitors.xml
+```

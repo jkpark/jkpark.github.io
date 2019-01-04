@@ -80,10 +80,6 @@ SSL을 사용안하므로 체크해제한다.
 
 ## Autostart Synergy on bootup
 
-### 로그인 전
-
-[참고](https://help.ubuntu.com/community/SynergyHowto)
-
 ### 로그인 후
 
 `~/.config/autostart/01synergyc.desktop` 파일을 만들고 아래 내용을 입력한다. `[server address]`에는 서버의 주소를 입력한다.
@@ -100,3 +96,21 @@ Type=Application
 StartupNotify=false
 X-GNOME-Autostart-enabled=true
 ```
+
+### 로그인 전
+
+>Ubuntu 18.04 의 Display Manager는 `gdm3`이다. [참고자료](https://help.ubuntu.com/community/SynergyHowto)에 보면 `/etc/gdm3/Init/Default` 파일에 스크립트를 추가하라고 하지만, 우분투 18.04에서 `/etc/gdm3/Init/Default`이 동작하지 않는 버그 [Bug#317](https://gitlab.gnome.org/GNOME/gdm/issues/317) 때문에 다른 방법으로 해야한다.
+
+위 단계에서 생성한 `~/.config/autostart/01synergyc.desktop` 파일을 `/usr/share/gdm/greeter/autostart` 에 복사한다.
+
+```
+$ sudo cp ~/.config/autostart/01synergyc.desktop /usr/share/gdm/greeter/autostart/01synergyc.desktop
+$ sudo chown root:root /usr/share/gdm/greeter/autostart/01synergyc.desktop
+```
+
+`/etc/gdm/PostLogin/Default` 파일에 아래 내용을 추가한다. (파일이 없으면 생성 후 `실행:x` 권한 추가)
+
+```
+/usr/bin/killall synergyc
+```
+

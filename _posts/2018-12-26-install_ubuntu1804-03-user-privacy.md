@@ -1,10 +1,119 @@
 ---
 layout: post
-title: Ubuntu18.04 - 03 - User Privacy
-description: 사용자 설정
+title: Ubuntu18.04 - 03 - General Setting
+description: 우분투 18.04 LTS 기본 설정
 category: blog
-tags: [Ubuntu, Ubuntu18.04, privacy]
+tags: [Ubuntu, Ubuntu18.04, privacy, ufw]
 ---
+
+# Firewall - UFW
+
+서버의 보안을 위해 방화벽을 설정한다. 우분투는 기본적으로 `ufw`를 라는 방화벽 관리 툴을 제공하는데, 이는 `iptables` 를 쉽게 설정하도록 하는 역활을 한다.
+
+>The Uncomplicated Firewall (ufw) is a frontend for iptables and is particularly well-suited for host-based firewalls. ufw aims to provide an easy to use interface for people unfamiliar with firewall concepts, while at the same time simplifies complicated iptables commands to help an adminstrator who knows what he or she is doing.
+
+`ufw`를 통해 방화벽 설정을 하는 것보다 `iptables`를 직접 다루는게 직관적이므로 `ufw`를 제거하고 `iptables`로 방화벽을 직접 설정할 것이다.
+
+## UFW 제거
+
+```
+$ sudo apt-get purge ufw
+$ sudo rm -rf /etc/ufw
+$ sudo rm /etc/default/ufw
+```
+
+## iptables 초기화
+
+`iptables` 에는 5개의 테이블이 있다.
+- `raw` is used only for configuring packets so that they are exempt from connection tracking.
+- `filter` is the default table, and is where all the actions typically associated with a firewall take place.
+- `nat` is used for network address translation (e.g. port forwarding).
+- `mangle` is used for specialized packet alterations.
+- `security` is used for Mandatory Access Control networking rules (e.g. SELinux -- see this article for more details).
+
+일반적인 경우 기본 테이블인 `filter`와 `nat`만 사용하면 된다.
+
+```
+$ sudo iptables -F
+$ sudo iptables -X
+$ sudo iptables -t nat -F
+$ sudo iptables -t nat -X
+```
+`-F`는 각 체인에 설정되어 있는 규칙을 모두 제거한다. `-X`를 기본 체인을 제외한 나머지 체인을 삭제한다.
+
+```
+$ sudo iptables -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination 
+```
+
+`iptables`는 현재 시스템의 방화벽을 설정하지만 저장하지는 않는다. 즉, 서버를 재시작하면 설정한 내역이 초기화된다. 설정한 내역을 저장하기 위해서 `netfilter-persistent` 를 설치한다. `netfilter-persistent save`를 하면 `iptables` 설정이 저장된다.
+
+```
+$ sudo apt-get install netfilter-persistent iptables-persistent
+```
+
+`iptables` 설정을 저장하고 리로드한다.
+
+```
+$ sudo netfilter-persistent save
+$ sudo netfilter-persistent reload
+```
+
+재시작 후에도 설정이 잘 되어 있는지 확인한다.
+
+## iptables 기본 설정
+
+established sessions 허용
+```
+$ sudo iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+```
+
+SSH가 사용하는 TCP 22번 포트 허용
+```
+$ sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+```
+
+localhost 허용
+```
+$ sudo iptables -A INPUT -i lo -j ACCEPT
+```
+
+
+기본 정책으로 `INPUT`과 `FORWARD`는 차단시킨다.
+```
+$ sudo iptables -P INPUT DROP
+$ sudo iptables -P FORWARD DROP
+```
+
+이렇게 하면 앞에서 설정한 규칙의 접근만 허용되고 나머지 접근에 대해선 모두 차단된다.
+
+설정 후에는 반드시 저장을 해야한다.
+
+```
+$ sudo netfilter-persistent save
+$ sudo netfilter-persistent reload
+```
+
+확인
+
+```
+$ sudo iptables -S
+-P INPUT DROP
+-P FORWARD DROP
+-P OUTPUT ACCEPT
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+```
+
+- - -
 
 # Make Own Workspace
 
