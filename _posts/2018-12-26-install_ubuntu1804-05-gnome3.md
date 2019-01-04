@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ubuntu18.04 - 05 - Desktop Environment
+title: Ubuntu18.04 - 05 - Desktop Environment - Gnome3
 description: Gnome3 설치 및 설정
 category: blog
 tags: [Ubuntu, Ubuntu18.04, gnome3, chrome, nvidia]
@@ -181,6 +181,13 @@ $ sudo nvidia-xconfig
 
 재부팅 후 확인
 
+```
+$ sudo lspci -k
+01:00.0 VGA compatible controller: NVIDIA Corporation GK208 [GeForce GT 730] (rev a1)
+        Subsystem: Samsung Electronics Co Ltd GK208B [GeForce GT 730]
+        Kernel driver in use: nvidia
+        Kernel modules: nvidiafb, nouveau, nvidia_drm, nvidia
+```
 
 # Multiple display settings
 
