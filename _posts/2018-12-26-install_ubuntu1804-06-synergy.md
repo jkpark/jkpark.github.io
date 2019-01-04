@@ -80,4 +80,23 @@ SSL을 사용안하므로 체크해제한다.
 
 ## Autostart Synergy on bootup
 
+### 로그인 전
+
 [참고](https://help.ubuntu.com/community/SynergyHowto)
+
+### 로그인 후
+
+`~/.config/autostart/01synergyc.desktop` 파일을 만들고 아래 내용을 입력한다. `[server address]`에는 서버의 주소를 입력한다.
+
+```
+[Desktop Entry]
+Encoding=UTF-8
+Exec=synergyc [server address]
+Name=Synergyc
+Comment=Starting Synergyc
+Terminal=false
+OnlyShowIn=GNOME
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
+```

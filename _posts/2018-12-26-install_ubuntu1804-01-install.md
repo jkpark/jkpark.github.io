@@ -121,6 +121,14 @@ Acquire::http::Proxy "http://xx.xx.xx.xx:xx";
 Acquire::https::Proxy "http://xx.xx.xx.xx:xx";
 ```
 
+## apt 카카오 저장소로 변경
+
+US 서버보다 4배정도 빠르네. 카카오 저장소가 안정적이라는 소문이 있어서 apt 저장소를 바꿔주었다.
+
+```
+$ sudo cp /etc/apt/sources.list /etc/apt/sources.list.ori
+$ sudo sed 's/us.archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
+```
 
 # software package update and upgrade
 
@@ -130,4 +138,5 @@ IP과 Proxy를 설정했다면 인터넷이 가능할 것이다.
 ```
 $ sudo apt-get update
 $ sudo apt-get upgrade
+$ sudo apt-get dist-upgrade
 ```

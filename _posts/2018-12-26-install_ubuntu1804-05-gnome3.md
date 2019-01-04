@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Ubuntu18.04 - 05 - Desktop Environment
-description:
+description: Gnome3 설치 및 설정
 category: blog
-tags: [Ubuntu, Ubuntu18.04, gnome3, chrome]
+tags: [Ubuntu, Ubuntu18.04, gnome3, chrome, nvidia]
 ---
 
 # Install Gnome 3 Desktop Environment
@@ -143,5 +143,47 @@ www.gnome-look.org 에서 [Flat Remix GNOME theme](https://www.gnome-look.org/p/
 
 ![](/images/posts/install-ubuntu1804/gnome-theme.png)
 
+# Nvidia 그래픽 드라이버 설치
+
+먼저 커널이 어떤 드라이버를 사용중인지 확인한다.
+
+```
+$ sudo lspci -k
+01:00.0 VGA compatible controller: NVIDIA Corporation GK208 [GeForce GT 730] (rev a1)
+	Subsystem: Samsung Electronics Co Ltd GK208B [GeForce GT 730]
+	Kernel driver in use: nouveau
+	Kernel modules: nvidiafb, nouveau
+```
+
+`nouveau`를 사용중임을 확인했다. Nvidia 드라이버를 설치한다.
+
+Nvidia PPA 추가
+
+```
+$ sudo add-apt-repository ppa:graphics-drivers/ppa
+$ sudo apt update
+```
+
+드라이버 자동 설치
+
+```
+$ sudo ubuntu-drivers autoinstall
+```
+
+그래픽 드라이버 뿐만 아니라 다른 드라이버도 설치된다.
+
+`nvidia-modprobe`을 설치해야 커널이 자동으로 NVIDIA character device files 을 생성한다.
+
+```
+$ sudo apt-get install nvidia-modprobe
+$ sudo nvidia-xconfig
+```
+
+재부팅 후 확인
 
 
+# Multiple display settings
+
+부팅 시 로그인 화면은 Primary Display에 보여진다.
+
+`settings - display` 설정 후 
