@@ -7,7 +7,7 @@ tags: [Ubuntu, Ubuntu18.04, nextcloud, PHP, NGINX, MariaDB]
 english: false
 ---
 
-> Ubuntu 16.04 에서는 파일공유 프로그램으로 (Resilio Sync)[https://www.resilio.com/individuals/]를 설치했었다. Resilio Sync는 P2P 방식이다. 보통 서버와 스마트폰은 항상 켜놓기 때문에 피어가 살아있어서 언제든지 싱크가 가능했다. 별다른 문제없이 잘 쓰고 있었지만 종종 스마트폰에 부담을 주는 것 같은 느낌을 받았다. 그리고 이사를 하면서 서버를 꽤 오랜시간동안 방치했고 그 기간동안 스마트폰도 바꾸고 윈도우PC의 파일도 정리하고 이것저것 만지다보니 싱크가 어디서부터 꼬였는지 알 수 없었다. 트러블슈팅도 어려웠고 이번에 우분투 18.04를 설치하게 되면서 새로운 파일 싱크 툴을 찾게 되었다.
+> Ubuntu 16.04 에서는 파일공유 프로그램으로 [Resilio Sync](https://www.resilio.com/individuals/)를 설치했었다. Resilio Sync는 P2P 방식이다. 보통 서버와 스마트폰은 항상 켜놓기 때문에 피어가 살아있어서 언제든지 싱크가 가능했다. 별다른 문제없이 잘 쓰고 있었지만 종종 스마트폰에 부담을 주는 것 같은 느낌을 받았다. 그리고 이사를 하면서 서버를 꽤 오랜시간동안 방치했고 그 기간동안 스마트폰도 바꾸고 윈도우PC의 파일도 정리하고 이것저것 만지다보니 싱크가 어디서부터 꼬였는지 알 수 없었다. 트러블슈팅도 어려웠고 이번에 우분투 18.04를 설치하게 되면서 새로운 파일 싱크 툴을 찾게 되었다.
 
 [NextCloud](https://nextcloud.com/)는 Opensource 이며 Self-hosting가 가능하고 윈도우, 리눅스, 안드로이드 모두 지원한다. 또한 이미 LEMP Stack이 완성되어 있기 때문에 쉽게 설치할 수 있다.
 
@@ -295,7 +295,7 @@ innodb_file_per_table = 1
 
 NextCloud에 관리자계정으로 로그인한 후 상단 패널 제일 오른쪽에 자신의 계정을 클릭하면 메뉴가 나온다.
 
-![](/images/posts/install-ubuntu1804/nextcloud-ㅡmenu.png)
+![](/images/posts/install-ubuntu1804/nextcloud-menu.png)
 
 `앱` 을 누르면 내 앱 리스트가 나오고 이 중 `external storage support`를 `사용함` 버튼을 누른다.
 

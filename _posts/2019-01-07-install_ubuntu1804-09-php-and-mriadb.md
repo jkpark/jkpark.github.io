@@ -39,7 +39,7 @@ mbstring.http_output = UTF-8
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    server_name cactus www.cactus;
+    server_name cactus;
 
     # Redirect all HTTP requests to HTTPS with a 301 Moved Permanently response.
     return 301 https://$server_name$request_uri;
@@ -47,6 +47,7 @@ server {
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
+    server_name cactus;
 
     # SSL configuration
     ssl_certificate     /etc/nginx/ssl/cactus/nginx.crt;
@@ -81,8 +82,6 @@ server {
     root /var/www/cactus/htdocs;
 
     index index.php index.html;
-
-    server_name cactus www.cactus;
 
     access_log /var/log/nginx/cactus.access.log;
     error_log /var/log/nginx/cactus.error.log;
