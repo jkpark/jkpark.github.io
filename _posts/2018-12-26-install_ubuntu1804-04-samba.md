@@ -53,8 +53,8 @@ Added user jkpark.
   read only = yes
   valid users = %S
   write list = %S
-  create mask = 0600
-  directory mask = 0700
+  create mask = 0644
+  directory mask = 0755
 ```
 
 설정 후 `systemctl restart smbd`로 삼바 재실행한다.

@@ -202,6 +202,15 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 
+# 방화벽 설정
+
+```
+$ sudo iptables -A INPUT -p tcp -m tcp --dport 88 -j ACCEPT
+$ sudo iptables -A INPUT -p tcp -m tcp --dport 10443 -j ACCEPT
+$ sudo netfilter-persistent save
+$ sudo netfilter-persistent reload
+```
+
 # PHP 설정
 
 `client_max_body_size`를 100GB로 잡았기 때문에 관련 php 설정도 바꿔줘야 한다.
@@ -279,4 +288,23 @@ innodb_file_per_table = 1
 
 ```
 'memcache.local' => '\OC\Memcache\APCu',
+'auth.bruteforce.protection.enabled' => false,
 ```
+
+# 외부 저장소 연결
+
+NextCloud에 관리자계정으로 로그인한 후 상단 패널 제일 오른쪽에 자신의 계정을 클릭하면 메뉴가 나온다.
+
+![](/images/posts/install-ubuntu1804/nextcloud-ㅡmenu.png)
+
+`앱` 을 누르면 내 앱 리스트가 나오고 이 중 `external storage support`를 `사용함` 버튼을 누른다.
+
+![](/images/posts/install-ubuntu1804/nextcloud-external-storage.png)
+
+ 상단 패널의 메뉴에서 `설정` 화면으로 넘어오면 좌측 패널에 `개인` 영역과 `관리` 영역에 각각 `외부 저장소` 메뉴가 보인다. `관리` 영역의 `외부 저장소`에서 저장소를 추가할 수 있다.
+
+![](/images/posts/install-ubuntu1804/nextcloud-external-storage2.png)
+
+승인된 유저라면 아래그림처럼 외부 저장소가 보일 것이다. (로컬 저장소는 외부에서 마운트 불가능하도록 사용자 마운트 가능 체크박스를 해제했다.)
+
+![](/images/posts/install-ubuntu1804/nextcloud-external-storage3.png)
