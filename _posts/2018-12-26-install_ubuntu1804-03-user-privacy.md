@@ -68,6 +68,36 @@ $ sudo netfilter-persistent reload
 
 재시작 후에도 설정이 잘 되어 있는지 확인한다.
 
+# Change Timezone
+
+```
+$ timedatectl
+                      Local time: 일 2019-01-13 22:57:41 EST
+                  Universal time: 월 2019-01-14 03:57:41 UTC
+                        RTC time: 월 2019-01-14 03:57:41
+                       Time zone: America/New_York (EST, -0500)
+       System clock synchronized: yes
+systemd-timesyncd.service active: yes
+                 RTC in local TZ: no
+$ ls -l /etc/localtime 
+lrwxrwxrwx 1 root root 36  1월  3 02:18 /etc/localtime -> /usr/share/zoneinfo/America/New_York
+$ timedatectl list-timezones | grep Seoul
+Asia/Seoul
+jkpark@cactus:~/Downloads$ sudo timedatectl set-timezone Asia/Seoul
+jkpark@cactus:~/Downloads$ ls -l /etc/localtime 
+lrwxrwxrwx 1 root root 32  1월 14 13:23 /etc/localtime -> ../usr/share/zoneinfo/Asia/Seoul
+jkpark@cactus:~/Downloads$ timedatectl 
+                      Local time: 월 2019-01-14 13:23:52 KST
+                  Universal time: 월 2019-01-14 04:23:52 UTC
+                        RTC time: 월 2019-01-14 04:23:52
+                       Time zone: Asia/Seoul (KST, +0900)
+       System clock synchronized: yes
+systemd-timesyncd.service active: yes
+                 RTC in local TZ: no
+```
+
+
+
 ## iptables 기본 설정
 
 established sessions 허용

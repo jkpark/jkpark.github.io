@@ -291,7 +291,11 @@ innodb_file_per_table = 1
 'auth.bruteforce.protection.enabled' => false,
 ```
 
-# 외부 저장소 연결
+# 
+
+
+
+# 외부 저장소 연결 방법
 
 NextCloud에 관리자계정으로 로그인한 후 상단 패널 제일 오른쪽에 자신의 계정을 클릭하면 메뉴가 나온다.
 
