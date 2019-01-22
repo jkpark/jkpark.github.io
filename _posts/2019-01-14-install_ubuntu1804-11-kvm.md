@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 가상머신 - Install RHEL 7.6 using KVM
+title: Ubuntu18.04 - 11 - QEMU-KVM with VNC
 description: 
 category: blog
-tags: [Ubuntu, Ubuntu18.04, kvm, rhel7.6]
+tags: [Ubuntu, Ubuntu18.04, kvm]
 english: false
 ---
 
