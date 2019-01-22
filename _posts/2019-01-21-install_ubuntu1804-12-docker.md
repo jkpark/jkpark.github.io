@@ -49,7 +49,7 @@ sudo usermod -aG docker jkpark
 
 # Proxy
 
-> 참고 : https://docs.docker.com/config/daemon/systemd/
+> 참고 https://docs.docker.com/config/daemon/systemd/
 
 # 비인증 저장소 추가 방법
 

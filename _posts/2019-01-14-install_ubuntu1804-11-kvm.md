@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ubuntu18.04 - 11 - QEMU-KVM with VNC
+title: Ubuntu18.04 - 11 - QEMU-KVM
 description: 
 category: blog
 tags: [Ubuntu, Ubuntu18.04, kvm]
@@ -9,7 +9,8 @@ english: false
 
 # Overview
 
-Ubuntu 18.04에서 VM을 띄워 rhel 7.6을 설치할 것이다. Display는 VNC로 설정하여 다른 PC에서 가상머신으로의 접속을 쉽게 할 수 있다. 
+Ubuntu 18.04에서 VM을 띄워 rhel 7.6을 설치할 것이다. 
+Display는 VNC로 설정할 것이다. 
 
 # check if the system supports hardware virtualization
 
