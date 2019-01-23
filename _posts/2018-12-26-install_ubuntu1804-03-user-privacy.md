@@ -6,7 +6,7 @@ category: blog
 tags: [Ubuntu, Ubuntu18.04, privacy, ufw]
 ---
 
-# Firewall - UFW
+# 1. Firewall - iptables
 
 서버의 보안을 위해 방화벽을 설정한다. 우분투는 기본적으로 `ufw`를 라는 방화벽 관리 툴을 제공하는데, 이는 `iptables` 를 쉽게 설정하도록 하는 역활을 한다.
 
@@ -68,35 +68,6 @@ $ sudo netfilter-persistent reload
 
 재시작 후에도 설정이 잘 되어 있는지 확인한다.
 
-# Change Timezone
-
-```
-$ timedatectl
-                      Local time: 일 2019-01-13 22:57:41 EST
-                  Universal time: 월 2019-01-14 03:57:41 UTC
-                        RTC time: 월 2019-01-14 03:57:41
-                       Time zone: America/New_York (EST, -0500)
-       System clock synchronized: yes
-systemd-timesyncd.service active: yes
-                 RTC in local TZ: no
-$ ls -l /etc/localtime 
-lrwxrwxrwx 1 root root 36  1월  3 02:18 /etc/localtime -> /usr/share/zoneinfo/America/New_York
-$ timedatectl list-timezones | grep Seoul
-Asia/Seoul
-jkpark@cactus:~/Downloads$ sudo timedatectl set-timezone Asia/Seoul
-jkpark@cactus:~/Downloads$ ls -l /etc/localtime 
-lrwxrwxrwx 1 root root 32  1월 14 13:23 /etc/localtime -> ../usr/share/zoneinfo/Asia/Seoul
-jkpark@cactus:~/Downloads$ timedatectl 
-                      Local time: 월 2019-01-14 13:23:52 KST
-                  Universal time: 월 2019-01-14 04:23:52 UTC
-                        RTC time: 월 2019-01-14 04:23:52
-                       Time zone: Asia/Seoul (KST, +0900)
-       System clock synchronized: yes
-systemd-timesyncd.service active: yes
-                 RTC in local TZ: no
-```
-
-
 
 ## iptables 기본 설정
 
@@ -143,9 +114,8 @@ $ sudo iptables -S
 -A INPUT -i lo -j ACCEPT
 ```
 
-- - -
 
-# Make Own Workspace
+# 2. Make Own Workspace
 
 `adduser`를 통해 사용자가 추가될 때 사용자별로 workspace를 생성하도록 한다.
 
@@ -194,3 +164,33 @@ drwxr-xr-x 4 root root 4096 Dec 26 21:26 ../
 lrwxrwxrwx 1 root root   16 Dec 26 21:26 workspace -> /cactus_ws1/setu/
 ```
 
+
+# 3. Change Timezone
+
+timezone을 서울로 변경한다.
+
+```
+$ timedatectl
+                      Local time: 일 2019-01-13 22:57:41 EST
+                  Universal time: 월 2019-01-14 03:57:41 UTC
+                        RTC time: 월 2019-01-14 03:57:41
+                       Time zone: America/New_York (EST, -0500)
+       System clock synchronized: yes
+systemd-timesyncd.service active: yes
+                 RTC in local TZ: no
+$ ls -l /etc/localtime 
+lrwxrwxrwx 1 root root 36  1월  3 02:18 /etc/localtime -> /usr/share/zoneinfo/America/New_York
+$ timedatectl list-timezones | grep Seoul
+Asia/Seoul
+jkpark@cactus:~/Downloads$ sudo timedatectl set-timezone Asia/Seoul
+jkpark@cactus:~/Downloads$ ls -l /etc/localtime 
+lrwxrwxrwx 1 root root 32  1월 14 13:23 /etc/localtime -> ../usr/share/zoneinfo/Asia/Seoul
+jkpark@cactus:~/Downloads$ timedatectl 
+                      Local time: 월 2019-01-14 13:23:52 KST
+                  Universal time: 월 2019-01-14 04:23:52 UTC
+                        RTC time: 월 2019-01-14 04:23:52
+                       Time zone: Asia/Seoul (KST, +0900)
+       System clock synchronized: yes
+systemd-timesyncd.service active: yes
+                 RTC in local TZ: no
+```
