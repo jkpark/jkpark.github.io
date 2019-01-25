@@ -26,13 +26,19 @@ $ jekyll serve --host=HOSTIP
 ```
 
 ## google 검색 엔진에 노출 시키기
-1. _config.yml 에 `url` 자신의 홈페이지 주소 입력
+1. _config.yml 파일의 `url` 자신의 홈페이지 주소 입력
 2. 웹마스터 도구에 sitemap.xml 제출
 
 ## 구글 애널리틱스
 https://analytics.google.com/analytics/web/#/ 에 접속
 속성 추가
-_config.yml에 `google_analytics:` 에 자신의 추적 정보 입력
+_config.yml 파일의 `google_analytics:` 에 자신의 추적 정보 입력
+
+## Disqus
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Dr6pSdeJgkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+1. _config.yml 파일의 `disqus:` 에 자신의 shortname 입력
 
 # Publish
 
