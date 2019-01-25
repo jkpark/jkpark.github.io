@@ -27,13 +27,13 @@ _layouts/default.html 의 head 에 자신의 태그 추가
 ```
 
 ## google 검색 엔진에 노출 시키기
-sitemap.xml 작성
-_config.yml 에 url 부분 수정
+_config.yml 에 `url` 자신의 홈페이지 주소 입력
 웹마스터 도구에 sitemap.xml 제출
 
 ## 구글 애널리틱스
 https://analytics.google.com/analytics/web/#/ 에 접속
-
+속성 추가
+_config.yml에 `google_analytics:` 에 자신의 추적 정보 입력
 
 
 # Publish
