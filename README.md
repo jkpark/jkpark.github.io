@@ -13,9 +13,9 @@ $ cd jkpark.github.io
 $ jekyll serve --host=HOSTIP
 ```
 
-## 홈페이지 설정
+# 홈페이지 설정
 
-# Google Site Verification
+## Google Site Verification
 
 https://www.google.com/webmasters/tools/home?hl=ko 에 접속
 속성 추가
