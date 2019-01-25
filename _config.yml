@@ -28,7 +28,7 @@ url: http://jkpark.github.io
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
-paginate: 5
+paginate: 12
 paginate_path: /blog/page:num/
 
 #

@@ -3,7 +3,7 @@ layout: post
 title: Ubuntu18.04 - 03 - General Setting
 description: 우분투 18.04 LTS 기본 설정
 category: blog
-tags: [Ubuntu, Ubuntu18.04, privacy, ufw]
+tags: [Ubuntu, Ubuntu18.04, privacy, iptables]
 ---
 
 # 1. Firewall - iptables

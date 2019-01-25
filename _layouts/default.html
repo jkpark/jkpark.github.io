@@ -60,14 +60,10 @@
       </nav>
       <div class="pull-right right logo">
         <div class="name">
-          {% if page.url == '/en/index.html' %}
-            <a href="/">JK Park</a><br />
-          {% else %}
-            <a href="/">JK Park</a><br />
-          {% endif %}
+          <a href="/">{{ site.author }}</a><br />
           <small>
             <em>
-                <a href="http://www.indiecoders.org">Indiecoders org.</a>
+                <a href="https://jkpark.github.io/">jkpark.github.io</a>
             </em>
           </small>
         </div>
@@ -75,7 +71,6 @@
       </div>
       <div class="clear"></div>
     </header>
-    <div class="clear"></div>
   </div>
 
   {{ content }}
