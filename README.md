@@ -1,27 +1,49 @@
 Jekyll website serving [JK Park](http://jkpark.github.io)
 
-## Checkout :
+# Checkout :
 
 ```console
 $ git clone https://github.com/jkpark/jkpark.github.io.git
 ```
 
-## Serve
+# Serve
 
 ```console
 $ cd jkpark.github.io
 $ jekyll serve --host=HOSTIP
 ```
 
+## 홈페이지 설정
 
-## Publish
+# Google Site Verification
+
+https://www.google.com/webmasters/tools/home?hl=ko 에 접속
+속성 추가
+구글에서 제공하는 html 다운로드 (google20a646a1a7c513d0.html) 및 업로드
+
+_layouts/default.html 의 head 에 자신의 태그 추가
+```html
+<meta name="google-site-verification" content="H73FzMq39pLvMqBQL_e5f-JlaipO9MkcGC_ce_3xlDA" />
+```
+
+## google 검색 엔진에 노출 시키기
+sitemap.xml 작성
+_config.yml 에 url 부분 수정
+웹마스터 도구에 sitemap.xml 제출
+
+## 구글 애널리틱스
+https://analytics.google.com/analytics/web/#/ 에 접속
+
+
+
+# Publish
 
 ```console
 $ git commit -m '...'
 $ git push origin master
 ```
 
-## Write new post
+# Write new post
 
 ```console
 $ cd _posts
