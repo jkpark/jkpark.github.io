@@ -36,9 +36,8 @@ _config.yml 파일의 `google_analytics:` 에 자신의 추적 정보 입력
 
 ## Disqus
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Dr6pSdeJgkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-1. _config.yml 파일의 `disqus:` 에 자신의 shortname 입력
+1. Disqus 설정
+2. _config.yml 파일의 `disqus:` 에 자신의 shortname 입력
 
 # Publish
 
