@@ -28,7 +28,7 @@ url: http://jkpark.github.io
 baseurl: ""
 
 # paginate for posts
-paginate: 12
+paginate: 8
 paginate_path: /blog/page:num/
 
 # Permanent Link for posts

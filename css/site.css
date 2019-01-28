@@ -351,6 +351,34 @@ figure .two-third {
     max-width: 100%;
   }
 }
+.pagination {
+  text-align: center;
+  list-style-type: none;
+}
+
+.pagination li {
+  display: inline-block;
+  border: 1px solid #255b96;
+  border-right-width: 0;
+  min-width: 4em;
+}
+
+.pagination .active {
+  background-color: #3073b3;
+  color: white;
+}
+
+.pagination li:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination li:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-right-width: 1px;
+}
+
 
 /*****************************************************************************/
 /*
