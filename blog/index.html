@@ -4,24 +4,11 @@ title: All Posts
 category: blog
 ---
 
-
-<section class="inner">
-  <h5>Tag Cloud</h5>
-  {% assign tags = site.tags | sort %}
-  {% for tag in tags %}
-  <span class="tags">
-    <a href="/blog/search/?tags={{ tag | first }}"
-        style="font-size: {{ tag | last | size | times: 4 | plus: 80 }}%">
-        {{ tag[0] | replace:'-', ' ' }}({{ tag | last | size }})
-    </a>
-  </span>
-  {% endfor %}
-</section>
-
+{% include tag_cloud.html %}
 <div class="separator"></div>
 
 <section class="inner">
-  <h5>{{ page.title }} </h5>
+  <h1>{{ page.title }} </h1>
   <ul class="posts">
     {% for post in paginator.posts %}
       <li>

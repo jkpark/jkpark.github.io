@@ -3,14 +3,12 @@ layout: default
 category: about
 ---
 <section class="about-me inner" itemscope itemtype="http://data-vocabulary.org/Person">
-
-  <h5>
+  <h1>
     <span class="hello">
       안녕하세요,
-      <small><em>speak <a href="/en/" rel="alternate" hreflang="en">english</a> ?</em></small>
+      <small class="english_idx"><em>speak <a href="/en/" rel="alternate" hreflang="en">english</a> ?</em></small>
     </span>
-  </h5>
-
+  </h1>
   <p>
     <a href="/"><span itemprop="name">JK Park</span></a> 입니다.
     이 곳은 제가 작업한 이력을 저장하고 필요한 정보를 공유하는 목적으로 사용하고 있습니다.
@@ -27,7 +25,7 @@ category: about
 <div class="separator"></div>
 
 <section class="inner">
-  <h5>Recent Posts</h5>
+  <h1>Recent Posts</h1>
   <ul class="posts">
     {% for post in site.posts limit: 3 %}
       <li>
