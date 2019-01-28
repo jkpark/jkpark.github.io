@@ -1,0 +1,12 @@
+<section class="inner">
+    <h1>Tag Cloud</h1>
+    <ul class="tag-nav">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+    <li><a href="/blog/search/?tags={{ tag | first }}"
+          style="font-size: {{ tag | last | size | times: 4 | plus: 80 }}%">
+          {{ tag[0] | replace:'-', ' ' }}({{ tag | last | size }})
+      </a></li>
+    {% endfor %}
+    </ul>
+  </section>
