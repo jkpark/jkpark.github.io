@@ -10,14 +10,16 @@ category: about
     </span>
   </h1>
   <p>
-    <a href="/"><span itemprop="name">JK Park</span></a> 입니다.
+    <span itemprop="name">JK Park</span> 입니다. 저는 2012년 정보보안 전공으로 <a href="http://www.koreait.ac.kr">한국IT전문학교</a>를 졸업하였습니다.
+    졸업 프로젝트로 <a href="http://www.indiecoders.org/portfolio/d3s">D3S프로젝트</a>를 진행하여
+    교내 프로젝트 경진대회에서 최우수상을 수상하였습니다. <a href="http://www.kyungwoo.com/">경우시스테크</a>에 재직했었고
+    현재는 <a href="http://www.samsung.com/sec/">삼성전자</a>에 재직하고 있습니다. 주 업무는 <i>WEB 취약점 점검 및 보안</i> 입니다.
     이 곳은 제가 작업한 이력을 저장하고 필요한 정보를 공유하는 목적으로 사용하고 있습니다.
     천천히 흘러도 흘러가는 꾸준한 개발자가 되겠습니다.
   </p>
   <p>
   이 사이트는 jekyll로 만들어졌으며 <a href="https://github.com/jkpark/jkpark.github.io">이 곳</a>에서 확인할 수 있습니다.
   </p>
-
 </section>
 
 <div class="separator"></div>
@@ -35,6 +37,14 @@ category: about
         {% endif %}
         <br />
         <span class="date">{{ post.date | date_to_string }}</span>
+        <br />
+        {% if post.tags.size > 0 %}
+        <span class="tags">
+        {% for tag in post.tags %}
+        <a href="/blog/search?tags={{ tag }}">#{{ tag }}</a>
+        {% endfor %}
+        </span>
+        {% endif %}
         <br />
         <span class="description">{{ post.description }}</span>
       </li>
