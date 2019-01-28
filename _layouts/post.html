@@ -8,27 +8,26 @@ layout: default
 {% endif %}
 
 <article>
-  <h1 class="inner">
-    {{ page.title }}
-  </h1>
+  <div class='inner title'>
+    <h1>{{ page.title }}</h1>
 
-  <p class="inner meta">
-  {{ page.date | date: "%A %-d %B %Y" }}</br>
-  {% if page.tags.size > 0 %}
-    {% for tag in page.tags %}
-    <a href="/blog/search?tags={{ tag }}">#{{ tag }}</a>
-    {% endfor %}
-  {% endif %}
-  </p>
-  
-  {% if page.english %}
-  <div class="inner suggest-translate">
-    이 문서는 영어로 되어있습니다.
-    <a href="http://translate.google.com/translate?sl=en&amp;tl=kr&amp;u={{ site.url }}{{ page.url }}">
-      구글 번역을 원하시면 여기를 클릭해주세요</a>.
+    <p class="meta">
+    {{ page.date | date: "%A %-d %B %Y" }}</br>
+    {% if page.tags.size > 0 %}
+      {% for tag in page.tags %}
+      <a href="/blog/search?tags={{ tag }}">#{{ tag }}</a>
+      {% endfor %}
+    {% endif %}
+    </p>
+    
+    {% if page.english %}
+    <div class="suggest-translate">
+      이 문서는 영어로 되어있습니다.
+      <a href="http://translate.google.com/translate?sl=en&amp;tl=kr&amp;u={{ site.url }}{{ page.url }}">
+        구글 번역을 원하시면 여기를 클릭해주세요</a>.
+    </div>
+    {% endif %}
   </div>
-  {% endif %}
-
   <div class="post">
     {{ content }}
   </div>

@@ -1,19 +1,9 @@
 Jekyll website serving [JK Park](http://jkpark.github.io)
 
-# Checkout :
+# Fork and Configurations for New Github Pages
 
-```console
-$ git clone https://github.com/jkpark/jkpark.github.io.git
-```
+first, you need to check out _config.yml.
 
-# Serve
-
-```console
-$ cd jkpark.github.io
-$ jekyll serve --host=HOSTIP
-```
-
-# 홈페이지 설정
 
 ## Google Site Verification
 

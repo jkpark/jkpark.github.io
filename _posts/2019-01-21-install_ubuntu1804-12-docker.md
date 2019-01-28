@@ -36,7 +36,7 @@ $ sudo apt-get install docker-ce
 # 현재 사용자를 docker 그룹에 추가
 
 > Docker CE is installed and running. The docker group is created but no users are added to it. You need to use sudo to run Docker commands.
-> 
+
 현재 로그인한 사용자가 `docker` 명령어를 `sudo`없이 실행가능하도록 하기 위해 `docker`그룹에 현재 로그인한 사용자를 추가한다.
 
 ```

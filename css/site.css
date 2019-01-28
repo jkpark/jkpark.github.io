@@ -33,7 +33,7 @@
 body {
   color: #222;
   text-align: center;
-  font-family: proxima-nova, Helvetica, Arial, sans-serif;
+  font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
 }
@@ -100,10 +100,6 @@ a.discreet {
   line-height: 170%;
 }
 
-article {
-  font-size: 18px;
-}
-
 .portfolio-nav {
   text-align: center;
   list-style-type: none;
@@ -155,11 +151,17 @@ article {
   border: none;
 }
 
+.separator {
+  padding-bottom: 0.8em;
+  margin-bottom: 1.4em;
+}
 
-
+/*                       */
 /* Header and navigation */
+/*                       */
+
 header {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
 }
 
@@ -170,18 +172,6 @@ header nav {
 
 .header-container {
   border-bottom: 1px solid #ddd;
-  margin-bottom: 1.5em;
-}
-
-@media(max-width: 400px) {
-  .header-container .contact {
-    display: none;
-  }
-}
-
-.separator {
-  padding-bottom: 0.8em;
-  margin-bottom: 1.4em;
 }
 
 header .logo a, header .logo a:hover {
@@ -198,7 +188,7 @@ header .logo a, header .logo a:hover {
 }
 
 .inner, pre code, .post > * {
-  max-width: 710px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
@@ -210,19 +200,40 @@ pre code {
   white-space: pre;
 }
 
-
-article .inner {
-  padding-top: 1.5em;
-  margin-top: -1em;
-  color: white;
-}
-
 article {
   background-color: #3073b3;
 }
 
-article .post {
+article .title {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  color: white;
+}
+
+article .title h1 {
   margin-top: 1em;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+article .meta {
+  color: #dedede;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+article .meta a {
+  color: #dedede;
+}
+
+.suggest-translate, .suggest-translate a {
+  color: #ddd !important;
+  padding-top: 0.5em !important;
+  font-size: 0.9em;
+}
+
+
+article .post {
   padding-top: 1em;
   background-color: white;
   color: rgba(0, 0, 0, 0.7);
@@ -233,13 +244,10 @@ article .post {
   word-wrap: break-word;
 }
 
-code {
-}
-
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .inner, pre code, .post > * {
-    margin-left: 18px !important;
-    margin-right: 18px !important;
+    margin-left: 25px !important;
+    margin-right: 25px !important;
     width: auto !important;
   }
   .post > .highlighter-rouge {
@@ -301,17 +309,6 @@ nav a.selected:hover {
   margin-left: 12px;
 }
 
-.links {
-  border-top: 1px solid #E6E6E6;
-  margin: 1em 0;
-  list-style-type: none;
-  font-size: 1.4em;
-}
-
-.links li {
-  padding: 0.5em 0;
-}
-
 /* Footer */
 footer {
   font-size: small;
@@ -320,23 +317,6 @@ footer {
   color: #858585;
   text-align: center;
   margin: 2em 0;
-}
-
-footer p {
-  margin: 0;
-}
-
-footer .links {
-  border: none;
-}
-
-footer .links li {
-  display: inline;
-  padding: 0 0.2em;
-}
-
-footer .links a:hover {
-  text-decoration: none;
 }
 
 ul.posts {
@@ -366,43 +346,6 @@ header {
 
 header a {
   text-decoration: none;
-}
-
-header h1.title {
-  display: inline-block;
-  margin-bottom: 2em;
-}
-
-header h1.title a {
-  color: #a00;
-}
-
-header h1.title a:hover {
-  color: #000;
-}
-
-article h1 {
-  margin-bottom: 8px;
-  line-height: 120%;
-  text-align: left;
-}
-
-article .inner.meta {
-  color: #dedede;
-  display: inline-block;
-  font-size: 0.9em;
-  margin-top: 4px;
-  padding: 4px 8px;
-}
-
-article .inner.meta a {
-  color: #dedede;
-}
-
-.suggest-translate, .suggest-translate a {
-  color: #ddd !important;
-  padding-top: 0.5em !important;
-  font-size: 0.9em;
 }
 
 .convinced { margin: 6em 0 4em 0;}
@@ -458,9 +401,6 @@ figure .two-third {
   background-color: rgb(248, 248, 248);
 }
 
-.post code {
-  font-size: 18px;
-}
 
 .post ul, .post ol {
   padding-left: 2.5em;
@@ -566,17 +506,7 @@ img {
   width: 100%;
 }
 
-.book-me {
-  float: right;
-  margin-top: -3px;
-}
-
 @media (max-width: 380px) {
-  .book-me {
-    float: none;
-    text-align: center;
-    margin: 0 0 1em 0;
-  }
   .about-me h1 {
     text-align: center;
   }
@@ -628,7 +558,7 @@ img {
 }
 
 .video-wrapper {
-  max-width: 710px;
+  max-width: 800px;
 }
 .video-wrapper-inner {
   position: relative;
@@ -645,5 +575,5 @@ img {
 }
 
 .uslide-container {
-  max-width: 1000px;
+  max-width: 800px;
 }
