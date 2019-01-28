@@ -3,7 +3,7 @@ layout: post
 title: Resilio를 이용한 동기화
 description: Resilio(구버전 btsync, BitTorrent Sync)를 이용한 안드로이드, 아이폰, 서버, 데스크탑 동기화 작업 내역
 category: blog
-tags: [Resilio, FileSync, Ubuntu16.04]
+tags: [Resilio, FileSync, Ubuntu16.04, Ubuntu]
 ---
 
 스마트폰에서 찍은 사진을 서버에 백업하고

@@ -3,7 +3,7 @@ layout: post
 title: Changing keymap on ubuntu
 description: explain how to switch ESC and CAPSLOCK.
 category: blog
-tags: [Ubuntu16.04, keymap]
+tags: [Ubuntu, Ubuntu16.04, keymap]
 english: true
 ---
 

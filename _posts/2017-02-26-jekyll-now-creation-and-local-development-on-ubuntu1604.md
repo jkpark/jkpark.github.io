@@ -3,7 +3,7 @@ layout: post
 title: Jekyll-now로 블로그 생성 및 Ubuntu 16.04에서 local-development
 description: Jekyll Now로 Github page 블로그 생성 방법 및 우분투16.04에 Jekyll 설치 로그.
 category: blog
-tags: [Jekyll, Ubuntu16.04]
+tags: [Jekyll, Ubuntu16.04, Ubuntu]
 ---
 
 

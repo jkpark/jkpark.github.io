@@ -3,7 +3,7 @@ layout: post
 title: How To Install Nginx, MariaDB10, PHP7(LEMP stack) on Ubuntu16.04
 description:
 category: blog
-tags: [MariaDB, NGINX, PHP, LEMP stack, Ubuntu16.04]
+tags: [MariaDB, NGINX, PHP, LEMP stack, Ubuntu16.04, Ubuntu]
 ---
 [LEMP Stack](https://lemp.io/) 이란
 

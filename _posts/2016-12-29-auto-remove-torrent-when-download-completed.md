@@ -3,7 +3,7 @@ layout: post
 title: 토렌트 다운로드 완료 시 리스트에서 자동삭제
 description: 토렌트 다운로드 완료 시 리스트에서 자동삭제 방법
 category: blog
-tags: [Torrent, Ubuntu16.04]
+tags: [Torrent]
 ---
 
 `transmission-daemon` 은 작업 시 꼭 `service`를 `stop` 한 상태에서 해야 수정작업이 적용이 된다.
