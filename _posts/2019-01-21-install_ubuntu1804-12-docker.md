@@ -67,3 +67,21 @@ sudo usermod -aG docker jkpark
 # systemctl daemon-reload
 # systemctl restart docker
 ```
+
+# Tips
+
+## Tip1 : 정지상태 컨테이너들 전부 삭제
+
+```
+$  docker rm `docker ps -f status=exited -q`
+```
+
+
+## Tip2 : 불안전한 이미지 삭제
+
+독커 이미지를 만드는 도중 실패하면 `<none>` 형태의 이미지가 만들어지는 경우가 종종 발생한다.
+이런 이미지를 삭제한는 명령어는 아래와 같다.
+
+```
+$ docker rmi `docker images -f "dangling=true" -q`
+```
