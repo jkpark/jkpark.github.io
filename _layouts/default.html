@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    {% include analytics.html %}
-    <meta name="google-site-verification" content="H73FzMq39pLvMqBQL_e5f-JlaipO9MkcGC_ce_3xlDA" />
+<head>
+  {% include analytics.html %}
+  <meta name="google-site-verification" content="H73FzMq39pLvMqBQL_e5f-JlaipO9MkcGC_ce_3xlDA" />
 
-    <meta charset="utf-8" />
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+  <meta charset="utf-8" />
+  <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic">
-    <link rel="stylesheet" href="/css/site.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic">
+  <link rel="stylesheet" href="/css/site.css">
 
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-    {% if page.excerpt %}
-    <meta name="description" content="{{ page.excerpt| strip_html }}" />
-    <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
-    {% else %}
-    <meta name="description" content="{{ site.description }}">
-    <meta property="og:description" content="{{ site.description }}" />
+  {% if page.excerpt %}
+  <meta name="description" content="{{ page.excerpt| strip_html }}" />
+  <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
+  {% else %}
+  <meta name="description" content="{{ site.description }}">
+  <meta property="og:description" content="{{ site.description }}" />
+  {% endif %}
+  <meta name="author" content="{{ site.author }}" />
+
+  {% if page.title %}
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="twitter:title" content="{{ page.title }}" />
+  {% endif %}
+
+  {% if page.url == '/index.html' %}
+  <link rel="alternate" hreflang="kr" href="/" />
+  {% elsif page.url == '/en/index.html' %}
+    <link rel="alternate" hreflang="en" href="/en/" />
+  {% endif %}
+
+  {{ page.extra_head }}
+
+  {% if page.category == 'blog' %}
+    {% if page.photo %}
+      <meta property="og:type" content="article">
+      <meta property="og:image" content="images/posts/{{ page.photo }}" />
     {% endif %}
-    <meta name="author" content="{{ site.author }}" />
+  {% endif %}
 
-    {% if page.title %}
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="twitter:title" content="{{ page.title }}" />
-    {% endif %}
+</head>
 
-    {% if page.url == '/index.html' %}
-    <link rel="alternate" hreflang="kr" href="/" />
-    {% elsif page.url == '/en/index.html' %}
-      <link rel="alternate" hreflang="en" href="/en/" />
-    {% endif %}
-
-    {{ page.extra_head }}
-
-    {% if page.category == 'blog' %}
-      {% if page.photo %}
-        <meta property="og:type" content="article">
-        <meta property="og:image" content="images/posts/{{ page.photo }}" />
-      {% endif %}
-    {% endif %}
-
-  </head>
-
-  <body>
+<body>
   <header>
     <div class="inner">
       <nav>
@@ -83,7 +83,5 @@
       Made with <a href="http://jekyllrb.com/">Jekyll</a>, hosted on <a href="https://pages.github.com">Github Pages</a>.</br>
       Template by <a href="https://github.com/jkpark/jkpark.github.io">JK Park</a>, inspired by <a href="https://github.com/ssaunier/ssaunier.github.io">Sébastien Saunier</a>.</p>
   </footer>
-
-
-  </body>
+</body>
 </html>
