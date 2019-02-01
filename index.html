@@ -26,6 +26,34 @@ category: about
 <div  style="border-bottom: 1px solid #ddd"></div>
 <div class="separator"></div>
 
+<div class="inner projects">
+  <p>
+  Here are some of the projects I worked on.
+  </p>
+  {% for project in site.data.projects %}
+  <section>
+    <div class="inline pull-right img-container">
+        <img src="/images/portfolio/{{ project.image }}" alt="{{ project.name }} Screenshot" >
+    </div>
+    <h2><a href="{{ project.url }}">{{ project.name }}</a></h2>
+    <h3>{{ project.oneliner }}</h3>
+    <p>{{ project.description | truncatewords: 30 }} <a href="{{ project.url }}">More</a></p>
+    <p>
+    <strong>My role :</strong> {{ project.role }}
+    </p>
+    <p>
+      <strong>Achievements</strong></br>
+      - {{ project.achievements | join: "</br>- " }}
+    </p>
+  </section>
+    {% unless forloop.last %}
+    <div class="spacer"></div>
+    {% endunless %}
+  {% endfor %}
+</div>
+
+<div class="spacer"></div>
+
 <section class="inner">
   <h1>Recent Posts</h1>
   <ul class="posts">

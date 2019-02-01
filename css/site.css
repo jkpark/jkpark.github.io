@@ -95,6 +95,17 @@ section {
   line-height: 170%;
 }
 
+.projects .img-container {
+  width: 240px;
+  height: 250px;
+}
+.projects img {
+  display: block;
+  margin: auto;
+  width: auto;
+  max-height: 250px;
+}
+
 .portfolio-nav {
   text-align: center;
   list-style-type: none;
