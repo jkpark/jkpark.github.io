@@ -6,7 +6,7 @@ category: ubuntu1804
 english: true
 ---
 
-I've neen using [Vundle](https://github.com/VundleVim/Vundle.Vim) to manage my vim plugins for past years and I also wrote about [Vundle](install-vundle). Vundle is still good but I'm just wondering wihch is good for managing vim plugins in now a days. See [this compared post](https://www.slant.co/topics/1224/versus/~vim-plug_vs_vundle_vs_pathogen). as you can see, many people recommand to use `Vim-plug`, so I aim to install [Vim-plug](https://github.com/junegunn/vim-plug) in my new machine.
+I've been using [Vundle](https://github.com/VundleVim/Vundle.Vim) to manage my vim plugins for past years and I also wrote about [Vundle](install-vundle). Vundle is still good but I'm just wondering which is good for managing vim plugins in now a days. See [this compared post](https://www.slant.co/topics/1224/versus/~vim-plug_vs_vundle_vs_pathogen). as you can see, many people recommand to use `Vim-plug`, so I aim to install [Vim-plug](https://github.com/junegunn/vim-plug) in my new machine.
 
 `Vim-plug` is a free, open source, very fast, minimalist vim plugin manager. 
 
