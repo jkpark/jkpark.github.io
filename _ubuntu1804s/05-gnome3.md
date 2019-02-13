@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 05 - Desktop Environment - Gnome3
+title: 05 - Desktop Environment - Gnome3
 description: Gnome3 설치 및 설정
-category: blog
-tags: [Ubuntu, Ubuntu18.04, gnome3, chrome, nvidia]
+category: ubuntu1804
 ---
 
 # Install Gnome 3 Desktop Environment

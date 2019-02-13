@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 11 - QEMU-KVM
+title: 11 - QEMU-KVM
 description: 
-category: blog
-tags: [Ubuntu, Ubuntu18.04, kvm]
+category: ubuntu1804
 english: false
 ---
 

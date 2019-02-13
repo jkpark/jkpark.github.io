@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 04 - samba
+title: 04 - samba
 description:
-category: blog
-tags: [Ubuntu, Ubuntu18.04, samba]
+category: ubuntu1804
 ---
 
 # Install Samba
@@ -84,7 +83,7 @@ $ sudo netfilter-persistent reload
 
 # restore each files
 
-[btrfs 스냅샷 설정](install_ubuntu1804-02-btrfs#automatically-snapshot-creation) 에서 주기적으로 스냅샷이 적용되고 있기 때문에 파일의 `속성 - 이전 버전` 을 누르면 아래 그림과 같이 스냆샷 목록이 나온다.
+[btrfs 스냅샷 설정](02-btrfs#automatically-snapshot-creation) 에서 주기적으로 스냅샷이 적용되고 있기 때문에 파일의 `속성 - 이전 버전` 을 누르면 아래 그림과 같이 스냆샷 목록이 나온다.
 
 ![](/images/posts/install-ubuntu1804/samba01.png)
 

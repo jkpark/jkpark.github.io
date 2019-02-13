@@ -27,6 +27,12 @@ url: http://jkpark.github.io
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
+#
+collections:
+  ubuntu1804s:
+    output: true
+    permalink: ubuntu1804/:title
+
 # paginate for posts
 paginate: 8
 paginate_path: /blog/:num/

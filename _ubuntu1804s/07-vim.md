@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 07 - VIM
+title: 07 - VIM
 description: Vim and plugin management
-category: blog
-tags: [Ubuntu, Ubuntu18.04, Vim, vim-plug]
+category: ubuntu1804
 english: true
 ---
 

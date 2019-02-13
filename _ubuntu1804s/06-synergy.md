@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 06 - Synergy
+title: 06 - Synergy
 description: Linux <-> Windows 간 마우스 및 키보드 공유 소프트웨어
-category: blog
-tags: [Ubuntu, Ubuntu18.04, Synergy]
+category: ubuntu1804
 ---
 
 [Synergy](https://symless.com/synergy)는 마우스와 키보드를 공유해주는 소프트웨어이다. `Syngery`를 사용하여 윈도우PC에 연결되어 있는 마우스와 키보드를 우분투18.04에서도 사용하도록 만들 것이다.

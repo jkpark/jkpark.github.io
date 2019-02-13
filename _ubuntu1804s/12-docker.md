@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 12 - Docker
+title: 12 - Docker
 description: Docker란 OS Level의 가상화를 하는 툴이다. 다른 말로 컨테이너화(Containerzation)이라고도 한다. 어플리케이션과 어플리케이션을 구동하는데 필요한 툴, 라이브러리, 설정 등을 하나의 컨테이너로 구축할 수 있고 각 컨테이너는 독립적으로 실행되어 개별 시스템을 사용할 때와 동일한 환경으로 운용되어 보안도 강화된다.
-category: blog
-tags: [Ubuntu, Ubuntu18.04, docker, jekyll]
+category: ubuntu1804
 english: false
 ---
 

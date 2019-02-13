@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 02 - btrfs
+title: 02 - btrfs
 description: 파일 백업 및 복원을 위한 btrfs 파티션 설정방법
-category: blog
-tags: [Ubuntu, Ubuntu18.04, btrfs]
+category: ubuntu1804
 ---
 
 # workspace 용 1TB HDD를 btrfs로 관리
@@ -237,7 +236,7 @@ $ sudo mount -o subvol=@cactus_ws1 /dev/sdb1 /cactus_ws1
 #### 윈도우OS에서 복원
 
 `samba`로 윈도우OS에서 접근가능하도록 설정 한 후 파일을 복원시킬 수 있다.
-자세한 내용은 [restore each files from SMB](install_ubuntu1804-04-samba#restore-each-files) 에서 다룬다.
+자세한 내용은 [restore each files from SMB](04-samba#restore-each-files) 에서 다룬다.
 
 
 ## 스냅샷 삭제
@@ -250,4 +249,4 @@ $ sudo btrfs subvolume delete /btrfsmnt/@cactus_ws1_last
 
 ## 사용자별로 workspace 나누기
 
-[Make Own Workspace](install_ubuntu1804-03-user-privacy#make-own-workspace)을 참고하여 사용자가 추가될 때 자동으로 workspace가 생기도록 만들어준다.
+[Make Own Workspace](03-user-privacy#make-own-workspace)을 참고하여 사용자가 추가될 때 자동으로 workspace가 생기도록 만들어준다.

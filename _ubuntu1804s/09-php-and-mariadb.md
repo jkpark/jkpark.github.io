@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 09 - PHP and MariaDB
+title: 09 - PHP and MariaDB
 description: 
-category: blog
-tags: [Ubuntu, Ubuntu18.04, PHP, MariaDB]
+category: ubuntu1804
 english: false
 ---
 
@@ -13,7 +12,7 @@ english: false
 
 [2018년 11월에 드디어 nginx가 apache의 마켓 점유율을 재쳤다.](https://news.netcraft.com/archives/2018/12/17/december-2018-web-server-survey.html#more-26943)
 
-이 포스트에서는 php, mariadb 설치에 대해 다룬다. nginx 설치에 대해서는 [지난 포스트](install_ubuntu1804-08-nginx)에서 다뤘다.
+이 포스트에서는 php, mariadb 설치에 대해 다룬다. nginx 설치에 대해서는 [지난 포스트](08-nginx)에서 다뤘다.
 
 # PHP Installation
 

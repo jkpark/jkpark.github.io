@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 08 - nginx
+title: 08 - nginx
 description: 
-category: blog
-tags: [Ubuntu, Ubuntu18.04, NGINX]
+category: ubuntu1804
 english: false
 ---
 
@@ -13,7 +12,7 @@ english: false
 
 [2018년 11월에 드디어 nginx가 apache의 마켓 점유율을 재쳤다.](https://news.netcraft.com/archives/2018/12/17/december-2018-web-server-survey.html#more-26943)
 
-이 포스트에서는 nginx 설치에 대해 다룬다. php와 mariadb는 [다음 포스트](install_ubuntu1804-09-php-and-mariadb)를 참고하기 바란다.
+이 포스트에서는 nginx 설치에 대해 다룬다. php와 mariadb는 [다음 포스트](09-php-and-mariadb)를 참고하기 바란다.
 
 # Nginx Installation
 

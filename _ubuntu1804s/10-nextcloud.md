@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 10 - NextCloud
+title: 10 - NextCloud
 description: self-hosted cloud storage
-category: blog
-tags: [Ubuntu, Ubuntu18.04, nextcloud, PHP, NGINX, MariaDB]
+category: ubuntu1804
 english: false
 ---
 
@@ -13,7 +12,7 @@ english: false
 
 # Overview
 
-NextCloud를 설치는 nginx, php, mariadb 를 기반으로 할 것이다. [nginx설치](install_ubuntu1804-08-nginx)와 [php and mariddb 설치](install_ubuntu1804-09-php-and-mariadb)를 마쳤다는 전제 조건에서 진행한다.
+NextCloud를 설치는 nginx, php, mariadb 를 기반으로 할 것이다. [nginx설치](08-nginx)와 [php and mariddb 설치](09-php-and-mariadb)를 마쳤다는 전제 조건에서 진행한다.
 
 
 # Prerequisites

@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 03 - General Setting
+title: 03 - General Setting
 description: 우분투 18.04 LTS 기본 설정
-category: blog
-tags: [Ubuntu, Ubuntu18.04, privacy, iptables]
+category: ubuntu1804
 ---
 
 # 1. Firewall - iptables
@@ -119,7 +118,7 @@ $ sudo iptables -S
 
 `adduser`를 통해 사용자가 추가될 때 사용자별로 workspace를 생성하도록 한다.
 
-생성되는 workspace는 스냅샷기능으로 관리되는 디렉토리이기 때문에 백업 및 복원이 가능하다. 백업 및 복원이 가능한 디렉토리를 `/cactus_ws1`이며 [btrfs 설치방법](install_ubuntu1804-02-btrfs)을 통해 다뤘다. `/cactus_ws1`에 사용자별로, 예를 들어 사용자명이 `jkpark`일 경우 `/cactus_ws1/jkpark` 을 생성하고 이 디렉토리를 `/home/jkpark/workspace`으로 링크시킬 것이다.
+생성되는 workspace는 스냅샷기능으로 관리되는 디렉토리이기 때문에 백업 및 복원이 가능하다. 백업 및 복원이 가능한 디렉토리를 `/cactus_ws1`이며 [btrfs 설치방법](02-btrfs)을 통해 다뤘다. `/cactus_ws1`에 사용자별로, 예를 들어 사용자명이 `jkpark`일 경우 `/cactus_ws1/jkpark` 을 생성하고 이 디렉토리를 `/home/jkpark/workspace`으로 링크시킬 것이다.
 
 `/usr/local/sbin/adduser.local` 이라는 파일을 만들고 아래 내용을 입력한다.
 

@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Ubuntu18.04 - 01 - Install Ubuntu Server 18.04 LTS
+title: 01 - Install Ubuntu Server 18.04 LTS
 description: Installation Guide for Ubuntu 18.04 Server LTS.
-category: blog
-tags: [Ubuntu, Ubuntu18.04]
+category: ubuntu1804
 ---
 
 # Install Ubuntu Server 18.04 LTS
@@ -37,11 +36,11 @@ http://cdimage.ubuntu.com/releases/18.04/release/ 에서 `ubuntu-18.04.1-server-
 ![](/images/posts/install-ubuntu1804/07.png)
 
 키보드 레이아웃은 `gnome3`를 설치할 때 수동으로 설치할 것이다.
-[언어 및 키보드 레이아웃 설정](install_ubuntu1804-05-gnome3#language-and-keyboard-layout)
+[언어 및 키보드 레이아웃 설정](05-gnome3#language-and-keyboard-layout)
 
 ![](/images/posts/install-ubuntu1804/18.png)
 우분투가 설치 될 SSD를 `/`에 `ext4`로 포맷시킨다.
-HDD 포맷은 우분투 설치 후 [btrfs 설치방법](install_ubuntu1804-02-btrfs)를 통해 진행할 것이다.
+HDD 포맷은 우분투 설치 후 [btrfs 설치방법](02-btrfs)를 통해 진행할 것이다.
 지금은 하지 않으므로 그냥 놔둔다.
 
 ![](/images/posts/install-ubuntu1804/27.png)
