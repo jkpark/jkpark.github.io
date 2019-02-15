@@ -1,45 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="{% if page.language %}{{ page.language }}{% else %}ko{% endif %}">
 <head>
-  {% include analytics.html %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="H73FzMq39pLvMqBQL_e5f-JlaipO9MkcGC_ce_3xlDA" />
 
-  <meta charset="utf-8" />
-  <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-
-  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
-
-  <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  {% include analytics.html %}
 
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic">
+  <link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/site.css">
 
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-
-  {% if page.excerpt %}
-  <meta name="description" content="{{ page.excerpt| strip_html }}" />
-  <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
-  {% else %}
-  <meta name="description" content="{{ site.description }}">
-  <meta property="og:description" content="{{ site.description }}" />
-  {% endif %}
+  
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
   <meta name="author" content="{{ site.author }}" />
-
-  {% if page.title %}
-  <meta property="og:title" content="{{ page.title }}" />
-  <meta property="twitter:title" content="{{ page.title }}" />
-  {% endif %}
-
-  {% if page.url == '/index.html' %}
-  <link rel="alternate" hreflang="kr" href="/" />
-  {% elsif page.url == '/en/index.html' %}
-    <link rel="alternate" hreflang="en" href="/en/" />
-  {% endif %}
+  {% if page.description %}<meta name="description" content="{{page.description}}" />{% endif %}
 
   {{ page.extra_head }}
 
@@ -49,7 +25,6 @@
       <meta property="og:image" content="images/posts/{{ page.photo }}" />
     {% endif %}
   {% endif %}
-
 </head>
 
 <body>

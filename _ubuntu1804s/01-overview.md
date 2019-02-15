@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 00 - 개요
-description: 
+title: 1장. 개요
+description: 1
 category: ubuntu1804
 ---
 

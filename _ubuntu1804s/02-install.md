@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 01 - Ubuntu Server 18.04 LTS 설치
+title: 2장. Ubuntu Server 18.04 LTS 설치
 description: 우분투 서버 18.04 LTS 설치 과정
 category: ubuntu1804
 ---
