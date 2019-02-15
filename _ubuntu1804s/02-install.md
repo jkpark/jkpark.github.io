@@ -1,18 +1,18 @@
 ---
 layout: post
 title: 2장. Ubuntu Server 18.04 LTS 설치
-description: 우분투 서버 18.04 LTS 설치 과정
 category: ubuntu1804
 ---
 
 
-# Download Install Image
-
-설치 이미지는 https://www.ubuntu.com/download/server 에서 다운로드할 수 있다.
+# 설치 이미지 다운로드
 
 
+[Ubuntu Server 18.04.2 LTS 다운로드](http://releases.ubuntu.com/bionic/ubuntu-18.04.2-live-server-amd64.iso) 
+혹은 http://releases.ubuntu.com/bionic/ 에서 다운로드할 수 있다. Ubuntu 18.04 부터 새로운 인스톨러인 Subiquity
 
-# Burn bootable ISO
+
+# USB에 설치 이미지 굽기
 
 [참고](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#0)
 
