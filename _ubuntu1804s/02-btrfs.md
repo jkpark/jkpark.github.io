@@ -249,4 +249,4 @@ $ sudo btrfs subvolume delete /btrfsmnt/@cactus_ws1_last
 
 ## 사용자별로 workspace 나누기
 
-[Make Own Workspace](03-user-privacy#make-own-workspace)을 참고하여 사용자가 추가될 때 자동으로 workspace가 생기도록 만들어준다.
+[Make Own Workspace](03-general-setting#make-own-workspace)을 참고하여 사용자가 추가될 때 자동으로 workspace가 생기도록 만들어준다.

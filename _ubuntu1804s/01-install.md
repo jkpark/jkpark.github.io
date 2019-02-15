@@ -1,26 +1,23 @@
 ---
 layout: post
-title: 01 - Install Ubuntu Server 18.04 LTS
-description: Installation Guide for Ubuntu 18.04 Server LTS.
+title: 01 - Ubuntu Server 18.04 LTS 설치
+description: 우분투 서버 18.04 LTS 설치 과정
 category: ubuntu1804
 ---
 
-# Install Ubuntu Server 18.04 LTS
 
-## Choose Install ISO
-설치 이미지는 2 종류가 있는데, Subiquity 인스톨러가 탑재된 이미지와 기존의 데비안 인스톨러가 탑재된 이미지이다.
-Subiquity 인스톨러 버전은 새로운 우분투 서버 인스톨러이다.
-일단 RAID 기능을 지원하지 않고 아직 불안정해보여서 기존처럼 데비안 인스톨러를 다운 받는다.
-http://cdimage.ubuntu.com/releases/18.04/release/ 에서 `ubuntu-18.04.1-server-amd64.iso` 선택한다.
+# Download Install Image
 
-*Subiquity 인스톨러 버전은 https://www.ubuntu.com/download/server 에서 받으면 된다.
+설치 이미지는 https://www.ubuntu.com/download/server 에서 다운로드할 수 있다.
 
-## Burn bootable ISO
+
+
+# Burn bootable ISO
 
 [참고](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#0)
 
 
-## 설치 과정
+# 설치 과정
 
 스크린샷을 찍기 위해 가상머신에 설치를 진행하였다.
 디스크는 우분투가 설치될 SSD과 workspace로 사용할 HDD가 있다. 우분투 설치용 SSD는 `ext4`로 포맷하고 workspace용 HDD는 `btrfs`로 포맷할 것이다.
