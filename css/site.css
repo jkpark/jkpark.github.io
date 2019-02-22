@@ -557,6 +557,17 @@ img.inline.pull-right {
 img {
   max-width: 100%;
 }
+
+img.small {
+  max-width: 50%;
+}
+
+img + em {
+  display: block;
+  font-size: 0.8em;
+  padding-bottom: 1em;
+}
+
 .english-post {
   font-size: 1em;
   height: 18px;

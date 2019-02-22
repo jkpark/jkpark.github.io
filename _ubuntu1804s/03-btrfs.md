@@ -1,7 +1,6 @@
 ---
 layout: post
-title: 02 - btrfs
-description: 파일 백업 및 복원을 위한 btrfs 파티션 설정방법
+title: 3장. 데이터 백업 및 복원이 가능한 btrfs
 category: ubuntu1804
 ---
 

@@ -193,3 +193,25 @@ jkpark@cactus:~/Downloads$ timedatectl
 systemd-timesyncd.service active: yes
                  RTC in local TZ: no
 ```
+
+
+
+# 4. 인증서 등록
+
+프록시 서버에 대한 인증서를 등록이 필요한 경우 인증서를 등록해준다.
+
+먼저 인증서 파일을 가져와야 한다. USB나 여러 방법을 통해 인증서를 `/usr/local/share/ca-certificates/extra` 디렉토리에 복사한다.
+
+```
+$ sudo mkdir /usr/local/share/ca-certificates/extra
+$ sudo mv samsung.crt /usr/share/ca-certificates/samsung/
+$ sudo dpkg-reconfigure ca-certificates
+Updating certificates in /etc/ssl/certs...
+1 added, 0 removed; done.
+Processing triggers for ca-certificates (20180409) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+```
+
