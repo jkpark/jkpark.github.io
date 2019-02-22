@@ -1,7 +1,6 @@
 ---
 layout: post
-title: 05 - Desktop Environment - Gnome3
-description: Gnome3 설치 및 설정
+title: 6장. 그래픽 모드 설치 - Gnome3
 category: ubuntu1804
 ---
 

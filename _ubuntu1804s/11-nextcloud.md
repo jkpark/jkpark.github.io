@@ -1,7 +1,6 @@
 ---
 layout: post
-title: 10 - NextCloud
-description: self-hosted cloud storage
+title: 11장. 클라우드 저장소 - NextCloud
 category: ubuntu1804
 english: false
 ---

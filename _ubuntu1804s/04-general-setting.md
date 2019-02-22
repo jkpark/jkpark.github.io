@@ -1,7 +1,6 @@
 ---
 layout: post
-title: 03 - General Setting
-description: 우분투 18.04 LTS 기본 설정
+title: 4장. 기본 설정
 category: ubuntu1804
 ---
 

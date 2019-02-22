@@ -1,7 +1,6 @@
 ---
 layout: post
-title: 07 - VIM
-description: Vim and plugin management
+title: 8장. 파일 편집기 - VIM
 category: ubuntu1804
 english: true
 ---

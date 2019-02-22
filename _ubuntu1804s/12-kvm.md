@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 11 - QEMU-KVM
+title: 12장. 가상머신 - QEMU-KVM
 description: 
 category: ubuntu1804
 english: false

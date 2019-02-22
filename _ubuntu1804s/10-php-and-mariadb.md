@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 09 - PHP and MariaDB
+title: 10장. PHP and MariaDB
 description: 
 category: ubuntu1804
 english: false

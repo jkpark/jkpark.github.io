@@ -1,7 +1,6 @@
 ---
 layout: post
-title: 06 - Synergy
-description: Linux <-> Windows 간 마우스 및 키보드 공유 소프트웨어
+title: 7장. 키보드 및 마우스 공유 - Synergy
 category: ubuntu1804
 ---
 

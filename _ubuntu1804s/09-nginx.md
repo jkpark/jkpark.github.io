@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 08 - nginx
+title: 9장. 웹 서버 - nginx
 description: 
 category: ubuntu1804
 english: false

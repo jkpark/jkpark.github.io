@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 04 - samba
+title: 5장. 파일 공유 - samba 
 description:
 category: ubuntu1804
 ---
