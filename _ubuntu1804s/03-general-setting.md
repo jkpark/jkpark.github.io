@@ -259,6 +259,36 @@ Get:3 http://mirror.kakao.com/ubuntu bionic-backports InRelease [74.6 kB])
 
 ```
 
+# timezone 설정
+
+우분투 설치 시 인터넷 연결이 되어있지 않았다면 타임존을 수동으로 설정하였을 것이다. 자동으로 타임존이 잡혔다면 이 단계는 넘어가도 된다.
+
+`timedatectl` 명령어를 통해 현재 타임존을 출력한다.
+
+```
+$ timedatectl 
+                      Local time: Tue 2019-02-22 03:25:40 EST
+                  Universal time: Tue 2019-02-22 08:25:40 UTC
+                        RTC time: Tue 2019-02-22 08:25:41
+                       Time zone: US/Eastern (EST, -0500)
+       System clock synchronized: yes
+systemd-timesyncd.service active: yes
+                 RTC in local TZ: no
+```
+
+타임존을 서울로 변경하기 위해 타임존 리스트를 본다.
+
+```
+$ timedatectl list-timezones | grep Seoul
+Asia/Seoul
+```
+
+타임존을 서울로 변경한다.
+
+```
+$ sudo timedatectl set-timezone Asia/Seoul
+```
+
 # OpenSSH 설치
 
 원격으로 시스템에 접속하기 위해 SSH를 설치한다. 
