@@ -319,7 +319,7 @@ $ sudo mkdir workspace private pictures music videos public cloud
 
 # 스냅샷 생성
 
-스냅샷은 아래 명령어로 `btrfs subvolume snapshot` 명령어로 생성한다.
+`btrfs subvolume snapshot` 명령어로 스냅샷을 생성한다.
 
 ```
 $ sudo btrfs subvolume snapshot /mnt/hdd1_btrfs/@workspace /mnt/hdd1_btrfs/snapshots/workspace/@workspace_`date +%Y.%m.%d_%H.%M.%S`
@@ -348,7 +348,7 @@ ID 272 gen 38 top level 5 path snapshots/workspace/@workspace_2019.02.26_00.27.4
 스냅샷을 생성하는 스크립트를 작성한다.
 
 ```
-$ vi /usr/local/etc/btrfs-snapshot.sh
+$ sudo vi /usr/local/etc/btrfs-snapshot.sh
 ```
 
 아래 내용을 입력한다.
@@ -364,11 +364,10 @@ btrfs subvolume snapshot /mnt/hdd1_btrfs/@$1 /mnt/hdd1_btrfs/snapshots/$1/@$1_`d
 
 `:wq` 을 입력하고 저장 후 편집을 종료한다.
 
-실행권한을 추가하고 소유자를 root로 변경한다.
+실행권한을 추가한다.
 
 ```
-$ chmod +x /usr/local/etc/btrfs-snapshot.sh
-$ sudo chown root: /usr/local/etc/btrfs-snapshot.sh
+$ sudo chmod +x /usr/local/etc/btrfs-snapshot.sh
 ```
 
 `btrfs-snapshot.sh`에 스냅샷을 생성하고자하는 서브볼륨을 입력하면 스냅샷이 생성된다.
@@ -400,12 +399,12 @@ Create a snapshot of '/mnt/hdd1_btrfs/@workspace' in '/mnt/hdd1_btrfs/snapshots/
 $ sudo vi /etc/crontab
 ```
 
-파일의 제일 끝에 아래 내용을 추가하고 `:wq`로 저장 후 종료한다.
+파일의 끝에 아래 내용을 추가하고 `:wq`로 저장 후 종료한다.
 
 ```
 # 2019-02-26 | jkpark | added below 5 lines 
 05 6    * * mon,fri,sat,sun   root    /usr/local/etc/btrfs-snapshot.sh cloud
-06 6    * * *   root /usr/local/etc/btrfs-snapshot.sh workspace
+06 6    * * *   root    /usr/local/etc/btrfs-snapshot.sh workspace
 07 6    * * *   root    /usr/local/etc/btrfs-snapshot.sh private
 08 6    * * *   root    /usr/local/etc/btrfs-snapshot.sh pictures 
 09 6    * * *   root    /usr/local/etc/btrfs-snapshot.sh public 
@@ -444,11 +443,9 @@ $ sudo mount -o subvol=@workspace /dev/vdb1 /home/jkpark/workspace
 
 ## 개별 파일 복원
 
-리눅스에서 파일 삭제는 해당 파일의 메타 정보를 지우는 것 뿐이다. 그렇기 때문에 파일에 대한 메타 정보를 알고 있다면 언제든지 복원이 가능하다. 스냅샷에는 스냅샷이 생성되는 시점의 모든 파일이 포함되어 있는데 파일이 복사된 것이 아닌 파일의 메타 정보를 가지고 있는 것이다. 스냅샷에 파일에 대한 메타 정보가 있다면 서브볼륨에서 파일을 제거하여도 복원이 가능하다. 또한 전체 서브볼륨의 복원이 가능한 것이 이런 이유 때문이다.
+파일 복원은 원하는 시점의 스냅샷에서 파일을 복사해오면 된다.
 
-파일 복원은 복원을 원하는 시점의 스냅샷에서 파일을 복사해오면 된다.
-
-만약 workspace의 스냅샷 `@workspace_2019.02.26_18.02.53`에서 `helloworld` 파일을 복원할 경우
+`@workspace`의 스냅샷 `@workspace_2019.02.26_18.02.53`에서 `helloworld` 파일을 복원할 경우
 
 ```
 $ cp /mnt/hdd1_btrfs/snapshots/workspace/@workspace_2019.02.26_18.02.53/helloworld /home/jkpark/workspace/helloworld
