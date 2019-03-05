@@ -317,16 +317,14 @@ Feb 24 23:58:33 cactus sshd[1067]: Server listening on :: port 22.
 Feb 24 23:58:33 cactus systemd[1]: Started OpenBSD Secure Shell server.
 ```
 
-외부에서 홈 서버로 접속이 가능하다면 누군가 무차별 공격을 시도할 수 있다. 그러므로 기본포트를 사용하지 않고 다른 임의의 숫자의 포트로 설정하기도 한다. 나는 포트를 `8822`로 변경하고 접속가능한 사용자도 설정하였다.
-
-`/etc/ssh/sshd_config` 파일을 연다.
+외부에서 홈 서버로 접속이 가능하다면 누군가 무차별 공격을 시도할 수 있다. 그러므로 기본포트를 사용하지 않고 다른 임의의 숫자의 포트로 설정하기도 한다. 포트 변경 같은 설정은 `/etc/ssh/sshd_config` 파일에서 할 수 있다.
 
 ```
 $ sudo vi /etc/ssh/sshd_config
 ```
 
-`Port` 옵션의 주석을 해제하고 `8822`로 설정한다.
-바로 아래 `AllowUsers` 항목을 추가하고 접속허용할 사용자명을 적는다.
+`Port` 옵션의 주석을 해제하고 원하는 포트로 설정한다. 나는 기본 포트를 사용할 것이므로 설정하지 않았다.
+바로 아래 `AllowUsers` 항목을 추가하고 접속허용할 사용자명을 지정할 수도 있다.
 
 ```
 #       $OpenBSD: sshd_config,v 1.101 2017/03/14 07:19:07 djm Exp $
@@ -341,7 +339,7 @@ $ sudo vi /etc/ssh/sshd_config
 # possible, but leave them commented.  Uncommented options override the
 # default value.
 
-Port 8822
+Port 22
 AllowUsers jkpark
 ```
 

@@ -153,7 +153,7 @@ Yes를 눌러 파티션 설정을 저장한다.
 파티션 설정이 끝나면 우분투 서버 설치가 진행된다. 진행되는 도중에도 몇가지 설정을 묻는다.
 
 ![proxy](/images/ubuntu1804/32.png)
-[프록시](https://en.wikipedia.org/wiki/Proxy_server) 설정 창이다. 프록시 서버를 사용 중이라면 프록시 주소를 입력한다. 일반 가정의 경우 프록시는 없을 것이다.
+[프록시](https://en.wikipedia.org/wiki/Proxy_server) 설정 창이다. 프록시 서버를 사용 중이라면 프록시 주소를 입력한다. 일반적인 경우 쓰이지 않는다.
 
 ![configuring tasksel](/images/ubuntu1804/33.png)
 주기적으로 아카이브를 통해 업데이트 받을 수 있다. 설치 후 언제든지 설정가능하므로 원하는 것을 고른다. 나는 수동 업데이트를 원하므로 `No automatic updates`를 선택하였다.

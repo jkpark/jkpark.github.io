@@ -1,8 +1,13 @@
 ---
 layout: post
-title: 6장. 그래픽 모드 설치 - Gnome3
+title: 6장. 그래픽 유저 인터페이스 - Gnome3
 category: ubuntu1804
 ---
+
+# Overview
+
+인터페이스란 의사소통의 창구이다. 시스템과 사람 사이의 인터페이스는 GUI(Graphic User Interface)와 CLI(Command Line Interface)를 주로 사용한다. GUI는 그래픽적인 요소(마우스, 터치 키보드 입력 등)을 기반으로 소통하고 CLI는 키보드로 명령어를 입력하여 소통한다. 서버의 경우 굳이 리소스를 낭비할 필요가 없기 때문에 대부분 CLI를 이용한다. 하지만 나는 홈 서버를 서브PC용도로도 사용할 것이기 때문에 GUI를 설치할 것이다.
+
 
 # Install Gnome 3 Desktop Environment
 
