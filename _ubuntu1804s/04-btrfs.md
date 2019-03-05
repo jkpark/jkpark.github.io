@@ -451,7 +451,7 @@ $ sudo mount -o subvol=@workspace /dev/vdb1 /home/jkpark/workspace
 $ cp /mnt/hdd1_btrfs/snapshots/workspace/@workspace_2019.02.26_18.02.53/helloworld /home/jkpark/workspace/helloworld
 ```
 
-*윈도우PC에서의 파일 복원은 **5장. 파일 공유 - Samba** 에서 다룰 것이다.*
+*윈도우PC에서의 파일 복원은 **6장. 파일 공유 - Samba** 에서 다룰 것이다.*
 
 
 ## 스냅샷 삭제
