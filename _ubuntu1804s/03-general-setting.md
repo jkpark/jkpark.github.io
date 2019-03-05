@@ -435,11 +435,6 @@ localhost 허용
 $ sudo iptables -A INPUT -i lo -j ACCEPT
 ```
 
-SSH가 사용하는 TCP 8822번 포트 허용 (SSH의 기본 포트는 22번이다. SSH 설정에서 8822번 포트로 바꿔주었기 때문에 8822포트에 대해 설정한다.)
-```
-$ sudo iptables -A INPUT -p tcp -m tcp --dport 8822 -j ACCEPT
-```
-
 기본 규칙으로 `INPUT`과 `FORWARD`는 차단시킨다.
 ```
 $ sudo iptables -P INPUT DROP
@@ -465,8 +460,14 @@ $ sudo iptables -S
 -P FORWARD DROP
 -P OUTPUT ACCEPT
 -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
--A INPUT -p tcp -m tcp --dport 8822 -j ACCEPT
 -A INPUT -i lo -j ACCEPT
+```
+
+## SSH 접속에 대한 방화벽 설정
+
+SSH가 사용하는 TCP 8822번 포트 허용 (SSH의 기본 포트는 22번이다. SSH 설정에서 8822번 포트로 바꿔주었기 때문에 8822포트에 대해 설정한다.)
+```
+$ sudo iptables -A INPUT -p tcp -m tcp --dport 8822 -j ACCEPT
 ```
 
 ### 규칙 삭제 방법
@@ -477,7 +478,7 @@ $ sudo iptables -D INPUT -p tcp -m tcp --dport 8822 -j ACCEPT
 ```
 
 ### SSH 특정 IP대역만 접속 허용
-SSH 접속을 특정 IP주소만 접속가능하도록 설정하고 싶다면 `-s IP주소` 옵션을 추가 입력한다. `192.168.122.1` 같이 특정 IP을 입력하거나 `192.168.122.0/24` 같이 네트워크 대역을 입력할 수도 있다.
+ `-s IP주소` 옵션으로 특정 IP주소만 접속가능 하도록 설정하여 보안수준을 높인다. `192.168.122.1` 같이 특정 IP을 입력하거나 `192.168.122.0/24` 같이 네트워크 대역을 입력할 수도 있다.
 
 ```
 $ sudo iptables -A INPUT -p tcp -m tcp --dport 8822 -s 192.168.122.0/24 -j ACCEPT

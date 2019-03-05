@@ -19,8 +19,9 @@ SMB를 통해 공유할 디렉토리이다. 각 디렉토리 별로 용도에 �
 |/mnt/hdd1_btrfs/@music|음악|jkpark|
 |/mnt/hdd1_btrfs/@videos|동영상|jkpark|
 |/mnt/hdd1_btrfs/@private|개인적인 데이터|jkpark|
-|/mnt/hdd1_btrfs/@public|공개 데이터|jkpark|
+|/mnt/hdd1_btrfs/@public|공개 데이터|root|
 
+`@public`의 경우 사용자명의 서브 디렉토리를 만들 것이다(예를 들어 /mnt/hdd1_btrfs/@public/jkpark).
 
 # Samba 설치
 
