@@ -7,7 +7,7 @@ category: ubuntu1804
 
 # 인터넷 연결 설정
 
-우분투 서버가 설치되었다면 가장 먼저 IP 설정을 해주어야 한다. 대부분의 경우 IP주소는 공유기의 DHCP 기능을 통해 동적으로 할당되고 언제든지 바뀔 가능성이 있기 때문에 IP주소가 바뀌지 않도록 설정하도록 한다.
+우분투 서버가 설치되었다면 가장 먼저 IP 설정을 해주어야 한다. 나는 공유기르 사용 중이다. 대부분의 경우 IP주소는 공유기의 DHCP 기능을 통해 동적으로 할당되고 언제든지 바뀔 가능성이 있기 때문에 IP주소가 바뀌지 않도록 설정하도록 한다.
 
 시스템에 인터넷 선이 잘 연결되어있는지 확인 후 아래 명령어를 입력하여 내 네트워크의 상태를 확인한다.
 
@@ -57,12 +57,6 @@ network:
 
 `ens3` 네트워크 인터페이스를 고정 IP으로 설정하기 위해 자신의 환경에 맞게 내용을 입력한다.
 
-가산머신에는 아래와 같이 설정할 것이다.
-
-- IP주소 : 192.168.122.3
-- Gateway : 192.168.122.1
-- DNS 서버 : 192.168.122.1
-
 결과는 아래와 같아야 한다. 공백(들여쓰기) 또한 정확하게 입력해야 한다.
 ```
 # This file describes the network interfaces available on your system
@@ -79,7 +73,7 @@ network:
         addresses: [192.168.122.1]
 ```
 
-파일 수정을 마쳤다면 `:wq`를 입력하여 저장 후 편집을 종료한다. `:`은 명령어모드이고 `w`는 저장, `q`는 종료를 의미한다.
+파일 수정을 마쳤다면 `:wq`를 입력하여 저장 후 편집을 종료한다. `:`은 vi에서 명령어모드이고 `w`는 저장, `q`는 종료를 의미한다.
 
 아래 명령어를 통해 수정사항을 적용한다.
 ```
@@ -184,8 +178,10 @@ $ sudo apt-get upgrade
 
 # 미국 미러 아카이브를 카카오 미러 아카이브로 변경
 
-`/etc/apt/sources.list` 파일과 `/etc/apt/sources.list.d` 디렉토리 안에 있는 파일에 아카이브 주소들이 적혀있다. 패키지 관리는 
-먼저 `/etc/apt/sources.list` 파일 내용을 출력하여 Source 리스트를 확인한다.
+`/etc/apt/sources.list` 파일과 `/etc/apt/sources.list.d` 디렉토리 안에 있는 파일에 아카이브 주소들을 통해 패키지 인덱스를 동기화하고 다운로드한다.
+
+`/etc/apt/sources.list` 파일 내용을 출력하여 Source 리스트를 확인한다.
+
 ```
 $ cat /etc/apt/sources.list
 # 
@@ -210,7 +206,7 @@ deb http://us.archive.ubuntu.com/ubuntu/ bionic main restricted
 $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.ori
 ```
 
-`sed` 명령어를 통해 `us.archive.ubuntu.com` 를 `mirror.kakao.com`로 바꿔준다.
+`sed` 명령어를 통해 `us.archive.ubuntu.com` 를 `mirror.kakao.com`로 치환한다.
 
 ```
 $ sudo sed -i -e 's/us.archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
@@ -248,7 +244,7 @@ deb http://mirror.kakao.com/ubuntu/ bionic-updates universe
 ```
 
 
-`apt-get update` 시 http://mirror.kakao.com/ubuntu을 통해 업데이트 되는 것을 볼 수 있다.
+`apt-get update` 시 http://mirror.kakao.com/ubuntu 을 통해 업데이트 되는 것을 볼 수 있다.
 ```
 $ sudo apt-get update]($ sudo apt-get update
 Get:1 http://mirror.kakao.com/ubuntu bionic InRelease [242 kB]
@@ -323,8 +319,7 @@ Feb 24 23:58:33 cactus systemd[1]: Started OpenBSD Secure Shell server.
 $ sudo vi /etc/ssh/sshd_config
 ```
 
-`Port` 옵션의 주석을 해제하고 원하는 포트로 설정한다. 나는 기본 포트를 사용할 것이므로 설정하지 않았다.
-바로 아래 `AllowUsers` 항목을 추가하고 접속허용할 사용자명을 지정할 수도 있다.
+`Port` 옵션의 주석을 해제하고 원하는 포트로 설정한다. 나는 기본 포트를 사용할 것이므로 설정하지 않았다. 바로 아래 라인에 `AllowUsers` 항목을 추가하여 접속 허용할 사용자명을 지정할 수도 있다.
 
 ```
 #       $OpenBSD: sshd_config,v 1.101 2017/03/14 07:19:07 djm Exp $
