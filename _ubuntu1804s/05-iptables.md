@@ -76,7 +76,7 @@ SSH가 사용하는 TCP 22번 포트 허용
 $ sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 ```
 
-기본 규칙으로 `INPUT`과 `FORWARD`는 차단시킨다.
+마지막으로 기본 규칙인 `INPUT`과 `FORWARD`는 차단시킨다.
 ```
 $ sudo iptables -P INPUT DROP
 $ sudo iptables -P FORWARD DROP
@@ -127,7 +127,7 @@ ipv6에 대해 저장할 것인지도 물어본다. `Yes`를 선택한다.
 
 ![](/images/ubuntu1804/43.png)
 
-`/etc/iptables` 라는 디렉토리에 `rules.v4`가 생성되었다.
+`/etc/iptables` 라는 디렉토리에 `rules.v4`와 `rules.v6`가 생성되었다.
 
 `netfilter-persistent save` 명령어로 저장하고 `netfilter-persistent reload` 명령어로 리로드할 수 있다.
 
@@ -135,8 +135,6 @@ ipv6에 대해 저장할 것인지도 물어본다. `Yes`를 선택한다.
 $ sudo netfilter-persistent save
 $ sudo netfilter-persistent reload
 ```
-
-iptables 규칙을 변경했다면 필히 저장을 해주어야 시스템을 재부팅 시 적용이 되기 때문에 `netfilter-persistent save` 후 재부팅한다.
 
 재부팅 후 `iptables -S` 로 정책이 유지되는지 확인한다.
 
@@ -159,10 +157,4 @@ $ sudo iptables -S
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1
-```
-
-시스템컨트롤을 재시작한다.
-
-```
-$ sudo sysctl -p
 ```
