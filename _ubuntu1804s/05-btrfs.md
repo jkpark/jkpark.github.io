@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 4장. 데이터 백업 및 복원이 가능한 파일 시스템 - btrfs
+title: 5장. 데이터 백업 및 복원이 가능한 파일 시스템 - btrfs
 category: ubuntu1804
 ---
 

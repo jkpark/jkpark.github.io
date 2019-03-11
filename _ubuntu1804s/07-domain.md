@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 6장. 도메인
+title: 7장. 도메인
 description:
 category: ubuntu1804
 ---

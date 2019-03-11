@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 8장. 파일 편집기 - VIM
+title: 4장. 파일 편집기 - VIM
 category: ubuntu1804
 english: true
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 7장. 파일 공유 - Samba
+title: 8장. 파일 공유 - Samba
 description:
 category: ubuntu1804
 ---

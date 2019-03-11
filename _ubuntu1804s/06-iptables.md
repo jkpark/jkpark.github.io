@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 5장. 방화벽 - iptables
+title: 6장. 방화벽 - iptables
 description:
 category: ubuntu1804
 ---
