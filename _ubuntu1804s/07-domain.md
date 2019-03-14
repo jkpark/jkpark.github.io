@@ -68,12 +68,12 @@ $ sudo vi /usr/local/etc/ddns-cloudflare.sh
 - **DOMAIN** : 도메인
 - **A_RECORD_LIST** : 갱신할 A 레코드 리스트. `,`로 구분한다. DNS 레코드에 없을 경우 자동으로 생성된다. 
 
-<script src="https://gist.github.com/jkpark/fe9b8583f9e70db1a66b37ede96c2dfe.js"></script>
+<script src="https://gist.github.com/jkpark/c2cfbb84728feb05c20c5d3950e10f20.js"></script>
 
 편집 후 실행권한을 추가한다.
 
 ```
-$ sudo chmod u+x /usr/local/etc/ddns-cloudflare.sh
+$ sudo chmod 700 /usr/local/etc/ddns-cloudflare.sh
 ```
 
 주기적으로 IP주소를 확인하고 업데이트 되도록 crontab에 등록한다.

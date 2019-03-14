@@ -246,7 +246,7 @@ drwxr-xr-x 1 jkpark jkpark    0 Mar  7 20:13 '@workspace'/
 서브볼륨 들을 원하는 위치에 마운트한다. 나는 아래 위치에 마운트 시킬 것이다.
 
 |@workspace|/home/jkpark/workspace
-| @private|/home/jkpark/private
+|@private|/home/jkpark/private
 |@pictures|/home/jkpark/Pictures
 |@music|/home/jkpark/Music
 |@torrent|/torrent
