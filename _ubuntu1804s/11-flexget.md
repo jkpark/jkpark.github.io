@@ -57,12 +57,15 @@ series:
 
 # 스케줄링
 
-`/etc/crontab` 에 아래 라인 추가.
+원하는 시간대에 다운로드하도록 `/etc/crontab` 에 추가한다.
 
 ```
-# 2019-03-12 | jkpark | added below 1 line.
-*/30 * * * *    jkpark  /usr/local/bin/flexget --cron execute
+# 2019-03-12 | jkpark | added below 2 line.
+10 0-2,6,18-23 * * *    jkpark  /usr/local/bin/flexget --cron execute --tasks download_*
+12 6,18,0 * * * jkpark  /usr/local/bin/flexget --cron execute --tasks download2_movie
 ```
+
+> crontab 작성 참고 https://crontab.guru/
 
 ```
 $ sudo systemctl restart cron

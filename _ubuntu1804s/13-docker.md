@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 9장. Docker
+title: 13장. Docker
 category: ubuntu1804
 english: false
 ---
@@ -9,13 +9,10 @@ english: false
 
 Docker란 OS Level의 가상화를 하는 툴이다. 다른 말로 컨테이너화(Containerzation)이라고도 한다. 어플리케이션과 어플리케이션을 구동하는데 필요한 코드, 런타임, 도구, 라이브러리, 설정 등 무엇이든 포함하여 하나의 컨테이너로 만들고 독립적으로 실행시켜 개별 시스템을 사용하는 것과 동일한 환경으로 운용할 수 있고 보안성도 강회된다. 각 각의 기능을 컨테이너화 시켜 시스템을 여러개로 나누는 것은 대규모의 인스턴스를 가진 환경에서 웹 서버, 데이터베이스 서버, 파일 서버 등 시스템을 여러개로 나누는 것과 동등한 환경을 가질 수 있다. 그러므로 해커가 시스템에 침투하여도 container 안에서의 액션 밖에 할 수가 없다.
 
-홈 서버에는 가능한 모든 소프트웨어를 도커 컨테이너 기반으로 설치할 것이다.
-- 웹 서버 `nginx`
-- 데이터베이스 서버 `mariadb`
-- 클라우드 서비스 `nextcloud`
+홈 서버에는 아래 소프트웨어들을 컨테이너 기반으로 설치할 것이다.
+
 - 광고차단 DNS 서버 `Pi-hole`
-- 토렌트 클라이언트 `transmission`
-- 미디어 서버 `plex`
+- WEB based Remote Desktop `Apache Guacamole`
 - 웹페이지 호스팅 `jekyll`
 
 이 포스트는 Ubuntu Server 18.04 에 Docker를 설치하는 방법과 container를 다루는 방법을 살펴볼 것이다.
@@ -101,8 +98,6 @@ This message shows that your installation appears to be working correctly.
 # Configuration proxy
 
 > 참고 https://docs.docker.com/config/daemon/systemd/
-
-
 
 # How to
 

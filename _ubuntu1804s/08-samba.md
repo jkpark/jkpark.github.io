@@ -94,8 +94,6 @@ $ sudo vi /etc/samba/smb.conf
 
 `samba`가 사용하는 포트에 대한 접속은 허용해주어야 한다. 
 
-> `-s 192.168.122.0/24`와 같이 source도 명시 할 수 있다.
-
 ```
 $ sudo iptables -A INPUT -p tcp -m tcp --dport 135 -j ACCEPT
 $ sudo iptables -A INPUT -p udp -m udp --dport 137 -j ACCEPT

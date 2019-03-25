@@ -7,96 +7,8 @@ category: ubuntu1804
 
 # 인터넷 연결 설정
 
-우분투 서버가 설치되었다면 가장 먼저 IP 설정을 해주어야 한다. 사설 IP를 직접 할당받는 경우에는 고정IP를 설정할 수 없다. 공유기를 사용한다면 IP주소는 공유기의 DHCP 기능을 통해 동적으로 할당되기 때문에 IP주소가 바뀌지 않도록 설정하도록 한다.
+우분투 서버가 설치되었다면 가장 먼저 IP 설정을 해주어야 한다. 사설 IP를 직접 할당받는 경우에는 고정IP를 설정할 수 없다. 
 
-시스템에 인터넷 선이 잘 연결되어있는지 확인 후 아래 명령어를 입력하여 내 네트워크의 상태를 확인한다.
-
-```
-$ ip addr
-```
-
-현재 시스템의 네트워크 인터페이스가 출력될 것이다.
-
-```
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host 
-       valid_lft forever preferred_lft forever
-2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
-    link/ether 52:54:00:93:eb:53 brd ff:ff:ff:ff:ff:ff
-    inet 192.168.122.74/24 brd 192.168.122.255 scope global dynamic ens3
-       valid_lft 2112sec preferred_lft 2112sec
-    inet6 fe80::5054:ff:fe93:eb53/64 scope link 
-       valid_lft forever preferred_lft forever
-```
-
-`ens3`이 외부 인터넷 망과 연결되는 인터페이스다. 내 가상머신의 IP주소는 `192.168.122.74`로 할당되었다. 공유기를 사용 중이라면 일반적으로 IP 주소가 `192.168`로 시작한다. IP주소 뒤에 붙은 `/24`는 네트워크 클래스를 의미한다. 가정에서 공유기는 일반적으로 C클래스인 24를 사용한다.
-
-## IP 설정
-
-우분투 18.04 에서는 `netplan`을 통해 네트워크를 설정한다. 고정 IP 주소 설정을 위해 `/etc/netplan` 디렉토리에 있는 `01-netcfg.yaml` 파일을 수정해야 한다. (Subiquity 인스톨러로 우분투 서버를 설치하였다면 `50-cloud-init.yaml` 파일을 수정한다.)
-
-```
-$ sudo vi /etc/netplan/01-netcfg.yaml
-```
-
-아래와 같이 DHCP를 통해 네트워크를 설정하도록 되어있다.
-
-```
-# This file describes the network interfaces available on your system
-# For more information, see netplan(5).
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    ens3:
-      dhcp4: yes
-```
-
-`ens3` 네트워크 인터페이스를 고정 IP으로 설정하기 위해 자신의 환경에 맞게 내용을 입력한다.
-
-결과는 아래와 같아야 한다. 공백(들여쓰기) 또한 정확하게 입력해야 한다.
-```
-# This file describes the network interfaces available on your system
-# For more information, see netplan(5).
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    ens3:
-      dhcp4: no
-      addresses: [192.168.122.3/24]
-      gateway4: 192.168.122.1
-      nameservers:
-        addresses: [192.168.122.1]
-```
-
-파일 수정을 마쳤다면 `:wq`를 입력하여 저장 후 편집을 종료한다. `:`은 vi에서 명령어모드이고 `w`는 저장, `q`는 종료를 의미한다.
-
-아래 명령어를 통해 수정사항을 적용한다.
-```
-$ sudo netplan apply
-```
-
-설정에 문제가 없다면 `ip addr` 명령어를 입력하였을 때 IP주소가 `192.168.122.3`으로 바뀐 것을 볼 수 있다.
-
-```
-$ ip addr
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host 
-       valid_lft forever preferred_lft forever
-2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
-    link/ether 52:54:00:93:eb:53 brd ff:ff:ff:ff:ff:ff
-    inet 192.168.122.3/24 brd 192.168.122.255 scope global ens3
-       valid_lft forever preferred_lft forever
-    inet6 fe80::5054:ff:fe93:eb53/64 scope link 
-       valid_lft forever preferred_lft forever
-```
 
 ## Proxy 설정
 
@@ -142,9 +54,9 @@ Acquire::https::Proxy "http://xx.xx.xx.xx:xx";
 
 
 
-### 인증서 등록
+### 프록시 서버 인증서 등록
 
-프록시 서버에 대한 인증서를 등록이 필요한 경우 인증서를 등록해준다.
+프록시 서버에 대한 인증서를 등록이 필요한 경우 인증서를 등록해준다. 마찬가지로 일반적인 경우에는 인증서를 등록하지 않아도 된다.
 
 먼저 인증서 파일을 가져와야 한다. USB나 여러 방법을 통해 인증서를 `/usr/local/share/ca-certificates/extra` 디렉토리에 복사한다.
 
