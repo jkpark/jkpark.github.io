@@ -105,11 +105,21 @@ $ sudo nginx -t
 $ sudo systemctl restart nginx
 ```
 
-
 이제 웹 브라우저에서 `https://exsample.com/guacamole` 으로 접속할 수 있다.
-
 
 guacadmin / guacadmin 로 로그인할 수 있다.
 
-
 ![logined admin account.](/images/ubuntu1804/guacamole01.png)
+
+설정에서 비밀번호를 변경한다.
+
+# 새로운 연결
+
+Settings - Connections 탭에서 New Connection 버튼을 누른다.
+
+EDIT CONNECTION에서 프로토콜을 설정하고 PARAMETERS에서 네트워크 정보를 입력하고 SAVE를 누른다.
+
+
+# 참고
+
+CTRL + ALT + SHIFT 을 누르면 클립보드 복사창이 뜬다.
