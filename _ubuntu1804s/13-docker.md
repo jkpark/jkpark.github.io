@@ -69,7 +69,7 @@ Docker를 설치하면 docker 그룹이 생성되지만 아무 사용자도 그�
 나는 사용자 `jkpark`을 docker 그룹에 추가시켰다.
 
 ```
-sudo usermod -aG docker jkpark
+$ sudo usermod -aG docker jkpark
 ```
 
 로그아웃 후 다시 로그인하여 로그인한 유저의 그룹정보를 갱신한다.
@@ -121,7 +121,7 @@ This message shows that your installation appears to be working correctly.
 ##  정지상태 컨테이너들 전부 삭제
 
 ```
-$  docker rm `docker ps -f status=exited -q`
+$ docker rm `docker ps -f status=exited -q`
 ```
 
 
