@@ -13,7 +13,11 @@
 
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
   
-  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+  <title>
+    {% if page.title %}{{ page.title }}
+    {% if page.category == 'ubuntu1804' %} - 우분투18.04 홈 서버 구축{% endif %}
+    - {% endif %}{{ site.name }}
+  </title>
   <meta name="author" content="{{ site.author }}" />
   {% if page.description %}<meta name="description" content="{{page.description}}" />{% endif %}
 

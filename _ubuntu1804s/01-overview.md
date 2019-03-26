@@ -2,6 +2,7 @@
 layout: post
 title: 1장. 개요
 category: ubuntu1804
+description: 홈 서버를 운용하기 위한 하드웨어, OS 선택 등을 설명하고 홈 서버에서 운용할 서비스들을 설명합니다.
 ---
 
 # 홈 서버를 운영하게 된 계기
