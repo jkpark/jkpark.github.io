@@ -40,7 +40,7 @@ $ mkdir -p ~/.config/flexget
 $ vi ~/.config/flexget/config.yml
 ```
 
-<script src="https://gist.github.com/jkpark/a7ea87a3e18a506ec55d1fe1805fb5ff.js"></script>
+<script src="https://gist.github.com/jkpark/53a1808bf0376b9db71c93a9c3828748.js"></script>
 
 다운로드 받고 싶은 동영상들 리스트 작성
 
