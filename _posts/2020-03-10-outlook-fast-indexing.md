@@ -6,6 +6,8 @@ category: blog
 tags: [Windows10][Outlook]
 ---
 
+# Outlook 빠른 인덱싱
+
 1. windows 돋보기 -  gpedit.msc 실행
    : 컴퓨터구성 - 관리템플릿 - Windows 구성요소 - 검색 - 인덱서 백오프 사용안함 -> 사용 변경
 
