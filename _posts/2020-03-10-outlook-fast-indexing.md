@@ -3,7 +3,7 @@ layout: post
 title: Outlook 빠른 인덱싱
 description: Outlook 인덱싱 설정으로 검색을 빠르게 할 수 있다.
 category: blog
-tags: [Windows10][Outlook]
+tags: [Windows10, Outlook]
 ---
 
 # Outlook 빠른 인덱싱
