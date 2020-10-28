@@ -1,0 +1,38 @@
+
+<meta charset="UTF-8">
+
+<title>
+    {% if page.title %}{{ page.title }}
+    {% if page.category == 'ubuntu1804' %} - 우분투 홈 서버{% endif %}
+    - {% endif %}{{ site.name }}
+</title>
+
+<meta name="author" content="{{ site.author }}" />
+{% if page.description %}
+<meta name="description" content="{{page.description}}" />
+{% endif %}
+
+{% if page.category == 'blog' %}
+    {% if page.photo %}
+<meta property="og:type" content="article">
+<meta property="og:image" content="images/posts/{{ page.photo }}" />
+    {% endif %}
+{% endif %}
+
+{{ page.extra_head }}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% include analytics.html %}
+
+{% if site.google_site_verification %}
+<meta name="google-site-verification" content="H73FzMq39pLvMqBQL_e5f-JlaipO9MkcGC_ce_3xlDA" />
+{% endif %}
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/masthead.css">
+<link rel="stylesheet" href="/css/footer.css">
+
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />

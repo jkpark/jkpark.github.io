@@ -2,6 +2,7 @@
 layout: post
 title: 4장. 파일 편집기 - VIM
 category: ubuntu1804
+lang: en
 english: true
 ---
 
