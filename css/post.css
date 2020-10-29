@@ -1,0 +1,44 @@
+
+#post-header {
+  background-color: #3073b3;
+  color: white;
+}
+
+.post-header-inner {
+  padding-top: 1.5em;
+}
+
+#post-header .post-title {
+  margin-top: 1em;
+  margin-bottom: 8px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#post-header .post-date {
+  font-family: "Ubuntu Mono";
+  color: #dedede;
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 4px;
+
+}
+
+#post-header .tag {
+  font-family: "Ubuntu Mono";
+  color: #dedede;
+  display: inline-block;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#post-header .tag a {
+  color: #dedede;
+}
+
+.suggest-translate, .suggest-translate a {
+  color: #ddd !important;
+  padding-top: 0.5em !important;
+  font-size: 0.9em;
+  font-style: italic;
+}

@@ -1,24 +1,28 @@
 ---
 layout: default
 ---
-{% if page.photo %}
-<div class="post-photo" style="background-image: url('/images/posts/{{ page.photo }}')">
+<link rel="stylesheet" href="/css/post.css">
 
-</div>
+<header id="post-header">
+{% if page.photo %}
+  <div class="post-photo" style="background-image: url('/images/posts/{{ page.photo }}')"></div>
 {% endif %}
 
-<article>
-  <div class='inner title'>
-    <h1>{{ page.title }}</h1>
+<div class='inner post-header-inner'>
+    <div class='post-title'>
+    {{ page.title }}
+    </div>
 
-    <p class="meta">
-    {{ page.date | date: "%A %-d %B %Y" }}</br>
+    <div class='post-date'>
+    {{ page.date | date: "%A %-d %B %Y" }}
+    </div>
     {% if page.tags.size > 0 %}
+    <div class="tag">
       {% for tag in page.tags %}
       <a href="/blog/search?tags={{ tag }}">#{{ tag }}</a>
       {% endfor %}
+    </div>
     {% endif %}
-    </p>
     
     {% if page.english %}
     <div class="suggest-translate">
@@ -27,7 +31,10 @@ layout: default
         구글 번역을 원하시면 여기를 클릭해주세요</a>.
     </div>
     {% endif %}
-  </div>
+</div>
+</header>
+
+<article id="post-article">
   <div class="post">
     {{ content }}
   </div>

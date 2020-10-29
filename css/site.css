@@ -103,9 +103,11 @@ a.discreet {
   color: #222;
 }
 
+/*
 section {
   line-height: 170%;
 }
+*/
 
 .projects .img-container {
   width: 240px;
@@ -183,38 +185,6 @@ pre code {
   white-space: pre;
 }
 
-article {
-  background-color: #3073b3;
-}
-
-article .title {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-  color: white;
-}
-
-article .title h1 {
-  margin-top: 1em;
-  margin-bottom: 8px;
-  text-align: left;
-}
-
-article .meta {
-  font-family: "Ubuntu Mono";
-  color: #dedede;
-  display: inline-block;
-  margin-top: 4px;
-}
-
-article .meta a {
-  color: #dedede;
-}
-
-.suggest-translate, .suggest-translate a {
-  color: #ddd !important;
-  padding-top: 0.5em !important;
-  font-size: 0.9em;
-}
 
 
 article .post {
@@ -470,10 +440,6 @@ img + em {
   vertical-align: -3px;
   height: 18px;
   margin-left: 0.2em;
-}
-
-.suggest-translate {
-  font-style: italic;
 }
 
 .gist {
