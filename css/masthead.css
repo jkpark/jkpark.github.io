@@ -3,42 +3,42 @@
   background-color: white;
 }
 
-nav {
+.masthead nav {
     display: flex;
     align-items: center;
     min-height: 50px;
 }
 
-nav a {
+.masthead nav a {
   display: inline-block;
   margin-right: 1.2em;
   padding-bottom: 0.2em;
   border-bottom: 3px solid transparent;
 }
-nav a:last-child {
+.masthead nav a:last-child {
   margin-right: 0;
 }
 
-nav a:hover {
+.masthead nav a:hover {
   text-decoration: none;
   border-bottom: 3px solid #3073b3;
 }
 
 .masthead .logo a, .masthead .logo a:hover {
   color: black;
-  /*text-decoration: none;*/
+  text-decoration: none;
 }
 
-.logo .name {
+.masthead .logo .name {
   font-weight: bold;
   display: inline-block;
 }
 
-.logo small em {
+.masthead .logo small {
   font-weight: 400;
 }
 
-.logo .avatar {
+.masthead .logo .avatar {
   border-radius: 50%;
   max-width: 50px;
   vertical-align: -9px;
