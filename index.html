@@ -2,7 +2,8 @@
 layout: default
 category: about
 ---
-<section class="about-me inner" itemscope itemtype="http://data-vocabulary.org/Person">
+<section class="about-me" itemscope itemtype="http://data-vocabulary.org/Person">
+    <div class='inner'>
   <h1>
     <span class="hello">
       안녕하세요,
@@ -19,32 +20,36 @@ category: about
   <p>
   이 사이트는 jekyll로 만들어졌으며 <a href="https://github.com/jkpark/jkpark.github.io">이 곳</a>에서 확인할 수 있습니다.
   </p>
+    </div>
 </section>
 
 <div class="separator"></div>
 <div  style="border-bottom: 1px solid #ddd"></div>
 <div class="separator"></div>
 
-<div class="inner projects">
-  <p>
-  Here are some of the projects I worked on.
-  </p>
-  {% for project in site.data.projects %}
-  <section>
-    <div class="inline pull-right img-container">
-        <img src="/images/portfolio/{{ project.image }}" alt="{{ project.name }} Screenshot" >
-    </div>
-    <h2><a href="{{ project.url }}">{{ project.name }}</a></h2>
-    <h3>{{ project.oneliner }}</h3>
-    <p><strong>My role :</strong> {{ project.role }}</p>
-    <p>{{ project.description | truncatewords: 30 }} <a href="{{ project.url }}">More</a></p>
-    <p>
-      <strong>Achievements</strong></br>
-      - {{ project.achievements | join: "</br>- " }}
-    </p>
-  </section>
+<section class="projects">
+    <div class="inner">
+        <p>
+        Here are some of the projects I worked on.
+        </p>
+        {% for project in site.data.projects %}
+        <section>
+            <div class="inline pull-right img-container">
+                <img src="/images/portfolio/{{ project.image }}" alt="{{ project.name }} Screenshot" >
+            </div>
+                <h2><a href="{{ project.url }}">{{ project.name }}</a></h2>
+                <h3>{{ project.oneliner }}</h3>
+                <p><strong>My role :</strong> {{ project.role }}</p>
+                <p>{{ project.description | truncatewords: 30 }} <a href="{{ project.url }}">More</a></p>
+                <p>
+                <strong>Achievements</strong></br>
+    - {{ project.achievements | join: "</br>- " }}
+                </p>
+        </section>
     {% unless forloop.last %}
     <div class="spacer"></div>
     {% endunless %}
   {% endfor %}
-</div>
+    </div>
+</section>
+<div class="separator"></div>
