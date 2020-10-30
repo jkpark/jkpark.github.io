@@ -29,9 +29,9 @@ baseurl: ""
 
 #
 collections:
-  ubuntu1804s:
+  homeserver:
     output: true
-    permalink: ubuntu1804/:title
+    permalink: homeserver/:title
 
 # paginate for posts
 paginate: 8

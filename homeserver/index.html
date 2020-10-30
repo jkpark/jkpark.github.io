@@ -1,0 +1,22 @@
+---
+layout: default
+title: Home Server
+category: homeserver
+---
+
+<section>
+    <div class="inner">
+    <ul class="posts">
+        {% for post in site.homeserver %}
+        <li>
+            <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
+            {% if post.lang == 'en' %}
+            <span class="english-post">Posted in English.</span>
+            {% endif %}
+            <br />
+            <span class="description">{{ post.description }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+</section>
