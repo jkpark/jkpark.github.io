@@ -11,7 +11,11 @@ category: ubuntu1804
 
 이해를 돕기 위해 아래 동영상을 시청하길 바란다.
 
+<div class="video-wrapper">
+  <div class="video-wrapper-inner">
 <iframe width="602" height="295" src="https://www.youtube.com/embed/2ZUxoi7YNgs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
 
 # 도메인 대여
 

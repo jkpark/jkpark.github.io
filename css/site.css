@@ -35,6 +35,12 @@
   max-width: 800px;
 }
 
+@media (max-width: 850px) {
+  .inner {
+    width: auto !important;
+  }
+}
+
 .sticky-bottom {
   position: -webkit-sticky; /* Safari */
   position: sticky;
@@ -52,7 +58,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-p { margin: 0.5em 0; }
+p {
+    margin: 0.5em 0;
+    line-height: 160%;
+
+}
 
 h1, h2, h3, h4, h5 {
   margin-top: 1em;
@@ -137,17 +147,6 @@ a.discreet {
   color: #999;
 }
 
-/*
-@media (max-width: 850px) {
-  .inner, pre code, .post > * {
-    width: auto !important;
-  }
-  .post > .highlighter-rouge {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-}
-*/
 
 ul.posts {
   list-style-type: none;
@@ -273,11 +272,11 @@ figure .two-third {
   text-align: right;
 }
 
-
-/* standard */
+/* highlight */
 * > .highlighter-rouge {
     max-width: 100% !important;
     word-wrap: break-word;
+    padding: 0 !important;
 }
 
 code {
@@ -306,19 +305,16 @@ pre code {
     line-height: 150%;
 }
 
-.post ul, .post ol {
-  padding-left: 2.5em;
-}
-
 /* Quotes */
 blockquote {
-  margin: 1em 0 1em -1em;
+  margin: 1em 0;
   color: #666;
   border-left: 0.4em solid #3073b3;
   padding-left: 0.6em;
   font-style: italic;
 }
 
+/* img */
 img.inline.pull-right {
   margin-left: 1em;
 }
@@ -357,12 +353,6 @@ img + em {
 }
 .gist .lines {
   width: 100%;
-}
-
-@media (max-width: 380px) {
-  .about-me h1 {
-    text-align: center;
-  }
 }
 
 /* From http://designmodo.github.io/Flat-UI/ */
@@ -410,22 +400,6 @@ img + em {
   width: 100%;
 }
 
-.video-wrapper {
-  max-width: 600px;
-}
-.video-wrapper-inner {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  padding-top: 25px;
-  height: 0;
-}
-.video-wrapper-inner iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 
 .uslide-container {
   max-width: 800px;
