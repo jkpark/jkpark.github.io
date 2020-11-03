@@ -47,6 +47,14 @@
   bottom: 0;
 }
 
+.sticky-right {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  float: right;
+  right: 0;
+  top: 0;
+}
+
 /* Global Reset */
 * {
   margin: 0;
@@ -321,10 +329,12 @@ img.inline.pull-right {
 
 img {
   max-width: 100%;
+  margin: 1px;
+  display: block;
 }
 
 img.small {
-  max-width: 50%;
+  max-width: 512px;
 }
 
 img + em {

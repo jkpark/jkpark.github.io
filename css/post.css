@@ -61,6 +61,7 @@
 
 .post-article-inner {
     padding-top: 1.5em;
+    max-width: 100%;
 }
 
 .post-article-content > * {

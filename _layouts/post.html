@@ -4,17 +4,17 @@ layout: default
 <link rel="stylesheet" href="/css/post.css">
 
 <header id="post-header">
-{% if page.photo %}
+  {% if page.photo %}
   <div class="post-photo" style="background-image: url('/images/posts/{{ page.photo }}')"></div>
-{% endif %}
+  {% endif %}
 
-<div class='inner post-header-inner'>
+  <div class='inner post-header-inner'>
     <div class='post-title'>
-    {{ page.title }}
+      {{ page.title }}
     </div>
 
     <div class='post-date'>
-    {{ page.date | date: "%A %-d %B %Y" }}
+      {{ page.date | date: "%A %-d %B %Y" }}
     </div>
     {% if page.tags.size > 0 %}
     <div class="tag">
@@ -23,7 +23,7 @@ layout: default
       {% endfor %}
     </div>
     {% endif %}
-    
+
     {% if page.english %}
     <div class="suggest-translate">
       이 문서는 영어로 되어있습니다.
@@ -31,27 +31,49 @@ layout: default
         구글 번역을 원하시면 여기를 클릭해주세요</a>.
     </div>
     {% endif %}
-</div>
+  </div>
 </header>
 
-<article id="post-article">
-<div class='post-article-inner'>
-  <div class="post post-article-content">
-    {{ content }}
+<link rel="stylesheet" href="/css/sidebar.css">
+<sidebar class="toc sticky-right">
+  <div class="toc-wrapper">
+      <header class=toc-header>
+        <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+          <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+          </g>
+        </svg>
+        <span class="toc-title">{{ page.toc_label | default: "Contents" }}</span>
+      </header>
+      <nav class=toc-items>
+      {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
+    </nav>
   </div>
-</div>
+</sidebar>
+  
+
+<article id="post-article">
+  <div class='post-article-inner'>
+    <div class="post post-article-content">
+      {{ content }}
+    </div>
+  </div>
 </article>
+
 
 <div class="separator"></div>
 <div class="page-nav sticky-bottom">
   <div class="inner">
-  {% if page.previous.url %}
+    {% if page.previous.url %}
     <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
-  {% endif %}
+    {% endif %}
     <a class='top' href="#">Top</a>
-  {% if page.next.url %}
+    {% if page.next.url %}
     <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
-  {% endif %}
+    {% endif %}
   </div>
 </div>
 <div class="separator"></div>

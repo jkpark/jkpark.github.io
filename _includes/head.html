@@ -7,20 +7,17 @@
 </title>
 
 <meta name="author" content="{{ site.author }}" />
-{% if page.description %}
-<meta name="description" content="{{page.description}}" />
-{% endif %}
+<meta itemprop="description" name="description" content="{% if page.description %}{{ page.description | truncate: 160 }}{% else %}{{ site.description | truncate: 160  }}{% endif %}" />
 
-{% if page.category == 'blog' %}
-    {% if page.photo %}
+{% if page.photo %}
 <meta property="og:type" content="article">
 <meta property="og:image" content="images/posts/{{ page.photo }}" />
-    {% endif %}
 {% endif %}
 
 {{ page.extra_head }}
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="{{ page.url | prepend: site.url }}">
 
 {% include analytics.html %}
 
