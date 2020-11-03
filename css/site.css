@@ -55,6 +55,14 @@
   top: 0;
 }
 
+.sticky-left {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  float: left;
+  left: 0;
+  top: 0;
+}
+
 /* Global Reset */
 * {
   margin: 0;

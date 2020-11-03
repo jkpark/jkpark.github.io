@@ -35,24 +35,41 @@ layout: default
 </header>
 
 <article id="post-article">
-<sidebar class="toc sticky-right">
-  <div class="toc-wrapper">
-      <header class=toc-header>
-        <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
-          <g>
-            <line x1="21" y1="10" x2="7" y2="10"></line>
-            <line x1="21" y1="6" x2="3" y2="6"></line>
-            <line x1="21" y1="14" x2="3" y2="14"></line>
-            <line x1="21" y1="18" x2="7" y2="18"></line>
-          </g>
+  <sidebar class="pagetree sticky-left">
+    <div class="pagetree-wrapper">
+      <header class=pagetree-header>
+        <svg height="15px" width="1px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+          
         </svg>
-        <span class="toc-title">{{ page.toc_label | default: "Contents" }}</span>
+        <span class="pagetree-title">Page Tree</span>
       </header>
-      <nav class=toc-items>
-      {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
-    </nav>
-  </div>
-</sidebar>
+      <ul class="pagetree-items">
+          {% for post in site.homeserver %}
+          <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+          {% endfor %}
+      </ul>
+    </div>
+  </sidebar>
+  <sidebar class="toc sticky-right">
+    <div class="toc-wrapper">
+        <header class=toc-header>
+          <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+            <g>
+              <line x1="21" y1="10" x2="7" y2="10"></line>
+              <line x1="21" y1="6" x2="3" y2="6"></line>
+              <line x1="21" y1="14" x2="3" y2="14"></line>
+              <line x1="21" y1="18" x2="7" y2="18"></line>
+            </g>
+          </svg>
+          <span class="toc-title">{{ page.toc_label | default: "Contents" }}</span>
+        </header>
+        <nav class=toc-items>
+        {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
+      </nav>
+    </div>
+  </sidebar>
 
   <div class='inner post-article-inner'>
     <div class="post post-article-content">
