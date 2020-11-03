@@ -56,7 +56,7 @@ USB를 꽂고 전원을 키면 아래와 우분투 서버를 설치하는 화면
 
 ![pre install : language](images/00-debian.png){:.small }
 
-![pre install : home-screen](images/00-home-screen.png){:.small }
+![pre install : home-screen](images/VirtualBox_Ubuntu 20.04_02_11_2020_10_01_42.png){:.small }
 
 이 페이지가 나오지 않고 부팅된다면 바이오스 설정에서 부팅 순서를 USB로 바꿔주어야 한다.
 
