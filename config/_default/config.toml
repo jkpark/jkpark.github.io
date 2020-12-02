@@ -1,0 +1,49 @@
+
+##### Customizable variables #####
+
+# Your website URL (e.g. http://jkpark.github.io)
+baseURL = "https://jkpark.github.io/hugo-theme-jkpark/"
+
+title = "jkpark Demo"
+
+# Uncomment for google analytics
+google_analytics = ""
+
+# Enable Emoji emoticons support for page content; see the Emoji Cheat Sheet(https://www.webfx.com/tools/emoji-cheat-sheet/).
+enableEmoji = true
+
+##############################
+
+theme = "jkpark"
+
+languageCode = "ko"
+hasCJKLanguage = false  # Set `true` for Chinese/Japanese/Korean.
+defaultContentLanguageInSubdir = false # baseURL/en/, baseURL/kr/ ...
+
+timeout = 10000
+
+# Default number of elements per page in pagination.
+paginate = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+      xHTML = true
+      safeHTML = true
+
+  [markup.tableOfContents]
+    endLevel = 4
+    startLevel = 1
+
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "github"
