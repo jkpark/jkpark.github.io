@@ -2,7 +2,7 @@
 name: Defcon Smart Security System
 identifier: d3s
 weight: 3
-period: 2009.06 ~ 2009.12
+period: 2011.06 ~ 2011.12
 oneliner: A security application for android
 role: a android programmer
 language : Java(Android), JSP
