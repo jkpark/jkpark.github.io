@@ -2,9 +2,9 @@
 ##### Customizable variables #####
 
 # Your website URL (e.g. http://jkpark.github.io)
-baseURL = "https://jkpark.github.io/hugo-theme-jkpark/"
+baseURL = "https://jkpark.github.io/"
 
-title = "jkpark Demo"
+title = "jkpark's territory"
 
 # Uncomment for google analytics
 google_analytics = ""
