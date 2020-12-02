@@ -3,26 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jkpark.github.io/hugo-theme-jkpark/blog/</loc>
+    <loc>https://jkpark.github.io/blog/</loc>
     <lastmod>2020-12-02T10:30:47+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jkpark.github.io/hugo-theme-jkpark/</loc>
+    <loc>https://jkpark.github.io/</loc>
     <lastmod>2020-12-02T10:30:47+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jkpark.github.io/hugo-theme-jkpark/blog/my-first-post/</loc>
+    <loc>https://jkpark.github.io/blog/my-first-post/</loc>
     <lastmod>2020-12-02T10:30:47+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jkpark.github.io/hugo-theme-jkpark/categories/</loc>
+    <loc>https://jkpark.github.io/categories/</loc>
   </url>
   
   <url>
-    <loc>https://jkpark.github.io/hugo-theme-jkpark/tags/</loc>
+    <loc>https://jkpark.github.io/tags/</loc>
   </url>
   
 </urlset>
