@@ -18,4 +18,3 @@ achievements:
 - Produced and delivered the products to HYUNDAI Heavy Industies.
 ---
 
-More contents here
