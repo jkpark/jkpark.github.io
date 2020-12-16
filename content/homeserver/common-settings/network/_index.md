@@ -11,6 +11,20 @@ type: docs
 
 # Static IP 설정
 
+```
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp4s0:
+      dhcp4: no
+      addresses: [ x.x.x.x/24 ]
+      gateway4: x.x.x.x
+      nameservers:
+        addresses: [ x.x.x.x, x.x.x.x ]
+
+
+```
 
 
 # Proxy 설정
@@ -43,15 +57,15 @@ no_proxy="localhost"
 
 프록시 서버의 인증서를 검증하기 위한 CA를 등록한다.
 
-USB나 여러 방법을 통해 인증서를 `/usr/local/share/ca-certificates/extra` 디렉토리에 복사한 뒤, `sudo dpkg-reconfigure ca-certificates` 명령어로 인증서를 설치한다.
+USB나 여러 방법을 통해 인증서를 `/usr/share/ca-certificates/extra` 디렉토리에 복사한 뒤, `sudo dpkg-reconfigure ca-certificates` 명령어로 인증서를 설치한다.
 
 ```
-$ sudo mkdir /usr/local/share/ca-certificates/extra
-$ sudo mv samsung.crt /usr/local/share/ca-certificates/extra/
+$ sudo mkdir /usr/share/ca-certificates/extra
+$ sudo mv your.crt /usr/share/ca-certificates/extra/
 $ sudo dpkg-reconfigure ca-certificates
 Updating certificates in /etc/ssl/certs...
 1 added, 0 removed; done.
-Processing triggers for ca-certificates (20180409) ...
+Processing triggers for ca-certificates (20190110ubuntu1.1) ...
 Updating certificates in /etc/ssl/certs...
 0 added, 0 removed; done.
 Running hooks in /etc/ca-certificates/update.d...

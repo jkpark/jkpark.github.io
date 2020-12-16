@@ -5,7 +5,7 @@ date: 2020-12-08T12:41:07+09:00
 draft: false
 weight: 2
 image: "" # relative path of /static/images folder
-collapse: hide # show | hide | always
+collapse: always # show | hide | always
 type: docs
 ---
 
@@ -24,24 +24,24 @@ type: docs
 
 *Ubuntu Desktop 20.04 의 Default Package - https://packages.ubuntu.com/focal/ubuntu-desktop
 
-> ## What's New in Ubuntu%2020.04 Server
+> ## What's New in Ubuntu 20.04 Server
 > One of the biggest improvements brought by Ubuntu Server 20.04 LTS is enhanced security and stability. This comes through the constant security patching process and new features like the Ubuntu Server Live installer, iptables to nftables migration, and more resilient boot loader. Additional features like CIS hardening and Kernel Livepatch service will be available in Ubuntu Pro cloud images for AWS.
 
 
 
 # 인스톨러 다운로드
 
-Ubuntu%2020.04 설치는 네트워크과 서비스를 위한 버전으로 텍스트-모드로 설치하기 위해 Ubuntu Server 로 설치할 것이다. 또한 설치 중 설정들이 어느 위치를 참조하고 어떻게 동작하는지 학습하는 것 또한 목표로 하기 때문에 지역, 언어, 네트워크 등 가능한 모든 설정은 설치가 끝난 후 수동으로 설정할 것이다.
+Ubuntu 20.04 설치는 네트워크과 서비스를 위한 버전으로 텍스트-모드로 설치하기 위해 Ubuntu Server 로 설치할 것이다. 또한 설치 중 설정들이 어느 위치를 참조하고 어떻게 동작하는지 학습하는 것 또한 목표로 하기 때문에 지역, 언어, 네트워크 등 가능한 모든 설정은 설치가 끝난 후 수동으로 설정할 것이다.
 
 Ubuntu Server 20.04 는 두 가지 인스톨러를 지원한다.
 - Subiquity Installer (Default, live version)
 - Debian Installer (Alternative, legacy version)
 
-![Ubuntu%2020.04 LTS Server Live](images/00-subiquity.png)
-*Ubuntu%2020.04 LTS Server Live (ubuntu-20.04.1-live-server-amd64.iso)*
+![Ubuntu 20.04 LTS Server Live](images/00-subiquity.png)
+*Ubuntu 20.04 LTS Server Live (ubuntu-20.04.1-live-server-amd64.iso)*
 
-![Ubuntu%2020.04 LTS Server Legacy](images/00-debian.png)
-*Ubuntu%2020.04 LTS Server Legacy (ubuntu-20.04.1-legacy-server-amd64.iso)*
+![Ubuntu 20.04 LTS Server Legacy](images/00-debian.png)
+*Ubuntu 20.04 LTS Server Legacy (ubuntu-20.04.1-legacy-server-amd64.iso)*
 
 Subiquity(live version) 인스톨러는 Ubuntu 18.04부터 새로운 인스톨러로 등장했고 UI가 조금 더 현대적이다. 두 installer의 가장 큰 차이는 `cloud-init` 패키지 설치 여부이다. Subiquity installer로 설치할 경우 `cloud-init`이 설치되는데, `cloud-init`는 우분투 설치 작업을 자동화하는 목적으로 쓰인다. 이 기능은 가령, 서버를 100대 한번에 설치할땐 효율적이겠지만 나한텐 필요없는 기능이다. 그렇기 때문에 나는 Debian Installer(Legacy version)로 우분투를 설치할 것이다.
 
