@@ -5,3 +5,7 @@
 
 [date]
   format = "Jan 2, 2006"
+
+# Enter your Utterance Repo for Comments
+[utterance]
+  repo = "jkpark/jkpark.github.io-utterances"
