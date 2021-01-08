@@ -337,7 +337,7 @@ drwxr-xr-x 1 root root 0 Dec 18 05:04 @workspace
 |서브볼륨|마운트 위치|
 |:---:|:-----:|
 |@workspace|/ws|
-|@public|/home/jkark/public|
+|@public|/home/jkpark/public|
 |@private|/home/jkpark/private|
 
 ```
