@@ -62,7 +62,7 @@ hdd는 사진이나 동영상, 문서 등 각종 데이터를 저장하는 용�
 |서브볼륨|용도|마운트위치|스냅샷 생성 주기|
 |:---:|:-----:|:---:|:---:|
 |@workspace|개인 별 작업공간|/ws/\<user\>|30분|
-|@public|공유 데이터|/home/jkpark/public|-|
+|@public|공유 데이터|/public|-|
 |@private|사적인 데이터|/home/jkpark/private|1일|
 
 # btrfs 생성 과정
@@ -317,7 +317,7 @@ $ sudo chown jkpark: @private @public
 ```
 
 - @private는 나만 사용할 수 있게 한다.
-- @public은 나만 write 가능하고, 모두가 볼 수 있게 한다.
+- @public은 나만 write 가능하고, 모두가 볼 수 있게 했다.
 - @workspace는 하위에 개인 별 디렉토리 생성 예정이므로 건들지 않는다.
 
 
@@ -337,7 +337,7 @@ drwxr-xr-x 1 root root 0 Dec 18 05:04 @workspace
 |서브볼륨|마운트 위치|
 |:---:|:-----:|
 |@workspace|/ws|
-|@public|/home/jkpark/public|
+|@public|/public|
 |@private|/home/jkpark/private|
 
 ```
@@ -347,15 +347,15 @@ $ sudo mount -o subvol=@workspace /dev/sda4 /ws
 
 ```
 $ mkdir /home/jkpark/private
-$ mkdir /home/jkpark/public
-$ sudo mount -o subvol=@public /dev/sdb1 /home/jkpark/public
+$ mkdir /public
+$ sudo mount -o subvol=@public /dev/sdb1 /public
 $ sudo mount -o subvol=@private /dev/sdb1 /home/jkpark/private
 ```
 
 > 언마운트는 `umount` 명령어로 한다.
 > 
 > ```
-> $ sudo umount /home/jkpark/public
+> $ sudo umount /public
 > ```
 
 ### 마운트 자동화
@@ -378,7 +378,7 @@ UUID=2767f408-217b-4d9b-8e44-611c47334ccc /mnt/ssd1_btrfs      btrfs   defaults,
 UUID=2767f408-217b-4d9b-8e44-611c47334ccc /ws                  btrfs   defaults,compress=lzo,subvol=@workspace 0  0
 UUID=972984bb-548f-4cc6-9c54-012159766391 /mnt/hdd1_btrfs      btrfs   noatime,nodiratime 0  2
 UUID=972984bb-548f-4cc6-9c54-012159766391 /home/jkpark/private btrfs   noatime,nodiratime,subvol=@private 0  0
-UUID=972984bb-548f-4cc6-9c54-012159766391 /home/jkpark/public  btrfs   noatime,nodiratime,subvol=@public  0  0
+UUID=972984bb-548f-4cc6-9c54-012159766391 /public  btrfs   noatime,nodiratime,subvol=@public  0  0
 ```
 
 마운트 옵션을 살펴보면,
@@ -402,7 +402,7 @@ reboot 후 `findmnt` 명령어로 마운트가 잘 되는지 확인한다.
 $ findmnt -nt btrfs
 /ws                  /dev/sda4[/@workspace] btrfs  rw,relatime,compress=lzo,ssd,space_cache,subvolid=256,subvol=/@workspace
 /mnt/ssd1_btrfs      /dev/sda4              btrfs  rw,relatime,compress=lzo,ssd,space_cache,subvolid=5,subvol=/
-/home/jkpark/public  /dev/sdb1[/@public]    btrfs  rw,noatime,nodiratime,space_cache,subvolid=258,subvol=/@public
+/public  /dev/sdb1[/@public]    btrfs  rw,noatime,nodiratime,space_cache,subvolid=258,subvol=/@public
 /home/jkpark/private /dev/sdb1[/@private]   btrfs  rw,noatime,nodiratime,space_cache,subvolid=257,subvol=/@private
 /mnt/hdd1_btrfs      /dev/sdb1              btrfs  rw,noatime,nodiratime,space_cache,subvolid=5,subvol=/
 ```

@@ -19,9 +19,9 @@ SMB(Server Message Block)는 윈도우즈 네트워크 파일 시스템의 기�
 
 |위치|용도|권한|
 |:---:|:-----:|:---:|
-|/mnt/hdd1_btrfs/@workspace/\<user\>|개인 별 작업공간|All : RW|
-|/mnt/hdd1_btrfs/@public|공유 데이터|jkpark : RW, Others : R|
-|/mnt/hdd1_btrfs/@private|개인 데이터|jkpark : RW, Others : -|
+|/ws/\<user\>|개인 별 작업공간|All : RW|
+|/public|공유 데이터|jkpark : RW, Others : R|
+|/home/jkpark/private|개인 데이터|jkpark : RW, Others : -|
 
 # Samba 설치
 
@@ -65,7 +65,7 @@ $ sudo vi /etc/samba/smb.conf
 
 [private]
    comment = private folder for jkpark
-   path = /mnt/hdd1_btrfs/@private
+   path = /home/jkpark/private
    browseable = no
    guest ok = no
    write list = jkpark
@@ -80,7 +80,7 @@ $ sudo vi /etc/samba/smb.conf
 
 [public]
    comment = public folder
-   path = /mnt/hdd1_btrfs/@public
+   path = /public
    browseable = yes
    guest ok = no
    write list = jkpark
