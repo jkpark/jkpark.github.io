@@ -6,6 +6,10 @@
 [date]
   format = "Jan 2, 2006"
 
+#[github]
+#  owner = "jkpark"
+#  repo = "hugo-theme-jkpark"
+
 # Enter your Utterance Repo for Comments
 [utterance]
   repo = "jkpark/jkpark.github.io-utterances"
