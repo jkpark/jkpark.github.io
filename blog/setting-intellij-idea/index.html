@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head><meta charset="UTF-8">
+
+<title>
+    IntelliJ IDEA 기본 설정 - jkpark&#39;s blog
+</title>
+
+<meta name="author" content="JK Park">
+<meta itemprop="description" name="description" content="IntelliJ IDEA 16.3 기본 설정" />
+<meta name="keywords" content="">
+
+<meta property="og:site_name" content="jkpark&#39;s blog">
+<meta property="og:title" content="IntelliJ IDEA 기본 설정">
+<meta property="og:url" content="https://jkpark.github.io/blog/setting-intellij-idea/">
+<meta property="og:type" content="article">
+
+
+<meta name="generator" content="Hugo 0.68.3" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1F50DQW5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1F50DQW5H');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href='/css/site.css'>
+<link rel="stylesheet" href='/css/page.css'>
+<link rel="stylesheet" href='/css/dyn.css'>
+<link rel="stylesheet" href='/css/markdown.css'>
+<link rel="stylesheet" href='/css/shortcodes.css'>
+
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div><header id="masthead" class="thm-dark">
+    <div class="wrapper">
+        <nav class="mh-menu">
+            <ul>
+                <li>
+                    <div class="mh-logo">
+                        <img class="avatar" src="https://avatars.githubusercontent.com/jkpark?size=36" alt="avatar" />
+                        <a href="https://jkpark.github.io/" class="text mh-item no-color-link">JK Park</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/">About</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/blog/">Blog</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/homeserver/">Home Server</a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</header><main class="thm-light">
+<section id="main-header" class="thm-dark">
+  
+<div class="wrapper">
+  
+  <div class="date mono"><small>Apr 2, 2017</small></div>
+  
+  
+  <div class ="tags flex">
+    <a class="tag-item z2 mono" href="/tags/windows10/">#Windows10</a><a class="tag-item z2 mono" href="/tags/intellij/">#IntelliJ</a>
+  </div>
+  
+  <div class="title post-title">IntelliJ IDEA 기본 설정</div>
+</div>
+
+</section>
+<section id="main-content">
+  
+
+<sidebar id="section-toc" class="sticky-top pull-right-side">
+<section id="toc">
+<header id="toc-header">
+    <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+        <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+        </g>
+    </svg>
+    <span class="label">Contents</span>
+</header>
+
+<div class="toc-list">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#intellij-idea-163-기본-설정">IntelliJ IDEA 16.3 기본 설정</a>
+      <ul>
+        <li><a href="#memory-heap-size-수정">Memory Heap Size 수정</a></li>
+        <li><a href="#file-encoding">File encoding</a></li>
+      </ul>
+    </li>
+    <li><a href="#plugins">Plugins</a>
+      <ul>
+        <li><a href="#javadoc">JavaDoc</a></li>
+        <li><a href="#grepconsol">GrepConsol</a></li>
+      </ul>
+    </li>
+    <li><a href="#back--recovery">Back &amp; Recovery</a></li>
+  </ul>
+</nav>
+</div>
+</section></sidebar>
+
+<div class="wrapper">
+  <div style="margin-top: 5vh;"></div>
+  <article id="post-article" class="content">
+    <h1 id="intellij-idea-163-기본-설정">IntelliJ IDEA 16.3 기본 설정</h1>
+<h2 id="memory-heap-size-수정">Memory Heap Size 수정</h2>
+<pre><code>C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.3.5\bin\idea.exe.vmoptions
+</code></pre><p>파일을 열어 general memory policy를 수정한다.</p>
+<pre><code>-Xms256m
+-Xmx750m
+</code></pre><blockquote>
+<p>Please note that very big Xmx and Xms values are not so good. In this case, GarbageCollector has to work with a big part of memory at a time and causes considerable hang-ups. On the other hand, too small values can lead to the OutOfMemory exception. The specified values provide enough memory and at the same time the GarbageCollector works often but rather fast.
+<a href="https://blog.jetbrains.com/idea/2006/04/configuring-intellij-idea-vm-options/">https://blog.jetbrains.com/idea/2006/04/configuring-intellij-idea-vm-options/</a></p>
+</blockquote>
+<h2 id="file-encoding">File encoding</h2>
+<p>Settings 에서 file encoding을 <code>UTF-8</code>로 설정한다.
+<code>Transparent native-to-ascii conversion</code>를 체크한다.
+이 옵션은  <code>\\0A</code>과 같은 escape들이 한글이나 ASCII로 보일 수 있도록 해주는 옵션이다.</p>
+<blockquote>
+<p>To have the special mode turned on when symbols are stored in a properties file as escape sequences but displayed as normal letters, check the option Transparent native-to-ascii conversion. This option is helpful when the properties files are encoded in ISO 8859-1. It is recommended to use this approach, if you don&rsquo;t have any special reasons to change encoding.
+<a href="https://www.jetbrains.com/help/idea/2016.1/configuring-encoding-for-properties-files.html?origin=old_help">https://www.jetbrains.com/help/idea/2016.1/configuring-encoding-for-properties-files.html?origin=old_help</a></p>
+</blockquote>
+<h1 id="plugins">Plugins</h1>
+<h2 id="javadoc">JavaDoc</h2>
+<p><code>Ctrl + Alt + Shift + G</code> 로 <code>JavaDoc</code>을 만들 수 있다.</p>
+<p><img src="../images/setting-intellij-idea/install-javadoc.PNG" alt="install JavaDoc plugin" /></p>
+<h2 id="grepconsol">GrepConsol</h2>
+<p>콘솔로그에 색 입히기</p>
+<p><img src="../images/setting-intellij-idea/install-grep-console.PNG" alt="install JavaDoc plugin" /></p>
+<h1 id="back--recovery">Back &amp; Recovery</h1>
+<p>아래 사용자 폴더에 설정 정보 및 플러그인을 저장하고 있다.</p>
+<pre><code>C:\Users\{계정명}\.IntelliJIdea2016.3
+</code></pre><p>config : 개인 설정 정보</p>
+<p>system : 설치된 플러그인</p>
+<ul>
+<li>config/idea.key 는 개인 라이센스 key 이므로 배포 시 주의</li>
+</ul>
+
+  </article>
+  <div style="margin-top: 5vh;"></div>
+  <section>
+
+
+<div style="min-height: 268px;">
+    
+<script src="https://utteranc.es/client.js"
+    repo="jkpark/jkpark.github.io-utterances"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+</div>
+</section>
+</div>
+
+</section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <footer>
+    <p>
+        Powered by the <a href="https://github.com/jkpark/hugo-theme-jkpark" target="_blank">jkpark</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>.
+    </p>
+</footer></body>
+
+</html>

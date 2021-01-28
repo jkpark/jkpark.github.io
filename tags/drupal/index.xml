@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drupal on jkpark&#39;s blog</title>
+    <link>https://jkpark.github.io/tags/drupal/</link>
+    <description>Recent content in Drupal on jkpark&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Thu, 10 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jkpark.github.io/tags/drupal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LEMP stack 에 Drupal8 설치방법</title>
+      <link>https://jkpark.github.io/blog/install-drupal-on-lemp-stack/</link>
+      <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jkpark.github.io/blog/install-drupal-on-lemp-stack/</guid>
+      <description>https://www.drupal.org/download 에서 최신버전의 바이너리를 확인
+jkpark@cactus:/var/www/html$ sudo wget https://ftp.drupal.org/files/projects/drupal-8.2.2.zip --2016-11-09 14:26:53-- https://ftp.drupal.org/files/projects/drupal-8.2.2.zip Resolving ftp.drupal.org (ftp.drupal.org)... 151.101.76.68 접속 ftp.drupal.org (ftp.drupal.org)|151.101.76.68|:443... 접속됨. HTTP request sent, awaiting response... 200 OK Length: 21205013 (20M) [application/zip] Saving to: ‘drupal-8.2.2.zip’ drupal-8.2.2.zip 100%[===========================================&amp;gt;] 20.22M 6.32MB/s in 3.7s 2016-11-09 14:26:58 (5.53 MB/s) - ‘drupal-8.2.2.zip’ saved [21205013/21205013] jkpark@cactus:/var/www/html$ ls -al 합계 20728 drwxr-xr-x 2 www-data www-data 4096 11월 9 14:26 . drwxr-xr-x 3 root root 4096 11월 9 14:24 .</description>
+    </item>
+    
+  </channel>
+</rss>

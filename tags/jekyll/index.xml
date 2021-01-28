@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll on jkpark&#39;s blog</title>
+    <link>https://jkpark.github.io/tags/jekyll/</link>
+    <description>Recent content in Jekyll on jkpark&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 16 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jkpark.github.io/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install Jekyll on Windows 7</title>
+      <link>https://jkpark.github.io/blog/install-jekyll-on-windows7/</link>
+      <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jkpark.github.io/blog/install-jekyll-on-windows7/</guid>
+      <description>이 포스트는 http://jekyll-windows.juthilo.com/ 를 참고 하였습니다.
+Install Ruby and Ruby DevKit Ruby Download Page
+다운로드 ruby v2.3.3 and devKit.
+rubyinstaller-2.3.3-x64.exe DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe  Jekyll has some dependencies which, out of the box, only provide raw source code. To make them into fully functional executables, you’ll probably need to install the Development Kit.
+ The download is a self-extracting archive. extract to C:\RubyDevKit
+cmd 창에서
+cd C:\RubyDevKit ruby dk.rb init init 후 C:\RubyDevKit\config.</description>
+    </item>
+    
+    <item>
+      <title>Jekyll-now로 블로그 생성 및 Ubuntu 16.04에서 local-development</title>
+      <link>https://jkpark.github.io/blog/jekyll-now-creation-and-local-development-on-ubuntu1604/</link>
+      <pubDate>Sun, 26 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jkpark.github.io/blog/jekyll-now-creation-and-local-development-on-ubuntu1604/</guid>
+      <description>Jekyll + Github page 의 조합
+history Jekyll 설치 jkpark@cactus:~$ gem install jekyll 버전 확인
+jkpark@cactus:~$ jekyll -v jekyll 3.4.0 github-pages 설치 jkpark@cactus:~$ sudo gem install github-pages [sudo] password for jkpark: ... Fetching: nokogiri-1.6.8.1.gem (100%) Building native extensions. This could take a while... ERROR: Error installing github-pages: ERROR: Failed to build gem native extension. current directory: /var/lib/gems/2.3.0/gems/nokogiri-1.6.8.1/ext/nokogiri /usr/bin/ruby2.3 -r ./siteconf20170225-14571-taczen.rb extconf.rb mkmf.rb cant find header files for ruby at /usr/lib/ruby/include/ruby.h extconf failed, exit code 1 Gem files will remain installed in /var/lib/gems/2.</description>
+    </item>
+    
+  </channel>
+</rss>

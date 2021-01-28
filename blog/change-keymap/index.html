@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head><meta charset="UTF-8">
+
+<title>
+    Changing keymap on ubuntu - jkpark&#39;s blog
+</title>
+
+<meta name="author" content="JK Park">
+<meta itemprop="description" name="description" content="explain how to switch ESC and CAPSLOCK." />
+<meta name="keywords" content="">
+
+<meta property="og:site_name" content="jkpark&#39;s blog">
+<meta property="og:title" content="Changing keymap on ubuntu">
+<meta property="og:url" content="https://jkpark.github.io/blog/change-keymap/">
+<meta property="og:type" content="article">
+
+
+<meta name="generator" content="Hugo 0.68.3" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1F50DQW5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1F50DQW5H');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href='/css/site.css'>
+<link rel="stylesheet" href='/css/page.css'>
+<link rel="stylesheet" href='/css/dyn.css'>
+<link rel="stylesheet" href='/css/markdown.css'>
+<link rel="stylesheet" href='/css/shortcodes.css'>
+
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div><header id="masthead" class="thm-dark">
+    <div class="wrapper">
+        <nav class="mh-menu">
+            <ul>
+                <li>
+                    <div class="mh-logo">
+                        <img class="avatar" src="https://avatars.githubusercontent.com/jkpark?size=36" alt="avatar" />
+                        <a href="https://jkpark.github.io/" class="text mh-item no-color-link">JK Park</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/">About</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/blog/">Blog</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/homeserver/">Home Server</a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</header><main class="thm-light">
+<section id="main-header" class="thm-dark">
+  
+<div class="wrapper">
+  
+  <div class="date mono"><small>Nov 18, 2014</small></div>
+  
+  
+  <div class ="tags flex">
+    <a class="tag-item z2 mono" href="/tags/ubuntu/">#Ubuntu</a><a class="tag-item z2 mono" href="/tags/ubuntu16.04/">#Ubuntu16.04</a><a class="tag-item z2 mono" href="/tags/keymap/">#keymap</a>
+  </div>
+  
+  <div class="title post-title">Changing keymap on ubuntu</div>
+</div>
+
+</section>
+<section id="main-content">
+  
+
+<sidebar id="section-toc" class="sticky-top pull-right-side">
+<section id="toc">
+<header id="toc-header">
+    <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+        <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+        </g>
+    </svg>
+    <span class="label">Contents</span>
+</header>
+
+<div class="toc-list">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#save-your-current-keyboard-layout">Save your current keyboard layout:</a></li>
+    <li><a href="#check-which-keycodes-are-assigned-to-your-keys">Check which keycodes are assigned to your keys:</a></li>
+    <li><a href="#create-a-keymap-file-which-switches-esc-and-capslock">Create a keymap file which switches ESC and CAPSLOCK:</a></li>
+    <li><a href="#load-the-keymap">Load the keymap:</a></li>
+  </ul>
+</nav>
+</div>
+</section></sidebar>
+
+<div class="wrapper">
+  <div style="margin-top: 5vh;"></div>
+  <article id="post-article" class="content">
+    <p>The tools to manipulate the keyboard layout on the virtual consoles are loadkeys, dumpkeys and showkeys. Read their manpages and inform yourself about their intricacies.</p>
+<p>Note that these tools only work in a virtual console, not in a terminal emulator in X.</p>
+<h1 id="save-your-current-keyboard-layout">Save your current keyboard layout:</h1>
+<pre><code>$ dumpkeys &gt; backup.kmap
+</code></pre><p>In case something goes wrong you might be able restore your keymap using the command:</p>
+<pre><code>$ sudo loadkeys backup.kmap
+</code></pre><p>If the keyboard is so messed up that you can&rsquo;t even do this then your only option not involving ancient kernel magic is to reboot.</p>
+<h1 id="check-which-keycodes-are-assigned-to-your-keys">Check which keycodes are assigned to your keys:</h1>
+<pre><code>$ showkey
+</code></pre><p>Now press the ESC key and the CAPSLOCK key. The keycodes should show up on the screen. Note the keycodes. On my system the ESC has the keycode 1 and CAPSLOCK has the keycode 58. showkey will terminate after 10 seconds of inactivity.</p>
+<p>Note the names of the ESC and CAPSLOCK keys from dumpkeys:</p>
+<pre><code>$ dumpkeys | grep 1
+...
+keycode   1 = Escape
+...
+$ dumpkeys | grep 58
+...
+keycode  58 = CtrlL_Lock
+...
+</code></pre><p>Note the keymap line from dumpkeys:</p>
+<pre><code>$ dumpkeys | head -1
+keymaps 0-127
+</code></pre><h1 id="create-a-keymap-file-which-switches-esc-and-capslock">Create a keymap file which switches ESC and CAPSLOCK:</h1>
+<pre><code>keymaps 0-127
+keycode   1 = CtrlL_Lock
+keycode  58 = Escape
+</code></pre><h1 id="load-the-keymap">Load the keymap:</h1>
+<pre><code>$ sudo loadkeys swap_esc_capslock.kmap
+</code></pre>
+  </article>
+  <div style="margin-top: 5vh;"></div>
+  <section>
+
+
+<div style="min-height: 268px;">
+    
+<script src="https://utteranc.es/client.js"
+    repo="jkpark/jkpark.github.io-utterances"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+</div>
+</section>
+</div>
+
+</section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <footer>
+    <p>
+        Powered by the <a href="https://github.com/jkpark/hugo-theme-jkpark" target="_blank">jkpark</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>.
+    </p>
+</footer></body>
+
+</html>

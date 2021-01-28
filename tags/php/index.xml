@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP on jkpark&#39;s blog</title>
+    <link>https://jkpark.github.io/tags/php/</link>
+    <description>Recent content in PHP on jkpark&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 09 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jkpark.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How To Install Nginx, MariaDB10, PHP7(LEMP stack) on Ubuntu16.04</title>
+      <link>https://jkpark.github.io/blog/install-lemp-stack-on-ubuntu1604/</link>
+      <pubDate>Wed, 09 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jkpark.github.io/blog/install-lemp-stack-on-ubuntu1604/</guid>
+      <description>LEMP Stack 이란
+Linux, Nginx, MariaDB, PHP를 조합하여 줄인말이다.
+Apache vs Nginx
+Nginx(엔진X)는 Apache의 잘 사용하지 않는 기능을 제외하고 새로운 시대의 요청에 부응하여 만들어진 웹 서버이다.
+PHP 속도 테스트
+https://news.netcraft.com/archives/2016/02/22/february-2016-web-server-survey.html
+MariaDB 는 MySQL의 불확실한 라이선스 상태에 반발하여 만들어졌으며 MariaDB 5.5버전까지는 모든 MySQL의 특징을 가지고 있었다. 5.5버전 이후 MariaDB만의 색깔을 더 분명히 하고자 개발판을 10.x로 변경하였다.
+Nginx Web Server 설치 install Nginx
+jkpark@cactus:~$ sudo apt-get install nginx [sudo] password for jkpark: 패키지 목록을 읽는 중입니다.</description>
+    </item>
+    
+  </channel>
+</rss>

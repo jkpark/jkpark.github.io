@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head><meta charset="UTF-8">
+
+<title>
+    Setup for Atom Editor - jkpark&#39;s blog
+</title>
+
+<meta name="author" content="JK Park">
+<meta itemprop="description" name="description" content="Instruction of installing Atom Editor on windows 7." />
+<meta name="keywords" content="">
+
+<meta property="og:site_name" content="jkpark&#39;s blog">
+<meta property="og:title" content="Setup for Atom Editor">
+<meta property="og:url" content="https://jkpark.github.io/blog/atom/">
+<meta property="og:type" content="article">
+
+
+<meta name="generator" content="Hugo 0.68.3" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1F50DQW5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1F50DQW5H');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href='/css/site.css'>
+<link rel="stylesheet" href='/css/page.css'>
+<link rel="stylesheet" href='/css/dyn.css'>
+<link rel="stylesheet" href='/css/markdown.css'>
+<link rel="stylesheet" href='/css/shortcodes.css'>
+
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div><header id="masthead" class="thm-dark">
+    <div class="wrapper">
+        <nav class="mh-menu">
+            <ul>
+                <li>
+                    <div class="mh-logo">
+                        <img class="avatar" src="https://avatars.githubusercontent.com/jkpark?size=36" alt="avatar" />
+                        <a href="https://jkpark.github.io/" class="text mh-item no-color-link">JK Park</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/">About</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/blog/">Blog</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/homeserver/">Home Server</a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</header><main class="thm-light">
+<section id="main-header" class="thm-dark">
+  
+<div class="wrapper">
+  
+  <div class="date mono"><small>Jan 12, 2018</small></div>
+  
+  
+  <div class ="tags flex">
+    <a class="tag-item z2 mono" href="/tags/windows7/">#Windows7</a><a class="tag-item z2 mono" href="/tags/atom/">#Atom</a>
+  </div>
+  
+  <div class="title post-title">Setup for Atom Editor</div>
+</div>
+
+</section>
+<section id="main-content">
+  
+
+<sidebar id="section-toc" class="sticky-top pull-right-side">
+<section id="toc">
+<header id="toc-header">
+    <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+        <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+        </g>
+    </svg>
+    <span class="label">Contents</span>
+</header>
+
+<div class="toc-list">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#설치">설치</a></li>
+    <li><a href="#proxy-설정">Proxy 설정</a></li>
+    <li><a href="#install-extends-packages">Install Extends Packages</a>
+      <ul>
+        <li><a href="#minimap">minimap</a></li>
+        <li><a href="#file-icons">file-icons</a></li>
+        <li><a href="#jekyll">Jekyll</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+</section></sidebar>
+
+<div class="wrapper">
+  <div style="margin-top: 5vh;"></div>
+  <article id="post-article" class="content">
+    <h1 id="설치">설치</h1>
+<p><a href="https://atom.io/">https://atom.io/</a> 에서 Installer 다운로드 후 Install.</p>
+<h1 id="proxy-설정">Proxy 설정</h1>
+<p><code>C:\Users\Jungyu\.atom\.apmrc</code> 파일에 다음 내용 추가.</p>
+<pre><code>https-proxy=http://address:port
+http-proxy=http://address:port
+strict-ssl=false
+</code></pre><h1 id="install-extends-packages">Install Extends Packages</h1>
+<p><code>Ctrl + ,</code> 로 Setting 패널을 열어 Install 항목에서 원하는 Package 이름을 검색 후 설치한다.</p>
+<h2 id="minimap">minimap</h2>
+<blockquote>
+<p>(<a href="https://atom.io/packages/minimap">https://atom.io/packages/minimap</a>)</p>
+</blockquote>
+<blockquote>
+<p>(<a href="https://atom.io/packages/minimap-find-and-replace">https://atom.io/packages/minimap-find-and-replace</a>)</p>
+</blockquote>
+<blockquote>
+<p>(<a href="https://atom.io/packages/minimap-linter">https://atom.io/packages/minimap-linter</a>)</p>
+</blockquote>
+<blockquote>
+<p>(<a href="https://atom.io/packages/minimap-cursorline">https://atom.io/packages/minimap-cursorline</a>)</p>
+</blockquote>
+<h2 id="file-icons">file-icons</h2>
+<blockquote>
+<p>(<a href="https://atom.io/packages/file-icons">https://atom.io/packages/file-icons</a>)</p>
+</blockquote>
+<h2 id="jekyll">Jekyll</h2>
+<blockquote>
+<p>(<a href="https://atom.io/packages/jekyll">https://atom.io/packages/jekyll</a>)</p>
+</blockquote>
+<blockquote>
+<p>(<a href="https://atom.io/packages/language-liquid">https://atom.io/packages/language-liquid</a>)</p>
+</blockquote>
+<blockquote>
+<p>(<a href="https://atom.io/packages/language-gfm2">https://atom.io/packages/language-gfm2</a>)</p>
+</blockquote>
+
+  </article>
+  <div style="margin-top: 5vh;"></div>
+  <section>
+
+
+<div style="min-height: 268px;">
+    
+<script src="https://utteranc.es/client.js"
+    repo="jkpark/jkpark.github.io-utterances"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+</div>
+</section>
+</div>
+
+</section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <footer>
+    <p>
+        Powered by the <a href="https://github.com/jkpark/hugo-theme-jkpark" target="_blank">jkpark</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>.
+    </p>
+</footer></body>
+
+</html>

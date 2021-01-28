@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head><meta charset="UTF-8">
+
+<title>
+    LEMP stack 에 Drupal8 설치방법 - jkpark&#39;s blog
+</title>
+
+<meta name="author" content="JK Park">
+<meta itemprop="description" name="description" content="" />
+<meta name="keywords" content="">
+
+<meta property="og:site_name" content="jkpark&#39;s blog">
+<meta property="og:title" content="LEMP stack 에 Drupal8 설치방법">
+<meta property="og:url" content="https://jkpark.github.io/blog/install-drupal-on-lemp-stack/">
+<meta property="og:type" content="article">
+
+
+<meta name="generator" content="Hugo 0.68.3" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1F50DQW5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1F50DQW5H');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href='/css/site.css'>
+<link rel="stylesheet" href='/css/page.css'>
+<link rel="stylesheet" href='/css/dyn.css'>
+<link rel="stylesheet" href='/css/markdown.css'>
+<link rel="stylesheet" href='/css/shortcodes.css'>
+
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div><header id="masthead" class="thm-dark">
+    <div class="wrapper">
+        <nav class="mh-menu">
+            <ul>
+                <li>
+                    <div class="mh-logo">
+                        <img class="avatar" src="https://avatars.githubusercontent.com/jkpark?size=36" alt="avatar" />
+                        <a href="https://jkpark.github.io/" class="text mh-item no-color-link">JK Park</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/">About</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/blog/">Blog</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/homeserver/">Home Server</a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</header><main class="thm-light">
+<section id="main-header" class="thm-dark">
+  
+<div class="wrapper">
+  
+  <div class="date mono"><small>Nov 10, 2016</small></div>
+  
+  
+  <div class ="tags flex">
+    <a class="tag-item z2 mono" href="/tags/ubuntu/">#Ubuntu</a><a class="tag-item z2 mono" href="/tags/ubuntu16.04/">#Ubuntu16.04</a><a class="tag-item z2 mono" href="/tags/drupal/">#Drupal</a><a class="tag-item z2 mono" href="/tags/lemp-stack/">#LEMP stack</a><a class="tag-item z2 mono" href="/tags/mariadb/">#MariaDB</a><a class="tag-item z2 mono" href="/tags/nginx/">#NGINX</a>
+  </div>
+  
+  <div class="title post-title">LEMP stack 에 Drupal8 설치방법</div>
+</div>
+
+</section>
+<section id="main-content">
+  
+
+<sidebar id="section-toc" class="sticky-top pull-right-side">
+<section id="toc">
+<header id="toc-header">
+    <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+        <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+        </g>
+    </svg>
+    <span class="label">Contents</span>
+</header>
+
+<div class="toc-list">
+    <nav id="TableOfContents"></nav>
+</div>
+</section></sidebar>
+
+<div class="wrapper">
+  <div style="margin-top: 5vh;"></div>
+  <article id="post-article" class="content">
+    <p><a href="https://www.drupal.org/download">https://www.drupal.org/download</a> 에서 최신버전의 바이너리를 확인</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/var/www/html$ sudo wget https://ftp.drupal.org/files/projects/drupal-8.2.2.zip
+--2016-11-09 14:26:53--  https://ftp.drupal.org/files/projects/drupal-8.2.2.zip
+Resolving ftp.drupal.org <span style="color:#000;font-weight:bold">(</span>ftp.drupal.org<span style="color:#000;font-weight:bold">)</span>... 151.101.76.68
+접속 ftp.drupal.org <span style="color:#000;font-weight:bold">(</span>ftp.drupal.org<span style="color:#000;font-weight:bold">)</span>|151.101.76.68|:443... 접속됨.
+HTTP request sent, awaiting response... <span style="color:#099">200</span> OK
+Length: <span style="color:#099">21205013</span> <span style="color:#000;font-weight:bold">(</span>20M<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">[</span>application/zip<span style="color:#000;font-weight:bold">]</span>
+Saving to: ‘drupal-8.2.2.zip’
+drupal-8.2.2.zip            100%<span style="color:#000;font-weight:bold">[===========================================</span>&gt;<span style="color:#000;font-weight:bold">]</span>  20.22M  6.32MB/s    in 3.7s
+2016-11-09 14:26:58 <span style="color:#000;font-weight:bold">(</span>5.53 MB/s<span style="color:#000;font-weight:bold">)</span> - ‘drupal-8.2.2.zip’ saved <span style="color:#000;font-weight:bold">[</span>21205013/21205013<span style="color:#000;font-weight:bold">]</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/var/www/html$ ls -al
+합계 <span style="color:#099">20728</span>
+drwxr-xr-x <span style="color:#099">2</span> www-data www-data     <span style="color:#099">4096</span> 11월  <span style="color:#099">9</span> 14:26 .
+drwxr-xr-x <span style="color:#099">3</span> root     root         <span style="color:#099">4096</span> 11월  <span style="color:#099">9</span> 14:24 ..
+-rw-r--r-- <span style="color:#099">1</span> root     root     <span style="color:#099">21205013</span> 11월  <span style="color:#099">3</span> 03:08 drupal-8.2.2.zip
+-rwxr-xr-x <span style="color:#099">1</span> www-data www-data      <span style="color:#099">612</span> 11월  <span style="color:#099">8</span> 22:06 index.nginx-debian.html
+-rwxr-xr-x <span style="color:#099">1</span> www-data www-data       <span style="color:#099">20</span> 11월  <span style="color:#099">8</span> 23:58 info.php
+jkpark@cactus:/var/www/html$ sudo unzip drupal-8.2.2.zip
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/var/www/html$ sudo mv drupal-8.2.2 drupal
+jkpark@cactus:/var/www/html$ ls -al
+합계 <span style="color:#099">20732</span>
+drwxr-xr-x <span style="color:#099">3</span> www-data www-data     <span style="color:#099">4096</span> 11월  <span style="color:#099">9</span> 14:28 .
+drwxr-xr-x <span style="color:#099">3</span> root     root         <span style="color:#099">4096</span> 11월  <span style="color:#099">9</span> 14:24 ..
+drwxr-xr-x <span style="color:#099">8</span> root     root         <span style="color:#099">4096</span> 11월  <span style="color:#099">2</span> 18:08 drupal
+-rw-r--r-- <span style="color:#099">1</span> root     root     <span style="color:#099">21205013</span> 11월  <span style="color:#099">3</span> 03:08 drupal-8.2.2.zip
+-rwxr-xr-x <span style="color:#099">1</span> www-data www-data      <span style="color:#099">612</span> 11월  <span style="color:#099">8</span> 22:06 index.nginx-debian.html
+-rwxr-xr-x <span style="color:#099">1</span> www-data www-data       <span style="color:#099">20</span> 11월  <span style="color:#099">8</span> 23:58 info.php
+jkpark@cactus:/var/www/html$ sudo rm drupal-8.2.2.zip
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/var/www/html$ sudo chown www-data: -R drupal
+jkpark@cactus:/var/www/html$ ls -al
+합계 <span style="color:#099">20</span>
+drwxr-xr-x <span style="color:#099">3</span> www-data www-data <span style="color:#099">4096</span> 11월  <span style="color:#099">9</span> 14:29 .
+drwxr-xr-x <span style="color:#099">3</span> root     root     <span style="color:#099">4096</span> 11월  <span style="color:#099">9</span> 14:24 ..
+drwxr-xr-x <span style="color:#099">8</span> www-data www-data <span style="color:#099">4096</span> 11월  <span style="color:#099">2</span> 18:08 drupal
+-rwxr-xr-x <span style="color:#099">1</span> www-data www-data  <span style="color:#099">612</span> 11월  <span style="color:#099">8</span> 22:06 index.nginx-debian.html
+-rwxr-xr-x <span style="color:#099">1</span> www-data www-data   <span style="color:#099">20</span> 11월  <span style="color:#099">8</span> 23:58 info.php
+</code></pre></div><p>데이터베이스 생성</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/var/www/html$ mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or <span style="color:#d14">\g</span>.
+Your MariaDB connection id is <span style="color:#099">32</span>
+Server version: 10.0.27-MariaDB-0ubuntu0.16.04.1 Ubuntu 16.04
+
+Copyright <span style="color:#000;font-weight:bold">(</span>c<span style="color:#000;font-weight:bold">)</span> 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type <span style="color:#d14">&#39;help;&#39;</span> or <span style="color:#d14">&#39;\h&#39;</span> <span style="color:#000;font-weight:bold">for</span> help. Type <span style="color:#d14">&#39;\c&#39;</span> to clear the current input statement.
+
+MariaDB <span style="color:#000;font-weight:bold">[(</span>none<span style="color:#000;font-weight:bold">)]</span>&gt; create database drupal;
+Query OK, <span style="color:#099">1</span> row affected <span style="color:#000;font-weight:bold">(</span>0.00 sec<span style="color:#000;font-weight:bold">)</span>
+
+MariaDB <span style="color:#000;font-weight:bold">[(</span>none<span style="color:#000;font-weight:bold">)]</span>&gt; grant all privileges on drupal.* to drupaluser@localhost identified by <span style="color:#d14">&#39;your_password&#39;</span>;
+Query OK, <span style="color:#099">0</span> rows affected <span style="color:#000;font-weight:bold">(</span>0.01 sec<span style="color:#000;font-weight:bold">)</span>
+
+MariaDB <span style="color:#000;font-weight:bold">[(</span>none<span style="color:#000;font-weight:bold">)]</span>&gt; flush privileges;
+Query OK, <span style="color:#099">0</span> rows affected <span style="color:#000;font-weight:bold">(</span>0.00 sec<span style="color:#000;font-weight:bold">)</span>
+
+MariaDB <span style="color:#000;font-weight:bold">[(</span>none<span style="color:#000;font-weight:bold">)]</span>&gt; <span style="color:#0086b3">exit</span>
+Bye
+</code></pre></div><p>확인</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/var/www/html$ mysql -u drupaluser -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or <span style="color:#d14">\g</span>.
+Your MariaDB connection id is <span style="color:#099">34</span>
+Server version: 10.0.27-MariaDB-0ubuntu0.16.04.1 Ubuntu 16.04
+
+Copyright <span style="color:#000;font-weight:bold">(</span>c<span style="color:#000;font-weight:bold">)</span> 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type <span style="color:#d14">&#39;help;&#39;</span> or <span style="color:#d14">&#39;\h&#39;</span> <span style="color:#000;font-weight:bold">for</span> help. Type <span style="color:#d14">&#39;\c&#39;</span> to clear the current input statement.
+
+MariaDB <span style="color:#000;font-weight:bold">[(</span>none<span style="color:#000;font-weight:bold">)]</span>&gt; <span style="color:#0086b3">exit</span>
+Bye
+</code></pre></div><p>drupal 접속을 위해 nginx default 설정파일을 수정한다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/etc/nginx/sites-available$ sudo vi default
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  <span style="color:#099">4</span>     root /var/www/html/drupal;
+  <span style="color:#099">5</span>     index index.html index.htm index.php;
+  <span style="color:#099">6</span>     server_name 192.168.0.102;
+  <span style="color:#099">7</span>     location / <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#099">8</span>         index index.php;
+  <span style="color:#099">9</span>         try_files <span style="color:#008080">$uri</span> <span style="color:#008080">$uri</span>/ /index.php<span style="color:#008080">$is_args$args</span>;
+ <span style="color:#099">10</span> <span style="color:#998;font-style:italic">#try_files $uri $uri/ =404;</span>
+ <span style="color:#099">11</span>     <span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>테스트 &amp; 재시작</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/etc/nginx/sites-available$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf <span style="color:#0086b3">test</span> is successful
+jkpark@cactus:/etc/nginx/sites-available$ sudo systemctl restart nginx
+</code></pre></div><p>설정</p>
+<p><img src="https://2.bp.blogspot.com/-FJXtmhK8BJk/WCK9uFOH_pI/AAAAAAAAAgo/EBFldQj9HPUsHB4VTGUkDZW7f5Q-4nYmACLcB/s500/step1.PNG" alt="" /></p>
+<p><img src="https://4.bp.blogspot.com/-hGLa3PTv1-c/WCK9uCCQuBI/AAAAAAAAAgs/D-x5zJkykI82p2HkVBaT3wPvjXaL3QWMQCLcB/s500/step2.PNG" alt="" /></p>
+<p><img src="https://3.bp.blogspot.com/--E1mGlUMf18/WCK9uBk87_I/AAAAAAAAAgw/Y86G3AGRh34oYxOyQUQGQTDC8jExPEYiwCLcB/s500/step3.PNG" alt="" /></p>
+<p>php gd모듈과 xml 모듈 설치</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/etc/nginx/sites-available$ sudo apt-get install php7.0-gd php7.0-xml
+패키지 목록을 읽는 중입니다... 완료
+의존성 트리를 만드는 중입니다
+상태 정보를 읽는 중입니다... 완료
+다음 새 패키지를 설치할 것입니다:
+  php7.0-gd php7.0-xml
+0개 업그레이드, 2개 새로 설치, 0개 제거 및 2개 업그레이드 안 함.
+<span style="color:#099">139</span> k바이트 아카이브를 받아야 합니다.
+이 작업 후 <span style="color:#099">613</span> k바이트의 디스크 공간을 더 사용하게 됩니다.
+받기:1 http://kr.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php7.0-gd amd64 7.0.8-0ubuntu0.16.04.3 <span style="color:#000;font-weight:bold">[</span>27.1 kB<span style="color:#000;font-weight:bold">]</span>
+받기:2 http://kr.archive.ubuntu.com/ubuntu xenial-updates/main amd64 php7.0-xml amd64 7.0.8-0ubuntu0.16.04.3 <span style="color:#000;font-weight:bold">[</span><span style="color:#099">112</span> kB<span style="color:#000;font-weight:bold">]</span>
+내려받기 <span style="color:#099">139</span> k바이트, 소요시간 0초 <span style="color:#000;font-weight:bold">(</span><span style="color:#099">583</span> k바이트/초<span style="color:#000;font-weight:bold">)</span>
+Selecting previously unselected package php7.0-gd.
+<span style="color:#000;font-weight:bold">(</span>데이터베이스 읽는중 ...현재 212758개의 파일과 디렉터리가 설치되어 있습니다.<span style="color:#000;font-weight:bold">)</span>
+Preparing to unpack .../php7.0-gd_7.0.8-0ubuntu0.16.04.3_amd64.deb ...
+Unpacking php7.0-gd <span style="color:#000;font-weight:bold">(</span>7.0.8-0ubuntu0.16.04.3<span style="color:#000;font-weight:bold">)</span> ...
+Selecting previously unselected package php7.0-xml.
+Preparing to unpack .../php7.0-xml_7.0.8-0ubuntu0.16.04.3_amd64.deb ...
+Unpacking php7.0-xml <span style="color:#000;font-weight:bold">(</span>7.0.8-0ubuntu0.16.04.3<span style="color:#000;font-weight:bold">)</span> ...
+Processing triggers <span style="color:#000;font-weight:bold">for</span> php7.0-fpm <span style="color:#000;font-weight:bold">(</span>7.0.8-0ubuntu0.16.04.3<span style="color:#000;font-weight:bold">)</span> ...
+php7.0-gd <span style="color:#000;font-weight:bold">(</span>7.0.8-0ubuntu0.16.04.3<span style="color:#000;font-weight:bold">)</span> 설정하는 중입니다 ...
+
+Creating config file /etc/php/7.0/mods-available/gd.ini with new version
+php7.0-xml <span style="color:#000;font-weight:bold">(</span>7.0.8-0ubuntu0.16.04.3<span style="color:#000;font-weight:bold">)</span> 설정하는 중입니다 ...
+
+Creating config file /etc/php/7.0/mods-available/dom.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/simplexml.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/wddx.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/xml.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/xmlreader.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/xmlwriter.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/xsl.ini with new version
+Processing triggers <span style="color:#000;font-weight:bold">for</span> php7.0-fpm <span style="color:#000;font-weight:bold">(</span>7.0.8-0ubuntu0.16.04.3<span style="color:#000;font-weight:bold">)</span> ...
+jkpark@cactus:/etc/nginx/sites-available$ sudo systemctl restart php7.0-fpm.service
+</code></pre></div><p><img src="https://4.bp.blogspot.com/-5ppghTTs0eU/WCLAeH5rzaI/AAAAAAAAAhU/qOkylwNc7NAOAJUgR8taHmmVNkziqtEeQCLcB/s500/step4.PNG" alt="" /></p>
+<p><img src="https://3.bp.blogspot.com/-bYKd6G15r3k/WCLAePVDs4I/AAAAAAAAAhQ/xshYCQxgqtYZWQ1XSMuZNm19THN8E358gCLcB/s500/step5.PNG" alt="" /></p>
+<p><img src="https://1.bp.blogspot.com/-Oo7Zx1GI3ic/WCLAeIj6QhI/AAAAAAAAAhM/f7sfP-BqowEkMLE9m-Qwmjsov4NywJFqgCLcB/s500/step6.PNG" alt="" /></p>
+<p><img src="https://1.bp.blogspot.com/-24Qw1piWteY/WCLAed4wzBI/AAAAAAAAAhg/TbdKGaDCeYYkYeGhA2M2euXntlWld3DpQCLcB/s500/step7.PNG" alt="" /></p>
+<p><img src="https://1.bp.blogspot.com/-0_hMvm38fa0/WCLAeXPC18I/AAAAAAAAAhY/70qwOW4A-pU-2oapCS4YInQ-kbT_91NDgCLcB/s500/step8.PNG" alt="" /></p>
+<p><img src="https://1.bp.blogspot.com/-CDck84-SGbs/WCLAeil2KZI/AAAAAAAAAhc/eHCY8N1NTAsHDnKbE8va6eS78MjQqIlpwCLcB/s500/step9.PNG" alt="" /></p>
+<p>설치 완료.</p>
+
+  </article>
+  <div style="margin-top: 5vh;"></div>
+  <section>
+
+
+<div style="min-height: 268px;">
+    
+<script src="https://utteranc.es/client.js"
+    repo="jkpark/jkpark.github.io-utterances"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+</div>
+</section>
+</div>
+
+</section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <footer>
+    <p>
+        Powered by the <a href="https://github.com/jkpark/hugo-theme-jkpark" target="_blank">jkpark</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>.
+    </p>
+</footer></body>
+
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTTP on jkpark&#39;s blog</title>
+    <link>https://jkpark.github.io/tags/http/</link>
+    <description>Recent content in HTTP on jkpark&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 09 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jkpark.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTTP 공부</title>
+      <link>https://jkpark.github.io/blog/http/</link>
+      <pubDate>Tue, 09 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jkpark.github.io/blog/http/</guid>
+      <description>하이퍼텍스트 트랜스퍼 프로토콜(HTTP)는 HTML과 같은, 하이퍼미디어 문서 전송을 위한 응용-계층 프로토콜입니다. HTTP는 웹 브라우저와 웹 서버 사이의 통신을 위해 설계되었지만 다른 목적을 위해서도 사용될 수 있습니다. 이 프로토콜은 연결을 열고, 요청을 보낸 뒤 응답을 받을 때까지 대기하는 클라이언트를 이용하는 고전적인 클라이언트-서버 모델을 따릅니다. 또한 상태없는 프로토콜로, 이는 두 개의 요청 사이에 어떤 데이터(상태)도 서버가 유지하지 않는다는 것을 의미합니다. 종종 TCP / IP 계층을 기반으로 하지만, 모든 안정적인 전송 계층에서 사용할 수 있습니다.</description>
+    </item>
+    
+  </channel>
+</rss>
