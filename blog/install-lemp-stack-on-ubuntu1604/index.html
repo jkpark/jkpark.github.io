@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head><meta charset="UTF-8">
+
+<title>
+    How To Install Nginx, MariaDB10, PHP7(LEMP stack) on Ubuntu16.04 - jkpark&#39;s blog
+</title>
+
+<meta name="author" content="JK Park">
+<meta itemprop="description" name="description" content="" />
+<meta name="keywords" content="">
+
+<meta property="og:site_name" content="jkpark&#39;s blog">
+<meta property="og:title" content="How To Install Nginx, MariaDB10, PHP7(LEMP stack) on Ubuntu16.04">
+<meta property="og:url" content="https://jkpark.github.io/blog/install-lemp-stack-on-ubuntu1604/">
+<meta property="og:type" content="article">
+
+
+<meta name="generator" content="Hugo 0.68.3" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1F50DQW5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1F50DQW5H');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href='/css/site.css'>
+<link rel="stylesheet" href='/css/page.css'>
+<link rel="stylesheet" href='/css/dyn.css'>
+<link rel="stylesheet" href='/css/markdown.css'>
+<link rel="stylesheet" href='/css/shortcodes.css'>
+
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div><header id="masthead" class="thm-dark">
+    <div class="wrapper">
+        <nav class="mh-menu">
+            <ul>
+                <li>
+                    <div class="mh-logo">
+                        <img class="avatar" src="https://avatars.githubusercontent.com/jkpark?size=36" alt="avatar" />
+                        <a href="https://jkpark.github.io/" class="text mh-item no-color-link">JK Park</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/">About</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/blog/">Blog</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/homeserver/">Home Server</a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</header><main class="thm-light">
+<section id="main-header" class="thm-dark">
+  
+<div class="wrapper">
+  
+  <div class="date mono"><small>Nov 9, 2016</small></div>
+  
+  
+  <div class ="tags flex">
+    <a class="tag-item z2 mono" href="/tags/ubuntu/">#Ubuntu</a><a class="tag-item z2 mono" href="/tags/ubuntu16.04/">#Ubuntu16.04</a><a class="tag-item z2 mono" href="/tags/lemp-stack/">#LEMP stack</a><a class="tag-item z2 mono" href="/tags/mariadb/">#MariaDB</a><a class="tag-item z2 mono" href="/tags/nginx/">#NGINX</a><a class="tag-item z2 mono" href="/tags/php/">#PHP</a>
+  </div>
+  
+  <div class="title post-title">How To Install Nginx, MariaDB10, PHP7(LEMP stack) on Ubuntu16.04</div>
+</div>
+
+</section>
+<section id="main-content">
+  
+
+<sidebar id="section-toc" class="sticky-top pull-right-side">
+<section id="toc">
+<header id="toc-header">
+    <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+        <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+        </g>
+    </svg>
+    <span class="label">Contents</span>
+</header>
+
+<div class="toc-list">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#nginx-web-server-설치">Nginx Web Server 설치</a></li>
+    <li><a href="#http20-프로토콜-활설화">HTTP/2.0 프로토콜 활설화</a></li>
+    <li><a href="#php7-설치">PHP7 설치</a></li>
+    <li><a href="#mariadb-설치">MariaDB 설치</a></li>
+  </ul>
+</nav>
+</div>
+</section></sidebar>
+
+<div class="wrapper">
+  <div style="margin-top: 5vh;"></div>
+  <article id="post-article" class="content">
+    <p><a href="https://lemp.io/">LEMP Stack</a> 이란</p>
+<p>Linux, Nginx, MariaDB, PHP를 조합하여 줄인말이다.</p>
+<p><code>Apache</code> vs <code>Nginx</code></p>
+<p><code>Nginx</code>(엔진X)는 <code>Apache</code>의 잘 사용하지 않는 기능을 제외하고 새로운 시대의 요청에 부응하여 만들어진 웹 서버이다.</p>
+<p><a href="http://www.theorganicagency.com/blog/apache-vs-nginx-performance-comparison/">PHP 속도 테스트</a></p>
+<p><img src="https://3.bp.blogspot.com/-i3piYEtcSso/WCHK14sRsSI/AAAAAAAAAfY/A3W4qePtFdYxFBaMcBAAPigTHlm1qlqIACLcB/s400/%25EC%25BA%25A1%25EC%25B2%2598.PNG" alt="" />
+<a href="https://news.netcraft.com/archives/2016/02/22/february-2016-web-server-survey.html">https://news.netcraft.com/archives/2016/02/22/february-2016-web-server-survey.html</a></p>
+<p><a href="https://ko.wikipedia.org/wiki/MariaDB">MariaDB</a> 는 MySQL의 불확실한 라이선스 상태에 반발하여 만들어졌으며 MariaDB 5.5버전까지는 모든 MySQL의 특징을 가지고 있었다.
+5.5버전 이후 MariaDB만의 색깔을 더 분명히 하고자 개발판을 10.x로 변경하였다.</p>
+<h1 id="nginx-web-server-설치">Nginx Web Server 설치</h1>
+<p>install Nginx</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:~$ sudo apt-get install nginx
+<span style="color:#000;font-weight:bold">[</span>sudo<span style="color:#000;font-weight:bold">]</span> password <span style="color:#000;font-weight:bold">for</span> jkpark:
+패키지 목록을 읽는 중입니다... 완료
+의존성 트리를 만드는 중입니다
+상태 정보를 읽는 중입니다... 완료
+The following additional packages will be installed:
+  nginx-common nginx-core
+제안하는 패키지:
+  fcgiwrap nginx-doc
+다음 새 패키지를 설치할 것입니다:
+  nginx nginx-common nginx-core
+0개 업그레이드, 3개 새로 설치, 0개 제거 및 2개 업그레이드 안 함.
+<span style="color:#099">458</span> k바이트 아카이브를 받아야 합니다.
+이 작업 후 1,482 k바이트의 디스크 공간을 더 사용하게 됩니다.
+계속 하시겠습니까? <span style="color:#000;font-weight:bold">[</span>Y/n<span style="color:#000;font-weight:bold">]</span> y
+받기:1 http://kr.archive.ubuntu.com/ubuntu xenial-updates/main amd64 nginx-common all 1.10.0-0ubuntu0.16.04.4 <span style="color:#000;font-weight:bold">[</span>26.6 kB<span style="color:#000;font-weight:bold">]</span>
+받기:2 http://kr.archive.ubuntu.com/ubuntu xenial-updates/main amd64 nginx-core amd64 1.10.0-0ubuntu0.16.04.4 <span style="color:#000;font-weight:bold">[</span><span style="color:#099">428</span> kB<span style="color:#000;font-weight:bold">]</span>
+받기:3 http://kr.archive.ubuntu.com/ubuntu xenial-updates/main amd64 nginx all 1.10.0-0ubuntu0.16.04.4 <span style="color:#000;font-weight:bold">[</span>3,498 B<span style="color:#000;font-weight:bold">]</span>
+내려받기 <span style="color:#099">458</span> k바이트, 소요시간 0초 <span style="color:#000;font-weight:bold">(</span>1,224 k바이트/초<span style="color:#000;font-weight:bold">)</span>
+패키지를 미리 설정하는 중입니다...
+Selecting previously unselected package nginx-common.
+<span style="color:#000;font-weight:bold">(</span>데이터베이스 읽는중 ...현재 212073개의 파일과 디렉터리가 설치되어 있습니다.<span style="color:#000;font-weight:bold">)</span>
+Preparing to unpack .../nginx-common_1.10.0-0ubuntu0.16.04.4_all.deb ...
+Unpacking nginx-common <span style="color:#000;font-weight:bold">(</span>1.10.0-0ubuntu0.16.04.4<span style="color:#000;font-weight:bold">)</span> ...
+Selecting previously unselected package nginx-core.
+Preparing to unpack .../nginx-core_1.10.0-0ubuntu0.16.04.4_amd64.deb ...
+Unpacking nginx-core <span style="color:#000;font-weight:bold">(</span>1.10.0-0ubuntu0.16.04.4<span style="color:#000;font-weight:bold">)</span> ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../nginx_1.10.0-0ubuntu0.16.04.4_all.deb ...
+Unpacking nginx <span style="color:#000;font-weight:bold">(</span>1.10.0-0ubuntu0.16.04.4<span style="color:#000;font-weight:bold">)</span> ...
+Processing triggers <span style="color:#000;font-weight:bold">for</span> ufw <span style="color:#000;font-weight:bold">(</span>0.35-0ubuntu2<span style="color:#000;font-weight:bold">)</span> ...
+Processing triggers <span style="color:#000;font-weight:bold">for</span> ureadahead <span style="color:#000;font-weight:bold">(</span>0.100.0-19<span style="color:#000;font-weight:bold">)</span> ...
+Processing triggers <span style="color:#000;font-weight:bold">for</span> systemd <span style="color:#000;font-weight:bold">(</span>229-4ubuntu12<span style="color:#000;font-weight:bold">)</span> ...
+nginx-common <span style="color:#000;font-weight:bold">(</span>1.10.0-0ubuntu0.16.04.4<span style="color:#000;font-weight:bold">)</span> 설정하는 중입니다 ...
+nginx-core <span style="color:#000;font-weight:bold">(</span>1.10.0-0ubuntu0.16.04.4<span style="color:#000;font-weight:bold">)</span> 설정하는 중입니다 ...
+nginx <span style="color:#000;font-weight:bold">(</span>1.10.0-0ubuntu0.16.04.4<span style="color:#000;font-weight:bold">)</span> 설정하는 중입니다 ...
+Processing triggers <span style="color:#000;font-weight:bold">for</span> systemd <span style="color:#000;font-weight:bold">(</span>229-4ubuntu12<span style="color:#000;font-weight:bold">)</span> ...
+Processing triggers <span style="color:#000;font-weight:bold">for</span> ureadahead <span style="color:#000;font-weight:bold">(</span>0.100.0-19<span style="color:#000;font-weight:bold">)</span> ...
+Processing triggers <span style="color:#000;font-weight:bold">for</span> ufw <span style="color:#000;font-weight:bold">(</span>0.35-0ubuntu2<span style="color:#000;font-weight:bold">)</span> ...
+</code></pre></div><p><code>netstat</code>, <code>systemctl</code> 또는 브라우저로 <code>nginx</code> 동작 확인 (디폴트 포트80)</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:~$ sudo systemctl status nginx.service
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded <span style="color:#000;font-weight:bold">(</span>/lib/systemd/system/nginx.service; enabled; vendor preset: enabled<span style="color:#000;font-weight:bold">)</span>
+   Active: active <span style="color:#000;font-weight:bold">(</span>running<span style="color:#000;font-weight:bold">)</span> since 화 2016-11-08 22:06:57 KST; 3min 41s ago
+ Main PID: <span style="color:#099">16028</span> <span style="color:#000;font-weight:bold">(</span>nginx<span style="color:#000;font-weight:bold">)</span>
+   CGroup: /system.slice/nginx.service
+           ├─16028 nginx: master process /usr/sbin/nginx -g daemon on; master_process on
+           ├─16029 nginx: worker process
+           ├─16030 nginx: worker process
+           ├─16031 nginx: worker process
+           └─16032 nginx: worker process
+
+11월 <span style="color:#099">08</span> 22:06:57 cactus systemd<span style="color:#000;font-weight:bold">[</span>1<span style="color:#000;font-weight:bold">]</span>: Starting A high performance web server and a reverse proxy server...
+11월 <span style="color:#099">08</span> 22:06:57 cactus systemd<span style="color:#000;font-weight:bold">[</span>1<span style="color:#000;font-weight:bold">]</span>: Started A high performance web server and a reverse proxy server.
+</code></pre></div><p><img src="https://4.bp.blogspot.com/-SGqaJImaZfk/WCHPFH7FmwI/AAAAAAAAAfs/dEsIz4mBFYMG8V9kU94Kr3oGUTTxWarHwCLcB/s320/%25EC%25BA%25A1%25EC%25B2%2598.PNG" alt="" /></p>
+<h1 id="http20-프로토콜-활설화">HTTP/2.0 프로토콜 활설화</h1>
+<p>lastest release of Nginx binaries의 <code>HTTP/2.0</code> 프로토콜은 <code>SSL</code>과 함께 사용해야 동작된다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/etc/nginx/sites-available$ sudo mv default default.backup
+jkpark@cactus:/etc/nginx/sites-available$ sudo vi default
+</code></pre></div><p>아래 내용 복사하여 <code>HTTP/2.0</code> 을 활성화한다.</p>
+<p><code>server_name</code>는 자신의 IP주소를 적는다.</p>
+<pre><code>server {
+listen 443 ssl http2 default_server;
+listen [::]:443 ssl http2 default_server;
+root /var/www/html;
+index index.html index.htm index.php;
+server_name 192.168.0.102;
+location / {
+try_files $uri $uri/ =404;
+}
+ssl_certificate /etc/nginx/ssl/nginx.crt;
+ssl_certificate_key /etc/nginx/ssl/nginx.key;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_prefer_server_ciphers on;
+ssl_ciphers EECDH+CHACHA20:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
+ssl_dhparam  /etc/nginx/ssl/dhparam.pem;
+ssl_session_cache shared:SSL:20m;
+ssl_session_timeout 180m;
+resolver 8.8.8.8 8.8.4.4;
+add_header Strict-Transport-Security &quot;max-age=31536000;
+#includeSubDomains&quot; always;
+location ~ \.php$ {
+include snippets/fastcgi-php.conf;
+fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+}
+location ~ /\.ht {
+deny all;
+}
+}
+server {
+listen         80;
+listen    [::]:80;
+server_name    192.168.0.102;
+return         301 https://$server_name$request_uri;
+}
+</code></pre><p>위의 default 설정이 끝나면 <code>SSL</code> 사용을 위한 파일을 만든다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/etc/nginx$ sudo mkdir ssl
+jkpark@cactus:/etc/nginx$ sudo openssl req -x509 -nodes -days <span style="color:#099">3650</span> -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+Generating a <span style="color:#099">2048</span> bit RSA private key
+..........................................................+++
+............................................................................................+++
+writing new private key to <span style="color:#d14">&#39;/etc/nginx/ssl/nginx.key&#39;</span>
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter <span style="color:#d14">&#39;.&#39;</span>, the field will be left blank.
+-----
+Country Name <span style="color:#000;font-weight:bold">(</span><span style="color:#099">2</span> letter code<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">[</span>AU<span style="color:#000;font-weight:bold">]</span>:KR
+State or Province Name <span style="color:#000;font-weight:bold">(</span>full name<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">[</span>Some-State<span style="color:#000;font-weight:bold">]</span>:.
+Locality Name <span style="color:#000;font-weight:bold">(</span>eg, city<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">[]</span>:Seoul
+Organization Name <span style="color:#000;font-weight:bold">(</span>eg, company<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">[</span>Internet Widgits Pty Ltd<span style="color:#000;font-weight:bold">]</span>:Indiecoders
+Organizational Unit Name <span style="color:#000;font-weight:bold">(</span>eg, section<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">[]</span>:.
+Common Name <span style="color:#000;font-weight:bold">(</span>e.g. server FQDN or YOUR name<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">[]</span>:.
+Email Address <span style="color:#000;font-weight:bold">[]</span>:jkparkr@indiecoders.org
+jkpark@cactus:/etc/nginx$
+
+5. DH<span style="color:#000;font-weight:bold">(</span>Diffie-Hellman<span style="color:#000;font-weight:bold">)</span>암호키를 만든다.
+jkpark@cactus:/etc/nginx$ sudo openssl dhparam -out /etc/nginx/ssl/dhparam.pem <span style="color:#099">2048</span>
+Generating DH parameters, <span style="color:#099">2048</span> bit long safe prime, generator <span style="color:#099">2</span>
+This is going to take a long <span style="color:#0086b3">time</span>
+.............................................................++*++*
+</code></pre></div><p>DH암호키가 만들어졌다면 <code>Nginx</code> 설정이 제대로 되었는지 확인해본다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/etc/nginx$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf <span style="color:#0086b3">test</span> is successful
+jkpark@cactus:/etc/nginx$ sudo systemctl restart nginx.service
+</code></pre></div><p>아래 명령어로 <code>Nginx</code>가 <code>HTTP/2.0</code> 프로토콜을 사용하고 있는지 확인할 수 있다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/etc/nginx$ openssl s_client -connect localhost:443 -nextprotoneg <span style="color:#d14">&#39;&#39;</span>
+CONNECTED<span style="color:#000;font-weight:bold">(</span>00000003<span style="color:#000;font-weight:bold">)</span>
+Protocols advertised by server: h2, http/1.1
+140205134509720:error:140920E3:SSL routines:ssl3_get_server_hello:parse tlsext:s3_clnt.c:1152:
+---
+no peer certificate available
+---
+No client certificate CA names sent
+---
+SSL handshake has <span style="color:#0086b3">read</span> <span style="color:#099">87</span> bytes and written <span style="color:#099">7</span> bytes
+---
+New, <span style="color:#000;font-weight:bold">(</span>NONE<span style="color:#000;font-weight:bold">)</span>, Cipher is <span style="color:#000;font-weight:bold">(</span>NONE<span style="color:#000;font-weight:bold">)</span>
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+Next protocol: <span style="color:#000;font-weight:bold">(</span>2<span style="color:#000;font-weight:bold">)</span>
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : <span style="color:#099">0000</span>
+    Session-ID:
+    Session-ID-ctx:
+    Master-Key:
+    Key-Arg   : None
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    Start Time: <span style="color:#099">1478612682</span>
+    Timeout   : <span style="color:#099">300</span> <span style="color:#000;font-weight:bold">(</span>sec<span style="color:#000;font-weight:bold">)</span>
+    Verify <span style="color:#000;font-weight:bold">return</span> code: <span style="color:#099">0</span> <span style="color:#000;font-weight:bold">(</span>ok<span style="color:#000;font-weight:bold">)</span>
+---
+</code></pre></div><h1 id="php7-설치">PHP7 설치</h1>
+<p>Nginx w/ FastCGI 세팅을 위해 <code>PHP7</code>과 <code>PHP-FPM</code>을 설치한다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:~$ sudo apt install php7.0 php7.0-fpm
+</code></pre></div><p>설치가 끝나면 <code>PHP-FPM</code>을 실행하고 체크해본다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:~$ sudo systemctl start php7.0-fpm
+jkpark@cactus:~$ sudo systemctl status php7.0-fpm
+● php7.0-fpm.service - The PHP 7.0 FastCGI Process Manager
+   Loaded: loaded <span style="color:#000;font-weight:bold">(</span>/lib/systemd/system/php7.0-fpm.service; enabled; vendor preset: enabled<span style="color:#000;font-weight:bold">)</span>
+   Active: active <span style="color:#000;font-weight:bold">(</span>running<span style="color:#000;font-weight:bold">)</span> since 화 2016-11-08 23:47:13 KST; 1min 14s ago
+ Main PID: <span style="color:#099">23164</span> <span style="color:#000;font-weight:bold">(</span>php-fpm7.0<span style="color:#000;font-weight:bold">)</span>
+   Status: <span style="color:#d14">&#34;Processes active: 0, idle: 2, Requests: 0, slow: 0, Traffic: 0req/sec&#34;</span>
+   CGroup: /system.slice/php7.0-fpm.service
+           ├─23164 php-fpm: master process <span style="color:#000;font-weight:bold">(</span>/etc/php/7.0/fpm/php-fpm.conf<span style="color:#000;font-weight:bold">)</span>
+           ├─23168 php-fpm: pool www
+           └─23169 php-fpm: pool www
+
+11월 <span style="color:#099">08</span> 23:47:13 cactus systemd<span style="color:#000;font-weight:bold">[</span>1<span style="color:#000;font-weight:bold">]</span>: Starting The PHP 7.0 FastCGI Process Manager...
+11월 <span style="color:#099">08</span> 23:47:13 cactus systemd<span style="color:#000;font-weight:bold">[</span>1<span style="color:#000;font-weight:bold">]</span>: Started The PHP 7.0 FastCGI Process Manager.
+</code></pre></div><p>위에서 설정한 <code>Nginx</code> <code>default</code> 설정 파일에 아래 구문을 통해 이미 <code>PHP FastCGI</code>에 대한 설정을 하였다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">location ~ <span style="color:#d14">\.</span>php$ <span style="color:#000;font-weight:bold">{</span>
+include snippets/fastcgi-php.conf;
+fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>아래 명령어를 통해 <code>info.php</code> 파일을 만들어 <code>PHP</code> 설정을 확인할 수 있다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:~$ sudo su -c <span style="color:#d14">&#39;echo &#34;&lt;?php phpinfo(); ?&gt;&#34; |tee /var/www/html/info.php&#39;</span>
+&lt;?php phpinfo<span style="color:#000;font-weight:bold">()</span>; ?&gt;
+</code></pre></div><p><img src="https://1.bp.blogspot.com/-yU3yEJ54-4s/WCHoi_YParI/AAAAAAAAAgE/hb4hzWi-TP47vHEgOwCzfBK_OAicLx_LQCLcB/s400/%25EC%25BA%25A1%25EC%25B2%2598.PNG" alt="" /></p>
+<p>또한 <code>$_SERVER['SERVER_PROTOCOL']</code> 항목에서 <code>HTTP/2.0</code> 프로토콜이 동작중인지 확인할 수 있다.</p>
+<p><code>apt search php7.0</code> 명령어를 통해 모듈을 검색할 수 있고 <code>sudo apt install php7.0-****</code> 을 통해 모듈을 설치하였다면 <code>PHP-FPM</code> 데몬을 재시작하여 설치된 모듈을 등록할 수 있다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl restart php7.0-fpm.service
+</code></pre></div><h1 id="mariadb-설치">MariaDB 설치</h1>
+<p>미지막으로 MariaDB를 설치하여 LEMP Stack을 완성시키자.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:~$ sudo apt install mariadb-server mariadb-client php7.0-mysql
+</code></pre></div><p>설치 후 <code>PHP-RPM</code> 데몬 재시작한다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:~$ sudo systemctl restart php7.0-fpm.service
+</code></pre></div><p><code>mysql_secure_installation</code> 스크립트를 실행하여 <code>MariaDB</code>의 root password를 설정한다.</p>
+<pre><code>jkpark@cactus:~$ sudo mysql_secure_installation
+
+NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+
+In order to log into MariaDB to secure it, we'll need the current
+password for the root user.  If you've just installed MariaDB, and
+you haven't set the root password yet, the password will be blank,
+so you should just press enter here.
+
+Enter current password for root (enter for none):
+OK, successfully used password, moving on...
+
+Setting the root password ensures that nobody can log into the MariaDB
+root user without the proper authorisation.
+
+You already have a root password set, so you can safely answer 'n'.
+
+Change the root password? [Y/n] n
+ ... skipping.
+
+By default, a MariaDB installation has an anonymous user, allowing anyone
+to log into MariaDB without having to have a user account created for
+them.  This is intended only for testing, and to make the installation
+go a bit smoother.  You should remove them before moving into a
+production environment.
+
+Remove anonymous users? [Y/n] y
+ ... Success!
+
+Normally, root should only be allowed to connect from 'localhost'.  This
+ensures that someone cannot guess at the root password from the network.
+
+Disallow root login remotely? [Y/n] y
+ ... Success!
+
+By default, MariaDB comes with a database named 'test' that anyone can
+access.  This is also intended only for testing, and should be removed
+before moving into a production environment.
+
+Remove test database and access to it? [Y/n] y
+ - Dropping test database...
+ ... Success!
+ - Removing privileges on test database...
+ ... Success!
+
+Reloading the privilege tables will ensure that all changes made so far
+will take effect immediately.
+
+Reload privilege tables now? [Y/n] y
+ ... Success!
+
+Cleaning up...
+
+All done!  If you've completed all of the above steps, your MariaDB
+installation should now be secure.
+
+Thanks for using MariaDB!
+</code></pre><p>일반유저가 <code>sudo</code> 특권없이 <code>Database</code>에 접근하기 위해 아래 명령어를 입력한다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:~$ sudo mysql
+Welcome to the MariaDB monitor.  Commands end with ; or <span style="color:#d14">\g</span>.
+Your MariaDB connection id is <span style="color:#099">48</span>
+Server version: 10.0.27-MariaDB-0ubuntu0.16.04.1 Ubuntu 16.04
+
+Copyright <span style="color:#000;font-weight:bold">(</span>c<span style="color:#000;font-weight:bold">)</span> 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type <span style="color:#d14">&#39;help;&#39;</span> or <span style="color:#d14">&#39;\h&#39;</span> <span style="color:#000;font-weight:bold">for</span> help. Type <span style="color:#d14">&#39;\c&#39;</span> to clear the current input statement.
+
+MariaDB <span style="color:#000;font-weight:bold">[(</span>none<span style="color:#000;font-weight:bold">)]</span>&gt; use mysql;
+Reading table information <span style="color:#000;font-weight:bold">for</span> completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB <span style="color:#000;font-weight:bold">[</span>mysql<span style="color:#000;font-weight:bold">]</span>&gt; update user <span style="color:#0086b3">set</span> <span style="color:#008080">plugin</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;&#39;</span> where <span style="color:#008080">User</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;root&#39;</span>;
+Query OK, <span style="color:#099">1</span> row affected <span style="color:#000;font-weight:bold">(</span>0.00 sec<span style="color:#000;font-weight:bold">)</span>
+Rows matched: <span style="color:#099">1</span>  Changed: <span style="color:#099">1</span>  Warnings: <span style="color:#099">0</span>
+
+MariaDB <span style="color:#000;font-weight:bold">[</span>mysql<span style="color:#000;font-weight:bold">]</span>&gt; flush privileges;
+Query OK, <span style="color:#099">0</span> rows affected <span style="color:#000;font-weight:bold">(</span>0.00 sec<span style="color:#000;font-weight:bold">)</span>
+
+MariaDB <span style="color:#000;font-weight:bold">[</span>mysql<span style="color:#000;font-weight:bold">]</span>&gt; <span style="color:#0086b3">exit</span>
+Bye
+</code></pre></div><p>이제 <code>sudo</code> 없이 <code>mysql</code>에 접근할 수 있다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:~$ mysql -u root -p -e <span style="color:#d14">&#39;show databases&#39;</span>
+Enter password:
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
++--------------------+
+</code></pre></div><p>언어셋 설정
+기본언어셋으로 <code>utf8mb4_general_ci</code>가 설정되어 있는데 이것을 <code>utf8mb4_unicode_ci</code>로 바꿔준다.</p>
+<p><a href="http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci">difference between utf8_general_ci and utf8_unicode_ci</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jkpark@cactus:/etc/mysql/mariadb.conf.d$ sudo vi 50-server.cnf
+</code></pre></div><pre><code>105 character-set-server  = utf8mb4
+106 #original
+107 #collation-server      = utf8mb4_general_ci
+108 #jkpark modified 2016-11-09
+109 collation-server      = utf8mb4_unicode_ci
+</code></pre><p>설정이 끝나면<code> mysql</code> 데몬을 제시작하고 아래 명령어로 언어셋을 확인한다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">MariaDB <span style="color:#000;font-weight:bold">[(</span>none<span style="color:#000;font-weight:bold">)]</span>&gt; show variables like <span style="color:#d14">&#34;%character%&#34;</span>;show variables like <span style="color:#d14">&#34;%collation%&#34;</span>;
++--------------------------+----------------------------+
+| Variable_name            | Value                      |
++--------------------------+----------------------------+
+| character_set_client     | utf8mb4                    |
+| character_set_connection | utf8mb4                    |
+| character_set_database   | utf8mb4                    |
+| character_set_filesystem | binary                     |
+| character_set_results    | utf8mb4                    |
+| character_set_server     | utf8mb4                    |
+| character_set_system     | utf8                       |
+| character_sets_dir       | /usr/share/mysql/charsets/ |
++--------------------------+----------------------------+
+<span style="color:#099">8</span> rows in <span style="color:#0086b3">set</span> <span style="color:#000;font-weight:bold">(</span>0.00 sec<span style="color:#000;font-weight:bold">)</span>
+
++----------------------+--------------------+
+| Variable_name        | Value              |
++----------------------+--------------------+
+| collation_connection | utf8mb4_general_ci |
+| collation_database   | utf8mb4_unicode_ci |
+| collation_server     | utf8mb4_unicode_ci |
++----------------------+--------------------+
+<span style="color:#099">3</span> rows in <span style="color:#0086b3">set</span> <span style="color:#000;font-weight:bold">(</span>0.00 sec<span style="color:#000;font-weight:bold">)</span>
+
+MariaDB <span style="color:#000;font-weight:bold">[(</span>none<span style="color:#000;font-weight:bold">)]</span>&gt;
+</code></pre></div><ul>
+<li><code>collation_connection 은 utf8mb4_unicode_ci</code> 로 설정이 안되는데 아시는분은 답글부탁드립니다.</li>
+</ul>
+<p>이상으로 <code>LEMP Stack</code> 설치가 끝났다.</p>
+
+  </article>
+  <div style="margin-top: 5vh;"></div>
+  <section>
+
+
+<div style="min-height: 268px;">
+    
+<script src="https://utteranc.es/client.js"
+    repo="jkpark/jkpark.github.io-utterances"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+</div>
+</section>
+</div>
+
+</section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <footer>
+    <p>
+        Powered by the <a href="https://github.com/jkpark/hugo-theme-jkpark" target="_blank">jkpark</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>.
+    </p>
+</footer></body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head><meta charset="UTF-8">
+
+<title>
+    NERD tree 개발버전, NERD tree git plugin 을 vundle로 설치 - jkpark&#39;s blog
+</title>
+
+<meta name="author" content="JK Park">
+<meta itemprop="description" name="description" content="" />
+<meta name="keywords" content="">
+
+<meta property="og:site_name" content="jkpark&#39;s blog">
+<meta property="og:title" content="NERD tree 개발버전, NERD tree git plugin 을 vundle로 설치">
+<meta property="og:url" content="https://jkpark.github.io/blog/install-nerdtree-for-git-via-vundle/">
+<meta property="og:type" content="article">
+
+
+<meta name="generator" content="Hugo 0.68.3" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1F50DQW5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1F50DQW5H');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href='/css/site.css'>
+<link rel="stylesheet" href='/css/page.css'>
+<link rel="stylesheet" href='/css/dyn.css'>
+<link rel="stylesheet" href='/css/markdown.css'>
+<link rel="stylesheet" href='/css/shortcodes.css'>
+
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div><header id="masthead" class="thm-dark">
+    <div class="wrapper">
+        <nav class="mh-menu">
+            <ul>
+                <li>
+                    <div class="mh-logo">
+                        <img class="avatar" src="https://avatars.githubusercontent.com/jkpark?size=36" alt="avatar" />
+                        <a href="https://jkpark.github.io/" class="text mh-item no-color-link">JK Park</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/">About</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/blog/">Blog</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/homeserver/">Home Server</a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</header><main class="thm-light">
+<section id="main-header" class="thm-dark">
+  
+<div class="wrapper">
+  
+  <div class="date mono"><small>Jan 7, 2017</small></div>
+  
+  
+  <div class ="tags flex">
+    <a class="tag-item z2 mono" href="/tags/nerdtree/">#NERDtree</a><a class="tag-item z2 mono" href="/tags/vim/">#Vim</a><a class="tag-item z2 mono" href="/tags/vundle/">#Vundle</a>
+  </div>
+  
+  <div class="title post-title">NERD tree 개발버전, NERD tree git plugin 을 vundle로 설치</div>
+</div>
+
+</section>
+<section id="main-content">
+  
+
+<sidebar id="section-toc" class="sticky-top pull-right-side">
+<section id="toc">
+<header id="toc-header">
+    <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+        <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+        </g>
+    </svg>
+    <span class="label">Contents</span>
+</header>
+
+<div class="toc-list">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#history">History</a></li>
+  </ul>
+</nav>
+</div>
+</section></sidebar>
+
+<div class="wrapper">
+  <div style="margin-top: 5vh;"></div>
+  <article id="post-article" class="content">
+    <p><a href="http://www.vim.org/scripts/script.php?script_id=1658">NERD Tree</a> 란 아래 그림과 같이 <code>vim</code>에서 파일시스템을 탐색하고 파일을 열 수 있도록 도와주는 플러그인이다.</p>
+<p><img src="https://2.bp.blogspot.com/-pHgUOdoCZSo/WG8wSHSt_9I/AAAAAAAAAqU/ZBV2WQPN1t8zqTjsRw7IGP_HVaOpbeDbACLcB/s700/2862367534_53cd90855e_o.gif" alt="" /></p>
+<p>nerd tree git plugin은 vim 에서 git 저장소의 상태확인을 위해 쓴다.</p>
+<p><img src="https://4.bp.blogspot.com/-s4ZwVlfDR5E/WG80qtmbDVI/AAAAAAAAArE/flNXwROuSSoSoddiLlktyldBEKMxuXzMwCLcB/s700/687474703a2f2f692e696d6775722e636f6d2f6a534377476a552e6769663f31.gif" alt="" /></p>
+<h1 id="history">History</h1>
+<p><code>.vimrc</code>를 열어 <code>vundle</code> 플러그인 삽입란에 아래 2라인을 추가한다.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Plugin <span style="color:#d14">&#39;scrooloose/nerdtree&#39;</span>  
+Plugin <span style="color:#d14">&#39;Xuyuanp/nerdtree-git-plugin&#39;</span>
+</code></pre></div><p><img src="https://2.bp.blogspot.com/-ZRfFHB6gcxU/WG81bmrj-oI/AAAAAAAAArI/2_jZCvpgsJQZgFSx4_z8Qvx2dmPjDG3BwCLcB/s700/%25EC%25BA%25A1%25EC%25B2%2598.PNG" alt="" /></p>
+<p>저장 후 <code>vim</code> 에서 <code>:PluginInstall</code> 입력</p>
+<p><img src="https://1.bp.blogspot.com/-8Ikzyvh-uSs/WG82MLbQC3I/AAAAAAAAArY/bfy3jmH5Vdc2bu5DvccK_MLN_PR4MFg0gCLcB/s700/%25EC%25BA%25A1%25EC%25B2%2598.PNG" alt="" /></p>
+<p>설치완료.</p>
+
+  </article>
+  <div style="margin-top: 5vh;"></div>
+  <section>
+
+
+<div style="min-height: 268px;">
+    
+<script src="https://utteranc.es/client.js"
+    repo="jkpark/jkpark.github.io-utterances"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+</div>
+</section>
+</div>
+
+</section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <footer>
+    <p>
+        Powered by the <a href="https://github.com/jkpark/hugo-theme-jkpark" target="_blank">jkpark</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>.
+    </p>
+</footer></body>
+
+</html>
