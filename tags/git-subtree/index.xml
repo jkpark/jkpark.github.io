@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git-subtree on jkpark&#39;s blog</title>
+    <link>https://jkpark.github.io/tags/git-subtree/</link>
+    <description>Recent content in git-subtree on jkpark&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 18 May 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jkpark.github.io/tags/git-subtree/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Repository의 하위 폴더를 분리</title>
+      <link>https://jkpark.github.io/blog/git-separate-subdirectory/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jkpark.github.io/blog/git-separate-subdirectory/</guid>
+      <description>https://docs.github.com/en/get-started/using-git/splitting-a-subfolder-out-into-a-new-repository</description>
+    </item>
+    
+  </channel>
+</rss>

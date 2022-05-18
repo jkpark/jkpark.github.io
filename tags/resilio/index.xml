@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resilio on jkpark&#39;s blog</title>
+    <link>https://jkpark.github.io/tags/resilio/</link>
+    <description>Recent content in Resilio on jkpark&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 16 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jkpark.github.io/tags/resilio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resilio를 이용한 동기화</title>
+      <link>https://jkpark.github.io/blog/file-sync-using-resilio/</link>
+      <pubDate>Wed, 16 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://jkpark.github.io/blog/file-sync-using-resilio/</guid>
+      <description>스마트폰에서 찍은 사진을 서버에 백업하고 다른 스마트폰과 공유하기 위해 동기화 프로그램이 필요하였다. 구글 드라이브같은 클라우드 서비스를 이용하면 간단하게 동기화를 할 수 있지만, 3자에게 정보를 공유해야하고 용량 제한, 업로드 속도 등 여러가지 제약이 많다.
+Resilio Sync는 device to device 동기화이기 때문에 이번 기회에 사용해보고 싶었다.
+다른 싱크프로그램도 많지만 아이폰, 안드로이드 뿐만 아니라 리눅스, 윈도우 모든 OS에서 동작하는 싱크프로그램이 필요하기 때문에 Resilio를 택했다.
+또한 Resilio Sync는 bitTorrent Sync 의 새로운 버전이고 토렌트방식으로 동기화를 한다.</description>
+    </item>
+    
+  </channel>
+</rss>

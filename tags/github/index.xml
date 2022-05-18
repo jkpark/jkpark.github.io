@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github on jkpark&#39;s blog</title>
+    <link>https://jkpark.github.io/tags/github/</link>
+    <description>Recent content in github on jkpark&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 18 May 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jkpark.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GitHub 로그인 없이 push 하기</title>
+      <link>https://jkpark.github.io/blog/register-github-ssh-key/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jkpark.github.io/blog/register-github-ssh-key/</guid>
+      <description>$ ssh-keygen -t rsa -b 4096 -C &amp;quot;jkpark.r@gmail.com&amp;quot; Generating public/private rsa key pair. Enter file in which to save the key (/home/jkpark/.ssh/id_rsa): Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /home/jkpark/.ssh/id_rsa Your public key has been saved in /home/jkpark/.ssh/id_rsa.pub The key fingerprint is: SHA256:+wFoSRin+UpwTcIfc8tqXB4Ma3EFawckT34hVH+E2xQ jkpark.r@gmail.com The key&#39;s randomart image is: +---[RSA 4096]----+ ... hide ... +----[SHA256]-----+ $ eval &amp;quot;$(ssh-agent -s)&amp;quot; Agent pid 44437 $ ssh-add ~/.</description>
+    </item>
+    
+  </channel>
+</rss>

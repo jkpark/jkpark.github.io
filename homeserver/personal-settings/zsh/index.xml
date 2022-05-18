@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zsh on jkpark&#39;s blog</title>
+    <link>https://jkpark.github.io/homeserver/personal-settings/zsh/</link>
+    <description>Recent content in Zsh on jkpark&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 08 Dec 2020 12:46:19 +0900</lastBuildDate>
+    
+	<atom:link href="https://jkpark.github.io/homeserver/personal-settings/zsh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

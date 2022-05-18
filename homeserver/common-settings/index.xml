@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Common Settings on jkpark&#39;s blog</title>
+    <link>https://jkpark.github.io/homeserver/common-settings/</link>
+    <description>Recent content in Common Settings on jkpark&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 08 Dec 2020 12:41:38 +0900</lastBuildDate>
+    
+	<atom:link href="https://jkpark.github.io/homeserver/common-settings/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
