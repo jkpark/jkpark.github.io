@@ -1,0 +1,15 @@
+[author]
+  name = "JK Park"
+  # URL of your avatar or profile pic (you could use your GitHub profile pic)
+  avatar = "https://avatars.githubusercontent.com/jkpark?size=36"
+
+[date]
+  format = "Jan 2, 2006"
+
+#[github]
+#  owner = "jkpark"
+#  repo = "hugo-theme-jkpark"
+
+# Enter your Utterance Repo for Comments
+[utterance]
+  repo = "jkpark/jkpark.github.io-utterances"
