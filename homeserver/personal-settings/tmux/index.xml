@@ -7,9 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 08 Dec 2020 12:46:22 +0900</lastBuildDate>
-    
-	<atom:link href="https://jkpark.github.io/homeserver/personal-settings/tmux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://jkpark.github.io/homeserver/personal-settings/tmux/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -7,20 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 10 Mar 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://jkpark.github.io/tags/outlook/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://jkpark.github.io/tags/outlook/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Outlook 빠른 인덱싱</title>
       <link>https://jkpark.github.io/blog/outlook-fast-indexing/</link>
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://jkpark.github.io/blog/outlook-fast-indexing/</guid>
-      <description>Outlook 빠른 인덱싱    windows 돋보기 - gpedit.msc 실행 컴퓨터구성 - 관리템플릿 - Windows 구성요소 - 검색 - 인덱서 백오프 사용안함 -&amp;gt; 사용 변경    아웃록 - 파일 - 계정설정 - 데이터파일 - pst데이터 파일 위치 확인
-  아웃룩 - 파일 - 옵션 - 검색 - 인덱싱 옵션 - 수정 - pst파일위치 체크 - 확인 - 고급 - 다시색인 - 확인
-  </description>
+      <description>Outlook 빠른 인덱싱 windows 돋보기 - gpedit.msc 실행 컴퓨터구성 - 관리템플릿 - Windows 구성요소 - 검색 - 인덱서 백오프 사용안함 -&amp;gt; 사용 변경 아웃록 - 파일 - 계정설정 - 데이터파일 - pst데이터 파일 위치 확인&#xA;아웃룩 - 파일 - 옵션 - 검색 - 인덱싱 옵션 - 수정 - pst파일위치 체크 - 확인 - 고급 - 다시색인 - 확인</description>
     </item>
-    
   </channel>
 </rss>

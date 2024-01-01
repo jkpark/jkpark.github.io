@@ -7,31 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 29 Dec 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://jkpark.github.io/tags/torrent/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://jkpark.github.io/tags/torrent/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>토렌트 다운로드 완료 시 리스트에서 자동삭제</title>
       <link>https://jkpark.github.io/blog/auto-remove-torrent-when-download-completed/</link>
       <pubDate>Thu, 29 Dec 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://jkpark.github.io/blog/auto-remove-torrent-when-download-completed/</guid>
-      <description>transmission-daemon 은 작업 시 꼭 service를 stop 한 상태에서 해야 수정작업이 적용이 된다.
-jkpark@cactus:/storages/storage1/public/torrent$ sudo service transmission-daemon stop /etc/transmission-daemon/settings.json 파일을 열어 다음과 같이 수정한다.
-&amp;quot;script-torrent-done-enabled&amp;quot;: true, &amp;quot;script-torrent-done-filename&amp;quot;: &amp;quot;/storages/storage1/public/torrent/auto_delete.sh&amp;quot;, /storages/storage1/public/torrent/auto_delete.sh 파일을 만들고 아래 내용을 입력한다.
-#!/bin/sh # Transmission script to remove torrent from lists # The file for logging events from this script LOGFILE=/storages/storage1/public/torrent/auto_delete_log # Remote login details. TR_HOST=&amp;#34;9091 --auth=아이디:비밀번호&amp;#34; echo &amp;#34;`date &amp;#39;+%Y-%m-%d %H:%M:%S&amp;#39;` removed from list : $TR_TORRENT_NAME&amp;#34; &amp;gt;&amp;gt; $LOGFILE transmission-remote $TR_HOST -t $TR_TORRENT_ID --remove 저장 후 권한설정</description>
+      <description>transmission-daemon 은 작업 시 꼭 service를 stop 한 상태에서 해야 수정작업이 적용이 된다.&#xA;jkpark@cactus:/storages/storage1/public/torrent$ sudo service transmission-daemon stop /etc/transmission-daemon/settings.json 파일을 열어 다음과 같이 수정한다.&#xA;&amp;#34;script-torrent-done-enabled&amp;#34;: true, &amp;#34;script-torrent-done-filename&amp;#34;: &amp;#34;/storages/storage1/public/torrent/auto_delete.sh&amp;#34;, /storages/storage1/public/torrent/auto_delete.sh 파일을 만들고 아래 내용을 입력한다.&#xA;#!/bin/sh # Transmission script to remove torrent from lists # The file for logging events from this script LOGFILE=/storages/storage1/public/torrent/auto_delete_log # Remote login details. TR_HOST=&amp;#34;9091 --auth=아이디:비밀번호&amp;#34; echo &amp;#34;`date &amp;#39;+%Y-%m-%d %H:%M:%S&amp;#39;` removed from list : $TR_TORRENT_NAME&amp;#34; &amp;gt;&amp;gt; $LOGFILE transmission-remote $TR_HOST -t $TR_TORRENT_ID --remove 저장 후 권한설정</description>
     </item>
-    
     <item>
       <title>토렌트서버(Transmission-daemon) 구축 방법</title>
       <link>https://jkpark.github.io/blog/install-transmission-daemon-on-ubuntu1604/</link>
       <pubDate>Thu, 29 Dec 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://jkpark.github.io/blog/install-transmission-daemon-on-ubuntu1604/</guid>
-      <description>history 다운로드 디렉토리 생성 downloads, incomplete 디렉토리 생성
-jkpark@cactus:/storages/storage1/public/torrent$ ls -al 합계 16 drwxrwxr-x 4 jkpark jkpark 4096 10월 29 01:26 . drwxrwxrwx 13 nobody nogroup 4096 12월 28 21:43 .. drwxrwxrwx 12 jkpark jkpark 4096 12월 28 12:51 downloads drwxrwxrwx 2 jkpark jkpark 4096 10월 29 01:26 incomplete 원래 목적은 incomplete 디렉토리에 토렌트용 HDD를 마운트하고 이 위치에 다운로드해서 저장소의 부담을 줄이고 싶었지만 토렌트용 HDD가 고장났는지 인식이 안된다. 그러므로 다운로드를 downloads 디렉토리에 하도록 설정했다.</description>
+      <description>history 다운로드 디렉토리 생성 downloads, incomplete 디렉토리 생성&#xA;jkpark@cactus:/storages/storage1/public/torrent$ ls -al 합계 16 drwxrwxr-x 4 jkpark jkpark 4096 10월 29 01:26 . drwxrwxrwx 13 nobody nogroup 4096 12월 28 21:43 .. drwxrwxrwx 12 jkpark jkpark 4096 12월 28 12:51 downloads drwxrwxrwx 2 jkpark jkpark 4096 10월 29 01:26 incomplete 원래 목적은 incomplete 디렉토리에 토렌트용 HDD를 마운트하고 이 위치에 다운로드해서 저장소의 부담을 줄이고 싶었지만 토렌트용 HDD가 고장났는지 인식이 안된다. 그러므로 다운로드를 downloads 디렉토리에 하도록 설정했다.</description>
     </item>
-    
   </channel>
 </rss>

@@ -7,9 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 08 Jan 2021 12:59:55 +0900</lastBuildDate>
-    
-	<atom:link href="https://jkpark.github.io/homeserver/media-server/transmission/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://jkpark.github.io/homeserver/media-server/transmission/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

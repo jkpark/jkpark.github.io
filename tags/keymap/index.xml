@@ -7,21 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 18 Nov 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://jkpark.github.io/tags/keymap/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://jkpark.github.io/tags/keymap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Changing keymap on ubuntu</title>
       <link>https://jkpark.github.io/blog/change-keymap/</link>
       <pubDate>Tue, 18 Nov 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://jkpark.github.io/blog/change-keymap/</guid>
-      <description>The tools to manipulate the keyboard layout on the virtual consoles are loadkeys, dumpkeys and showkeys. Read their manpages and inform yourself about their intricacies.
-Note that these tools only work in a virtual console, not in a terminal emulator in X.
-Save your current keyboard layout: $ dumpkeys &amp;gt; backup.kmap In case something goes wrong you might be able restore your keymap using the command:
-$ sudo loadkeys backup.kmap If the keyboard is so messed up that you can&amp;rsquo;t even do this then your only option not involving ancient kernel magic is to reboot.</description>
+      <description>The tools to manipulate the keyboard layout on the virtual consoles are loadkeys, dumpkeys and showkeys. Read their manpages and inform yourself about their intricacies.&#xA;Note that these tools only work in a virtual console, not in a terminal emulator in X.&#xA;Save your current keyboard layout: $ dumpkeys &amp;gt; backup.kmap In case something goes wrong you might be able restore your keymap using the command:&#xA;$ sudo loadkeys backup.kmap If the keyboard is so messed up that you can&amp;rsquo;t even do this then your only option not involving ancient kernel magic is to reboot.</description>
     </item>
-    
   </channel>
 </rss>

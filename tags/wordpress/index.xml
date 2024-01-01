@@ -7,23 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 10 Nov 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://jkpark.github.io/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://jkpark.github.io/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LEMP stack 에 WordPress 설치방법</title>
       <link>https://jkpark.github.io/blog/install-wordpress-on-lemp-stack/</link>
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://jkpark.github.io/blog/install-wordpress-on-lemp-stack/</guid>
-      <description>Drupal 8 설치 후 테마, 모듈 수가 너무 적어서 Drupal 7을 설치하려고 했지만 WordPress를 설치하여 차이를 느껴보고 싶었다.
-WordPress vs Joomla vs Drupal
-설치 방법은 https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-on-ubuntu-16-04 와 https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-nginx-on-ubuntu-14-04 를 참고하였다.
-설치 방법 WordPress를 설치하기 전에 LEMP stack 이 설치되어있어야 하고, SSL이 활성화되어있어야 한다. 우분투 버전은 16.04 에서 진행하였다.
-LEMP stack 설치 방법은 여기를 참고.
-WordPress를 위한 Database 생성 및 유저 생성 jkpark@cactus:/var/www/html$ mysql -u root -p Enter password: Welcome to the MariaDB monitor.</description>
+      <description>Drupal 8 설치 후 테마, 모듈 수가 너무 적어서 Drupal 7을 설치하려고 했지만 WordPress를 설치하여 차이를 느껴보고 싶었다.&#xA;WordPress vs Joomla vs Drupal&#xA;설치 방법은 https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-on-ubuntu-16-04 와 https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-nginx-on-ubuntu-14-04 를 참고하였다.&#xA;설치 방법 WordPress를 설치하기 전에 LEMP stack 이 설치되어있어야 하고, SSL이 활성화되어있어야 한다. 우분투 버전은 16.04 에서 진행하였다.&#xA;LEMP stack 설치 방법은 여기를 참고.&#xA;WordPress를 위한 Database 생성 및 유저 생성 jkpark@cactus:/var/www/html$ mysql -u root -p Enter password: Welcome to the MariaDB monitor.</description>
     </item>
-    
   </channel>
 </rss>

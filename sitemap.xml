@@ -1,407 +1,221 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://jkpark.github.io/homeserver/media-server/transmission/</loc>
     <lastmod>2021-01-08T12:59:55+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/common-settings/network/</loc>
     <lastmod>2020-12-08T12:44:36+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/getting-started/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/media-server/flexget/</loc>
     <lastmod>2021-01-08T13:00:02+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/common-settings/apt/</loc>
     <lastmod>2020-12-08T12:44:40+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/ubuntu-installation/</loc>
     <lastmod>2020-12-08T12:41:07+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/projects/hxcluster/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://jkpark.github.io/projects/sa-dashboard/</loc>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/media-server/plex/</loc>
     <lastmod>2021-01-08T13:00:05+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/common-settings/ssh/</loc>
     <lastmod>2020-12-08T12:44:44+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/common-settings/</loc>
     <lastmod>2020-12-08T12:41:38+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/projects/d3s/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/personal-settings/</loc>
     <lastmod>2020-12-08T12:46:12+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/common-settings/firewall/</loc>
     <lastmod>2020-12-08T12:44:53+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/web-hosting/</loc>
     <lastmod>2021-01-08T13:41:12+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/common-settings/disk-setup/</loc>
     <lastmod>2020-12-07T15:31:28+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/media-server/</loc>
     <lastmod>2021-01-08T12:59:34+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/common-settings/time_date/</loc>
     <lastmod>2020-12-08T12:44:48+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/file-share/</loc>
     <lastmod>2020-12-08T12:44:21+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/git/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/git-separate-subdirectory/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/git-subtree/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/github/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/register-github-ssh-key/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/</loc>
     <lastmod>2021-01-08T13:41:34+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/</loc>
     <lastmod>2021-01-08T13:41:34+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/web-hosting/webserver/</loc>
     <lastmod>2021-01-08T13:41:34+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/web-hosting/domain/</loc>
     <lastmod>2021-01-08T13:41:16+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/containerization/</loc>
     <lastmod>2021-01-08T13:39:48+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/file-share/samba/</loc>
     <lastmod>2021-01-06T16:47:55+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/virtualization/</loc>
     <lastmod>2020-12-21T11:41:54+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/personal-settings/tmux/</loc>
     <lastmod>2020-12-08T12:46:22+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/personal-settings/zsh/</loc>
     <lastmod>2020-12-08T12:46:19+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/personal-settings/vim/</loc>
     <lastmod>2020-12-08T12:46:15+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/homeserver/common-settings/disk-setup/btrfs/</loc>
     <lastmod>2020-12-07T15:31:13+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/hugo/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/jekyll-to-hugo/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/outlook/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/outlook-fast-indexing/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/windows10/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/burpsuite/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/burpsuite-v2/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/ubuntu/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/ubuntu18.04/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/install_jdk11/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/jdk11/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/install-jekyll-on-windows7/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/jekyll/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/windows7/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/atom/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/atom/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/burp-suite/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/http/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/http/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/visual-studio-code/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/vs-code/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/intellij/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/setting-intellij-idea/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/windows-10-basic-settings/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/jekyll-now-creation-and-local-development-on-ubuntu1604/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/ubuntu16.04/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/install-nerdtree-for-git-via-vundle/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/nerdtree/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/vim/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/vundle/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/install-vundle/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/torrent/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/auto-remove-torrent-when-download-completed/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/install-transmission-daemon-on-ubuntu1604/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/filesync/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/resilio/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/file-sync-using-resilio/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/drupal/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/lemp-stack/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/install-drupal-on-lemp-stack/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/install-wordpress-on-lemp-stack/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/mariadb/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/nginx/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/wordpress/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/install-lemp-stack-on-ubuntu1604/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/php/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/install-vsftpd-on-ubuntu1604/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/vsftpd/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/android/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/byte-to-hex-string/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/date-format-custom-date-text-view/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/change-keymap/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/tags/keymap/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/file-saving-bug/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/service-bind-and-handler-observer-pattern/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/blog/restrict-input-on-edittext/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://jkpark.github.io/projects/</loc>
   </url>
-  
 </urlset>

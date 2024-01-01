@@ -7,27 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 18 May 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://jkpark.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://jkpark.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git Repository의 하위 폴더를 분리</title>
       <link>https://jkpark.github.io/blog/git-separate-subdirectory/</link>
       <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://jkpark.github.io/blog/git-separate-subdirectory/</guid>
       <description>https://docs.github.com/en/get-started/using-git/splitting-a-subfolder-out-into-a-new-repository</description>
     </item>
-    
     <item>
       <title>GitHub 로그인 없이 push 하기</title>
       <link>https://jkpark.github.io/blog/register-github-ssh-key/</link>
       <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://jkpark.github.io/blog/register-github-ssh-key/</guid>
-      <description>$ ssh-keygen -t rsa -b 4096 -C &amp;quot;jkpark.r@gmail.com&amp;quot; Generating public/private rsa key pair. Enter file in which to save the key (/home/jkpark/.ssh/id_rsa): Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /home/jkpark/.ssh/id_rsa Your public key has been saved in /home/jkpark/.ssh/id_rsa.pub The key fingerprint is: SHA256:+wFoSRin+UpwTcIfc8tqXB4Ma3EFawckT34hVH+E2xQ jkpark.r@gmail.com The key&#39;s randomart image is: +---[RSA 4096]----+ ... hide ... +----[SHA256]-----+ $ eval &amp;quot;$(ssh-agent -s)&amp;quot; Agent pid 44437 $ ssh-add ~/.</description>
+      <description>$ ssh-keygen -t rsa -b 4096 -C &amp;#34;jkpark.r@gmail.com&amp;#34; Generating public/private rsa key pair. Enter file in which to save the key (/home/jkpark/.ssh/id_rsa): Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /home/jkpark/.ssh/id_rsa Your public key has been saved in /home/jkpark/.ssh/id_rsa.pub The key fingerprint is: SHA256:+wFoSRin+UpwTcIfc8tqXB4Ma3EFawckT34hVH+E2xQ jkpark.r@gmail.com The key&amp;#39;s randomart image is: +---[RSA 4096]----+ ... hide ... +----[SHA256]-----+ $ eval &amp;#34;$(ssh-agent -s)&amp;#34; Agent pid 44437 $ ssh-add ~/.</description>
     </item>
-    
   </channel>
 </rss>

@@ -7,21 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 02 Dec 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://jkpark.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://jkpark.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jekyll to Hugo</title>
       <link>https://jkpark.github.io/blog/jekyll-to-hugo/</link>
       <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://jkpark.github.io/blog/jekyll-to-hugo/</guid>
-      <description>Leave Jekyll 블로그를 처음 시작한다면 jekyll을 추천한다. github 에서 공식적으로 Jekyll을 추천하며 자료도 많아서 쉽게 시작할 수 있다. 나도 markdown형식 블로그로 갔을 때 jekyll을 선택했었고 jekyll로 운용한지 벌서 3년이 되었다.
-그런데 jekyll을 쓰면서 불편한 점이 하나 있었다.
-page tree 구조를 만들기 어렵다는 점.
-홈 서버 관련 글들을 트리 형식으로 관리하고 싶었는데 jekyll에서는 그 방법이 복잡하게 되어있었다. 그래서 gitbook 에서 홈 서버 관련 블로그르 운영 하였지만 gitbook에서는 한글 입력 버그가 있고 테마도 수정하기 어려웠기 때문에 gitbook도 접게 되었다.</description>
+      <description>Leave Jekyll 블로그를 처음 시작한다면 jekyll을 추천한다. github 에서 공식적으로 Jekyll을 추천하며 자료도 많아서 쉽게 시작할 수 있다. 나도 markdown형식 블로그로 갔을 때 jekyll을 선택했었고 jekyll로 운용한지 벌서 3년이 되었다.&#xA;그런데 jekyll을 쓰면서 불편한 점이 하나 있었다.&#xA;page tree 구조를 만들기 어렵다는 점.&#xA;홈 서버 관련 글들을 트리 형식으로 관리하고 싶었는데 jekyll에서는 그 방법이 복잡하게 되어있었다. 그래서 gitbook 에서 홈 서버 관련 블로그르 운영 하였지만 gitbook에서는 한글 입력 버그가 있고 테마도 수정하기 어려웠기 때문에 gitbook도 접게 되었다.</description>
     </item>
-    
   </channel>
 </rss>
