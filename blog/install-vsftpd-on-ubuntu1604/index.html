@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head><meta charset="UTF-8">
+
+<title>
+    How to install vsftpd on ubuntu - jkpark&#39;s blog
+</title>
+
+<meta name="author" content="JK Park">
+<meta itemprop="description" name="description" content="" />
+<meta name="keywords" content="">
+
+<meta property="og:site_name" content="jkpark&#39;s blog">
+<meta property="og:title" content="How to install vsftpd on ubuntu">
+<meta property="og:url" content="https://jkpark.github.io/blog/install-vsftpd-on-ubuntu1604/">
+<meta property="og:type" content="article">
+
+
+<meta name="generator" content="Hugo 0.121.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1F50DQW5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1F50DQW5H');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href='/css/site.css'>
+<link rel="stylesheet" href='/css/page.css'>
+<link rel="stylesheet" href='/css/dyn.css'>
+<link rel="stylesheet" href='/css/markdown.css'>
+<link rel="stylesheet" href='/css/shortcodes.css'>
+
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div><header id="masthead" class="thm-dark">
+    <div class="wrapper">
+        <nav class="mh-menu">
+            <ul>
+                <li>
+                    <div class="mh-logo">
+                        <img class="avatar" src="https://avatars.githubusercontent.com/jkpark?size=36" alt="avatar" />
+                        <a href="https://jkpark.github.io/" class="text mh-item no-color-link">JK Park</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/">About</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/blog/">Blog</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/homeserver/">Home Server</a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</header><main class="thm-light">
+<section id="main-header" class="thm-dark">
+  
+<div class="wrapper">
+  
+  <div class="date mono"><small>Nov 5, 2016</small></div>
+  
+  
+  <div class ="tags flex">
+    <a class="tag-item z2 mono" href="/tags/ubuntu/">#Ubuntu</a><a class="tag-item z2 mono" href="/tags/ubuntu16.04/">#Ubuntu16.04</a><a class="tag-item z2 mono" href="/tags/vsftpd/">#vsftpd</a>
+  </div>
+  
+  <div class="title post-title">How to install vsftpd on ubuntu</div>
+</div>
+
+</section>
+<section id="main-content">
+  
+
+<sidebar id="section-toc" class="sticky-top pull-right-side">
+<section id="toc">
+<header id="toc-header">
+    <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+        <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+        </g>
+    </svg>
+    <span class="label">Contents</span>
+</header>
+
+<div class="toc-list">
+    <nav id="TableOfContents"></nav>
+</div>
+</section></sidebar>
+
+<div class="wrapper">
+  <div style="margin-top: 5vh;"></div>
+  <article id="post-article" class="content">
+    <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jkpark@cactus:~$ sudo apt-get install vsftpd
+</span></span><span style="display:flex;"><span>다음 새 패키지를 설치할 것입니다:
+</span></span><span style="display:flex;"><span>  vsftpd
+</span></span><span style="display:flex;"><span>0개 업그레이드, 1개 새로 설치, 0개 제거 및 6개 업그레이드 안 함.
+</span></span><span style="display:flex;"><span><span style="color:#099">115</span> k바이트 아카이브를 받아야 합니다.
+</span></span><span style="display:flex;"><span>이 작업 후 <span style="color:#099">336</span> k바이트의 디스크 공간을 더 사용하게 됩니다.
+</span></span><span style="display:flex;"><span>받기:1 http://kr.archive.ubuntu.com/ubuntu xenial/main amd64 vsftpd amd64 3.0.3-3ubuntu2 <span style="color:#000;font-weight:bold">[</span><span style="color:#099">115</span> kB<span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>내려받기 <span style="color:#099">115</span> k바이트, 소요시간 0초 <span style="color:#000;font-weight:bold">(</span><span style="color:#099">974</span> k바이트/초<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>패키지를 미리 설정하는 중입니다...
+</span></span><span style="display:flex;"><span>Selecting previously unselected package vsftpd.
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span>데이터베이스 읽는중 ...현재 211923개의 파일과 디렉터리가 설치되어 있습니다.<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Preparing to unpack .../vsftpd_3.0.3-3ubuntu2_amd64.deb ...
+</span></span><span style="display:flex;"><span>Unpacking vsftpd <span style="color:#000;font-weight:bold">(</span>3.0.3-3ubuntu2<span style="color:#000;font-weight:bold">)</span> ...
+</span></span><span style="display:flex;"><span>Processing triggers <span style="color:#000;font-weight:bold">for</span> systemd <span style="color:#000;font-weight:bold">(</span>229-4ubuntu11<span style="color:#000;font-weight:bold">)</span> ...
+</span></span><span style="display:flex;"><span>Processing triggers <span style="color:#000;font-weight:bold">for</span> ureadahead <span style="color:#000;font-weight:bold">(</span>0.100.0-19<span style="color:#000;font-weight:bold">)</span> ...
+</span></span><span style="display:flex;"><span>Processing triggers <span style="color:#000;font-weight:bold">for</span> man-db <span style="color:#000;font-weight:bold">(</span>2.7.5-1<span style="color:#000;font-weight:bold">)</span> ...
+</span></span><span style="display:flex;"><span>vsftpd <span style="color:#000;font-weight:bold">(</span>3.0.3-3ubuntu2<span style="color:#000;font-weight:bold">)</span> 설정하는 중입니다 ...
+</span></span><span style="display:flex;"><span>Processing triggers <span style="color:#000;font-weight:bold">for</span> systemd <span style="color:#000;font-weight:bold">(</span>229-4ubuntu11<span style="color:#000;font-weight:bold">)</span> ...
+</span></span><span style="display:flex;"><span>Processing triggers <span style="color:#000;font-weight:bold">for</span> ureadahead <span style="color:#000;font-weight:bold">(</span>0.100.0-19<span style="color:#000;font-weight:bold">)</span> ...
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jkpark@cactus:~$ sudo vi /etc/vsftpd.conf
+</span></span></code></pre></div><p>uncomment the below lines (line no:31, 35, 122, 123 and 125)</p>
+<pre tabindex="0"><code>write_enable=YES
+local_umask=022
+chroot_local_user=YES
+chroot_list_enable=YES
+chroot_list_file=/etc/vsftpd.chroot_list
+</code></pre><p><code>chroot_local_user</code>에 대해..</p>
+<p><code>FTP</code>접속 시 홈 디렉토리의 상위 디렉토리 이동을 막기 위한 설정.</p>
+<p><code>Default</code> 상태(chroot_local_user=YES에 주석처리되어 있음)</p>
+<ul>
+<li>ftp접속 후 pwd 시 &lsquo;/home/user1&rsquo; 로 나옴. 상위 이동 가능</li>
+</ul>
+<p><code>chroot_local_user=YES</code> 설정</p>
+<ul>
+<li>FTP접속 후 pwd 시 &lsquo;/&lsquo;로 나옴. 상위 이동 불가능</li>
+</ul>
+<p><code>chroot_list_enable=YES</code> 설정</p>
+<ul>
+<li>FTP 접속 실패.</li>
+</ul>
+<p><code>chroot_list</code> 파일 생성</p>
+<ul>
+<li>FTP 접속 시 &lsquo;/&lsquo;로 나옴. 상위 이동 불가능</li>
+</ul>
+<p><code>chroot_list</code> 파일 안에 <code>user1</code> 등록</p>
+<ul>
+<li>
+<p>user1은 ftp 접속 시 &lsquo;/home/user1&rsquo;로 나옴. 상위 이동 가능</p>
+</li>
+<li>
+<p>user2는 ftp 접속 시 &lsquo;/&lsquo;로 나옴. 상위 이동 불가능</p>
+</li>
+</ul>
+<p>즉 <code>chroot_local_user=YES</code> 설정은 <code>ftp</code> 접속 시 홈 디렉토리를 root 디렉토리 처럼 인식하도록 하는 설정이다.</p>
+<p><a href="http://blog.naver.com/jbells/220416391250">http://blog.naver.com/jbells/220416391250</a></p>
+<p>Add the following lines to enable passive mode</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#008080">pasv_enable</span><span style="color:#000;font-weight:bold">=</span>Yes
+</span></span><span style="display:flex;"><span><span style="color:#008080">pasv_min_port</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">40000</span>
+</span></span><span style="display:flex;"><span><span style="color:#008080">pasv_max_port</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">40100</span>
+</span></span></code></pre></div><p>Add the following lines to enable utf8</p>
+<pre tabindex="0"><code>utf8_filesystem=YES
+</code></pre><p>Add the following lines to enable write permission on root directory</p>
+<pre tabindex="0"><code>allow_writeable_chroot=YES
+</code></pre><p>Restart vsftpd service</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jkpark@cactus:~$ sudo service vsftpd restart
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jkpark@cactus:~$ sudo iptables -I INPUT -p tcp --destination-port 40000:40100 -j ACCEPT
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jkpark@cactus:~$ sudo iptables --list
+</span></span><span style="display:flex;"><span>Chain INPUT <span style="color:#000;font-weight:bold">(</span>policy ACCEPT<span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>target     prot opt <span style="color:#0086b3">source</span>               destination
+</span></span><span style="display:flex;"><span>ACCEPT     tcp  --  anywhere             anywhere             tcp dpts:40000:40100
+</span></span></code></pre></div><p>영구적으로 저장하는 방법은 <a href="http://jkpark0r.blogspot.kr/2016/11/save-rules-of-iptables-permanently.html">http://jkpark0r.blogspot.kr/2016/11/save-rules-of-iptables-permanently.html</a> 참고</p>
+
+  </article>
+  <div style="margin-top: 5vh;"></div>
+  <section>
+
+
+<div style="min-height: 268px;">
+    
+<script src="https://utteranc.es/client.js"
+    repo="jkpark/jkpark.github.io-utterances"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+</div>
+</section>
+</div>
+
+</section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <footer>
+    <p>
+        Powered by the <a href="https://github.com/jkpark/hugo-theme-jkpark" target="_blank">jkpark</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>.
+    </p>
+</footer></body>
+
+</html>

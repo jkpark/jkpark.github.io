@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head><meta charset="UTF-8">
+
+<title>
+    Virtualization - jkpark&#39;s blog
+</title>
+
+<meta name="author" content="JK Park">
+<meta itemprop="description" name="description" content="" />
+<meta name="keywords" content="">
+
+<meta property="og:site_name" content="jkpark&#39;s blog">
+<meta property="og:title" content="Virtualization">
+<meta property="og:url" content="https://jkpark.github.io/homeserver/virtualization/">
+<meta property="og:type" content="website">
+
+
+<meta name="generator" content="Hugo 0.121.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1F50DQW5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1F50DQW5H');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href='/css/site.css'>
+<link rel="stylesheet" href='/css/page.css'>
+<link rel="stylesheet" href='/css/dyn.css'>
+<link rel="stylesheet" href='/css/markdown.css'>
+<link rel="stylesheet" href='/css/shortcodes.css'>
+
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div><header id="masthead" class="thm-dark">
+    <div class="wrapper">
+        <nav class="mh-menu">
+            <ul>
+                <li>
+                    <div class="mh-logo">
+                        <img class="avatar" src="https://avatars.githubusercontent.com/jkpark?size=36" alt="avatar" />
+                        <a href="https://jkpark.github.io/" class="text mh-item no-color-link">JK Park</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/">About</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/blog/">Blog</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/homeserver/">Home Server</a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</header><main class="thm-light">
+<section id="main-header" class="thm-dark">
+  
+  <div class="wrapper">
+    <button class="pt-toggle">pt</button>
+    <div class="title">
+      Virtualization
+    </div>
+    
+  </div>
+
+</section>
+<section id="main-content">
+  
+<sidebar id="section-pagetree" class="sticky-top pull-left-side">
+
+
+<nav id="pagetree">
+    <header id="pt-header">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 2.75A2.75 2.75 0 0 1 5.75 0h14.5a.75.75 0 0 1 .75.75v20.5a.75.75 0 0 1-.75.75h-6a.75.75 0 0 1 0-1.5h5.25v-4H6A1.5 1.5 0 0 0 4.5 18v.75c0 .716.43 1.334 1.05 1.605a.75.75 0 0 1-.6 1.374A3.25 3.25 0 0 1 3 18.75v-16zM19.5 1.5V15H6c-.546 0-1.059.146-1.5.401V2.75c0-.69.56-1.25 1.25-1.25H19.5z" fill="currentColor"/><path d="M7 18.25a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v5.01a.25.25 0 0 1-.397.201l-2.206-1.604a.25.25 0 0 0-.294 0L7.397 23.46a.25.25 0 0 1-.397-.2v-5.01z" fill="currentColor"/></svg>
+        <span class="label">Pagetree</span>
+    </header>
+    <div class="pt-items">
+    
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/getting-started/"></a>
+                <span class="title">
+                    
+                    Getting Started
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/ubuntu-installation/"></a>
+                <span class="title">
+                    
+                    Ubuntu Installation
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/"></a>
+                <span class="title">
+                    <b>
+                    Common Settings
+                    </b>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs collapsed">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/network/"></a>
+                <span class="title">
+                    
+                    Network
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/apt/"></a>
+                <span class="title">
+                    
+                    APT
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/ssh/"></a>
+                <span class="title">
+                    
+                    SSH
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/firewall/"></a>
+                <span class="title">
+                    
+                    Firewall
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/disk-setup/"></a>
+                <span class="title">
+                    <b>
+                    Disk Setup
+                    </b>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs collapsed">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/disk-setup/btrfs/"></a>
+                <span class="title">
+                    
+                    Btrfs
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/time_date/"></a>
+                <span class="title">
+                    
+                    Time / Date
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/"></a>
+                <span class="title">
+                    <b>
+                    Personal Settings
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/tmux/"></a>
+                <span class="title">
+                    
+                    Tmux
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/zsh/"></a>
+                <span class="title">
+                    
+                    Zsh
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/vim/"></a>
+                <span class="title">
+                    
+                    Vim
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/web-hosting/"></a>
+                <span class="title">
+                    <b>
+                    Web Hosting
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/web-hosting/webserver/"></a>
+                <span class="title">
+                    
+                    Webserver
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/web-hosting/domain/"></a>
+                <span class="title">
+                    
+                    Domain
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/"></a>
+                <span class="title">
+                    <b>
+                    Media Server
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/transmission/"></a>
+                <span class="title">
+                    
+                    Transmission
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/flexget/"></a>
+                <span class="title">
+                    
+                    Flexget
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/plex/"></a>
+                <span class="title">
+                    
+                    Plex
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/file-share/"></a>
+                <span class="title">
+                    <b>
+                    File Share
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/file-share/samba/"></a>
+                <span class="title">
+                    
+                    Samba
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/containerization/"></a>
+                <span class="title">
+                    
+                    Containerization
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/virtualization/"></a>
+                <span class="title">
+                    
+                    Virtualization
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+    </div>
+</nav>
+
+
+
+
+<script>
+    var btns = document.getElementsByClassName("pt-collapse-button");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            this.classList.toggle("collapsed");
+            this.parentElement.nextElementSibling.classList.toggle("collapsed");
+        });
+    }
+
+</script>
+
+
+
+</sidebar>
+
+<sidebar id="section-toc" class="sticky-top pull-right-side">
+<section id="toc">
+<header id="toc-header">
+    <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+        <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+        </g>
+    </svg>
+    <span class="label">Contents</span>
+</header>
+
+<div class="toc-list">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#qemu-kvm">qemu-kvm</a>
+      <ul>
+        <li><a href="#kvm이-가능한지-확인">KVM이 가능한지 확인</a></li>
+        <li><a href="#설치">설치</a></li>
+      </ul>
+    </li>
+    <li><a href="#libvirt">libvirt</a></li>
+    <li><a href="#check-vms">check VMs</a></li>
+    <li><a href="#create-vm">Create VM</a></li>
+    <li><a href="#접속">접속</a></li>
+    <li><a href="#주요-virsh-명령어">주요 virsh 명령어</a></li>
+    <li><a href="#고정-ip">고정 IP</a></li>
+    <li><a href="#remove-vm">Remove VM</a></li>
+  </ul>
+</nav>
+</div>
+</section></sidebar>
+<div class="wrapper">
+  <article id="post-article" class="content">
+    <h1 id="qemu-kvm">qemu-kvm</h1>
+<p>보통 가상머신은 VMware나 Vitual-Box를 떠올리지만, 리눅스의 대표적인 가상 머신은 <code>QEMU-KVM</code> 이다. <code>QEMU</code>와 <code>KVM</code>은 각각 Hypevisor 중 하나인데, 둘의 장점을 합쳐 사용하는 것이 <code>QEMU-KVM</code>이다.</p>
+<p>이 둘의 개념을 설명하려면 하이퍼바이저는 무엇인지, 전가상화와 반가상화는 무엇인지, 에뮬레이션과 시뮬레이션의 차이는 무엇인지 등 알아야 할 지식이 끝이 없기 때문에 자세한 설명은 생략하고 <code>QEMU</code>와 <code>KVM</code>을 같이 쓰는지 이유만 간단히 설명한다.</p>
+<p>먼저 에뮬레이션이란, 가상화에 필요한 하드웨어를 소프트웨어적으로 구현하여 가상머신에게 제공하는 것이다. <code>QEMU</code>는 에뮬레이터이다보니 동작에 필요한 하드웨어를 독립적으로 생성하기 때문에 성능이 떨어진다.</p>
+<p>반면 시뮬레이터인 <code>KVM</code>은 호스트 머신에서 제공하는 하드웨어를 그대로 쓰기 때문에 에뮬레이터에 비해 상대적으로 성능이 좋다. 하지만 가상화에 필요한 하드웨어가 없다면 시뮬레이션에 제약이 생긴다.</p>
+<p>이러한 시뮬레이터와 에뮬레이터의 이점을 합쳐 <code>QEMU-KVM</code>는 호스트와 게스트가 동일한 아키텍처를 사용하면 <code>KVM</code>을 통해 하드웨어를 가속화 하고 <code>KVM</code>에서 제공하지 못하는 하드웨어들은 <code>QEMU</code>에 의해 에뮬레이션하도록 한다.</p>
+<h2 id="kvm이-가능한지-확인">KVM이 가능한지 확인</h2>
+<pre tabindex="0"><code>$ kvm-ok
+INFO: /dev/kvm exists
+KVM acceleration can be used
+</code></pre><h2 id="설치">설치</h2>
+<pre tabindex="0"><code>$ sudo apt install qemu-kvm
+</code></pre><h1 id="libvirt">libvirt</h1>
+<p><code>libvirt</code>는 가상머신 스택의 핵심이다. VM을 만들고, 지우고 관련 네트워크를 관리하는 등 다양한 서비스를 <code>libvirt-daemon</code>이 수행하게 된다.</p>
+<p><code>virtinst</code>는 가상머신 설치할 때 쓰인다.</p>
+<pre tabindex="0"><code>$ sudo apt install libvirt-daemon-system virtinst
+</code></pre><h1 id="check-vms">check VMs</h1>
+<p><code>virsh</code>는 <code>libvirt</code>의 UI이다.</p>
+<pre tabindex="0"><code>$ sudo virsh list --all
+ Id    Name                           State
+----------------------------------------------------
+</code></pre><p>아직 VM을 생성한 적이 없으므로 빈 리스트가 출력된다.</p>
+<pre tabindex="0"><code>$ sudo virsh net-list --all
+ Name                 State      Autostart     Persistent
+----------------------------------------------------------
+ default              active     yes           yes
+</code></pre><p>default가 안뜬다면 virbr0을 재시작해본다.</p>
+<pre tabindex="0"><code>$ sudo ifconfig virbr0 down
+$ sudo ifconfig virbr0 up
+</code></pre><h1 id="create-vm">Create VM</h1>
+<p>Windows 10용 VM 생성 방법이다.</p>
+<pre tabindex="0"><code>$ sudo virt-install \
+--virt-type kvm \
+--name win10 \
+--vcpus 2 \
+--cpu host-passthrough,cache.mode=passthrough \
+--hvm \
+--memory 2048 \
+--os-variant win10 \
+--cdrom /home/jkpark/workspace/Win10.iso \
+--disk path=/home/jkpark/public/vm-win10.qcow2,format=qcow2,size=40 \
+--graphics vnc,port=5900,listen=0.0.0.0
+</code></pre><ul>
+<li><code>--cpu host-passthrough,cache.mode=passthrough</code> : 가상머신이 실제 CPU정보를 그대로 사용</li>
+<li><code>--os-variant</code> : win10, ubuntu20.04 등 설치하는 OS 종류</li>
+<li><code>--graphics vnc,port=5900,listen=0.0.0.0</code> : VNC를 통해 Display를 접근할 것이기 때문에 VNC 방화벽 포트 5900번을 열어준다.
+VNC는 보안에 취약하므로, <code>-s x.x.x.x</code>와 같이 접속할 source를 지정하여 보안을 강화한다.
+<pre tabindex="0"><code>$ sudo iptables -A INPUT -s x.x.x.x -p tcp -m tcp --dport 5900 -j ACCEPT
+$ sudo netfilter-persistent save
+</code></pre></li>
+</ul>
+<p>vm이 할당이 되면 <code>virsh list</code> 명령어를 통해 VM의 상태를 볼 수 있다.</p>
+<pre tabindex="0"><code>$ virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 7     win10                          running
+</code></pre><p>VM마다 ID가 있다. 이 ID로도 명령어를 내릴 수 있다.</p>
+<pre tabindex="0"><code>$ virsh shutdown 7
+Domain 7 is being shutdown
+$ virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 7     win10                          in shutdown
+</code></pre><h1 id="접속">접속</h1>
+<p>VNC viewer for Chrome 을 통해 접속한다.</p>
+<p><a href="https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla">https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla</a></p>
+<h1 id="주요-virsh-명령어">주요 virsh 명령어</h1>
+<pre tabindex="0"><code>virsh list --all
+
+virsh start &lt;domain&gt;
+
+virsh shutdown  &lt;domain&gt;
+
+virsh undefine  &lt;domain&gt;
+디스크는 삭제되지 않으므로 직접 삭제해야 한다.
+
+virsh autostart  &lt;domain&gt;
+호스트 부팅 시 자동 시작
+</code></pre><h1 id="고정-ip">고정 IP</h1>
+<p>libvirt는 기본 네트워크 default는 <code>192.168.122.xxx</code> 대역을 쓰고 있다.</p>
+<pre tabindex="0"><code>$ virsh net-dumpxml default
+&lt;network&gt;
+  &lt;name&gt;default&lt;/name&gt;
+  &lt;uuid&gt;84fffe88-e89a-4da3-9e47-c705bb76d404&lt;/uuid&gt;
+  &lt;forward mode=&#39;nat&#39;&gt;
+    &lt;nat&gt;
+      &lt;port start=&#39;1024&#39; end=&#39;65535&#39;/&gt;
+    &lt;/nat&gt;
+  &lt;/forward&gt;
+  &lt;bridge name=&#39;virbr0&#39; stp=&#39;on&#39; delay=&#39;0&#39;/&gt;
+  &lt;mac address=&#39;52:54:00:90:85:c3&#39;/&gt;
+  &lt;ip address=&#39;192.168.122.1&#39; netmask=&#39;255.255.255.0&#39;&gt;
+    &lt;dhcp&gt;
+      &lt;range start=&#39;192.168.122.2&#39; end=&#39;192.168.122.254&#39;/&gt;
+    &lt;/dhcp&gt;
+  &lt;/ip&gt;
+&lt;/network&gt;
+</code></pre><p>이 기본 네트워크가 VM에게 고정 IP를 내려주도록 설정한다.</p>
+<pre tabindex="0"><code>$ virsh dumpxml &lt;domain&gt; | grep &#39;mac address&#39;
+      &lt;mac address=&#39;52:54:00:c2:aa:53&#39;/&gt;
+
+$ virsh net-update default add ip-dhcp-host &#34;&lt;host mac=&#39;52:54:00:c2:aa:53&#39; name=&#39;&lt;domain&gt;&#39; ip=&#39;192.168.122.2&#39; /&gt;&#34; --live --config
+Updated network default persistent config and live state
+</code></pre><p>확인</p>
+<pre tabindex="0"><code>$ virsh net-dumpxml default
+&lt;network&gt;
+  &lt;name&gt;default&lt;/name&gt;
+  &lt;uuid&gt;e7dd4a92-a610-4e34-979f-acc36ac3a9a1&lt;/uuid&gt;
+  &lt;forward mode=&#39;nat&#39;&gt;
+    &lt;nat&gt;
+      &lt;port start=&#39;1024&#39; end=&#39;65535&#39;/&gt;
+    &lt;/nat&gt;
+  &lt;/forward&gt;
+  &lt;bridge name=&#39;virbr0&#39; stp=&#39;on&#39; delay=&#39;0&#39;/&gt;
+  &lt;mac address=&#39;52:54:00:bd:ba:d4&#39;/&gt;
+  &lt;ip address=&#39;192.168.122.1&#39; netmask=&#39;255.255.255.0&#39;&gt;
+    &lt;dhcp&gt;
+      &lt;range start=&#39;192.168.122.2&#39; end=&#39;192.168.122.254&#39;/&gt;
+      &lt;host mac=&#39;52:54:00:c2:aa:53&#39; name=&#39;win10&#39; ip=&#39;192.168.122.2&#39;/&gt;
+    &lt;/dhcp&gt;
+  &lt;/ip&gt;
+&lt;/network&gt;
+</code></pre><p>설정 후 VM을 재시작한다.</p>
+<pre tabindex="0"><code>$ virsh shutdown win10
+$ virsh start win10
+</code></pre><p>우분투 서버 부팅 시 자동으로 시작되도록 설정하려면 아래 명령어를 입력한다.</p>
+<pre tabindex="0"><code>$ virsh autostart win10
+</code></pre><p>[참고] 해제</p>
+<pre tabindex="0"><code>$ virsh autostart win10 --disable
+</code></pre><h1 id="remove-vm">Remove VM</h1>
+<p>win10 예:</p>
+<pre tabindex="0"><code>$ virsh shutdown win10
+$ virsh destroy win10
+$ virsh undefine win10
+$ sudo rm /var/lib/libvirt/images/vm-win10.qcow2
+$ sudo virsh net-update default delete ip-dhcp-host &#34;&lt;host mac=&#39;52:54:00:c2:aa:53&#39; name=&#39;win10&#39; ip=&#39;192.168.122.2&#39; /&gt;&#34; --live --config
+</code></pre>
+  </article>
+  <div style="margin-top: 5vh;"></div>
+  <section>
+
+
+<div style="min-height: 268px;">
+    
+<script src="https://utteranc.es/client.js"
+    repo="jkpark/jkpark.github.io-utterances"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+</div>
+</section>
+</div>
+
+</section>
+
+<script>
+  document.querySelector(".pt-toggle").addEventListener("click", function() {
+      document.querySelector("#section-pagetree").classList.add("active");
+      document.querySelector(".overay").classList.add("active");
+  });
+
+  document.querySelector(".overay").addEventListener("click", function() {
+      document.querySelector("#section-pagetree").classList.remove("active");
+      document.querySelector(".overay").classList.remove("active");
+  });
+</script>
+
+
+
+
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <footer>
+    <p>
+        Powered by the <a href="https://github.com/jkpark/hugo-theme-jkpark" target="_blank">jkpark</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>.
+    </p>
+</footer></body>
+
+</html>

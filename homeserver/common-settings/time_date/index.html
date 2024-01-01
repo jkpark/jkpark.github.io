@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head><meta charset="UTF-8">
+
+<title>
+    Time / Date - jkpark&#39;s blog
+</title>
+
+<meta name="author" content="JK Park">
+<meta itemprop="description" name="description" content="Ubuntu 20.04 Focal Fossa에서 timezone, ntp 설정하는 방법" />
+<meta name="keywords" content="">
+
+<meta property="og:site_name" content="jkpark&#39;s blog">
+<meta property="og:title" content="Time / Date">
+<meta property="og:url" content="https://jkpark.github.io/homeserver/common-settings/time_date/">
+<meta property="og:type" content="website">
+
+
+<meta name="generator" content="Hugo 0.121.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1F50DQW5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1F50DQW5H');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href='/css/site.css'>
+<link rel="stylesheet" href='/css/page.css'>
+<link rel="stylesheet" href='/css/dyn.css'>
+<link rel="stylesheet" href='/css/markdown.css'>
+<link rel="stylesheet" href='/css/shortcodes.css'>
+
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div><header id="masthead" class="thm-dark">
+    <div class="wrapper">
+        <nav class="mh-menu">
+            <ul>
+                <li>
+                    <div class="mh-logo">
+                        <img class="avatar" src="https://avatars.githubusercontent.com/jkpark?size=36" alt="avatar" />
+                        <a href="https://jkpark.github.io/" class="text mh-item no-color-link">JK Park</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/">About</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/blog/">Blog</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/homeserver/">Home Server</a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</header><main class="thm-light">
+<section id="main-header" class="thm-dark">
+  
+  <div class="wrapper">
+    <button class="pt-toggle">pt</button>
+    <div class="title">
+      Time / Date
+    </div>
+    
+  </div>
+
+</section>
+<section id="main-content">
+  
+<sidebar id="section-pagetree" class="sticky-top pull-left-side">
+
+
+<nav id="pagetree">
+    <header id="pt-header">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 2.75A2.75 2.75 0 0 1 5.75 0h14.5a.75.75 0 0 1 .75.75v20.5a.75.75 0 0 1-.75.75h-6a.75.75 0 0 1 0-1.5h5.25v-4H6A1.5 1.5 0 0 0 4.5 18v.75c0 .716.43 1.334 1.05 1.605a.75.75 0 0 1-.6 1.374A3.25 3.25 0 0 1 3 18.75v-16zM19.5 1.5V15H6c-.546 0-1.059.146-1.5.401V2.75c0-.69.56-1.25 1.25-1.25H19.5z" fill="currentColor"/><path d="M7 18.25a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v5.01a.25.25 0 0 1-.397.201l-2.206-1.604a.25.25 0 0 0-.294 0L7.397 23.46a.25.25 0 0 1-.397-.2v-5.01z" fill="currentColor"/></svg>
+        <span class="label">Pagetree</span>
+    </header>
+    <div class="pt-items">
+    
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/getting-started/"></a>
+                <span class="title">
+                    
+                    Getting Started
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/ubuntu-installation/"></a>
+                <span class="title">
+                    
+                    Ubuntu Installation
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/"></a>
+                <span class="title">
+                    <b>
+                    Common Settings
+                    </b>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs collapsed">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/network/"></a>
+                <span class="title">
+                    
+                    Network
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/apt/"></a>
+                <span class="title">
+                    
+                    APT
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/ssh/"></a>
+                <span class="title">
+                    
+                    SSH
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/firewall/"></a>
+                <span class="title">
+                    
+                    Firewall
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/disk-setup/"></a>
+                <span class="title">
+                    <b>
+                    Disk Setup
+                    </b>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs collapsed">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/disk-setup/btrfs/"></a>
+                <span class="title">
+                    
+                    Btrfs
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/time_date/"></a>
+                <span class="title">
+                    
+                    Time / Date
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/"></a>
+                <span class="title">
+                    <b>
+                    Personal Settings
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/tmux/"></a>
+                <span class="title">
+                    
+                    Tmux
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/zsh/"></a>
+                <span class="title">
+                    
+                    Zsh
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/vim/"></a>
+                <span class="title">
+                    
+                    Vim
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/web-hosting/"></a>
+                <span class="title">
+                    <b>
+                    Web Hosting
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/web-hosting/webserver/"></a>
+                <span class="title">
+                    
+                    Webserver
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/web-hosting/domain/"></a>
+                <span class="title">
+                    
+                    Domain
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/"></a>
+                <span class="title">
+                    <b>
+                    Media Server
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/transmission/"></a>
+                <span class="title">
+                    
+                    Transmission
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/flexget/"></a>
+                <span class="title">
+                    
+                    Flexget
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/plex/"></a>
+                <span class="title">
+                    
+                    Plex
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/file-share/"></a>
+                <span class="title">
+                    <b>
+                    File Share
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/file-share/samba/"></a>
+                <span class="title">
+                    
+                    Samba
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/containerization/"></a>
+                <span class="title">
+                    
+                    Containerization
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/virtualization/"></a>
+                <span class="title">
+                    
+                    Virtualization
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+    </div>
+</nav>
+
+
+
+
+<script>
+    var btns = document.getElementsByClassName("pt-collapse-button");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            this.classList.toggle("collapsed");
+            this.parentElement.nextElementSibling.classList.toggle("collapsed");
+        });
+    }
+
+</script>
+
+
+
+</sidebar>
+
+<sidebar id="section-toc" class="sticky-top pull-right-side">
+<section id="toc">
+<header id="toc-header">
+    <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+        <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+        </g>
+    </svg>
+    <span class="label">Contents</span>
+</header>
+
+<div class="toc-list">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#timezone">Timezone</a></li>
+    <li><a href="#ntp">NTP</a>
+      <ul>
+        <li><a href="#설치">설치</a></li>
+        <li><a href="#방화벽-설정">방화벽 설정</a></li>
+        <li><a href="#확인">확인</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+</section></sidebar>
+<div class="wrapper">
+  <article id="post-article" class="content">
+    <h1 id="timezone">Timezone</h1>
+<p>우분투 설치 시 인터넷 연결이 되어있지 않았다면 타임존을 수동으로 설정하였을 것이다. 자동으로 타임존이 잡혔다면 이 단계는 넘어가도 된다.</p>
+<p><code>timedatectl</code> 명령어를 통해 현재 타임존을 출력한다.</p>
+<pre tabindex="0"><code>$ timedatectl
+               Local time: Sat 2020-12-19 00:24:26 EST
+           Universal time: Sat 2020-12-19 05:24:26 UTC
+                 RTC time: Sat 2020-12-19 05:24:26
+                Time zone: America/New_York (EST, -0500)
+System clock synchronized: no
+              NTP service: active
+          RTC in local TZ: no
+</code></pre><p>타임존을 서울로 변경하기 위해 타임존 리스트를 본다.</p>
+<pre tabindex="0"><code>$ timedatectl list-timezones | grep Seoul
+Asia/Seoul
+</code></pre><p>타임존을 서울로 변경한다.</p>
+<pre tabindex="0"><code>$ sudo timedatectl set-timezone Asia/Seoul
+</code></pre><p>확인</p>
+<pre tabindex="0"><code>$ timedatectl
+               Local time: Sat 2020-12-19 14:26:00 KST
+           Universal time: Sat 2020-12-19 05:26:00 UTC
+                 RTC time: Sat 2020-12-19 05:26:00
+                Time zone: Asia/Seoul (KST, +0900)
+System clock synchronized: no
+              NTP service: active
+          RTC in local TZ: no
+</code></pre><h1 id="ntp">NTP</h1>
+<p>정확한 시간을 동기화하기 위새 NTP를 이용한다.</p>
+<h2 id="설치">설치</h2>
+<pre tabindex="0"><code>$ sudo apt-get install ntp
+</code></pre><p>공식 목록 <a href="http://www.pool.ntp.org/ko/zone/kr">http://www.pool.ntp.org/ko/zone/kr</a> 에서 서버목록을 확인한다.</p>
+<pre tabindex="0"><code>server 3.kr.pool.ntp.org
+server 1.asia.pool.ntp.org
+server 2.asia.pool.ntp.org
+</code></pre><p><code>/etc/ntp.conf</code> 파일을 열어 서버를 추가한다.</p>
+<pre tabindex="0"><code># Specify one or more NTP servers.
+server 3.kr.pool.ntp.org
+server 1.asia.pool.ntp.org
+server 2.asia.pool.ntp.org
+</code></pre><h2 id="방화벽-설정">방화벽 설정</h2>
+<pre tabindex="0"><code>$ sudo iptables -A INPUT -p udp --dport 123 -j ACCEPT
+$ sudo netfilter-persistent save
+</code></pre><h2 id="확인">확인</h2>
+<p>서비스를 재시작한다.</p>
+<pre tabindex="0"><code>$ sudo systemctl restart ntp
+</code></pre><p>ntp 동기화를 확인한다.</p>
+<pre tabindex="0"><code>$ sudo ntpq -p
+     remote           refid      st t when poll reach   delay   offset  jitter
+==============================================================================
+ 0.ubuntu.pool.n .POOL.          16 p    -   64    0    0.000    0.000   0.000
+ 1.ubuntu.pool.n .POOL.          16 p    -   64    0    0.000    0.000   0.000
+ 2.ubuntu.pool.n .POOL.          16 p    -   64    0    0.000    0.000   0.000
+ 3.ubuntu.pool.n .POOL.          16 p    -   64    0    0.000    0.000   0.000
+ ntp.ubuntu.com  .POOL.          16 p    -   64    0    0.000    0.000   0.000
+-211.233.40.78   125.185.190.74   2 u   29   64   37    3.772    6.502   2.554
++ott129.hkcable. 118.143.17.82    2 u   38   64   37   47.540    5.049   2.128
+-ntp.hkg10.hk.le 130.133.1.10     2 u   35   64   37   44.548   39.918   4.120
+*106.247.248.106 141.223.182.106  2 u   26   64   37    5.429    4.140   2.985
++211.233.84.186  216.239.35.12    2 u   21   64   37    3.290    4.562   3.311
+-ec2-13-209-84-5 17.253.114.253   2 u   25   64   17   29.177   15.007   6.481
++49.247.128.87 ( 106.247.248.106  3 u   25   64   37    4.708    4.212   3.323
+</code></pre><p>NTPQ Command row output interpretation:</p>
+<ul>
+<li><code>-</code> Discarded by the cluster algorithm.</li>
+<li><code>+</code> Included in the combine algorithm. This is a good candidate if the current server we are synchronizing with is discarded for any reason.</li>
+<li><code>*</code> The current system peer. The computer is using this remote server as its time source to synchronize the clock
+Ref: <a href="https://pthree.org/2013/11/05/real-life-ntp/">https://pthree.org/2013/11/05/real-life-ntp/</a></li>
+</ul>
+<p>또한, 우분투의 디폴트 NTP service가 <code>NTP service: n/a</code> 으로 disable 된 걸 확인한다.</p>
+<pre tabindex="0"><code>$ timedatectl
+               Local time: Thu 2020-12-17 14:45:22 KST
+           Universal time: Thu 2020-12-17 05:45:22 UTC
+                 RTC time: Sat 2020-12-19 05:42:18
+                Time zone: Asia/Seoul (KST, +0900)
+System clock synchronized: no
+              NTP service: n/a
+          RTC in local TZ: no
+</code></pre>
+  </article>
+  <div style="margin-top: 5vh;"></div>
+  <section>
+
+
+<div style="min-height: 268px;">
+    
+<script src="https://utteranc.es/client.js"
+    repo="jkpark/jkpark.github.io-utterances"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+</div>
+</section>
+</div>
+
+</section>
+
+<script>
+  document.querySelector(".pt-toggle").addEventListener("click", function() {
+      document.querySelector("#section-pagetree").classList.add("active");
+      document.querySelector(".overay").classList.add("active");
+  });
+
+  document.querySelector(".overay").addEventListener("click", function() {
+      document.querySelector("#section-pagetree").classList.remove("active");
+      document.querySelector(".overay").classList.remove("active");
+  });
+</script>
+
+
+
+
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <footer>
+    <p>
+        Powered by the <a href="https://github.com/jkpark/hugo-theme-jkpark" target="_blank">jkpark</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>.
+    </p>
+</footer></body>
+
+</html>

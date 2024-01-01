@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head><meta charset="UTF-8">
+
+<title>
+    Flexget - jkpark&#39;s blog
+</title>
+
+<meta name="author" content="JK Park">
+<meta itemprop="description" name="description" content="Flexget 설치 및 설정 방법" />
+<meta name="keywords" content="">
+
+<meta property="og:site_name" content="jkpark&#39;s blog">
+<meta property="og:title" content="Flexget">
+<meta property="og:url" content="https://jkpark.github.io/homeserver/media-server/flexget/">
+<meta property="og:type" content="website">
+
+
+<meta name="generator" content="Hugo 0.121.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1F50DQW5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1F50DQW5H');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href='/css/site.css'>
+<link rel="stylesheet" href='/css/page.css'>
+<link rel="stylesheet" href='/css/dyn.css'>
+<link rel="stylesheet" href='/css/markdown.css'>
+<link rel="stylesheet" href='/css/shortcodes.css'>
+
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div><header id="masthead" class="thm-dark">
+    <div class="wrapper">
+        <nav class="mh-menu">
+            <ul>
+                <li>
+                    <div class="mh-logo">
+                        <img class="avatar" src="https://avatars.githubusercontent.com/jkpark?size=36" alt="avatar" />
+                        <a href="https://jkpark.github.io/" class="text mh-item no-color-link">JK Park</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/">About</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/blog/">Blog</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/homeserver/">Home Server</a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</header><main class="thm-light">
+<section id="main-header" class="thm-dark">
+  
+  <div class="wrapper">
+    <button class="pt-toggle">pt</button>
+    <div class="title">
+      Flexget
+    </div>
+    
+  </div>
+
+</section>
+<section id="main-content">
+  
+<sidebar id="section-pagetree" class="sticky-top pull-left-side">
+
+
+<nav id="pagetree">
+    <header id="pt-header">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 2.75A2.75 2.75 0 0 1 5.75 0h14.5a.75.75 0 0 1 .75.75v20.5a.75.75 0 0 1-.75.75h-6a.75.75 0 0 1 0-1.5h5.25v-4H6A1.5 1.5 0 0 0 4.5 18v.75c0 .716.43 1.334 1.05 1.605a.75.75 0 0 1-.6 1.374A3.25 3.25 0 0 1 3 18.75v-16zM19.5 1.5V15H6c-.546 0-1.059.146-1.5.401V2.75c0-.69.56-1.25 1.25-1.25H19.5z" fill="currentColor"/><path d="M7 18.25a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v5.01a.25.25 0 0 1-.397.201l-2.206-1.604a.25.25 0 0 0-.294 0L7.397 23.46a.25.25 0 0 1-.397-.2v-5.01z" fill="currentColor"/></svg>
+        <span class="label">Pagetree</span>
+    </header>
+    <div class="pt-items">
+    
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/getting-started/"></a>
+                <span class="title">
+                    
+                    Getting Started
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/ubuntu-installation/"></a>
+                <span class="title">
+                    
+                    Ubuntu Installation
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/"></a>
+                <span class="title">
+                    <b>
+                    Common Settings
+                    </b>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs collapsed">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/network/"></a>
+                <span class="title">
+                    
+                    Network
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/apt/"></a>
+                <span class="title">
+                    
+                    APT
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/ssh/"></a>
+                <span class="title">
+                    
+                    SSH
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/firewall/"></a>
+                <span class="title">
+                    
+                    Firewall
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/disk-setup/"></a>
+                <span class="title">
+                    <b>
+                    Disk Setup
+                    </b>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs collapsed">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/disk-setup/btrfs/"></a>
+                <span class="title">
+                    
+                    Btrfs
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/common-settings/time_date/"></a>
+                <span class="title">
+                    
+                    Time / Date
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/"></a>
+                <span class="title">
+                    <b>
+                    Personal Settings
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/tmux/"></a>
+                <span class="title">
+                    
+                    Tmux
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/zsh/"></a>
+                <span class="title">
+                    
+                    Zsh
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/personal-settings/vim/"></a>
+                <span class="title">
+                    
+                    Vim
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/web-hosting/"></a>
+                <span class="title">
+                    <b>
+                    Web Hosting
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/web-hosting/webserver/"></a>
+                <span class="title">
+                    
+                    Webserver
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/web-hosting/domain/"></a>
+                <span class="title">
+                    
+                    Domain
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/"></a>
+                <span class="title">
+                    <b>
+                    Media Server
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/transmission/"></a>
+                <span class="title">
+                    
+                    Transmission
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/flexget/"></a>
+                <span class="title">
+                    
+                    Flexget
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/media-server/plex/"></a>
+                <span class="title">
+                    
+                    Plex
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/file-share/"></a>
+                <span class="title">
+                    <b>
+                    File Share
+                    </b>
+                </span>
+                
+                <span class="pt-collapse-button stretched-link-inner " data-target="">
+                    <a class="">
+                        <svg class="pt-item-button-icon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                    </a>
+                </span>
+                
+            </div>
+                
+            
+            <div class="pt-item-childs ">
+                
+    
+    
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/file-share/samba/"></a>
+                <span class="title">
+                    
+                    Samba
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+            </div>
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/containerization/"></a>
+                <span class="title">
+                    
+                    Containerization
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+    <ul class="pt-list">
+        <li class="">
+            <div class="pt-item flex-row z1 f-space-between tile">
+                <a class="stretched-link" href="/homeserver/virtualization/"></a>
+                <span class="title">
+                    
+                    Virtualization
+                    
+                </span>
+                
+            </div>
+                
+            
+        </li>
+    </ul>
+    
+
+    </div>
+</nav>
+
+
+
+
+<script>
+    var btns = document.getElementsByClassName("pt-collapse-button");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            this.classList.toggle("collapsed");
+            this.parentElement.nextElementSibling.classList.toggle("collapsed");
+        });
+    }
+
+</script>
+
+
+
+</sidebar>
+
+<sidebar id="section-toc" class="sticky-top pull-right-side">
+<section id="toc">
+<header id="toc-header">
+    <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+        <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+        </g>
+    </svg>
+    <span class="label">Contents</span>
+</header>
+
+<div class="toc-list">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#설치">설치</a></li>
+    <li><a href="#설정">설정</a>
+      <ul>
+        <li><a href="#secretsyml">secrets.yml</a></li>
+        <li><a href="#configyml">config.yml</a></li>
+        <li><a href="#wishyml">wish.yml</a></li>
+      </ul>
+    </li>
+    <li><a href="#스케줄링">스케줄링</a></li>
+  </ul>
+</nav>
+</div>
+</section></sidebar>
+<div class="wrapper">
+  <article id="post-article" class="content">
+    <p>Flexget은 여러가지 일을 자동화하는 툴이다.</p>
+<p>RSS feed로 부터 특정 키워드가 포함된 토렌트를 검색하여 원하는 위치에 토렌트 다운로드 받을 것이다. flexget에서 transmission연동을 지원한다.</p>
+<h1 id="설치">설치</h1>
+<p>설치 준비</p>
+<pre tabindex="0"><code>$ sudo apt-get update
+$ sudo apt-get install python3.5
+$ sudo apt-get install python-pip
+$ sudo pip install --upgrade setuptools
+</code></pre><p>flexget 설치</p>
+<pre tabindex="0"><code>$ sudo pip install flexget
+</code></pre><p>트랜스미션 플러그인 설치</p>
+<pre tabindex="0"><code>$ sudo pip install transmissionrpc
+</code></pre><p>확인</p>
+<pre tabindex="0"><code>$ flexget --version
+2.21.18
+Latest release: 3.1.1
+</code></pre><h1 id="설정">설정</h1>
+<p>내 설정은 아래와 같다.</p>
+<ul>
+<li>secrets.yml : 계정 정보같은 개인정보 저</li>
+<li>config.yml : Flexget 설정</li>
+<li>wish.yml : 다운로드할 목록</li>
+</ul>
+<p>각 파일은 <code>.config/flexget</code>에 생성하면 된다.</p>
+<pre tabindex="0"><code>$ mkdir -p ~/.config/flexget
+$ touch secrets.yml
+$ touch config.yml
+$ touch wish.yml
+</code></pre><p>참고로 내 설정은 <a href="https://github.com/jkpark/flexget_config">https://github.com/jkpark/flexget_config</a> 에 올려두었다.</p>
+<h2 id="secretsyml">secrets.yml</h2>
+<script src="https://gist.github.com/jkpark/e0a6df7e6a67146c483cd65a1ed238aa.js"></script>
+<p>folder를 알맞게 입력한다.</p>
+<p>transmission과 연동하기 위해 username과 password 를 알맞게 입력한다.</p>
+<h2 id="configyml">config.yml</h2>
+<script src="https://gist.github.com/jkpark/53a1808bf0376b9db71c93a9c3828748.js"></script>
+<p>가져올 rss정보를 넣는다.</p>
+<h2 id="wishyml">wish.yml</h2>
+<script src="https://gist.github.com/jkpark/b1e11e08746cd1a084d7a74abd279d16.js"></script>
+<h1 id="스케줄링">스케줄링</h1>
+<p>crontab에 추가하여 자동으로 flexget이 실행되도록 한다.</p>
+<p>*crontab 참고 <a href="https://crontab.guru/">https://crontab.guru/</a></p>
+<pre tabindex="0"><code>$sudo vi /etc/crontab
+</code></pre><pre tabindex="0"><code># 2019-03-12 | jkpark | added below 2 line.
+10 0-2,6,18-23 * * *    jkpark  /usr/local/bin/flexget --cron execute --tasks download_*
+12 6,18,0 * * * jkpark  /usr/local/bin/flexget --cron execute --tasks download2_movie
+</code></pre>
+  </article>
+  <div style="margin-top: 5vh;"></div>
+  <section>
+
+
+<div style="min-height: 268px;">
+    
+<script src="https://utteranc.es/client.js"
+    repo="jkpark/jkpark.github.io-utterances"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+</div>
+</section>
+</div>
+
+</section>
+
+<script>
+  document.querySelector(".pt-toggle").addEventListener("click", function() {
+      document.querySelector("#section-pagetree").classList.add("active");
+      document.querySelector(".overay").classList.add("active");
+  });
+
+  document.querySelector(".overay").addEventListener("click", function() {
+      document.querySelector("#section-pagetree").classList.remove("active");
+      document.querySelector(".overay").classList.remove("active");
+  });
+</script>
+
+
+
+
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <footer>
+    <p>
+        Powered by the <a href="https://github.com/jkpark/hugo-theme-jkpark" target="_blank">jkpark</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>.
+    </p>
+</footer></body>
+
+</html>

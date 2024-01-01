@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head><meta charset="UTF-8">
+
+<title>
+    Jekyll to Hugo - jkpark&#39;s blog
+</title>
+
+<meta name="author" content="JK Park">
+<meta itemprop="description" name="description" content="Hugo로 Github Page 블로그 구축 방법 설명" />
+<meta name="keywords" content="">
+
+<meta property="og:site_name" content="jkpark&#39;s blog">
+<meta property="og:title" content="Jekyll to Hugo">
+<meta property="og:url" content="https://jkpark.github.io/blog/jekyll-to-hugo/">
+<meta property="og:type" content="article">
+
+
+<meta name="generator" content="Hugo 0.121.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1F50DQW5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1F50DQW5H');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Roboto:400,700,300italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href='/css/site.css'>
+<link rel="stylesheet" href='/css/page.css'>
+<link rel="stylesheet" href='/css/dyn.css'>
+<link rel="stylesheet" href='/css/markdown.css'>
+<link rel="stylesheet" href='/css/shortcodes.css'>
+
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div><header id="masthead" class="thm-dark">
+    <div class="wrapper">
+        <nav class="mh-menu">
+            <ul>
+                <li>
+                    <div class="mh-logo">
+                        <img class="avatar" src="https://avatars.githubusercontent.com/jkpark?size=36" alt="avatar" />
+                        <a href="https://jkpark.github.io/" class="text mh-item no-color-link">JK Park</a>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/">About</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/blog/">Blog</a>
+                </li>
+                
+                <li>
+                    <a class='mh-item no-color-link ' href="/homeserver/">Home Server</a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</header><main class="thm-light">
+<section id="main-header" class="thm-dark">
+  
+<div class="wrapper">
+  
+  <div class="date mono"><small>Dec 2, 2020</small></div>
+  
+  
+  <div class ="tags flex">
+    <a class="tag-item z2 mono" href="/tags/hugo/">#hugo</a>
+  </div>
+  
+  <div class="title post-title">Jekyll to Hugo</div>
+</div>
+
+</section>
+<section id="main-content">
+  
+
+<sidebar id="section-toc" class="sticky-top pull-right-side">
+<section id="toc">
+<header id="toc-header">
+    <svg height="15px" width="15px" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+        <g>
+            <line x1="21" y1="10" x2="7" y2="10"></line>
+            <line x1="21" y1="6" x2="3" y2="6"></line>
+            <line x1="21" y1="14" x2="3" y2="14"></line>
+            <line x1="21" y1="18" x2="7" y2="18"></line>
+        </g>
+    </svg>
+    <span class="label">Contents</span>
+</header>
+
+<div class="toc-list">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#leave-jekyll">Leave Jekyll</a>
+      <ul>
+        <li><a href="#블로그-운영-연혁">블로그 운영 연혁</a></li>
+      </ul>
+    </li>
+    <li><a href="#why-hugo">Why Hugo</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#theme">Theme</a></li>
+  </ul>
+</nav>
+</div>
+</section></sidebar>
+
+<div class="wrapper">
+  <div style="margin-top: 5vh;"></div>
+  <article id="post-article" class="content">
+    <h1 id="leave-jekyll">Leave Jekyll</h1>
+<p>블로그를 처음 시작한다면 <code>jekyll</code>을 추천한다. github 에서 공식적으로 Jekyll을 추천하며 자료도 많아서 쉽게 시작할 수 있다. 나도 markdown형식 블로그로 갔을 때 jekyll을 선택했었고 jekyll로 운용한지 벌서 3년이 되었다.</p>
+<p>그런데 jekyll을 쓰면서 불편한 점이 하나 있었다.</p>
+<p>page tree 구조를 만들기 어렵다는 점.</p>
+<p>홈 서버 관련 글들을 트리 형식으로 관리하고 싶었는데 jekyll에서는 그 방법이 복잡하게 되어있었다. 그래서 gitbook 에서 홈 서버 관련 블로그르 운영 하였지만 gitbook에서는 한글 입력 버그가 있고 테마도 수정하기 어려웠기 때문에 gitbook도 접게 되었다. 그동안 jekyll에 대해 충분히 파악했고 또 다시 떠날 때가 되었다는 느낌을 받아 새로운 website publisher를 찾게 되었다.</p>
+<h2 id="블로그-운영-연혁">블로그 운영 연혁</h2>
+<table>
+<thead>
+<tr>
+<th align="center">년도</th>
+<th>블로그 운용 방식</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">2009</td>
+<td>Personal Web Server + Zeroboard</td>
+<td>블로그 운용 시작</td>
+</tr>
+<tr>
+<td align="center">2010</td>
+<td>Naver blog</td>
+<td>전기세, 보안문제 등의 이유로 만만한 Naver Blog로 이전</td>
+</tr>
+<tr>
+<td align="center">2011</td>
+<td>Blogger</td>
+<td>Naver블로그 글은 구글 검색이 안되서 이전</td>
+</tr>
+<tr>
+<td align="center">2017</td>
+<td>github page + jekyll</td>
+<td>Markdown와 Static Site에 흥미를 느껴 이전</td>
+</tr>
+<tr>
+<td align="center">2019</td>
+<td>github page + jekyll, gitbook</td>
+<td>jekyll은 page tree가 안되서 gitbook 추가 운영</td>
+</tr>
+<tr>
+<td align="center">2021</td>
+<td>github page + Hugo</td>
+<td>gitbook의 한글 문제와, jekyll의 page tree 미지원, Go lang에 흥미를 느껴 이전</td>
+</tr>
+</tbody>
+</table>
+<h1 id="why-hugo">Why Hugo</h1>
+<p>나는 블로그를 static으로 운영한다. 글 작성은 나만 하기도 하고 코멘트는 ecosystem으로 잘 작동하기 때문에 CMS는 불필요하다.</p>
+<p>static site generator도 jekyll, hugo, gatsby, hexo 등 많이 있지만 hugo는 충분히 많은 자료가 나오고 최근 Go lang도 공부하고 있기 때문에 흥미를 느꼈다.</p>
+<p>React가 좋은 gatsby도 고려했지만 JSX나 NPM, React 등 배워야할 것들이 너무 많았기 때문에 간단한 hugo를 선택했다.</p>
+<h1 id="getting-started">Getting Started</h1>
+<p>Hugo를 쓰기 위해선 다음과 같은 것들을 알아야 한다.</p>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>Hugo Template</li>
+<li>Markdown</li>
+</ul>
+<p>Hugo Template에 정의된 형식으로 build하면 site가 만들어진다.</p>
+<p>기본적인 사용 방법은 <a href="https://gohugo.io/getting-started/quick-start/">공식 홈페이지</a> 에서 차근차근 알아갔다.</p>
+<h1 id="theme">Theme</h1>
+<p>hugo로 오면서 테마를 만들었다. 언젠가 <a href="https://themes.gohugo.io/">hugo themes</a>에 등록할 예정이다.</p>
+<p>내 테마를 보고 싶다면 아래 링크를 참고한다.</p>
+<p><a href="https://jkpark.github.io/hugo-theme-jkpark/docs/getting-started/installation/">https://jkpark.github.io/hugo-theme-jkpark/docs/getting-started/installation/</a></p>
+
+  </article>
+  <div style="margin-top: 5vh;"></div>
+  <section>
+
+
+<div style="min-height: 268px;">
+    
+<script src="https://utteranc.es/client.js"
+    repo="jkpark/jkpark.github.io-utterances"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+</div>
+</section>
+</div>
+
+</section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <footer>
+    <p>
+        Powered by the <a href="https://github.com/jkpark/hugo-theme-jkpark" target="_blank">jkpark</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a>.
+    </p>
+</footer></body>
+
+</html>

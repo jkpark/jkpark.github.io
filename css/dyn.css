@@ -1,0 +1,149 @@
+/*                   */
+
+.wrapper {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.z1 {z-index: 1;}
+.z2 {z-index: 2;}
+.z3 {z-index: 3;}
+.z4 {z-index: 4;}
+.z5 {z-index: 5;}
+
+
+.flex {
+    display: flex;
+}
+.inline-flex {
+    display: inline-flex;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.f-row-left {
+    flex: 1 0 0px;
+    min-width: 100px;
+    display: flex;
+    justify-content: flex-end;
+}
+.f-row-middle {
+    flex: 0 1 var(--max-width);
+}
+.f-row-right {
+    flex: 1 0 0px;
+    min-width: 100px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.f-wrap {
+    flex-wrap: wrap;
+}
+
+.f-space-between {
+    justify-content: space-between;
+}
+
+.tile {
+    background-color: var(--color-bg);
+    position: relative;
+}
+
+.tile:hover {
+    background-color: var(--color-bg-hover);
+}
+
+a.stretched-link {
+    position:absolute;
+    left:0; top:0; bottom:0; right:0;
+}
+
+.stretched-link-inner {
+    position: relative;
+    pointer-events: none;
+    z-index: 2;
+}
+.stretched-link-inner a {
+    pointer-events: all;
+}
+
+.sticky-left {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    float: left;
+    left: 0;
+}
+
+.sticky-right {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    float: right;
+    right: 0;
+}
+
+.sticky-top {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+.pull-left-side {
+    float: left;
+    width: calc((100% - 800px) / 2 - 20px);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pull-right-side {
+    float: right;
+    width: calc((100% - 800px) / 2 - 20px);
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.label {
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.presentation {
+}
+
+.overay {
+    inset: 0px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(25, 25, 25, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+.overay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mono {
+    font-family: "Ubuntu Mono";
+}
+
