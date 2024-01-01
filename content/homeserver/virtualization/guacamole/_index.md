@@ -1,6 +1,6 @@
 ---
 title: Guacamole
-description: 
+description:
 date: 2021-01-08T13:49:56+09:00
 draft: true
 weight: 0
@@ -11,10 +11,9 @@ type: docs
 
 # Overview
 
-원격 접속 프로그램 중 guacamole은 웹 브라우저를 통해 접속할 수 있다. 가상머신을 웹 브라우저에서 접속하기 위해 guacamole을 설치한다. 
+원격 접속 프로그램 중 guacamole은 웹 브라우저를 통해 접속할 수 있다. 가상머신을 웹 브라우저에서 접속하기 위해 guacamole을 설치한다.
 
 기능 업데이트가 쉬운 docker 기반 컨테이너로 설치할 것이다.
-
 
 ```
 $ docker pull guacamole/guacd
@@ -52,7 +51,7 @@ guacamole을 위한 db와 사용자를 생성한다.
 ```
 > CREATE DATABASE guacamole_db;
 > CREATE USER `root`@'%' IDENTIFIED BY '비밀번호';
-> GRANT ALL PRIVILEGES ON * . * TO 'root'@'%' WITH GRANT OPTION; 
+> GRANT ALL PRIVILEGES ON * . * TO 'root'@'%' WITH GRANT OPTION;
 > FLUSH PRIVILEGES;
 > quit;
 ```
@@ -120,7 +119,6 @@ guacadmin / guacadmin 로 로그인할 수 있다.
 Settings - Connections 탭에서 New Connection 버튼을 누른다.
 
 EDIT CONNECTION에서 프로토콜을 설정하고 PARAMETERS에서 네트워크 정보를 입력하고 SAVE를 누른다.
-
 
 # 참고
 

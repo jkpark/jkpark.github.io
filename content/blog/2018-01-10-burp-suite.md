@@ -5,6 +5,7 @@ description:
 category: blog
 tags: [burpsuite, Windows7]
 ---
+
 # 프록시 설정 방법
 
 메뉴 - Proxy - Options 에 Proxy Listeners 는 브라우저에서 나오는 request를 listen 한다.
@@ -16,9 +17,9 @@ tags: [burpsuite, Windows7]
 메뉴 - User Options - Upstream Proxy Servers 를 설정하면 아래와 같은 flow로 패킷이 지나간다.
 브라우져 -> 127.0.0.1:8080 프록시 -> Burp Suite에서 catch -> Upstream Proxy Servers
 
-| Enabled | Dest Host | Proxy Host     | Proxy Port |
-| ------- | --------- | -------------- | ---------- |
-| v       | 10.*      |                |            |
+| Enabled | Dest Host | Proxy Host | Proxy Port |
+| ------- | --------- | ---------- | ---------- |
+| v       | 10.\*     |            |            |
 
 ## 프록시 설정 바로가기 exe
 
@@ -30,7 +31,7 @@ C:\Windows\System32\control.exe inetcpl.cpl,,4
 
 `Ctrl+Alt+L` 로 인터넷옵션-연결 탭을 바로 열 수 있다.
 
-`L`로 프록시 설정 탭을 열고 `S` `X` 를 눌러서  자동스크립트 구성 사용과 프록시 서버 설정을 끄고 킬 수 있다.
+`L`로 프록시 설정 탭을 열고 `S` `X` 를 눌러서 자동스크립트 구성 사용과 프록시 서버 설정을 끄고 킬 수 있다.
 
 # 크롬 프록시 플러그인
 

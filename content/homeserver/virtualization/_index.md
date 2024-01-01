@@ -1,6 +1,6 @@
 ---
 title: Virtualization
-description: 
+description:
 date: 2020-12-21T11:41:54+09:00
 draft: false
 weight: 0
@@ -15,7 +15,7 @@ type: docs
 
 이 둘의 개념을 설명하려면 하이퍼바이저는 무엇인지, 전가상화와 반가상화는 무엇인지, 에뮬레이션과 시뮬레이션의 차이는 무엇인지 등 알아야 할 지식이 끝이 없기 때문에 자세한 설명은 생략하고 `QEMU`와 `KVM`을 같이 쓰는지 이유만 간단히 설명한다.
 
-먼저 에뮬레이션이란, 가상화에 필요한 하드웨어를 소프트웨어적으로 구현하여 가상머신에게 제공하는 것이다. `QEMU`는 에뮬레이터이다보니 동작에 필요한 하드웨어를 독립적으로 생성하기 때문에 성능이 떨어진다. 
+먼저 에뮬레이션이란, 가상화에 필요한 하드웨어를 소프트웨어적으로 구현하여 가상머신에게 제공하는 것이다. `QEMU`는 에뮬레이터이다보니 동작에 필요한 하드웨어를 독립적으로 생성하기 때문에 성능이 떨어진다.
 
 반면 시뮬레이터인 `KVM`은 호스트 머신에서 제공하는 하드웨어를 그대로 쓰기 때문에 에뮬레이터에 비해 상대적으로 성능이 좋다. 하지만 가상화에 필요한 하드웨어가 없다면 시뮬레이션에 제약이 생긴다.
 
@@ -92,11 +92,11 @@ $ sudo virt-install \
 - `--cpu host-passthrough,cache.mode=passthrough` : 가상머신이 실제 CPU정보를 그대로 사용
 - `--os-variant` : win10, ubuntu20.04 등 설치하는 OS 종류
 - `--graphics vnc,port=5900,listen=0.0.0.0` : VNC를 통해 Display를 접근할 것이기 때문에 VNC 방화벽 포트 5900번을 열어준다.
-    VNC는 보안에 취약하므로, `-s x.x.x.x`와 같이 접속할 source를 지정하여 보안을 강화한다.
-    ```
-    $ sudo iptables -A INPUT -s x.x.x.x -p tcp -m tcp --dport 5900 -j ACCEPT
-    $ sudo netfilter-persistent save
-    ```
+  VNC는 보안에 취약하므로, `-s x.x.x.x`와 같이 접속할 source를 지정하여 보안을 강화한다.
+  ```
+  $ sudo iptables -A INPUT -s x.x.x.x -p tcp -m tcp --dport 5900 -j ACCEPT
+  $ sudo netfilter-persistent save
+  ```
 
 vm이 할당이 되면 `virsh list` 명령어를 통해 VM의 상태를 볼 수 있다.
 
@@ -117,7 +117,6 @@ $ virsh list
 ----------------------------------------------------
  7     win10                          in shutdown
 ```
-
 
 # 접속
 
@@ -140,7 +139,6 @@ virsh undefine  <domain>
 virsh autostart  <domain>
 호스트 부팅 시 자동 시작
 ```
-
 
 # 고정 IP
 
@@ -167,7 +165,6 @@ $ virsh net-dumpxml default
 ```
 
 이 기본 네트워크가 VM에게 고정 IP를 내려주도록 설정한다.
-
 
 ```
 $ virsh dumpxml <domain> | grep 'mac address'
@@ -218,7 +215,6 @@ $ virsh autostart win10
 ```
 $ virsh autostart win10 --disable
 ```
-
 
 # Remove VM
 

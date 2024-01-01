@@ -6,12 +6,9 @@ category: blog
 tags: [Jekyll, Ubuntu16.04, Ubuntu]
 ---
 
-
 Jekyll + Github page 의 조합
 
-
 # history
-
 
 ## Jekyll 설치
 
@@ -20,12 +17,14 @@ jkpark@cactus:~$ gem install jekyll
 ```
 
 버전 확인
+
 ```bash
 jkpark@cactus:~$ jekyll -v
 jekyll 3.4.0
 ```
 
 ## github-pages 설치
+
 ```bash
 jkpark@cactus:~$ sudo gem install github-pages
 [sudo] password for jkpark:
@@ -85,7 +84,6 @@ jkpark@cactus:~$
 jkpark@cactus:/storages/storage1$ git clone https://github.com/jkpark/jkpark.github.io.git
 ```
 
-
 이 상태에서 `jekyll serve` 명령어를 입력하면 http://127.0.0.1:4000 에서 웹사이트를 볼 수 있지만,
 나는 ssh로 원격접속중이기에, 내 서버 아이피인 192.168.25.3 을 추가로 넣어준다.
 
@@ -103,7 +101,6 @@ Configuration file: /storages/storage1/jkpark.github.io/_config.yml
 Server address: http://192.168.25.3:4000/
 Server running... press ctrl-c to stop.
 ```
-
 
 브라우저에서 실행된 웹사이트를 확인해보았지만 아래 그림과 같이 포스트가 보이지 않았다.
 

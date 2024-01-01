@@ -1,6 +1,6 @@
 ---
 title: APT
-description: 
+description:
 date: 2020-12-08T12:44:40+09:00
 draft: false
 weight: 2
@@ -9,12 +9,12 @@ collapse: hide # show | hide | always
 type: docs
 ---
 
-
 # Proxy
 
 우분투는 `apt` 명령어를 통해 소프트웨어 관리를 다룰 수 있다.
 
 `/etc/apt/apt.conf` 파일을 연다. (파일이 없다면 생성될 것이다.)
+
 ```
 $ sudo vi /etc/apt/apt.conf
 ```

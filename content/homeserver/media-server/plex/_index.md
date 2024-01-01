@@ -1,6 +1,6 @@
 ---
 title: Plex
-description: 
+description:
 date: 2021-01-08T13:00:05+09:00
 draft: false
 weight: 3
@@ -23,13 +23,11 @@ $ sudo apt-get update
 
 `W: Conflicting distribution: https://downloads.plex.tv/repo/deb public InRelease (expected public but got )` 경고는 무시한다. Plex 개발팀에서 고치는 중이라고 한다.
 
-
 ```
-$ sudo apt-get install plexmediaserver 
+$ sudo apt-get install plexmediaserver
 ```
 
 설치 도 중 `*** plexmediaserver.list (Y/I/N/O/D/Z) [default=N] ?` 질문에 `N`을 입력한다.
-
 
 # 방화벽 설정
 
@@ -72,7 +70,7 @@ $ sudo vi /etc/nginx/sites-available/plex.example.com
 ```
 upstream plex_backend {
     server localhost:32400;
-    keepalive 32; 
+    keepalive 32;
 }
 
 map $http_upgrade $connection_upgrade {
@@ -81,7 +79,7 @@ map $http_upgrade $connection_upgrade {
 }
 
 server {
-    listen 80; 
+    listen 80;
     server_name plex.example.com;
 
     # Redirect all HTTP requests to HTTPS with a 301 Moved Permanently response.
@@ -92,7 +90,7 @@ server {
     listen 443 ssl http2;
     server_name plex.example.com;
 
-    send_timeout 100m; #Some players don't reopen a socket and playback stops totally instead of resuming after an extended pause (e.g. Chrome) 
+    send_timeout 100m; #Some players don't reopen a socket and playback stops totally instead of resuming after an extended pause (e.g. Chrome)
 
 
     # SSL configuration
@@ -102,17 +100,17 @@ server {
     ssl_dhparam /usr/local/etc/ssl/certs/dhparam.pem;
 
     ssl_protocols       TLSv1.2;
-    ssl_prefer_server_ciphers on; 
+    ssl_prefer_server_ciphers on;
     ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
 
     # enable session resumption to improve https performance
     ssl_session_cache shared:SSL:50m;
-    ssl_session_timeout 1h; 
+    ssl_session_timeout 1h;
     ssl_session_tickets off;
 
     # fetch OCSP records from URL in ssl_certificate and cache them
-    #ssl_stapling on; 
-    #ssl_stapling_verify on; 
+    #ssl_stapling on;
+    #ssl_stapling_verify on;
     # verify chain of trust of OCSP response using Root CA and Intermediate cert
     #ssl_trusted_certificate /etc/nginx/ssl/star_forgott_com.crt;
 

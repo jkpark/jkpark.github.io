@@ -17,11 +17,11 @@ SMB(Server Message Block)는 윈도우즈 네트워크 파일 시스템의 기�
 
 아래 표에 SMB로 공유할 디렉토리 목록을 정리했다. 각 디렉토리 별로 용도에 맞게 권한 설정도 할 것이다. (비인증 사용자(guest) 접근은 default 값으로 no로 설정 되어있다.)
 
-|위치|용도|권한|
-|:---:|:-----:|:---:|
-|/ws/\<user\>|개인 별 작업공간|All : RW|
-|/public|공유 데이터|jkpark : RW, Others : R|
-|/home/jkpark/private|개인 데이터|jkpark : RW, Others : -|
+|         위치         |       용도       |          권한           |
+| :------------------: | :--------------: | :---------------------: |
+|     /ws/\<user\>     | 개인 별 작업공간 |        All : RW         |
+|       /public        |   공유 데이터    | jkpark : RW, Others : R |
+| /home/jkpark/private |   개인 데이터    | jkpark : RW, Others : - |
 
 # Samba 설치
 
@@ -49,7 +49,7 @@ Added user jkpark.
 $ sudo vi /etc/samba/smb.conf
 ```
 
-파일의 끝에 아래 내용을 추가한다. 
+파일의 끝에 아래 내용을 추가한다.
 
 ```
 [workspace]
@@ -102,7 +102,7 @@ $ sudo systemctl restart smbd
 
 # 방화벽 설정
 
-`samba`가 사용하는 포트에 대한 접속은 허용해주어야 한다. 
+`samba`가 사용하는 포트에 대한 접속은 허용해주어야 한다.
 
 ```
 $ sudo iptables -A INPUT -p tcp -m tcp --dport 135 -j ACCEPT
@@ -134,7 +134,6 @@ $ sudo netfilter-persistent save
 # 윈도우PC에서 접속
 
 윈도우PC에서 접속은 크게 두 가지가 있다. `네트워크 드라이브 연결`은 드라이브 문자(예를 들어 'C')를 할당되기 로컬 드라이브처럼 데이터 공유, 권한 등을 설정할 수 있으므로 관리에 이점이 있다. 네트워크 드라이브 연결은 사설망으로 제한되어 있다.
-
 
 ## restore each files
 

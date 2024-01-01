@@ -5,12 +5,14 @@ description: Windows 10 포맷 후 최적화 설정 방법
 category: blog
 tags: [Windows10]
 ---
+
 # Windows 10 포맷 후 최적화 설정 방법
 
 ## One Drive 제거
 
 한번에 제거할 수 있는 커맨드
 [Github 페이지](https://github.com/tomchappelow/onedrive-uninstaller/blob/master/OneDrive-Uninstaller.cmd)
+
 ```bash
 @echo off
 cls
@@ -59,13 +61,12 @@ Windows Registry Editor Version 5.00
 ```
 
 ## 알 수 없는 장치 드라이버 ACPI\\INT33A0
+
 Intel Smmart Connect Driver 를 설치하면 된다.
 
 <https://downloadcenter.intel.com/download/23109/Intel-Smart-Connect-Technology>
 
 <http://poeta.tistory.com/206> 참고
-
-
 
 ## Disable Cortana via Registry
 
@@ -88,8 +89,6 @@ Windows Search 폴더에서 [새로만들기 > DWORD(32비트)] -> 이름을 "Al
 
 Download Git from <https://git-scm.com/downloads>.
 
-
-
 ## Install gVim
 
 Download gVim from <https://vim.sourceforge.io/download.php#pc>.
@@ -97,6 +96,7 @@ Download gVim from <https://vim.sourceforge.io/download.php#pc>.
 and See <http://www.indiecoders.org/blog/2017/01/share-vimrc-file> for setting Plugins.
 
 Registry for adding "Open with gVim" menu on Windows Explorer
+
 ```
 Windows Registry Editor Version 5.00
 

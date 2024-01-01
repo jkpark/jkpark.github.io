@@ -1,6 +1,6 @@
 ---
 title: Network
-description: 
+description:
 date: 2020-12-08T12:44:36+09:00
 draft: false
 weight: 1
@@ -26,18 +26,18 @@ network:
 
 ```
 
-
 # Proxy 설정
 
 프록시를 사용한다면 프록시 설정도 한다.
 
-*프록시를 사용하지 않는다면 이 단계는 넘어간다.
+\*프록시를 사용하지 않는다면 이 단계는 넘어간다.
 
 ## 환경변수에 프록시 주소 추가
 
 프록시 주소는 `/etc/environment` 파일에 추가한다. `/etc/environment`은 모든 사용자가 로그인 시 적용되는 파일이다.
 
 `/etc/environment` 파일을 얼어 아래 내용을 추가한다.
+
 ```
 $ sudo vi /etc/environment
 ```
@@ -51,7 +51,6 @@ no_proxy="localhost"
 ```
 
 `:wq` 을 입력하고 저장 후 편집을 종료한다.
-
 
 ## 프록시 서버 CA 등록
 

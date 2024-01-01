@@ -1,6 +1,6 @@
 ---
 title: SSH
-description: 
+description:
 date: 2020-12-08T12:44:44+09:00
 draft: false
 weight: 3
@@ -9,8 +9,7 @@ collapse: hide # show | hide | always
 type: docs
 ---
 
-
-# 설치 
+# 설치
 
 원격으로 시스템에 접속하기 위해 SSH를 설치한다.
 

@@ -5,6 +5,7 @@ description:
 category: blog
 tags: [MariaDB, NGINX, PHP, LEMP stack, Ubuntu16.04, Ubuntu]
 ---
+
 [LEMP Stack](https://lemp.io/) 이란
 
 Linux, Nginx, MariaDB, PHP를 조합하여 줄인말이다.
@@ -20,7 +21,6 @@ https://news.netcraft.com/archives/2016/02/22/february-2016-web-server-survey.ht
 
 [MariaDB](https://ko.wikipedia.org/wiki/MariaDB) 는 MySQL의 불확실한 라이선스 상태에 반발하여 만들어졌으며 MariaDB 5.5버전까지는 모든 MySQL의 특징을 가지고 있었다.
 5.5버전 이후 MariaDB만의 색깔을 더 분명히 하고자 개발판을 10.x로 변경하였다.
-
 
 # Nginx Web Server 설치
 
@@ -68,7 +68,6 @@ Processing triggers for ureadahead (0.100.0-19) ...
 Processing triggers for ufw (0.35-0ubuntu2) ...
 ```
 
-
 `netstat`, `systemctl` 또는 브라우저로 `nginx` 동작 확인 (디폴트 포트80)
 
 ```bash
@@ -89,8 +88,6 @@ jkpark@cactus:~$ sudo systemctl status nginx.service
 ```
 
 ![](https://4.bp.blogspot.com/-SGqaJImaZfk/WCHPFH7FmwI/AAAAAAAAAfs/dEsIz4mBFYMG8V9kU94Kr3oGUTTxWarHwCLcB/s320/%25EC%25BA%25A1%25EC%25B2%2598.PNG)
-
-
 
 # HTTP/2.0 프로토콜 활설화
 
@@ -141,8 +138,6 @@ server_name    192.168.0.102;
 return         301 https://$server_name$request_uri;
 }
 ```
-
-
 
 위의 default 설정이 끝나면 `SSL` 사용을 위한 파일을 만든다.
 
@@ -266,7 +261,6 @@ jkpark@cactus:~$ sudo su -c 'echo "<?php phpinfo(); ?>" |tee /var/www/html/info.
 ```
 
 ![](https://1.bp.blogspot.com/-yU3yEJ54-4s/WCHoi_YParI/AAAAAAAAAgE/hb4hzWi-TP47vHEgOwCzfBK_OAicLx_LQCLcB/s400/%25EC%25BA%25A1%25EC%25B2%2598.PNG)
-
 
 또한 `$_SERVER['SERVER_PROTOCOL']` 항목에서 `HTTP/2.0` 프로토콜이 동작중인지 확인할 수 있다.
 
@@ -412,7 +406,6 @@ jkpark@cactus:/etc/mysql/mariadb.conf.d$ sudo vi 50-server.cnf
 109 collation-server      = utf8mb4_unicode_ci
 ```
 
-
 설정이 끝나면` mysql` 데몬을 제시작하고 아래 명령어로 언어셋을 확인한다.
 
 ```bash
@@ -443,6 +436,6 @@ MariaDB [(none)]> show variables like "%character%";show variables like "%collat
 MariaDB [(none)]>
 ```
 
-* `collation_connection 은 utf8mb4_unicode_ci` 로 설정이 안되는데 아시는분은 답글부탁드립니다.
+- `collation_connection 은 utf8mb4_unicode_ci` 로 설정이 안되는데 아시는분은 답글부탁드립니다.
 
 이상으로 `LEMP Stack` 설치가 끝났다.

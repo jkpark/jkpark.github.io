@@ -24,7 +24,7 @@ $ sudo apt install transmission-daemon
 
 ## download 폴더 및 watch 설정
 
-transmission은 특정 디렉토리에 토렌트 파일을 넣으면 자동으로 토렌트가 추가되게 할 수 있다. 
+transmission은 특정 디렉토리에 토렌트 파일을 넣으면 자동으로 토렌트가 추가되게 할 수 있다.
 
 다운로드할 디렉토리와 watch 디렉토리를 만든다.
 
@@ -82,7 +82,6 @@ $ sudo systemctl stop transmission-daemon.service
 
 ` "watch-dir": "/public/torrent/watch",`는 watch 디렉토리 설정이다.
 
-
 서비스 실행
 
 ```
@@ -126,7 +125,6 @@ $ sudo systemctl restart nginx
 ```
 
 이제 웹 브라우저에서 `https://exsample.com/transmission` 으로 접속할 수 있다.
-
 
 # WEB-UI 변경
 

@@ -1,6 +1,6 @@
 ---
 title: Firewall
-description: 
+description:
 date: 2020-12-08T12:44:53+09:00
 draft: false
 oneliner: a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules.
@@ -9,7 +9,6 @@ image: "" # relative path of /static/images folder
 collapse: hide # show | hide | always
 type: docs
 ---
-
 
 # Overview
 
@@ -60,7 +59,7 @@ Chain OUTPUT (policy ACCEPT)
 target     prot opt source               destination
 ```
 
-`INPUT`은 시스템으로 들어오는 패킷의 정책이고, `FORWARD`는 시스템에서 다른 시스템으로 보내는 패킷의 정책, `OUTPUT`은 시스템에서 나가는 패킷의 정책이다. 
+`INPUT`은 시스템으로 들어오는 패킷의 정책이고, `FORWARD`는 시스템에서 다른 시스템으로 보내는 패킷의 정책, `OUTPUT`은 시스템에서 나가는 패킷의 정책이다.
 
 `(policy ACCEPT)`은 아무조건도 해당되지 않을 때 ACCEPT 한다는 의미이다.
 
@@ -98,7 +97,6 @@ $ sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 $ sudo iptables -A INPUT -s 192.168.122.0/24 -p tcp -m tcp --dport 22 -j ACCEPT
 ```
 
-
 ## 기본 규칙 차단
 
 기본 규칙인 INPUT과 FORWARD는 차단시킨다.
@@ -129,16 +127,13 @@ $ sudo iptables -S
 $ sudo iptables -D INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 ```
 
-
 # 재부팅 시 자동으로 정책 불러오기
 
 `iptables`는 현재 시스템의 방화벽을 설정하지만 저장하지는 않는다. 즉, 서버를 재시작하면 설정한 내역이 초기화된다. 설정한 내역을 재부팅 시 자동으로 불러오기 위해 `netfilter-persistent` 를 설치한다.
 
-
 ```
 $ sudo apt install iptables-persistent netfilter-persistent
 ```
-
 
 /etc/iptables 라는 디렉토리에 rules.v4와 rules.v6가 생성되었다.
 

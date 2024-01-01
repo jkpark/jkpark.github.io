@@ -5,6 +5,7 @@ description:
 category: blog
 tags: [Jekyll, Windows7]
 ---
+
 이 포스트는 http://jekyll-windows.juthilo.com/ 를 참고 하였습니다.
 
 # Install Ruby and Ruby DevKit
@@ -12,11 +13,13 @@ tags: [Jekyll, Windows7]
 [Ruby Download Page](https://rubyinstaller.org/downloads/)
 
 다운로드 ruby v2.3.3 and devKit.
+
 ```
 rubyinstaller-2.3.3-x64.exe
 DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe
 ```
->Jekyll has some dependencies which, out of the box, only provide raw source code. To make them into fully functional executables, you’ll probably need to install the Development Kit.
+
+> Jekyll has some dependencies which, out of the box, only provide raw source code. To make them into fully functional executables, you’ll probably need to install the Development Kit.
 
 The download is a self-extracting archive. extract to `C:\RubyDevKit`
 
@@ -72,16 +75,15 @@ gem update && gem cleanup
 
 It is generally encouraged to keep your Gems updated
 
-
 # Install jekyll
 
->**Compatibility**
+> **Compatibility**
 
->The latest version of Jekyll at the time of writing is v2.4.0, which is compatible with Windows. Most of the previous versions are, too. Do not attempt to install Jekyll v1.4.3, though, which is known to be incompatible with Windows.
+> The latest version of Jekyll at the time of writing is v2.4.0, which is compatible with Windows. Most of the previous versions are, too. Do not attempt to install Jekyll v1.4.3, though, which is known to be incompatible with Windows.
 
->Check back here when a new version of Jekyll is released to find out if it remains compatible with Windows.
+> Check back here when a new version of Jekyll is released to find out if it remains compatible with Windows.
 
->http://jekyll-windows.juthilo.com/2-jekyll-gem/
+> http://jekyll-windows.juthilo.com/2-jekyll-gem/
 
 ```
 gem install jekyll

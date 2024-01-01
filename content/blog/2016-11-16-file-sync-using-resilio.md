@@ -15,11 +15,9 @@ Resilio Sync는 device to device 동기화이기 때문에 이번 기회에 사�
 
 ![](https://4.bp.blogspot.com/-svFi0Ikw0Dg/WCviIDzsnzI/AAAAAAAAAkQ/EZ6VpP4ca2segoKl1S1VpLExJDlyXDpcQCEw/s320/%25EC%25BA%25A1%25EC%25B2%2598.PNG)
 
-
 다른 싱크프로그램도 많지만 아이폰, 안드로이드 뿐만 아니라 리눅스, 윈도우 모든 OS에서 동작하는 싱크프로그램이 필요하기 때문에 Resilio를 택했다.
 
 또한 Resilio Sync는 bitTorrent Sync 의 새로운 버전이고 토렌트방식으로 동기화를 한다.
-
 
 이 포스트를 통해 다음을 진행할 것이다.
 
@@ -32,28 +30,33 @@ Resilio Sync는 device to device 동기화이기 때문에 이번 기회에 사�
 <br>
 
 # 1. Ubuntu 16.04에 Resilio 설치
+
 이 스텝은 https://help.getsync.com/hc/en-us/articles/206178924 의 가이드를 참고 하였다.
 
 resilio-sync.list 파일 생성 및 내용 추가
 
 `/etc/apt/sources.list.d/resilio-sync.list` 파일을 열어 아래 내용추가한다.
+
 ```
 deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free
 ```
 
-
 공개키 추가
+
 ```bash
 jkpark@cactus:~$ wget -qO - https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add -
 OK
 ```
 
 설치
+
 ```bash
 jkpark@cactus:~$ sudo apt-get update
 jkpark@cactus:~$ sudo apt-get install resilio-sync
 ```
+
 설정
+
 ```bash
 jkpark@cactus:~$ sudo systemctl enable resilio-sync
 Synchronizing state of resilio-sync.service with SysV init with /lib/systemd/systemd-sysv-install...
@@ -66,8 +69,8 @@ Executing /lib/systemd/systemd-sysv-install enable resilio-sync
 
 위 그림과 같이 `"listen"` 부분을 자신의 아이피로 설정
 
-
 실행
+
 ```bash
 jkpark@cactus:~$ sudo systemctl start resilio-sync
 ```
@@ -82,14 +85,14 @@ setting - preferences에서 언어를 한국어로 변경하였다.
 
 ![](https://2.bp.blogspot.com/-bO-urYyvhDA/WCvqR7edCSI/AAAAAAAAAlU/J-jkTxAWqLExegF2OiAAy1SUG6lvQBJzwCLcB/s500/%25EC%25BA%25A1%25EC%25B2%259811.PNG)
 
-
 서비스 재시작하면 변경된 설정이 적용된다.
+
 ```bash
 jkpark@cactus:~$ sudo systemctl restart resilio-sync
 ```
 
-
 # 2. Windows 10에 Resilio 설치
+
 https://www.resilio.com/individuals/ 페이지에서 free download 를 눌러 설치파일을 다운로드한다.
 
 설치방법은 간단하므로 생략한다.
@@ -99,9 +102,6 @@ https://www.resilio.com/individuals/ 페이지에서 free download 를 눌러 �
 ![](https://4.bp.blogspot.com/-laRZDAUXJEM/WCvo4eX6e0I/AAAAAAAAAk4/vpc0ACFwrZMOG2A0U9M2nBpzKd6f0tUawCLcB/s500/%25EC%25BA%25A1%25EC%25B2%25987.PNG)
 
 ![](https://1.bp.blogspot.com/-FySFHxhwMCM/WCvo4YHynkI/AAAAAAAAAk8/bDGoXpdCTjou1ICu8J87HafrlTkOjngpwCLcB/s500/%25EC%25BA%25A1%25EC%25B2%25988.PNG)
-
-
-
 
 # 3. 우분투와 윈도우간의 동기화 테스트
 
@@ -121,7 +121,6 @@ https://www.resilio.com/individuals/ 페이지에서 free download 를 눌러 �
 
 ![](https://1.bp.blogspot.com/-52gPM2U_9zY/WCvvJbQag_I/AAAAAAAAAmU/8RD6xRNgtyc0kzY1TnaBUESNxE7XUZaXACLcB/s500/%25EC%25BA%25A1%25EC%25B2%259817.PNG)
 
-
 5. 복사한 키 붙여넣고 다음 클릭
 
 ![](https://3.bp.blogspot.com/-fh05rZYjcqc/WCvvJZx4bJI/AAAAAAAAAmY/JN8RKQtjNt4cw4JBBzxoyMdrEKIM7xHAgCLcB/s500/%25EC%25BA%25A1%25EC%25B2%259818.PNG)
@@ -134,14 +133,12 @@ https://www.resilio.com/individuals/ 페이지에서 free download 를 눌러 �
 아무 파일이나 동기화폴더인 sync_test_window 에 넣어보니
 우분투의 test 폴더에 파일이 생성되었다.
 
-
 # 4. 안드로이드폰에 Resilio 설치 및 동기화 테스트
 
 테스트한 기종은 V20 이다.
 
 설치 후 테스트를 할 목적이었지만 방법이 어렵지 않기 때문에
 주목적이었던 사진 폴더 동기화를 바로 진행하였다.
-
 
 설치
 
@@ -173,8 +170,7 @@ https://www.resilio.com/individuals/ 페이지에서 free download 를 눌러 �
 
 ![](https://2.bp.blogspot.com/-rYlSdEN1nlA/WCwiTBw7T2I/AAAAAAAAAnU/1Lmlu7wNaewurUiWTHX1Cu5ahl62fSDpQCLcB/s500/device-2016-11-16-180412.png)
 
-
-윈도우로 돌아와서 
+윈도우로 돌아와서
 
 폴더 추가 옆 + 버튼 클릭 - 키 또는 링크를 입력 클릭
 공유 링크 붙여넣기
@@ -213,7 +209,6 @@ https://www.resilio.com/individuals/ 페이지에서 free download 를 눌러 �
 물론 쓰기 권한이 있기 때문에 추가/수정/삭제가 가능하고
 
 동기화 폴더에 변화가 있으면 자동으로 스마트폰에서 동기화를 시작한다.
-
 
 # 5: 아이폰에 Resilio 설치, 테스트
 

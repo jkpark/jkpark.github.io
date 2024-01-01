@@ -56,7 +56,7 @@ System clock synchronized: no
 
 정확한 시간을 동기화하기 위새 NTP를 이용한다.
 
-## 설치 
+## 설치
 
 ```
 $ sudo apt-get install ntp
@@ -115,11 +115,11 @@ $ sudo ntpq -p
 ```
 
 NTPQ Command row output interpretation:
+
 - `-` Discarded by the cluster algorithm.
 - `+` Included in the combine algorithm. This is a good candidate if the current server we are synchronizing with is discarded for any reason.
 - `*` The current system peer. The computer is using this remote server as its time source to synchronize the clock
-Ref: https://pthree.org/2013/11/05/real-life-ntp/
-
+  Ref: https://pthree.org/2013/11/05/real-life-ntp/
 
 또한, 우분투의 디폴트 NTP service가 `NTP service: n/a` 으로 disable 된 걸 확인한다.
 

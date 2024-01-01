@@ -5,17 +5,14 @@ description:
 category: blog
 tags: [MariaDB, NGINX, Ubuntu16.04, LEMP stack, WordPress, Ubuntu]
 ---
+
 Drupal 8 설치 후 테마, 모듈 수가 너무 적어서 Drupal 7을 설치하려고 했지만 WordPress를 설치하여 차이를 느껴보고 싶었다.
 
-
 [WordPress vs Joomla vs Drupal](http://websitesetup.org/cms-comparison-wordpress-vs-joomla-drupal/)
-
 
 설치 방법은
 <https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-on-ubuntu-16-04> 와
 <https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-nginx-on-ubuntu-14-04> 를 참고하였다.
-
-
 
 # 설치 방법
 
@@ -23,8 +20,8 @@ WordPress를 설치하기 전에 `LEMP stack` 이 설치되어있어야 하고, 
 
 `LEMP stack` 설치 방법은 [여기](/blog/2016/11/install-lemp-stack-on-ubuntu1604)를 참고.
 
-
 ## WordPress를 위한 Database 생성 및 유저 생성
+
 ```bash
 jkpark@cactus:/var/www/html$ mysql -u root -p
 Enter password:
@@ -50,6 +47,7 @@ Bye
 ```
 
 ## Nginx 설정
+
 ```bash
 jkpark@cactus:/etc/nginx/sites-available$ sudo vi default
 ```
@@ -77,6 +75,7 @@ jkpark@cactus:/var/www/html$ sudo systemctl restart nginx
 ## WordPress 다운로드
 
 `wp-config-sample.php` 샘플설정 파일의 대부분의 설정은 알맞게 되어있어므로 복사하여 기본 설정 파일로 만들어주었다.
+
 ```bash
 jkpark@cactus:/tmp$ curl -O https://wordpress.org/latest.tar.gz
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -88,6 +87,7 @@ jkpark@cactus:/tmp$ cp wordpress/wp-config-sample.php wordpress/wp-config.php
 
 `upgrade` 디렉토리를 생성하고 `WordPress`를 업그레이드하면 `upgrade` 디렉토리안에 업그레이드에 필요한 파일들이 설치된다.
 참고 : <https://www.wpkb.com/wp-files-explained/>
+
 ```bash
 jkpark@cactus:/tmp$ mkdir /tmp/wordpress/wp-content/upgrade
 ```
@@ -146,7 +146,6 @@ drwxr-sr-x 17 jkpark   www-data 12288  9월  7 23:58 wp-includes
 -rw-r--r--  1 jkpark   www-data  4035 12월  1  2014 wp-trackback.php
 -rw-r--r--  1 jkpark   www-data  3064  7월  6 21:40 xmlrpc.php
 ```
-
 
 아래 명령어로 group write permission을 부여하여 web interface 가 theme 와 plugin 변경 가능하도록 한다.
 
@@ -223,14 +222,11 @@ Database 설정
 
 save and close the file
 
-
 ## Web Interface를 이용하여 설치를 완료한다.
 
 ![](https://3.bp.blogspot.com/-FVfQJm5491o/WCMqMy4p24I/AAAAAAAAAiA/vt4KO1sfzHkX9BmeE4lO3njXdGO7CF4uACLcB/s320/%25EC%25BA%25A1%25EC%25B2%25981.PNG)
 
 ![](https://3.bp.blogspot.com/-kPW_nb5nwHw/WCMqcBu0jBI/AAAAAAAAAiE/qn8jgNMlxr4HpuHnaa9-uokBYiMJPOGmwCLcB/s320/%25EC%25BA%25A1%25EC%25B2%25982.PNG)
-
-
 
 # 업그레이드 방법
 

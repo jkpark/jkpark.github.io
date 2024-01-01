@@ -81,12 +81,11 @@ transmission과 연동하기 위해 username과 password 를 알맞게 입력한
 
 <script src="https://gist.github.com/jkpark/b1e11e08746cd1a084d7a74abd279d16.js"></script>
 
-
 # 스케줄링
 
 crontab에 추가하여 자동으로 flexget이 실행되도록 한다.
 
-*crontab 참고 https://crontab.guru/
+\*crontab 참고 https://crontab.guru/
 
 ```
 $sudo vi /etc/crontab

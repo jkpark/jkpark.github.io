@@ -1,6 +1,6 @@
 ---
 title: Home Server
-description: 
+description:
 weight: 0
 collapse: hide # show | hide | always
 type: docs

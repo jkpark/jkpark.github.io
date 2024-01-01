@@ -56,7 +56,7 @@ chroot_list_file=/etc/vsftpd.chroot_list
 
 `chroot_list_enable=YES` 설정
 
-- FTP 접속 실패. 
+- FTP 접속 실패.
 
 `chroot_list` 파일 생성
 
@@ -71,8 +71,6 @@ chroot_list_file=/etc/vsftpd.chroot_list
 즉 `chroot_local_user=YES` 설정은 `ftp` 접속 시 홈 디렉토리를 root 디렉토리 처럼 인식하도록 하는 설정이다.
 
 <http://blog.naver.com/jbells/220416391250>
-
-
 
 Add the following lines to enable passive mode
 

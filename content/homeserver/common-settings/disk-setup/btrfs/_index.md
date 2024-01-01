@@ -1,6 +1,6 @@
 ---
 title: Btrfs
-description: 
+description:
 oneliner: a file system based on the copy-on-write (COW) principle.
 date: 2020-12-07T15:31:13+09:00
 draft: false
@@ -59,21 +59,19 @@ hdd는 사진이나 동영상, 문서 등 각종 데이터를 저장하는 용�
 
 정리하면 다음과 같다.
 
-|서브볼륨|용도|마운트위치|스냅샷 생성 주기|
-|:---:|:-----:|:---:|:---:|
-|@workspace|개인 별 작업공간|/ws/\<user\>|30분|
-|@public|공유 데이터|/public|-|
-|@private|사적인 데이터|/home/jkpark/private|1일|
+|  서브볼륨  |       용도       |      마운트위치      | 스냅샷 생성 주기 |
+| :--------: | :--------------: | :------------------: | :--------------: |
+| @workspace | 개인 별 작업공간 |     /ws/\<user\>     |       30분       |
+|  @public   |   공유 데이터    |       /public        |        -         |
+|  @private  |  사적인 데이터   | /home/jkpark/private |       1일        |
 
 # btrfs 생성 과정
 
-256GB SSD에 207GB만큼의 btrfs 을 생성하는 과정을 설명한다.  2TB HDD에 1TB만큼 btrfs 생성 또한 동일하게 진행하면 된다.
-
+256GB SSD에 207GB만큼의 btrfs 을 생성하는 과정을 설명한다. 2TB HDD에 1TB만큼 btrfs 생성 또한 동일하게 진행하면 된다.
 
 ## 파티션 확인
 
 `fdisk -l` 명령어로 현재 파티션을 볼 수 있다.
-
 
 ```
 $ sudo fdisk -l
@@ -213,8 +211,6 @@ Devices:
     1   192.84GiB  /dev/sda4
 ```
 
-
-
 생성이 끝났다.
 
 ### 마찬가지로 2TB HDD에 1TB만큼 btrfs 생성 또한 동일하게 진행하면 된다.
@@ -245,7 +241,6 @@ Devices:
 
 ```
 
-
 # 마운트
 
 `/dev/sda4`을 `/mnt/ssd1_btrfs`에 마운트한다.
@@ -261,7 +256,6 @@ $ sudo mount /dev/sda4 /mnt/ssd1_btrfs
 $ sudo mkdir hdd1_btrfs
 $ sudo mount /dev/sdb1 /mnt/hdd1_btrfs
 ```
-
 
 `df` 명령어로 마운트된 디스크 정보를 확인한다.
 
@@ -320,7 +314,6 @@ $ sudo chown jkpark: @private @public
 - @public은 나만 write 가능하고, 모두가 볼 수 있게 했다.
 - @workspace는 하위에 개인 별 디렉토리 생성 예정이므로 건들지 않는다.
 
-
 ```
 $ ls -l /mnt/hdd1_btrfs
 drwx------ 1 jkpark jkpark  0 Dec 18 05:05 @private
@@ -334,11 +327,11 @@ drwxr-xr-x 1 root root 0 Dec 18 05:04 @workspace
 
 원하는 위치에 마운트한다.
 
-|서브볼륨|마운트 위치|
-|:---:|:-----:|
-|@workspace|/ws|
-|@public|/public|
-|@private|/home/jkpark/private|
+|  서브볼륨  |     마운트 위치      |
+| :--------: | :------------------: |
+| @workspace |         /ws          |
+|  @public   |       /public        |
+|  @private  | /home/jkpark/private |
 
 ```
 $ sudo mkdir /ws
@@ -353,7 +346,7 @@ $ sudo mount -o subvol=@private /dev/sdb1 /home/jkpark/private
 ```
 
 > 언마운트는 `umount` 명령어로 한다.
-> 
+>
 > ```
 > $ sudo umount /public
 > ```
@@ -447,7 +440,7 @@ $ sudo btrfs subvolume snapshot /mnt/ssd1_btrfs/@workspace /mnt/ssd1_btrfs/snaps
 Create a snapshot of '/mnt/ssd1_btrfs/@workspace' in '/mnt/ssd1_btrfs/snapshots/workspace/@workspace_2020.12.19_00.08.07'
 ```
 
-`date +%Y.%m.%d_%H.%M.%S` 는 연.월.일_시.분.초 형식으로 저장하라는 명령이다. 반드시 이렇게 작성해야 samba를 통해 윈도우OS에서 스냅샷을 인식하고 복원할 수 있다.
+`date +%Y.%m.%d_%H.%M.%S` 는 연.월.일\_시.분.초 형식으로 저장하라는 명령이다. 반드시 이렇게 작성해야 samba를 통해 윈도우OS에서 스냅샷을 인식하고 복원할 수 있다.
 
 스냅샷이 생성되었는지 확인한다.
 
@@ -492,14 +485,11 @@ $ cp /mnt/ssd1_btrfs/snapshots/workspace/@workspace_2020.12.19_00.08.07/hellowor
 
 ### 윈도우에서 파일 복원
 
-
-
 ## 스냅샷 삭제
 
 ```
 $ sudo btrfs subvolume delete /mnt/ssd1_btrfs/snapshots/workspace/@workspace_2020.12.19_00.08.07
 Delete subvolume (no-commit): '/mnt/ssd1_btrfs/snapshots/workspace/@workspace_2020.12.19_00.08.07'
 ```
-
 
 ## 자동화

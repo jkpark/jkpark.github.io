@@ -18,7 +18,7 @@ english: false
 ![](../images/burpsuite-v2-01.png)
 
 ```
-$ ll burpsuite_pro_linux_v2_0_13beta.sh 
+$ ll burpsuite_pro_linux_v2_0_13beta.sh
 -rwxrwxr-x 1 jkpark jkpark 149290948  1월  3 20:47 burpsuite_pro_linux_v2_0_13beta.sh*
 ```
 
@@ -38,4 +38,3 @@ burpsuite의 프록시 리스너는 `Proxy` 탭에 `Options`에서 확인할 수
 
 브라우저의 프록시를 설정하여 burpsuite로 향하게한다.
 프록시 관리는 크롬의 확장 프로그램 [Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)를 사용한다.
-

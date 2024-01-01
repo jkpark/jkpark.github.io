@@ -9,7 +9,6 @@ english: true
 
 Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages (such as C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity). Begin your journey with VS Code with these [introductory videos](https://code.visualstudio.com/docs/introvideos/overview).
 
-
 # Installation
 
 1. Download the Visual Studio Code installer from <https://code.visualstudio.com/>.
@@ -27,4 +26,3 @@ you can use the following command line arguments to change your proxy settings:
 ```
     "http.proxy": "http(s)://<ip address>:<port>"
 ```
-

@@ -1,6 +1,6 @@
 ---
 title: Ubuntu Installation
-description: 
+description:
 date: 2020-12-08T12:41:07+09:00
 draft: false
 weight: 2
@@ -8,7 +8,6 @@ image: "" # relative path of /static/images folder
 collapse: always # show | hide | always
 type: docs
 ---
-
 
 # Overview
 
@@ -22,31 +21,30 @@ type: docs
 서버는 안정적이고 보완성이 강해야되고, 지속적으로 관리하는 것에 초점을 맞추어 있기 때문에 불필요한 요소들을 제거하여 에러의 가능성을 줄인다. 그래서 Ubuntu Server를 설치하면 그래픽-모드가 없고 따라서 오피스, 브라우저, 미디어 플레이어, 게임 같은 불필요한 요소가 설치되지 않는다.
 예전에는 서버와 데스크탑이 서로 다른 커널 버전을 썼지만, 지금은 동일하기 때문에 서버와 데스크탑의 큰 차이는 사실 GUI여부와 GUI용 default package들 설치 여부이다. 이 패키지들은 서버를 설치하고 나서 그래픽-모드가 필요하면 그 때 따로 설치하면 된다.
 
-*Ubuntu Desktop 20.04 의 Default Package - https://packages.ubuntu.com/focal/ubuntu-desktop
+\*Ubuntu Desktop 20.04 의 Default Package - https://packages.ubuntu.com/focal/ubuntu-desktop
 
 > ## What's New in Ubuntu 20.04 Server
+>
 > One of the biggest improvements brought by Ubuntu Server 20.04 LTS is enhanced security and stability. This comes through the constant security patching process and new features like the Ubuntu Server Live installer, iptables to nftables migration, and more resilient boot loader. Additional features like CIS hardening and Kernel Livepatch service will be available in Ubuntu Pro cloud images for AWS.
-
-
 
 # 인스톨러 다운로드
 
 Ubuntu 20.04 설치는 네트워크과 서비스를 위한 버전으로 텍스트-모드로 설치하기 위해 Ubuntu Server 로 설치할 것이다. 또한 설치 중 설정들이 어느 위치를 참조하고 어떻게 동작하는지 학습하는 것 또한 목표로 하기 때문에 지역, 언어, 네트워크 등 가능한 모든 설정은 설치가 끝난 후 수동으로 설정할 것이다.
 
 Ubuntu Server 20.04 는 두 가지 인스톨러를 지원한다.
+
 - Subiquity Installer (Default, live version)
 - Debian Installer (Alternative, legacy version)
 
 ![Ubuntu 20.04 LTS Server Live](images/00-subiquity.png)
-*Ubuntu 20.04 LTS Server Live (ubuntu-20.04.1-live-server-amd64.iso)*
+_Ubuntu 20.04 LTS Server Live (ubuntu-20.04.1-live-server-amd64.iso)_
 
 ![Ubuntu 20.04 LTS Server Legacy](images/00-debian.png)
-*Ubuntu 20.04 LTS Server Legacy (ubuntu-20.04.1-legacy-server-amd64.iso)*
+_Ubuntu 20.04 LTS Server Legacy (ubuntu-20.04.1-legacy-server-amd64.iso)_
 
 Subiquity(live version) 인스톨러는 Ubuntu 18.04부터 새로운 인스톨러로 등장했고 UI가 조금 더 현대적이다. 두 installer의 가장 큰 차이는 `cloud-init` 패키지 설치 여부이다. Subiquity installer로 설치할 경우 `cloud-init`이 설치되는데, `cloud-init`는 우분투 설치 작업을 자동화하는 목적으로 쓰인다. 이 기능은 가령, 서버를 100대 한번에 설치할땐 효율적이겠지만 나한텐 필요없는 기능이다. 그렇기 때문에 나는 Debian Installer(Legacy version)로 우분투를 설치할 것이다.
 
 [우분투 다운로드 페이지](http://cdimage.ubuntu.com/ubuntu-legacy-server/releases/20.04/release/) 에서 Legacy server install image를 다운로드한다
-
 
 # USB 부팅 디스크 만들기
 
@@ -55,7 +53,6 @@ Subiquity(live version) 인스톨러는 Ubuntu 18.04부터 새로운 인스톨�
 우분투 : https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#0
 
 # 설치 과정
-
 
 USB를 꽂고 전원을 키면 아래와 우분투 서버를 설치하는 화면이 나온다.
 
@@ -77,7 +74,7 @@ USB를 꽂고 전원을 키면 아래와 우분투 서버를 설치하는 화면
 ![select your location](images/02.png)
 지역 설정은 미국으로 한다. 우분투 소프트웨어들은 각종 패키지들을 모아놓은 아카이브를 통해 다운받을 수 있는데 어느 지역을 선택하느냐에 따라 아카이브 호스트가 결정된다. 우분투의 메인 아카이브의 위치는 http://archive.ubuntu.com/ubuntu 이다. 미국을 선택하면 미국 미러 아카이브 http://us.archive.ubuntu.com/ubuntu 를 사용하게 되고, 한국이나 다른 나라를 선택하게 되면 해당 지역에 맞는 미러 아카이브가 선택된다. 한국에서 한국에 있는 미러 아카이브를 선택하면 속도가 빠르다. 설치 이후 카카오 미러 아카이브로 변경하는 방법을 학습할 것이다.
 
->우분투의 아카이브 미러 리스트는 https://launchpad.net/ubuntu/+archivemirrors 에서 볼 수 있다. 
+> 우분투의 아카이브 미러 리스트는 https://launchpad.net/ubuntu/+archivemirrors 에서 볼 수 있다.
 
 ## 키보드 레이아웃
 
@@ -168,14 +165,15 @@ debian installer에서는 EFI파티션을 수동으로 선택하는 옵션이 �
 
 ![partition disk - boot1](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_26_43.png)
 ![partition disk - boot2](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_26_53.png)
-1GB 설정. [우분투 help wiki](https://help.ubuntu.com/community/DiskSpace){:target="_blank"}에 따르면 250MB ~ 1GB로 가이드 한다.
+1GB 설정. [우분투 help wiki](https://help.ubuntu.com/community/DiskSpace){:target="\_blank"}에 따르면 250MB ~ 1GB로 가이드 한다.
+
 > 예전에 한 번 200MB로 설정했는데, 우분투 버전 업그레이드 시 /boot 공간이 부족한 경험이 있다. 용량을 여유있게 주도록 한다.
-![partition disk - boot3](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_33_04.png)
-![partition disk - boot4](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_33_05.png)
-![partition disk - boot5](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_33_11.png)
-마운트 포인트를 /boot로 바꿔준다.
-![partition disk - boot6](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_33_14.png)
-![partition disk - boot7](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_33_19.png)
+> ![partition disk - boot3](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_33_04.png)
+> ![partition disk - boot4](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_33_05.png)
+> ![partition disk - boot5](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_33_11.png)
+> 마운트 포인트를 /boot로 바꿔준다.
+> ![partition disk - boot6](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_33_14.png)
+> ![partition disk - boot7](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_33_19.png)
 
 ### swap 파티션 생성
 
@@ -199,7 +197,8 @@ Use as를 swap으로 바꿔준다.
 ![partition disk - root3](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_57_46.png)
 ![partition disk - root4](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_57_48.png)
 ![partition disk - root5](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_57_49.png)
->디스크는 보통 4개의 primary파티션으로 나눌 수 있는데 마지막 하나를 확장 시켜 더 많은 파티션을 만들 수 있도록 했다. 그래서 3개의 primary 파티션과 여러개의 logical 파티션으로 구성할 수 있다. 알고 넘어갈만한 차이는 없다.
+
+> 디스크는 보통 4개의 primary파티션으로 나눌 수 있는데 마지막 하나를 확장 시켜 더 많은 파티션을 만들 수 있도록 했다. 그래서 3개의 primary 파티션과 여러개의 logical 파티션으로 구성할 수 있다. 알고 넘어갈만한 차이는 없다.
 
 ![partition disk - root6](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_57_54.png)
 ![partition disk - root7](images/VirtualBox_Ubuntu%2020.04_02_11_2020_11_57_56.png)
@@ -224,6 +223,7 @@ Yes를 눌러 파티션 설정을 저장한다.
 [프록시](https://en.wikipedia.org/wiki/Proxy_server) 설정 창이다. 프록시 서버를 사용 중이라면 프록시 주소를 입력한다. 일반적인 경우 쓰이지 않는다.
 
 ## 자동 업데이트
+
 ![configuring tasksel](images/33.png)
 주기적으로 아카이브를 통해 업데이트 받을 수 있다. 설치 후 언제든지 설정가능하므로 원하는 것을 고른다. 나는 수동 업데이트를 원하므로 `No automatic updates`를 선택하였다.
 
@@ -252,6 +252,7 @@ USB를 제거하고 `continue`를 눌르면 재부팅이 되면서 아래와 같
 ![login succeed](images/VirtualBox_Ubuntu%2020.04_02_11_2020_12_16_44.png)
 
 커서가 위치한 `jkpark@cactus:~$` 을 살펴보면 다음과 같다.
+
 - `jkpark` : 사용자명
 - `cactus` : 호스트명
 - `~` : 디렉토리 위치. 자신이 위치한 디렉토리를 표시한다. `~`은 사용자의 홈 디렉토리이다.
@@ -259,15 +260,17 @@ USB를 제거하고 `continue`를 눌르면 재부팅이 되면서 아래와 같
 
 리눅스의 최상위 사용자는 `root`이다. 우분투는 기본적으로 `root` 계정으로 로그인이 불가능하게 설정되어 있다. root권한이 필요한 파일에 접근하기 위해선 일반 사용자가 root 권한을 빌려야 하는데 root 권한을 빌리 수 있는 사용자 그룹을 `sudoers`라고 한다. 우분투 서버를 설치할 때 생성했던 사용자는 `sudoers`그룹에 속해있다. root권한이 필요한 작업 수행 시 명령어 맨 앞에 `sudo`를 입력하여 수행할 수 있다.
 
-예) `whoami` 명령어는 명령어를 수행하는 사용자가 누구인지 출력해 주는 명령어이다. 
+예) `whoami` 명령어는 명령어를 수행하는 사용자가 누구인지 출력해 주는 명령어이다.
 
 ![login succeed](images/VirtualBox_Ubuntu%2020.04_02_11_2020_12_16_55.png)
+
 ```
 $ whoami
 jkpark
 $ sudo whoami
 root
 ```
+
 그냥 `whoami` 명령어를 실행하면 `jkpark`이 출력되지만, `sudo`를 붙이면 `root`가 출력되는 것이 보인다.
 
-> 내 글에서는 위와 같이 명령어(입력)와 출력을 구분하기 위해 `$` 을 맨 앞에 표시하였다. `$ whoami`는 'whoami' 명령어를 수행한다는 의미이고 `$`이 붙지 않는다면 출력(결과)이라는 의미이다. 
+> 내 글에서는 위와 같이 명령어(입력)와 출력을 구분하기 위해 `$` 을 맨 앞에 표시하였다. `$ whoami`는 'whoami' 명령어를 수행한다는 의미이고 `$`이 붙지 않는다면 출력(결과)이라는 의미이다.

@@ -5,8 +5,8 @@ description:
 category: blog
 tags: [MariaDB, NGINX, Ubuntu16.04, LEMP stack, Drupal, Ubuntu]
 ---
-<https://www.drupal.org/download> 에서 최신버전의 바이너리를 확인
 
+<https://www.drupal.org/download> 에서 최신버전의 바이너리를 확인
 
 ```bash
 jkpark@cactus:/var/www/html$ sudo wget https://ftp.drupal.org/files/projects/drupal-8.2.2.zip
@@ -56,6 +56,7 @@ drwxr-xr-x 8 www-data www-data 4096 11월  2 18:08 drupal
 ```
 
 데이터베이스 생성
+
 ```bash
 jkpark@cactus:/var/www/html$ mysql -u root -p
 Enter password:
@@ -97,7 +98,6 @@ MariaDB [(none)]> exit
 Bye
 ```
 
-
 drupal 접속을 위해 nginx default 설정파일을 수정한다.
 
 ```bash
@@ -115,7 +115,6 @@ jkpark@cactus:/etc/nginx/sites-available$ sudo vi default
  11     }
 ```
 
-
 테스트 & 재시작
 
 ```bash
@@ -132,7 +131,6 @@ jkpark@cactus:/etc/nginx/sites-available$ sudo systemctl restart nginx
 ![](https://4.bp.blogspot.com/-hGLa3PTv1-c/WCK9uCCQuBI/AAAAAAAAAgs/D-x5zJkykI82p2HkVBaT3wPvjXaL3QWMQCLcB/s500/step2.PNG)
 
 ![](https://3.bp.blogspot.com/--E1mGlUMf18/WCK9uBk87_I/AAAAAAAAAgw/Y86G3AGRh34oYxOyQUQGQTDC8jExPEYiwCLcB/s500/step3.PNG)
-
 
 php gd모듈과 xml 모듈 설치
 
@@ -192,4 +190,3 @@ jkpark@cactus:/etc/nginx/sites-available$ sudo systemctl restart php7.0-fpm.serv
 ![](https://1.bp.blogspot.com/-CDck84-SGbs/WCLAeil2KZI/AAAAAAAAAhc/eHCY8N1NTAsHDnKbE8va6eS78MjQqIlpwCLcB/s500/step9.PNG)
 
 설치 완료.
-
