@@ -1,0 +1,42 @@
+{{ define "main" }}
+<section id="main-header" class="thm-dark">
+  {{ template "main-header" . }}
+</section>
+<section id="main-content">
+  {{ template "main-content" . }}
+</section>
+{{ end }}
+
+
+
+{{ define "main-header" }}
+<div class="wrapper">
+  <div>Project</div>
+  <div class="title">{{ .Params.Name }}</div>
+  <div>{{ .Params.oneliner | safeHTML }}</div>
+</div>
+{{ end }}
+
+{{ define "main-content" }}
+  <article id="post-article">
+    <div class="wrapper project">
+      <div class="project-image-container">
+        <img src='{{ .RelPermalink }}{{ "images/preview.png" | urlize }}' class="project-image" alt="{{ .Params.name }}" onerror="this.style.display='none'" />
+      </div>
+      <p>{{ .Params.period }}</p>
+      <p><strong>As {{ .Params.role | safeHTML }}</strong></p>
+      <p>Using {{ .Params.language | safeHTML }}</p>
+      <p>{{ .Params.description | safeHTML }}</p>
+
+      
+      <p>
+          <strong>Achievements</strong><br>
+          {{ range .Params.achievements }} - {{ . | safeHTML }}<br>{{ end }}
+      </p>
+    </div>
+    <div class="wrapper content">
+      {{ .Content }}
+    </div>
+  </article>
+</section>
+{{ end }}

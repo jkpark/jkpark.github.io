@@ -1,0 +1,47 @@
+{{ define "main" }}
+<section id="main-header" class="thm-dark">
+</section>
+<section id="main-content">
+  {{ template "main-content" . }}
+</section>
+{{ end }}
+
+{{ define "main-content" }}
+    {{ if .Site.Data.aboutme }}
+    <section class="aboutme">
+        <div class="wrapper">
+            <article class="aboutme">
+                <h1 style="font-size: 2em;">{{ .Site.Data.aboutme.title }}</h1>
+                <p>{{ .Site.Data.aboutme.description  | markdownify }}</p>
+            </article>
+        </div>
+    </section>
+    {{ end }}
+    
+    {{ with .Site.GetPage "section" "projects" }}
+    <section class="projects">
+        <header class="wrapper"><h1>Projects</h1></header>
+        {{ range .Pages.ByWeight }}
+        <section class="project tile">
+            <div class="wrapper">
+                <a class="stretched-link" href='{{ "/projects/" | relLangURL }}{{ .Params.identifier | urlize }}'></a>
+                <div class="project-image-container">
+                    <img src='{{ .RelPermalink }}{{ "images/preview.png" | urlize }}' class="project-image" alt="{{ .Params.name }}" onerror="this.style.display='none'" />
+                </div>
+                <div class="stretched-link-inner">
+                    <h1>{{ .Params.name }}</h1>
+                    <p>{{ .Params.oneliner | safeHTML }}</p>
+                    <p><strong>As {{ .Params.role | safeHTML }}</strong></p>
+                    <p>{{ .Params.description | truncate 300 | safeHTML }}</p>
+                    <p>
+                        <strong>Achievements</strong><br>
+                        {{ range .Params.achievements }} - {{ . | safeHTML }}<br>{{ end }}
+                    </p>
+                </div>
+            </div>
+        </section>
+        {{ end }}
+    </section>
+    {{ end }}
+
+{{ end }}

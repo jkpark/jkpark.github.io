@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='{{ .Site.LanguageCode }}'>
+<head>
+    {{- partial "head.html" . -}}
+</head>
+
+<body class="thm-dark preload">
+    <div class="overay"></div>
+
+    {{- partial "masthead.html" . -}}
+
+    <main class="thm-light">
+        {{- block "main" . }}{{- end }}
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            document.querySelector("body").classList.remove("preload");
+        });
+    </script>
+    <!--
+    <script>
+        var masthead = document.querySelector("#masthead");
+        var mh = document.querySelector("#main-header");
+
+        function onScroll() {
+
+            if (window.scrollY > 1) {
+                mh.classList.add("scroll");
+            } else {
+                mh.classList.remove("scroll");
+            }
+        }
+
+        let ticking = false;
+        document.addEventListener("DOMContentLoaded", function(e) {
+            var limit = document.body.offsetHeight - window.innerHeight;
+            if(mh.offsetHeight < limit) {
+                mh.classList.add("sticky-top");
+            }
+            onScroll();
+            document.querySelector("body").classList.remove("preload");
+        });
+
+        window.addEventListener('scroll', function(e) {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    onScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+    </script>
+    -->
+
+    {{- partial "footer.html" . -}}
+</body>
+
+</html>
